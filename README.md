@@ -3,7 +3,8 @@
 Команда разработчиков:
 - Бабкина Екатерина
 - Кандауров Игнатий
-- Корнилов Илья  
+- Корнилов Илья
+
 Ссылки на проект:  
 Miro: https://miro.com/app/board/uXjVMfsWqvM=/  
 Доска в Jira: https://ilyakorn.atlassian.net/jira/software/projects/TP/boards/1    
