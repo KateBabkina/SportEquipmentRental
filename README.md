@@ -7,5 +7,4 @@
 
 Ссылки на проект:  
 Miro: https://miro.com/app/board/uXjVMfsWqvM=/  
-Доска в Jira: https://ilyakorn.atlassian.net/jira/software/projects/TP/boards/1    
-ССылка на приглашение в Jira: https://id.atlassian.com/invite/p/jira-software?id=abM4hnbiS-6ipwswlizAew
+Trello: https://trello.com/b/VeTOQY3y/аренда-спортивного-инвенторя
