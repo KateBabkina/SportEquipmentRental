@@ -9,7 +9,8 @@
 
 # Материалы к проекту:
 - [Miro](https://miro.com/app/board/uXjVMfsWqvM=/)  
-- [Trello](https://trello.com/b/VeTOQY3y/аренда-спортивного-инвентаря)
+- [Trello](https://trello.com/b/VeTOQY3y/аренда-спортивного-инвентаря)  
+- [Figma](https://www.figma.com/file/XtkhVklPCNHFBAgIbzIP51/Desktop?node-id=32%3A317&t=C6Uad3FMa4sqbmWP-1)
 
 ##### Курсовой проект:
 [Курсовой проект.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовая%20работа.docx)  
