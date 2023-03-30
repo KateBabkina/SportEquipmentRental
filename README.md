@@ -18,3 +18,6 @@
 ##### Техническое задание:
 [Техническое задание.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Техническое%20задание.docx)  
 [Техническое задание.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Техническое%20задание.pdf)  
+
+##### Презентация:
+[TP-4_2-1.pptx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/TP-4_2-1.pptx)  
