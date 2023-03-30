@@ -21,4 +21,4 @@
 [Техническое задание.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Техническое%20задание.pdf)  
 
 ##### Презентация:
-[Презентация.pptx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/TP-4_2-1.pptx)  
+[Презентация.pptx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация%20по%20игогам%201%20этапа.pptx)  
