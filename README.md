@@ -22,4 +22,4 @@
 
 ##### Презентация:
 [Презентация.pptx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация%20по%20итогам%201%20этапа.pptx)  
-[Видео презентация.mp4](https://disk.yandex.ru/d/1jRLxKe3ytFhvw)
+[Видеопрезентация.mp4](https://disk.yandex.ru/i/M4w3kLeDoMgYEw)
