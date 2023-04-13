@@ -1,11 +1,11 @@
 package ru.vsu.cs.sportbox.Data.Model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -13,23 +13,21 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "booking")
-public class Booking {
-
+@Table(name = "event")
+public class Event {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "price")
     private Double price;
-
-    @CreationTimestamp
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "date")
-    private Date date;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -41,20 +39,18 @@ public class Booking {
     @Column(name = "end_date")
     private Date endDate;
 
-    @ManyToOne(optional = false, cascade=CascadeType.ALL)
-    @JoinColumn(name = "person_id")
+    @Column(name = "description")
+    private String description;
+
+    @ManyToOne (optional=false, cascade=CascadeType.ALL)
+    @JoinColumn (name="inventory_type_id")
     @JsonIgnore
-    private Person person;
+    private InventoryType inventoryType;
 
-    @ManyToOne(optional = false, cascade=CascadeType.ALL)
-    @JoinColumn(name = "inventory_id")
-    @JsonIgnore
-    private Inventory inventory;
-
-    @Column(name = "debt")
-    private Double debt = 0.0;
-
-    @ManyToMany(mappedBy="bookings")
-    private List<Event> events;
-
+    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @JoinTable(
+            name="event_booking",
+            joinColumns={@JoinColumn(name="event_id")},
+            inverseJoinColumns={@JoinColumn(name="booking_id")})
+    private List<Booking> bookings;
 }

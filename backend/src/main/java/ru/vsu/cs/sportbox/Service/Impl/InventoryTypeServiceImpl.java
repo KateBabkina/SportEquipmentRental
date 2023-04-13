@@ -23,7 +23,7 @@ public class InventoryTypeServiceImpl implements ru.vsu.cs.sportbox.Service.Inve
 
     @Override
     public List<InventoryType> filterInventoryType(InventoryTypeFilterDto inventoryTypeFilterDto) {
-        List<InventoryType> result = inventoryTypeRepository.findAll(InventoryTypeSpecification.getEmployeesByPhoneTypeSpec(inventoryTypeFilterDto));
+        List<InventoryType> result = inventoryTypeRepository.findAll(InventoryTypeSpecification.getInventoryTypeByNameAndPrice(inventoryTypeFilterDto));
 
         String startDate = inventoryTypeFilterDto.getStartDate();
         String endDate = inventoryTypeFilterDto.getEndDate();

@@ -35,4 +35,7 @@ public class InventoryType {
 
     @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER, orphanRemoval = true)
     private List<Inventory> inventories;
+
+    @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER, orphanRemoval = true)
+    private List<Event> events;
 }
