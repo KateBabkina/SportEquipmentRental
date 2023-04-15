@@ -3,6 +3,7 @@ package ru.vsu.cs.sportbox.Service.Impl;
 import io.micrometer.common.util.StringUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.sportbox.Data.Dto.InventoryTypeFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Booking;
 import ru.vsu.cs.sportbox.Data.Model.Inventory;
@@ -22,6 +23,7 @@ public class InventoryTypeServiceImpl implements ru.vsu.cs.sportbox.Service.Inve
     private InventoryTypeRepository inventoryTypeRepository;
 
     @Override
+    @Transactional
     public List<InventoryType> filterInventoryType(InventoryTypeFilterDto inventoryTypeFilterDto) {
         List<InventoryType> result = inventoryTypeRepository.findAll(InventoryTypeSpecification.getInventoryTypeByNameAndPrice(inventoryTypeFilterDto));
 

@@ -2,6 +2,7 @@ package ru.vsu.cs.sportbox.Service.Impl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Event;
 import ru.vsu.cs.sportbox.Data.Model.InventoryType;
@@ -19,6 +20,7 @@ public class EventServiceImpl implements EventService {
     private EventRepository eventRepository;
 
     @Override
+    @Transactional
     public List<Event> filterEvent(EventFilterDto eventFilterDto) {
         return eventRepository.findAll(EventSpecification.getEventByInventoryAndDate(eventFilterDto));
     }

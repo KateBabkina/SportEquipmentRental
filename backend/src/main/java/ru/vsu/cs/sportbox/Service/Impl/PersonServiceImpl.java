@@ -10,6 +10,7 @@ import ru.vsu.cs.sportbox.Data.Mapper.PersonMapper;
 import ru.vsu.cs.sportbox.Data.Model.Person;
 import ru.vsu.cs.sportbox.Data.Repository.PersonRepository;
 import ru.vsu.cs.sportbox.Responses.LoginResponse;
+import ru.vsu.cs.sportbox.Responses.ProfileResponse;
 import ru.vsu.cs.sportbox.Responses.RegistrationResponse;
 import ru.vsu.cs.sportbox.Service.PersonService;
 
@@ -47,6 +48,16 @@ public class PersonServiceImpl implements PersonService {
             }
         } else {
             return new LoginResponse("Аккаунта с указанной почтой не существует.", false, null);
+        }
+    }
+
+    @Override
+    public ProfileResponse getPersonById(int id) {
+        Person person = personRepository.findById(id);
+        if (person != null) {
+            return new ProfileResponse("Пользователь успешно найден.", true, person);
+        } else {
+            return new ProfileResponse("Пользователя с указанным идентификатором не существует.", false, null);
         }
     }
 }

@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import ru.vsu.cs.sportbox.Data.Dto.PersonCreateDto;
 import ru.vsu.cs.sportbox.Data.Dto.PersonLoginDto;
 import ru.vsu.cs.sportbox.Responses.LoginResponse;
+import ru.vsu.cs.sportbox.Responses.ProfileResponse;
 import ru.vsu.cs.sportbox.Responses.RegistrationResponse;
 import ru.vsu.cs.sportbox.Service.PersonService;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/person")
@@ -21,19 +24,37 @@ public class PersonController {
 
     @PostMapping("/add")
     public ResponseEntity<RegistrationResponse> addNewPerson(@RequestBody PersonCreateDto personCreateDto) {
+        HttpStatus httpStatus;
         RegistrationResponse registrationResponse = personService.addNewPerson(personCreateDto);
         if (registrationResponse.isStatus()) {
-            return new ResponseEntity<>(registrationResponse, HttpStatus.OK);
+            httpStatus = HttpStatus.OK;
+        } else {
+            httpStatus = HttpStatus.CONFLICT;
         }
-        return new ResponseEntity<>(registrationResponse, HttpStatus.CONFLICT);
+        return new ResponseEntity<>(registrationResponse, httpStatus);
     }
 
     @GetMapping("/login")
     public ResponseEntity<LoginResponse> loginPerson(@RequestBody PersonLoginDto personLoginDto) {
+        HttpStatus httpStatus;
         LoginResponse loginResponse = personService.loginPerson(personLoginDto);
         if (loginResponse.isStatus()) {
-            return new ResponseEntity<>(loginResponse, HttpStatus.OK);
+            httpStatus = HttpStatus.OK;
+        } else {
+            httpStatus = HttpStatus.UNAUTHORIZED;
         }
-        return new ResponseEntity<>(loginResponse, HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(loginResponse, httpStatus);
+    }
+
+    @GetMapping("/profile")
+    public ResponseEntity<ProfileResponse> getPersonById(@RequestParam(value="id") int id) {
+        HttpStatus httpStatus;
+        ProfileResponse profileResponse = personService.getPersonById(id);
+        if (profileResponse.isStatus()) {
+            httpStatus = HttpStatus.OK;
+        } else {
+            httpStatus = HttpStatus.BAD_REQUEST;
+        }
+        return new ResponseEntity<>(profileResponse, httpStatus);
     }
 }

@@ -8,11 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
-import ru.vsu.cs.sportbox.Data.Dto.InventoryTypeFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Event;
-import ru.vsu.cs.sportbox.Data.Model.InventoryType;
 import ru.vsu.cs.sportbox.Service.EventService;
-import ru.vsu.cs.sportbox.Service.InventoryService;
 
 import java.util.List;
 
