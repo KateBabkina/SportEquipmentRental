@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -59,7 +60,7 @@ public class Booking {
             name="event_booking",
             joinColumns={@JoinColumn(name="booking_id")},
             inverseJoinColumns={@JoinColumn(name="event_id")})
-    private List<Event> events;
+    private Set<Event> events;
 
 
     @PrePersist

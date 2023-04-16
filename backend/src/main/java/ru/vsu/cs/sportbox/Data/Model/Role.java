@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -21,6 +22,6 @@ public class Role {
     private String name;
 
     @OneToMany (mappedBy="role", fetch=FetchType.EAGER)
-    private List<Person> persons;
+    private Set<Person> persons;
 
 }

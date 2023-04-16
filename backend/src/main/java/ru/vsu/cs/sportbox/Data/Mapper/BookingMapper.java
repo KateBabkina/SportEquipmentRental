@@ -1,6 +1,5 @@
 package ru.vsu.cs.sportbox.Data.Mapper;
 
-import io.micrometer.common.util.StringUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,15 +11,12 @@ import ru.vsu.cs.sportbox.Data.Model.Inventory;
 import ru.vsu.cs.sportbox.Data.Model.InventoryType;
 import ru.vsu.cs.sportbox.Data.Repository.*;
 import ru.vsu.cs.sportbox.Specification.EventSpecification;
-import ru.vsu.cs.sportbox.Specification.InventoryTypeSpecification;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Component
 @AllArgsConstructor
@@ -76,8 +72,8 @@ public class BookingMapper {
             }
             if (!notFree){
                 booking.setInventory(inventory);
-                List<Event> events = eventRepository.findAll(EventSpecification.getEventByInventoryAndDate(new EventFilterDto(
-                        inventoryType.getType(), bookingCreateDto.getStartDate(), bookingCreateDto.getEndDate())));
+                Set<Event> events = new HashSet<>(eventRepository.findAll(EventSpecification.getEventByInventoryAndDate(new EventFilterDto(
+                        inventoryType.getType(), bookingCreateDto.getStartDate(), bookingCreateDto.getEndDate()))));
                 booking.setEvents(events);
                 return booking;
             }

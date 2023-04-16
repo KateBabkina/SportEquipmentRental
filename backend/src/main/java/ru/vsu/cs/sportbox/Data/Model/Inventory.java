@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -27,11 +28,21 @@ public class Inventory {
     @Column(name = "size")
     private Integer size;
 
-    @ManyToOne (optional=false, cascade=CascadeType.ALL)
+    @ManyToOne (optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn (name="inventory_type_id")
     @JsonIgnore
     private InventoryType inventoryType;
 
-    @OneToMany(mappedBy = "inventory", fetch = FetchType.EAGER)
-    private List<Booking> bookings;
+    @OneToMany(mappedBy = "inventory", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private Set<Booking> bookings;
+
+    @PrePersist
+    public void addInventory() {
+        inventoryType.getInventories().add(this);
+    }
+
+    @PreRemove
+    public void removeInventory() {
+        inventoryType.getInventories().remove(this);
+    }
 }

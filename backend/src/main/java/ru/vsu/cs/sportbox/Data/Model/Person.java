@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -41,5 +42,5 @@ public class Person {
     private Role role;
 
     @OneToMany(mappedBy = "person", fetch = FetchType.EAGER)
-    private List<Booking> bookings;
+    private Set<Booking> bookings;
 }

@@ -38,6 +38,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
+    @Transactional
     public BookingCreateResponse addNewBooking(BookingCreateDto bookingCreateDto) {
         Booking booking = bookingMapper.bookingCreateDtoToBooking(bookingCreateDto);
         if (booking == null) {

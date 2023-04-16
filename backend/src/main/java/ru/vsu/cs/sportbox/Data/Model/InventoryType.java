@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -34,8 +35,8 @@ public class InventoryType {
     private Boolean isSizable;
 
     @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER)
-    private List<Inventory> inventories;
+    private Set<Inventory> inventories;
 
     @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER)
-    private List<Event> events;
+    private Set<Event> events;
 }

@@ -9,6 +9,7 @@ import ru.vsu.cs.sportbox.Data.Model.Event;
 import ru.vsu.cs.sportbox.Service.EventService;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/event")
@@ -23,8 +24,8 @@ public class EventController {
     }
 
     @GetMapping("/recommendation")
-    public ResponseEntity<List<Event>> getRecommendations(@RequestParam(value="booking_id") int bookingId) {
-        List<Event> events = eventService.getRecommendations(bookingId);
+    public ResponseEntity<Set<Event>> getRecommendations(@RequestParam(value="booking_id") int bookingId) {
+        Set<Event> events = eventService.getRecommendations(bookingId);
 
         return new ResponseEntity<>(events, HttpStatus.OK);
     }
