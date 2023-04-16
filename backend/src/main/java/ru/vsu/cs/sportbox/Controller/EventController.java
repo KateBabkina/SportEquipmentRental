@@ -3,10 +3,7 @@ package ru.vsu.cs.sportbox.Controller;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Event;
 import ru.vsu.cs.sportbox.Service.EventService;
@@ -21,6 +18,13 @@ public class EventController {
     @GetMapping("/filter")
     public ResponseEntity<List<Event>> filterEvent(@RequestBody EventFilterDto eventFilterDto) {
         List<Event> events = eventService.filterEvent(eventFilterDto);
+
+        return new ResponseEntity<>(events, HttpStatus.OK);
+    }
+
+    @GetMapping("/recommendation")
+    public ResponseEntity<List<Event>> getRecommendations(@RequestParam(value="booking_id") int bookingId) {
+        List<Event> events = eventService.getRecommendations(bookingId);
 
         return new ResponseEntity<>(events, HttpStatus.OK);
     }

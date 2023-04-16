@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Event;
 import ru.vsu.cs.sportbox.Data.Model.InventoryType;
+import ru.vsu.cs.sportbox.Data.Repository.BookingRepository;
 import ru.vsu.cs.sportbox.Data.Repository.EventRepository;
 import ru.vsu.cs.sportbox.Data.Repository.InventoryRepository;
 import ru.vsu.cs.sportbox.Service.EventService;
@@ -18,10 +19,16 @@ import java.util.List;
 @AllArgsConstructor
 public class EventServiceImpl implements EventService {
     private EventRepository eventRepository;
+    private BookingRepository bookingRepository;
 
     @Override
     @Transactional
     public List<Event> filterEvent(EventFilterDto eventFilterDto) {
         return eventRepository.findAll(EventSpecification.getEventByInventoryAndDate(eventFilterDto));
+    }
+
+    @Override
+    public List<Event> getRecommendations(int bookingId) {
+        return bookingRepository.findById(bookingId).getEvents();
     }
 }

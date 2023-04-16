@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface EventService {
     List<Event> filterEvent(EventFilterDto eventFilterDto);
+
+    List<Event> getRecommendations(int bookingId);
 }

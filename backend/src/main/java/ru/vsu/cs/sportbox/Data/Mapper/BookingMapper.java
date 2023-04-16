@@ -5,13 +5,13 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
+import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Booking;
+import ru.vsu.cs.sportbox.Data.Model.Event;
 import ru.vsu.cs.sportbox.Data.Model.Inventory;
 import ru.vsu.cs.sportbox.Data.Model.InventoryType;
-import ru.vsu.cs.sportbox.Data.Repository.BookingRepository;
-import ru.vsu.cs.sportbox.Data.Repository.InventoryRepository;
-import ru.vsu.cs.sportbox.Data.Repository.InventoryTypeRepository;
-import ru.vsu.cs.sportbox.Data.Repository.PersonRepository;
+import ru.vsu.cs.sportbox.Data.Repository.*;
+import ru.vsu.cs.sportbox.Specification.EventSpecification;
 import ru.vsu.cs.sportbox.Specification.InventoryTypeSpecification;
 
 import java.text.ParseException;
@@ -25,7 +25,7 @@ import java.util.List;
 @Component
 @AllArgsConstructor
 public class BookingMapper {
-    private BookingRepository bookingRepository;
+    private EventRepository eventRepository;
     private PersonRepository personRepository;
     private InventoryTypeRepository inventoryTypeRepository;
     private InventoryRepository inventoryRepository;
@@ -76,6 +76,9 @@ public class BookingMapper {
             }
             if (!notFree){
                 booking.setInventory(inventory);
+                List<Event> events = eventRepository.findAll(EventSpecification.getEventByInventoryAndDate(new EventFilterDto(
+                        inventoryType.getType(), bookingCreateDto.getStartDate(), bookingCreateDto.getEndDate())));
+                booking.setEvents(events);
                 return booking;
             }
         }

@@ -47,10 +47,7 @@ public class Event {
     @JsonIgnore
     private InventoryType inventoryType;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    @JoinTable(
-            name="event_booking",
-            joinColumns={@JoinColumn(name="event_id")},
-            inverseJoinColumns={@JoinColumn(name="booking_id")})
+    @ManyToMany(mappedBy="events", fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Booking> bookings;
 }

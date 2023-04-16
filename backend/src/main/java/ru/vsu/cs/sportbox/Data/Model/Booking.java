@@ -54,7 +54,11 @@ public class Booking {
     @Column(name = "debt")
     private Double debt = 0.0;
 
-    @ManyToMany(mappedBy="bookings", fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @JoinTable(
+            name="event_booking",
+            joinColumns={@JoinColumn(name="booking_id")},
+            inverseJoinColumns={@JoinColumn(name="event_id")})
     private List<Event> events;
 
 
