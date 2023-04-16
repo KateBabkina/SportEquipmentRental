@@ -13,6 +13,7 @@ import java.util.Optional;
 @Repository
 public interface InventoryRepository extends JpaRepository<Inventory,Integer> {
     List<Inventory> findByInventoryType(InventoryType inventoryType);
+    List<Inventory> findByInventoryTypeAndSize(InventoryType inventoryType, int size);
     Optional<Inventory> findById(Integer id);
 
     Optional<Inventory> findByIdAndInventoryType(Integer id, InventoryType inventoryType);
