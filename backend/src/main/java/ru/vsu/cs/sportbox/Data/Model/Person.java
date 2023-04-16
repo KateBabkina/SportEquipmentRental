@@ -40,6 +40,6 @@ public class Person {
     @JsonIgnore
     private Role role;
 
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER)
     private List<Booking> bookings;
 }

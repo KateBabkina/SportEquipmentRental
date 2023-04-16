@@ -32,6 +32,6 @@ public class Inventory {
     @JsonIgnore
     private InventoryType inventoryType;
 
-    @OneToMany(mappedBy = "inventory", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "inventory", fetch = FetchType.EAGER)
     private List<Booking> bookings;
 }

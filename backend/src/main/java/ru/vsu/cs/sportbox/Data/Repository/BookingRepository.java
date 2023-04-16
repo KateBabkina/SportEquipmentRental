@@ -13,4 +13,6 @@ import java.util.List;
 @Repository
 public interface BookingRepository extends JpaRepository<Booking,Integer> {
     List<Booking> findByStartDateBetweenOrEndDateBetween(Date startDate, Date endDate, Date startDate2, Date endDate2);
+    void removeBookingById(int id);
+    Booking findById(int id);
 }

@@ -41,12 +41,12 @@ public class Booking {
     @Column(name = "end_date")
     private Date endDate;
 
-    @ManyToOne(optional = false, cascade=CascadeType.ALL)
+    @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "person_id")
     @JsonIgnore
     private Person person;
 
-    @ManyToOne(optional = false, cascade=CascadeType.ALL)
+    @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "inventory_id")
     @JsonIgnore
     private Inventory inventory;
@@ -54,7 +54,20 @@ public class Booking {
     @Column(name = "debt")
     private Double debt = 0.0;
 
-    @ManyToMany(mappedBy="bookings")
+    @ManyToMany(mappedBy="bookings", fetch = FetchType.EAGER)
     private List<Event> events;
+
+
+    @PrePersist
+    public void addBooking() {
+        person.getBookings().add(this);
+        inventory.getBookings().add(this);
+    }
+
+    @PreRemove
+    public void removeBooking() {
+        person.getBookings().remove(this);
+        inventory.getBookings().remove(this);
+    }
 
 }

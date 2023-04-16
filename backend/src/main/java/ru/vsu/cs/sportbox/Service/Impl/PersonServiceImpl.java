@@ -52,6 +52,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    @Transactional
     public ProfileResponse getPersonById(int id) {
         Person person = personRepository.findById(id);
         if (person != null) {

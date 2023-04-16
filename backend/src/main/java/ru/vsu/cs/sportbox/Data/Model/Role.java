@@ -20,7 +20,7 @@ public class Role {
     @Column(name = "name")
     private String name;
 
-    @OneToMany (mappedBy="role", fetch=FetchType.EAGER, orphanRemoval = true)
+    @OneToMany (mappedBy="role", fetch=FetchType.EAGER)
     private List<Person> persons;
 
 }
