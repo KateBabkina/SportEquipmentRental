@@ -27,9 +27,9 @@ public class InventoryController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<InventoryCreateResponse> addNewInventory(@RequestBody InventoryCreateDto inventoryCreateDto) {
+    public ResponseEntity<InventoryResponse> addNewInventory(@RequestBody InventoryCreateDto inventoryCreateDto) {
         HttpStatus httpStatus;
-        InventoryCreateResponse inventoryCreateResponse = inventoryService.addNewInventory(inventoryCreateDto);
+        InventoryResponse inventoryCreateResponse = inventoryService.addNewInventory(inventoryCreateDto);
         if (inventoryCreateResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -39,9 +39,9 @@ public class InventoryController {
     }
 
     @GetMapping("/get_by_id")
-    public ResponseEntity<InventoryGetResponse> getInventoryById(@RequestParam(value="id") int id) {
+    public ResponseEntity<InventoryResponse> getInventoryById(@RequestParam(value="id") int id) {
         HttpStatus httpStatus;
-        InventoryGetResponse inventoryGetResponse = inventoryService.getInventoryById(id);
+        InventoryResponse inventoryGetResponse = inventoryService.getInventoryById(id);
         if (inventoryGetResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -51,9 +51,9 @@ public class InventoryController {
     }
 
     @PutMapping("/change")
-    public ResponseEntity<InventoryChangeResponse> changeInventory(@RequestParam(value="id") int id, @RequestBody InventoryChangeDto inventoryChangeDto) {
+    public ResponseEntity<InventoryResponse> changeInventory(@RequestParam(value="id") int id, @RequestBody InventoryChangeDto inventoryChangeDto) {
         HttpStatus httpStatus;
-        InventoryChangeResponse inventoryChangeResponse = inventoryService.changeInventory(id, inventoryChangeDto);
+        InventoryResponse inventoryChangeResponse = inventoryService.changeInventory(id, inventoryChangeDto);
         if (inventoryChangeResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -63,9 +63,9 @@ public class InventoryController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<InventoryDeleteResponse> deleteInventoryById(@RequestParam(value="id") int id) {
+    public ResponseEntity<InventoryResponse> deleteInventoryById(@RequestParam(value="id") int id) {
         HttpStatus httpStatus;
-        InventoryDeleteResponse inventoryDeleteResponse = inventoryService.deleteInventoryById(id);
+        InventoryResponse inventoryDeleteResponse = inventoryService.deleteInventoryById(id);
         if (inventoryDeleteResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {

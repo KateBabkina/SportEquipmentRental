@@ -5,9 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
-import ru.vsu.cs.sportbox.Data.Dto.EventChangeDto;
 import ru.vsu.cs.sportbox.Responses.BookingResponse;
-import ru.vsu.cs.sportbox.Responses.EventChangeResponse;
 import ru.vsu.cs.sportbox.Service.BookingService;
 
 @RestController

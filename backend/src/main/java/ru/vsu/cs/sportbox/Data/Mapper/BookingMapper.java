@@ -5,10 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
 import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
-import ru.vsu.cs.sportbox.Data.Model.Booking;
-import ru.vsu.cs.sportbox.Data.Model.Event;
-import ru.vsu.cs.sportbox.Data.Model.Inventory;
-import ru.vsu.cs.sportbox.Data.Model.InventoryType;
+import ru.vsu.cs.sportbox.Data.Model.*;
 import ru.vsu.cs.sportbox.Data.Repository.*;
 import ru.vsu.cs.sportbox.Specification.EventSpecification;
 
@@ -43,15 +40,19 @@ public class BookingMapper {
         booking.setStartDate(sDate);
         booking.setEndDate(eDate);
         booking.setDebt(0.);
-        booking.setPerson(personRepository.findById(bookingCreateDto.getPersonId()));
+        Person person = personRepository.findById(bookingCreateDto.getPersonId());
+        booking.setPerson(person);
 
         InventoryType inventoryType = inventoryTypeRepository.findById(bookingCreateDto.getInventoryTypeId());
         double priceForDay = inventoryType.getPrice();
         Instant sDateInstant = sDate.toInstant();
         Instant eDateInstant = eDate.toInstant();
         long days = ChronoUnit.DAYS.between(sDateInstant,eDateInstant);
-        booking.setPrice(priceForDay * days);
-
+        double price = priceForDay * days;
+        for (Booking currBooking : person.getBookings()) {
+            price += currBooking.getDebt();
+        }
+        booking.setPrice(price);
 
         List<Inventory> inventories;
         if (inventoryType.getIsSizable() && bookingCreateDto.getSize() != 0) {

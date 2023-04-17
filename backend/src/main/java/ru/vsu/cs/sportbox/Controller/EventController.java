@@ -33,9 +33,9 @@ public class EventController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<EventCreateResponse> addNewEvent(@RequestBody EventCreateDto eventCreateDto) {
+    public ResponseEntity<EventResponse> addNewEvent(@RequestBody EventCreateDto eventCreateDto) {
         HttpStatus httpStatus;
-        EventCreateResponse eventCreateResponse = eventService.addNewEvent(eventCreateDto);
+        EventResponse eventCreateResponse = eventService.addNewEvent(eventCreateDto);
         if (eventCreateResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -45,9 +45,9 @@ public class EventController {
     }
 
     @GetMapping("/get_by_id")
-    public ResponseEntity<EventGetResponse> getEventById(@RequestParam(value="id") int id) {
+    public ResponseEntity<EventResponse> getEventById(@RequestParam(value="id") int id) {
         HttpStatus httpStatus;
-        EventGetResponse eventGetResponse = eventService.getEventById(id);
+        EventResponse eventGetResponse = eventService.getEventById(id);
         if (eventGetResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -57,9 +57,9 @@ public class EventController {
     }
 
     @PutMapping("/change")
-    public ResponseEntity<EventChangeResponse> changeEvent(@RequestParam(value="id") int id, @RequestBody EventChangeDto eventChangeDto) {
+    public ResponseEntity<EventResponse> changeEvent(@RequestParam(value="id") int id, @RequestBody EventChangeDto eventChangeDto) {
         HttpStatus httpStatus;
-        EventChangeResponse eventChangeResponse = eventService.changeEvent(id, eventChangeDto);
+        EventResponse eventChangeResponse = eventService.changeEvent(id, eventChangeDto);
         if (eventChangeResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -69,9 +69,9 @@ public class EventController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<EventDeleteResponse> deleteEventById(@RequestParam(value="id") int id) {
+    public ResponseEntity<EventResponse> deleteEventById(@RequestParam(value="id") int id) {
         HttpStatus httpStatus;
-        EventDeleteResponse eventDeleteResponse = eventService.deleteEventById(id);
+        EventResponse eventDeleteResponse = eventService.deleteEventById(id);
         if (eventDeleteResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {

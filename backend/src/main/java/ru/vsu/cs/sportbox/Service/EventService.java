@@ -4,10 +4,7 @@ import ru.vsu.cs.sportbox.Data.Dto.EventChangeDto;
 import ru.vsu.cs.sportbox.Data.Dto.EventCreateDto;
 import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Event;
-import ru.vsu.cs.sportbox.Responses.EventChangeResponse;
-import ru.vsu.cs.sportbox.Responses.EventCreateResponse;
-import ru.vsu.cs.sportbox.Responses.EventDeleteResponse;
-import ru.vsu.cs.sportbox.Responses.EventGetResponse;
+import ru.vsu.cs.sportbox.Responses.*;
 
 import java.util.List;
 import java.util.Set;
@@ -17,11 +14,11 @@ public interface EventService {
 
     Set<Event> getRecommendations(int bookingId);
 
-    EventCreateResponse addNewEvent(EventCreateDto eventCreateDto);
+    EventResponse addNewEvent(EventCreateDto eventCreateDto);
 
-    EventGetResponse getEventById(int id);
+    EventResponse getEventById(int id);
 
-    EventChangeResponse changeEvent(int id, EventChangeDto eventChangeDto);
+    EventResponse changeEvent(int id, EventChangeDto eventChangeDto);
 
-    EventDeleteResponse deleteEventById(int id);
+    EventResponse deleteEventById(int id);
 }

@@ -8,9 +8,7 @@ import ru.vsu.cs.sportbox.Data.Dto.EventChangeDto;
 import ru.vsu.cs.sportbox.Data.Dto.EventCreateDto;
 import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
 import ru.vsu.cs.sportbox.Data.Mapper.EventMapper;
-import ru.vsu.cs.sportbox.Data.Mapper.InventoryMapper;
 import ru.vsu.cs.sportbox.Data.Model.Event;
-import ru.vsu.cs.sportbox.Data.Model.Inventory;
 import ru.vsu.cs.sportbox.Data.Model.InventoryType;
 import ru.vsu.cs.sportbox.Data.Repository.BookingRepository;
 import ru.vsu.cs.sportbox.Data.Repository.EventRepository;
@@ -47,28 +45,28 @@ public class EventServiceImpl implements EventService {
 
     @Override
     @Transactional
-    public EventCreateResponse addNewEvent(EventCreateDto eventCreateDto) {
+    public EventResponse addNewEvent(EventCreateDto eventCreateDto) {
         Event event = eventMapper.eventCreateDtoToEvent(eventCreateDto);
         if (event == null) {
-            return new EventCreateResponse("При добавлении мероприятия возникла ошибка.", false, null);
+            return new EventResponse("При добавлении мероприятия возникла ошибка.", false, null);
         }
         Event savedEvent = eventRepository.save(event);
-        return new EventCreateResponse("Мероприятие было успешно добавлено.", true, savedEvent);
+        return new EventResponse("Мероприятие было успешно добавлено.", true, savedEvent);
     }
 
     @Override
     @Transactional
-    public EventGetResponse getEventById(int id) {
+    public EventResponse getEventById(int id) {
         Event event = eventRepository.findById(id);
         if (event == null) {
-            return new EventGetResponse("Мероприятие с указанным идентификатором не существует.", false, null);
+            return new EventResponse("Мероприятие с указанным идентификатором не существует.", false, null);
         }
-        return new EventGetResponse("Мероприятие было успешно найдено.", true, event);
+        return new EventResponse("Мероприятие было успешно найдено.", true, event);
     }
 
     @Override
     @Transactional
-    public EventChangeResponse changeEvent(int id, EventChangeDto eventChangeDto) {
+    public EventResponse changeEvent(int id, EventChangeDto eventChangeDto) {
         Event event = eventRepository.findById(id);
         if (event != null) {
             if (StringUtils.isNotBlank(eventChangeDto.getName())){
@@ -83,7 +81,7 @@ public class EventServiceImpl implements EventService {
             }
 
             if (inventoryType == null) {
-                return new EventChangeResponse("Указанного типа инвентаря не существует.", false, null);
+                return new EventResponse("Указанного типа инвентаря не существует.", false, null);
             }
             event.setInventoryType(inventoryType);
 
@@ -113,21 +111,21 @@ public class EventServiceImpl implements EventService {
 
 
             eventRepository.save(event);
-            return new EventChangeResponse("Изменение мероприятия прошло успешно.", true, event);
+            return new EventResponse("Изменение мероприятия прошло успешно.", true, event);
         } else {
-            return new EventChangeResponse("Мероприятие с указанным идентификатором не существует.", false, null);
+            return new EventResponse("Мероприятие с указанным идентификатором не существует.", false, null);
         }
     }
 
     @Override
     @Transactional
-    public EventDeleteResponse deleteEventById(int id) {
+    public EventResponse deleteEventById(int id) {
         Event event = eventRepository.findById(id);
         if (event != null) {
             eventRepository.removeEventById(id);
-            return new EventDeleteResponse("Удаление мероприятия прошло успешно.", true, event);
+            return new EventResponse("Удаление мероприятия прошло успешно.", true, event);
         } else {
-            return new EventDeleteResponse("Мероприятие с указанным идентификатором не существует.", false, null);
+            return new EventResponse("Мероприятие с указанным идентификатором не существует.", false, null);
         }
     }
 }
