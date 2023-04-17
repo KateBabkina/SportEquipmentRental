@@ -10,7 +10,7 @@ import ru.vsu.cs.sportbox.Data.Model.Booking;
 @Getter
 @Setter
 @NoArgsConstructor
-public class BookingDeleteResponse {
+public class BookingResponse {
     private String message;
     private boolean status;
     private Booking booking;

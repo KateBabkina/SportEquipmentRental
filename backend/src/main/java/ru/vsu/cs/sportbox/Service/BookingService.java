@@ -1,10 +1,13 @@
 package ru.vsu.cs.sportbox.Service;
 
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
-import ru.vsu.cs.sportbox.Responses.BookingCreateResponse;
-import ru.vsu.cs.sportbox.Responses.BookingDeleteResponse;
+import ru.vsu.cs.sportbox.Responses.BookingResponse;
 
 public interface BookingService {
-    BookingDeleteResponse deleteBookingById(int id);
-    BookingCreateResponse addNewBooking(BookingCreateDto bookingCreateDto);
+    BookingResponse deleteBookingById(int id);
+    BookingResponse addNewBooking(BookingCreateDto bookingCreateDto);
+
+    BookingResponse getBookingById(int id);
+
+    BookingResponse returnBooking(int id);
 }
