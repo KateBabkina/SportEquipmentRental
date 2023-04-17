@@ -11,4 +11,6 @@ import java.util.Set;
 @EnableJpaRepositories
 @Repository
 public interface EventRepository extends JpaRepository<Event,Integer>, JpaSpecificationExecutor<Event> {
+    Event findById(int id);
+    void removeEventById(int id);
 }

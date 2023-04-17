@@ -3,10 +3,8 @@ package ru.vsu.cs.sportbox.Data.Mapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.vsu.cs.sportbox.Data.Dto.InventoryCreateDto;
-import ru.vsu.cs.sportbox.Data.Dto.PersonCreateDto;
 import ru.vsu.cs.sportbox.Data.Model.Inventory;
 import ru.vsu.cs.sportbox.Data.Model.InventoryType;
-import ru.vsu.cs.sportbox.Data.Model.Person;
 import ru.vsu.cs.sportbox.Data.Repository.InventoryTypeRepository;
 
 @Component

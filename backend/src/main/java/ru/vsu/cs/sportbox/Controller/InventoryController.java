@@ -61,4 +61,16 @@ public class InventoryController {
         }
         return new ResponseEntity<>(inventoryChangeResponse, httpStatus);
     }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<InventoryDeleteResponse> deleteInventoryById(@RequestParam(value="id") int id) {
+        HttpStatus httpStatus;
+        InventoryDeleteResponse inventoryDeleteResponse = inventoryService.deleteInventoryById(id);
+        if (inventoryDeleteResponse.isStatus()) {
+            httpStatus = HttpStatus.OK;
+        } else {
+            httpStatus = HttpStatus.BAD_REQUEST;
+        }
+        return new ResponseEntity<>(inventoryDeleteResponse, httpStatus);
+    }
 }

@@ -54,10 +54,10 @@ public class BookingMapper {
 
 
         List<Inventory> inventories;
-        if (!inventoryType.getIsSizable()) {
-            inventories = inventoryRepository.findByInventoryType(inventoryType);
-        } else {
+        if (inventoryType.getIsSizable() && bookingCreateDto.getSize() != 0) {
             inventories = inventoryRepository.findByInventoryTypeAndSize(inventoryType, bookingCreateDto.getSize());
+        } else {
+            inventories = inventoryRepository.findByInventoryType(inventoryType);
         }
 
         boolean notFree;

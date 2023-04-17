@@ -55,7 +55,7 @@ public class Booking {
     @Column(name = "debt")
     private Double debt = 0.0;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name="event_booking",
             joinColumns={@JoinColumn(name="booking_id")},
@@ -67,12 +67,14 @@ public class Booking {
     public void addBooking() {
         person.getBookings().add(this);
         inventory.getBookings().add(this);
+        events.forEach(event -> event.getBookings().add(this));
     }
 
     @PreRemove
     public void removeBooking() {
         person.getBookings().remove(this);
         inventory.getBookings().remove(this);
+        events.forEach(event -> event.getBookings().remove(this));
     }
 
 }

@@ -9,7 +9,6 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -51,4 +50,9 @@ public class Event {
     @ManyToMany(mappedBy="events", fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<Booking> bookings;
+
+    @PreRemove
+    public void removeBooking() {
+        bookings.forEach(booking -> booking.getEvents().remove(this));
+    }
 }
