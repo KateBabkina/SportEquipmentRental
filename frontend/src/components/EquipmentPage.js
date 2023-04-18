@@ -1,11 +1,11 @@
 import React from "react";
 
 const inputClick = () => {
-    console.log("Clicked")
+  console.log("Clicked")
 }
 
 const mouseOver = () => {
-    console.log("Mouse over");    
+  console.log("Mouse over");    
 }
   
 function EquipmentPage(){
@@ -13,6 +13,7 @@ function EquipmentPage(){
     <div>
       <h1>Equipment Page</h1>
       <input  onClick={inputClick} onMouseEnter={mouseOver}></input>
+      
     </div>
   );
 };

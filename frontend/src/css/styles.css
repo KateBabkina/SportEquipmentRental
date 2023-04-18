@@ -193,6 +193,10 @@
     background-color: rgb(203, 203, 203);
 }
 
+.login-main {
+    padding: 20px 10px
+}
+
 .password-field {
     height: 40px;
     width: 20%;

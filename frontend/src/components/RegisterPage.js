@@ -2,18 +2,19 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import validator from 'validator';
   
-function EnterPage() {
+function RegisterPage() {
 
-    const [login, setLogin] = useState(() => {
+    const [register, setRegister] = useState(() => {
         return {
+            usermame: "",
             email: "",
             password: ""
         }
     })
      
-    const changeInputLogin = event => {
+    const changeInputRegister = event => {
         event.persist()
-        setLogin(prev => {
+        setRegister(prev => {
             return {
                 ...prev,
                 [event.target.name]: event.target.value,
@@ -24,17 +25,19 @@ function EnterPage() {
      
     function submitChacking(event) {
         event.preventDefault();
-        if(!validator.isEmail(login.email)) {
+        if(!validator.isEmail(register.email)) {
             alert("You did not enter email")
-        } else if(!validator.isStrongPassword(login.password, {minSymbols: 0})) {
+        } else if(!validator.isStrongPassword(register.password, {minSymbols: 0})) {
             alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
-            axios.post("http://localhost:8080/api/person/add", {
-                email: login.email,
-                password: login.password
+            axios.post("http://localhost:8080/api/person/add", { 
+                usermame: register.usermame,
+                email: register.email,
+                password: register.password
             }).then(res => {
                 if (res.data === true) {
                     window.location.href = "/"
+                    console.log("Nice")
                 } else {
                     alert("There is already a user with this email")
                 }
@@ -43,46 +46,55 @@ function EnterPage() {
             })
         }
     }
-    
+
   return (
-    <div className='login-main'>
+    <div>
       <form name="login-form" method="POST" onSubmit={(e) => submitChacking(e)}>
 
         <div className="login-panel">
 
+            <h2 align="center">Для регистрации введите данные</h2>
+
             <div className="login-box">
                 <div className="login-title">
-                   <b>Введите адрес электронной почты:</b>
+                   <b>Введите ФИО:</b>
                 </div>
                 <div className="login-field">
-                    <input type="text" id="email" name="email" value={login.email}
-                     onChange={(e) => changeInputLogin(e)} required minLength="4" maxLength="35" size="20"></input>
+                    <input type="text" id="usermame" name="usermame" value={register.usermame} 
+                    onChange={(e) => changeInputRegister(e)} required minLength="4" maxLength="35" size="20"></input>
+                </div>
+            </div>
+
+            <div className="login-box">
+                <div className="login-title">
+                   <b>Введите Email:</b>
+                </div>
+                <div className="login-field">
+                    <input type="text" id="email" name="email" value={register.email}
+                     onChange={(e) => changeInputRegister(e)} required minLength="4" maxLength="35" size="20"></input>
                 </div>
             </div>
 
             <div className="password-box">
                 <div className="password-title">
-                   <b>Введите пароль:</b>
+                   <b>Введите Пароль:</b>
                 </div>
                 <div className="password-field">
-                    <input type="password" id="password" name="password" value={login.password}
-                    onChange={(e) => changeInputLogin(e)} required minLength="4" maxLength="35"size="20"></input>
+                    <input type="password" id="password" name="password" value={register.password} 
+                    onChange={(e) => changeInputRegister(e) } required minLength="4" maxLength="35"size="20"></input>
                 </div>
             </div>
 
             <div className="action-box">
-
                 <div className="action-buttons">
 
                     <div className="button-login">
                         <button className="login-button" type="submit">
                             <div className="login-button-text">
-                                Вход
+                                Зарегистрироваться
                             </div>
                         </button>
                     </div>
-
-                    <a href="/api/person/add">Зарегистрироваться, если нет аккаунта</a>
 
                 </div>
 
@@ -94,4 +106,4 @@ function EnterPage() {
   );
 };
   
-export default EnterPage;
+export default RegisterPage;

@@ -8,12 +8,13 @@ import Home from "./components/Home";
 import EquipmentPage from "./components/EquipmentPage";
 import EventPage from "./components/EventPage";
 import EnterPage from "./components/EnterPage";
+import RegisterPage from "./components/RegisterPage";
 
 const App = () => {
     
     return (<div>
         <Router>
-        <Header title="Head" />
+        <Header/>
             <Routes>
 
                 <Route exact path="/" element={<Home></Home>} />
@@ -23,6 +24,8 @@ const App = () => {
                 <Route path="/events" element={<EventPage></EventPage>} />
 
                 <Route path="/enter" element={<EnterPage></EnterPage>} />
+
+                <Route path="/api/person/add" element={<RegisterPage></RegisterPage>} />
 
             </Routes>
         </Router>
