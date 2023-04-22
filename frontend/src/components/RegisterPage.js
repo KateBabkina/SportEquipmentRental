@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import validator from 'validator';
   
-function RegisterPage() {
+function RegisterPage({ setIsLogged }) {
 
     const [register, setRegister] = useState(() => {
         return {
@@ -36,6 +36,7 @@ function RegisterPage() {
                 password: register.password
             }).then(res => {
                 if (res.data === true) {
+                    setIsLogged(true)
                     window.location.href = "/"
                     console.log("Nice")
                 } else {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import validator from 'validator';
   
-function EnterPage() {
+const EnterPage = ({ setIsLogged }) => {
 
     const [login, setLogin] = useState(() => {
         return {
@@ -29,18 +29,22 @@ function EnterPage() {
         } else if(!validator.isStrongPassword(login.password, {minSymbols: 0})) {
             alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
-            axios.post("http://localhost:8080/api/person/add", {
-                email: login.email,
-                password: login.password
-            }).then(res => {
-                if (res.data === true) {
-                    window.location.href = "/"
-                } else {
-                    alert("There is already a user with this email")
-                }
-            }).catch(() => {
-                alert("An error occurred on the server")
-            })
+            // axios.post("http://localhost:8080/api/person/add", {
+            //     email: login.email,
+            //     password: login.password
+            // }).then(res => {
+            //     if (res.data === true) {
+            //         localStorage.setItem("isLogged", true)
+            //         setIsLogged(true)
+            //         window.location.href = "/"
+            //     } else {
+            //         alert("There is already a user with this email")
+            //     }
+            // }).catch(() => {
+            //     alert("An error occurred on the server")
+            // })
+            localStorage.setItem("isLogged", true)
+            setIsLogged(true)
         }
     }
     

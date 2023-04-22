@@ -1,6 +1,9 @@
 import React from "react";
   
-function EventPage(){
+function EventPage(props){
+
+  console.log(props)
+
   return (
     <div>
       <h1>Event Page</h1>
