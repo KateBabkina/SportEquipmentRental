@@ -5,6 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.sportbox.Data.Dto.PersonCreateDto;
+import ru.vsu.cs.sportbox.Data.Dto.PersonFilterDto;
 import ru.vsu.cs.sportbox.Data.Dto.PersonLoginDto;
 import ru.vsu.cs.sportbox.Data.Mapper.PersonMapper;
 import ru.vsu.cs.sportbox.Data.Model.Person;
@@ -13,6 +14,8 @@ import ru.vsu.cs.sportbox.Responses.LoginResponse;
 import ru.vsu.cs.sportbox.Responses.ProfileResponse;
 import ru.vsu.cs.sportbox.Responses.RegistrationResponse;
 import ru.vsu.cs.sportbox.Service.PersonService;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -60,5 +63,12 @@ public class PersonServiceImpl implements PersonService {
         } else {
             return new ProfileResponse("Пользователя с указанным идентификатором не существует.", false, null);
         }
+    }
+
+    @Override
+    @Transactional
+    public Person filterPerson(PersonFilterDto personFilterDto) {
+        Person person = personRepository.findByEmail(personFilterDto.getEmail());
+        return person;
     }
 }

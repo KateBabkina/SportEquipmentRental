@@ -22,6 +22,7 @@ public class BookingMapper {
     private PersonRepository personRepository;
     private InventoryTypeRepository inventoryTypeRepository;
     private InventoryRepository inventoryRepository;
+    private BookingRepository bookingRepository;
 
     @Transactional
     public Booking bookingCreateDtoToBooking (BookingCreateDto bookingCreateDto){
@@ -51,7 +52,10 @@ public class BookingMapper {
         double price = priceForDay * days;
         for (Booking currBooking : person.getBookings()) {
             price += currBooking.getDebt();
+            currBooking.setDebt(0.);
+            bookingRepository.save(currBooking);
         }
+
         booking.setPrice(price);
 
         List<Inventory> inventories;

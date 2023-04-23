@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.vsu.cs.sportbox.Data.Dto.InventoryFilterDto;
 import ru.vsu.cs.sportbox.Data.Dto.PersonCreateDto;
+import ru.vsu.cs.sportbox.Data.Dto.PersonFilterDto;
 import ru.vsu.cs.sportbox.Data.Dto.PersonLoginDto;
+import ru.vsu.cs.sportbox.Data.Model.Inventory;
+import ru.vsu.cs.sportbox.Data.Model.Person;
 import ru.vsu.cs.sportbox.Responses.LoginResponse;
 import ru.vsu.cs.sportbox.Responses.ProfileResponse;
 import ru.vsu.cs.sportbox.Responses.RegistrationResponse;
 import ru.vsu.cs.sportbox.Service.PersonService;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -56,5 +61,11 @@ public class PersonController {
             httpStatus = HttpStatus.BAD_REQUEST;
         }
         return new ResponseEntity<>(profileResponse, httpStatus);
+    }
+
+    @GetMapping("/filter")
+    public ResponseEntity<Person> filterInventory(@RequestBody PersonFilterDto personFilterDto) {
+        Person person = personService.filterPerson(personFilterDto);
+        return new ResponseEntity<>(person, HttpStatus.OK);
     }
 }
