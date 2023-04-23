@@ -5,16 +5,20 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
+import ru.vsu.cs.sportbox.Data.Dto.BookingFilterDto;
 import ru.vsu.cs.sportbox.Data.Mapper.BookingMapper;
 import ru.vsu.cs.sportbox.Data.Model.Booking;
 import ru.vsu.cs.sportbox.Data.Model.InventoryType;
 import ru.vsu.cs.sportbox.Data.Repository.BookingRepository;
 import ru.vsu.cs.sportbox.Responses.BookingResponse;
 import ru.vsu.cs.sportbox.Service.BookingService;
+import ru.vsu.cs.sportbox.Specification.BookingSpecification;
+import ru.vsu.cs.sportbox.Specification.EventSpecification;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -80,5 +84,10 @@ public class BookingServiceImpl implements BookingService {
         } else {
             return new BookingResponse("Заказ с указанным идентификатором не существует.", false, null);
         }
+    }
+
+    @Override
+    public List<Booking> filterBooking(BookingFilterDto bookingFilterDto) {
+        return bookingRepository.findAll(BookingSpecification.getBookingByIdAndEmailAndDate(bookingFilterDto));
     }
 }

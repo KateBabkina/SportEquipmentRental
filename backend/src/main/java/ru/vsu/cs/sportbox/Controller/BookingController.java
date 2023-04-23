@@ -5,8 +5,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
+import ru.vsu.cs.sportbox.Data.Dto.BookingFilterDto;
+import ru.vsu.cs.sportbox.Data.Dto.InventoryFilterDto;
+import ru.vsu.cs.sportbox.Data.Model.Booking;
+import ru.vsu.cs.sportbox.Data.Model.Inventory;
 import ru.vsu.cs.sportbox.Responses.BookingResponse;
 import ru.vsu.cs.sportbox.Service.BookingService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/booking")
@@ -60,5 +66,12 @@ public class BookingController {
             httpStatus = HttpStatus.BAD_REQUEST;
         }
         return new ResponseEntity<>(bookingReturnResponse, httpStatus);
+    }
+
+    @GetMapping("/filter")
+    public ResponseEntity<List<Booking>> filterBooking(@RequestBody BookingFilterDto bookingFilterDto) {
+        List<Booking> bookings = bookingService.filterBooking(bookingFilterDto);
+
+        return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 }

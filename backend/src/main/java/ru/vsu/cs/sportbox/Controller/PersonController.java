@@ -64,7 +64,7 @@ public class PersonController {
     }
 
     @GetMapping("/filter")
-    public ResponseEntity<Person> filterInventory(@RequestBody PersonFilterDto personFilterDto) {
+    public ResponseEntity<Person> filterPerson(@RequestBody PersonFilterDto personFilterDto) {
         Person person = personService.filterPerson(personFilterDto);
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
