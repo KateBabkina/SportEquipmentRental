@@ -18,5 +18,4 @@ public interface InventoryRepository extends JpaRepository<Inventory,Integer> {
     Inventory findByIdAndInventoryType(int id, InventoryType inventoryType);
     List<Inventory> findAll();
     void removeInventoryById(int id);
-    int countByInventoryType(InventoryType inventoryType);
 }

@@ -36,11 +36,21 @@ public class Person {
     @Column(name = "is_baned")
     private Boolean isBaned = false;
 
-    @ManyToOne (optional=false, cascade=CascadeType.ALL)
+    @ManyToOne (optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn (name="role_id")
     @JsonIgnore
     private Role role;
 
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Set<Booking> bookings;
+
+    @PrePersist
+    public void addPerson() {
+        role.getPersons().add(this);
+    }
+
+    @PreRemove
+    public void removePerson() {
+        role.getPersons().remove(this);
+    }
 }

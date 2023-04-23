@@ -4,18 +4,20 @@ import ru.vsu.cs.sportbox.Data.Dto.PersonCreateDto;
 import ru.vsu.cs.sportbox.Data.Dto.PersonFilterDto;
 import ru.vsu.cs.sportbox.Data.Dto.PersonLoginDto;
 import ru.vsu.cs.sportbox.Data.Model.Person;
-import ru.vsu.cs.sportbox.Responses.LoginResponse;
-import ru.vsu.cs.sportbox.Responses.ProfileResponse;
-import ru.vsu.cs.sportbox.Responses.RegistrationResponse;
-
-import java.util.List;
+import ru.vsu.cs.sportbox.Responses.PersonResponse;
 
 public interface PersonService {
-    RegistrationResponse addNewPerson(PersonCreateDto personCreateDto);
-    LoginResponse loginPerson(PersonLoginDto personLoginDto);
-    ProfileResponse getPersonById(int id);
+    PersonResponse addNewPerson(PersonCreateDto personCreateDto);
+    PersonResponse loginPerson(PersonLoginDto personLoginDto);
+    PersonResponse getPersonById(int id);
 
     Person filterPerson(PersonFilterDto personFilterDto);
+
+    PersonResponse deletePersonById(int id);
+
+    PersonResponse banPerson(int id);
+
+    PersonResponse unbanPerson(int id);
 }
 
 

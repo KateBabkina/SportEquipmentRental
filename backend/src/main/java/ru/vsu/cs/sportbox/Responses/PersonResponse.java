@@ -10,7 +10,7 @@ import ru.vsu.cs.sportbox.Data.Model.Person;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProfileResponse {
+public class PersonResponse {
     private String message;
     private boolean status;
     private Person person;

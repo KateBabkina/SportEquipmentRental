@@ -42,7 +42,7 @@ public class Event {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne (optional=false, cascade=CascadeType.ALL)
+    @ManyToOne (optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn (name="inventory_type_id")
     @JsonIgnore
     private InventoryType inventoryType;
@@ -52,7 +52,8 @@ public class Event {
     private Set<Booking> bookings;
 
     @PreRemove
-    public void removeBooking() {
+    public void removeEvent() {
         bookings.forEach(booking -> booking.getEvents().remove(this));
+        inventoryType.getEvents().remove(this);
     }
 }

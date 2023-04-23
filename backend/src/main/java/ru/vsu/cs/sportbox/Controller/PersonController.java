@@ -6,15 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.vsu.cs.sportbox.Data.Dto.InventoryFilterDto;
-import ru.vsu.cs.sportbox.Data.Dto.PersonCreateDto;
-import ru.vsu.cs.sportbox.Data.Dto.PersonFilterDto;
-import ru.vsu.cs.sportbox.Data.Dto.PersonLoginDto;
+import ru.vsu.cs.sportbox.Data.Dto.*;
 import ru.vsu.cs.sportbox.Data.Model.Inventory;
 import ru.vsu.cs.sportbox.Data.Model.Person;
-import ru.vsu.cs.sportbox.Responses.LoginResponse;
-import ru.vsu.cs.sportbox.Responses.ProfileResponse;
-import ru.vsu.cs.sportbox.Responses.RegistrationResponse;
+import ru.vsu.cs.sportbox.Responses.*;
 import ru.vsu.cs.sportbox.Service.PersonService;
 
 import java.util.List;
@@ -28,9 +23,9 @@ public class PersonController {
     private PersonService personService;
 
     @PostMapping("/add")
-    public ResponseEntity<RegistrationResponse> addNewPerson(@RequestBody PersonCreateDto personCreateDto) {
+    public ResponseEntity<PersonResponse> addNewPerson(@RequestBody PersonCreateDto personCreateDto) {
         HttpStatus httpStatus;
-        RegistrationResponse registrationResponse = personService.addNewPerson(personCreateDto);
+        PersonResponse registrationResponse = personService.addNewPerson(personCreateDto);
         if (registrationResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -40,9 +35,9 @@ public class PersonController {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<LoginResponse> loginPerson(@RequestBody PersonLoginDto personLoginDto) {
+    public ResponseEntity<PersonResponse> loginPerson(@RequestBody PersonLoginDto personLoginDto) {
         HttpStatus httpStatus;
-        LoginResponse loginResponse = personService.loginPerson(personLoginDto);
+        PersonResponse loginResponse = personService.loginPerson(personLoginDto);
         if (loginResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -52,9 +47,9 @@ public class PersonController {
     }
 
     @GetMapping("/profile")
-    public ResponseEntity<ProfileResponse> getPersonById(@RequestParam(value="id") int id) {
+    public ResponseEntity<PersonResponse> getProfile(@RequestParam(value="id") int id) {
         HttpStatus httpStatus;
-        ProfileResponse profileResponse = personService.getPersonById(id);
+        PersonResponse profileResponse = personService.getPersonById(id);
         if (profileResponse.isStatus()) {
             httpStatus = HttpStatus.OK;
         } else {
@@ -67,5 +62,53 @@ public class PersonController {
     public ResponseEntity<Person> filterPerson(@RequestBody PersonFilterDto personFilterDto) {
         Person person = personService.filterPerson(personFilterDto);
         return new ResponseEntity<>(person, HttpStatus.OK);
+    }
+
+    @GetMapping("/get_by_id")
+    public ResponseEntity<PersonResponse> getPersonById(@RequestParam(value="id") int id) {
+        HttpStatus httpStatus;
+        PersonResponse personResponse = personService.getPersonById(id);
+        if (personResponse.isStatus()) {
+            httpStatus = HttpStatus.OK;
+        } else {
+            httpStatus = HttpStatus.BAD_REQUEST;
+        }
+        return new ResponseEntity<>(personResponse, httpStatus);
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<PersonResponse> deletePersonById(@RequestParam(value="id") int id) {
+        HttpStatus httpStatus;
+        PersonResponse personResponse = personService.deletePersonById(id);
+        if (personResponse.isStatus()) {
+            httpStatus = HttpStatus.OK;
+        } else {
+            httpStatus = HttpStatus.BAD_REQUEST;
+        }
+        return new ResponseEntity<>(personResponse, httpStatus);
+    }
+
+    @PutMapping("/ban")
+    public ResponseEntity<PersonResponse> banPerson(@RequestParam(value="id") int id) {
+        HttpStatus httpStatus;
+        PersonResponse personResponse = personService.banPerson(id);
+        if (personResponse.isStatus()) {
+            httpStatus = HttpStatus.OK;
+        } else {
+            httpStatus = HttpStatus.BAD_REQUEST;
+        }
+        return new ResponseEntity<>(personResponse, httpStatus);
+    }
+
+    @PutMapping("/unban")
+    public ResponseEntity<PersonResponse> unbanPerson(@RequestParam(value="id") int id) {
+        HttpStatus httpStatus;
+        PersonResponse personResponse = personService.unbanPerson(id);
+        if (personResponse.isStatus()) {
+            httpStatus = HttpStatus.OK;
+        } else {
+            httpStatus = HttpStatus.BAD_REQUEST;
+        }
+        return new ResponseEntity<>(personResponse, httpStatus);
     }
 }

@@ -21,7 +21,7 @@ public class Role {
     @Column(name = "name")
     private String name;
 
-    @OneToMany (mappedBy="role", fetch=FetchType.EAGER)
+    @OneToMany (mappedBy="role", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Set<Person> persons;
 
 }

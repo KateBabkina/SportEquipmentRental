@@ -34,9 +34,9 @@ public class InventoryType {
     @Column(name = "is_sizable")
     private Boolean isSizable;
 
-    @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER)
+    @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Set<Inventory> inventories;
 
-    @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER)
+    @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Set<Event> events;
 }
