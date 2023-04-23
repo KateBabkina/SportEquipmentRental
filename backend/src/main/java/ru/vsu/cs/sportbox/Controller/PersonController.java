@@ -18,97 +18,64 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/person")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class PersonController {
 
     private PersonService personService;
 
     @PostMapping("/add")
     public ResponseEntity<PersonResponse> addNewPerson(@RequestBody PersonCreateDto personCreateDto) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse registrationResponse = personService.addNewPerson(personCreateDto);
-        if (registrationResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.CONFLICT;
-        }
         return new ResponseEntity<>(registrationResponse, httpStatus);
     }
 
     @GetMapping("/login")
     public ResponseEntity<PersonResponse> loginPerson(@RequestBody PersonLoginDto personLoginDto) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse loginResponse = personService.loginPerson(personLoginDto);
-        if (loginResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.UNAUTHORIZED;
-        }
         return new ResponseEntity<>(loginResponse, httpStatus);
     }
 
     @GetMapping("/profile")
     public ResponseEntity<PersonResponse> getProfile(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse profileResponse = personService.getPersonById(id);
-        if (profileResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(profileResponse, httpStatus);
     }
 
     @GetMapping("/filter")
     public ResponseEntity<Person> filterPerson(@RequestBody PersonFilterDto personFilterDto) {
+        HttpStatus httpStatus = HttpStatus.OK;
         Person person = personService.filterPerson(personFilterDto);
-        return new ResponseEntity<>(person, HttpStatus.OK);
+        return new ResponseEntity<>(person, httpStatus);
     }
 
     @GetMapping("/get_by_id")
     public ResponseEntity<PersonResponse> getPersonById(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse personResponse = personService.getPersonById(id);
-        if (personResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(personResponse, httpStatus);
     }
 
     @DeleteMapping("/delete")
     public ResponseEntity<PersonResponse> deletePersonById(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse personResponse = personService.deletePersonById(id);
-        if (personResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(personResponse, httpStatus);
     }
 
     @PutMapping("/ban")
     public ResponseEntity<PersonResponse> banPerson(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse personResponse = personService.banPerson(id);
-        if (personResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(personResponse, httpStatus);
     }
 
     @PutMapping("/unban")
     public ResponseEntity<PersonResponse> unbanPerson(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse personResponse = personService.unbanPerson(id);
-        if (personResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(personResponse, httpStatus);
     }
 }

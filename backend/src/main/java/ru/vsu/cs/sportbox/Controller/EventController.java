@@ -15,68 +15,49 @@ import java.util.Set;
 @RestController
 @RequestMapping("/api/event")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class EventController {
     private EventService eventService;
 
     @GetMapping("/filter")
     public ResponseEntity<List<Event>> filterEvent(@RequestBody EventFilterDto eventFilterDto) {
+        HttpStatus httpStatus = HttpStatus.OK;
         List<Event> events = eventService.filterEvent(eventFilterDto);
-
-        return new ResponseEntity<>(events, HttpStatus.OK);
+        return new ResponseEntity<>(events, httpStatus);
     }
 
     @GetMapping("/recommendation")
     public ResponseEntity<Set<Event>> getRecommendations(@RequestParam(value="booking_id") int bookingId) {
+        HttpStatus httpStatus = HttpStatus.OK;
         Set<Event> events = eventService.getRecommendations(bookingId);
-
-        return new ResponseEntity<>(events, HttpStatus.OK);
+        return new ResponseEntity<>(events, httpStatus);
     }
 
     @PostMapping("/add")
     public ResponseEntity<EventResponse> addNewEvent(@RequestBody EventCreateDto eventCreateDto) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         EventResponse eventCreateResponse = eventService.addNewEvent(eventCreateDto);
-        if (eventCreateResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(eventCreateResponse, httpStatus);
     }
 
     @GetMapping("/get_by_id")
     public ResponseEntity<EventResponse> getEventById(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         EventResponse eventGetResponse = eventService.getEventById(id);
-        if (eventGetResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(eventGetResponse, httpStatus);
     }
 
     @PutMapping("/change")
     public ResponseEntity<EventResponse> changeEvent(@RequestParam(value="id") int id, @RequestBody EventChangeDto eventChangeDto) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         EventResponse eventChangeResponse = eventService.changeEvent(id, eventChangeDto);
-        if (eventChangeResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(eventChangeResponse, httpStatus);
     }
 
     @DeleteMapping("/delete")
     public ResponseEntity<EventResponse> deleteEventById(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         EventResponse eventDeleteResponse = eventService.deleteEventById(id);
-        if (eventDeleteResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(eventDeleteResponse, httpStatus);
     }
 }

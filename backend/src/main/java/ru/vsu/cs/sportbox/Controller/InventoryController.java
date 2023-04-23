@@ -15,62 +15,43 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/inventory")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class InventoryController {
 
     private InventoryService inventoryService;
 
     @GetMapping("/filter")
     public ResponseEntity<List<Inventory>> filterInventory(@RequestBody InventoryFilterDto inventoryFilterDto) {
+        HttpStatus httpStatus = HttpStatus.OK;
         List<Inventory> inventories = inventoryService.filterInventory(inventoryFilterDto);
-
-        return new ResponseEntity<>(inventories, HttpStatus.OK);
+        return new ResponseEntity<>(inventories, httpStatus);
     }
 
     @PostMapping("/add")
     public ResponseEntity<InventoryResponse> addNewInventory(@RequestBody InventoryCreateDto inventoryCreateDto) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         InventoryResponse inventoryCreateResponse = inventoryService.addNewInventory(inventoryCreateDto);
-        if (inventoryCreateResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(inventoryCreateResponse, httpStatus);
     }
 
     @GetMapping("/get_by_id")
     public ResponseEntity<InventoryResponse> getInventoryById(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         InventoryResponse inventoryGetResponse = inventoryService.getInventoryById(id);
-        if (inventoryGetResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(inventoryGetResponse, httpStatus);
     }
 
     @PutMapping("/change")
     public ResponseEntity<InventoryResponse> changeInventory(@RequestParam(value="id") int id, @RequestBody InventoryChangeDto inventoryChangeDto) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         InventoryResponse inventoryChangeResponse = inventoryService.changeInventory(id, inventoryChangeDto);
-        if (inventoryChangeResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(inventoryChangeResponse, httpStatus);
     }
 
     @DeleteMapping("/delete")
     public ResponseEntity<InventoryResponse> deleteInventoryById(@RequestParam(value="id") int id) {
-        HttpStatus httpStatus;
+        HttpStatus httpStatus = HttpStatus.OK;
         InventoryResponse inventoryDeleteResponse = inventoryService.deleteInventoryById(id);
-        if (inventoryDeleteResponse.isStatus()) {
-            httpStatus = HttpStatus.OK;
-        } else {
-            httpStatus = HttpStatus.BAD_REQUEST;
-        }
         return new ResponseEntity<>(inventoryDeleteResponse, httpStatus);
     }
 }
