@@ -23,8 +23,15 @@ public class InventoryTypeController {
     private InventoryTypeService inventoryTypeService;
     @GetMapping("/filter")
     public ResponseEntity<List<InventoryType>> filterInventoryType(@RequestBody InventoryTypeFilterDto inventoryTypeFilterDto) {
-        List<InventoryType> inventoryType = inventoryTypeService.filterInventoryType(inventoryTypeFilterDto);
+        List<InventoryType> inventoryTypes = inventoryTypeService.filterInventoryType(inventoryTypeFilterDto);
 
-        return new ResponseEntity<>(inventoryType, HttpStatus.OK);
+        return new ResponseEntity<>(inventoryTypes, HttpStatus.OK);
+    }
+
+    @GetMapping("/get_all")
+    public ResponseEntity<List<InventoryType>> getAllInventoryTypes() {
+        List<InventoryType> inventoryTypes = inventoryTypeService.getAllInventoryTypes();
+
+        return new ResponseEntity<>(inventoryTypes, HttpStatus.OK);
     }
 }

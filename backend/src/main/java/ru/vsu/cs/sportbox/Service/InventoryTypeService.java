@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface InventoryTypeService {
     List<InventoryType> filterInventoryType(InventoryTypeFilterDto inventoryTypeFilterDto);
+
+    List<InventoryType> getAllInventoryTypes();
 }

@@ -59,4 +59,9 @@ public class InventoryTypeServiceImpl implements ru.vsu.cs.sportbox.Service.Inve
         }
         return result;
     }
+
+    @Override
+    public List<InventoryType> getAllInventoryTypes() {
+        return inventoryTypeRepository.findAll();
+    }
 }
