@@ -10,6 +10,14 @@ const EnterPage = ({ setIsLogged }) => {
             password: ""
         }
     })
+
+    const [response, setResponse] = useState(() => {
+        return {
+            message: "",
+            status: true,
+            person: null
+        }
+    });
      
     const changeInputLogin = event => {
         event.persist()
@@ -29,28 +37,28 @@ const EnterPage = ({ setIsLogged }) => {
         } else if(!validator.isStrongPassword(login.password, {minSymbols: 0})) {
             alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
-            // axios.post("http://localhost:8080/api/person/add", {
-            //     email: login.email,
-            //     password: login.password
-            // }).then(res => {
-            //     if (res.data === true) {
-            //         localStorage.setItem("isLogged", true)
-            //         setIsLogged(true)
-            //         window.location.href = "/"
-            //     } else {
-            //         alert("There is already a user with this email")
-            //     }
-            // }).catch(() => {
-            //     alert("An error occurred on the server")
-            // })
-            localStorage.setItem("isLogged", true)
-            setIsLogged(true)
+            axios.get("http://localhost:8080/api/person/login", {
+                email: login.email,
+                password: login.password
+            }).then(res => {
+                if (res.data.status === true) { //возможно нужны ""
+                    localStorage.setItem("isLogged", true)
+                    setIsLogged(true)
+                    setResponse(res.data)
+                    window.location.href = "/"
+                } else {
+                    setResponse(res.data)
+                    //alert("There is already a user with this email")
+                }
+            }).catch(() => {
+                alert("An error occurred on the server")
+            })
         }
     }
     
   return (
     <div className='login-main'>
-      <form name="login-form" method="POST" onSubmit={(e) => submitChacking(e)}>
+      <form name="login-form" method="GET" onSubmit={(e) => submitChacking(e)}>
 
         <div className="login-panel">
 
@@ -60,7 +68,7 @@ const EnterPage = ({ setIsLogged }) => {
                 </div>
                 <div className="login-field">
                     <input type="text" id="email" name="email" value={login.email}
-                     onChange={(e) => changeInputLogin(e)} required minLength="4" maxLength="35" size="20"></input>
+                     onChange={(e) => changeInputLogin(e)} required minLength="8" maxLength="35" size="20"></input>
                 </div>
             </div>
 
@@ -70,9 +78,15 @@ const EnterPage = ({ setIsLogged }) => {
                 </div>
                 <div className="password-field">
                     <input type="password" id="password" name="password" value={login.password}
-                    onChange={(e) => changeInputLogin(e)} required minLength="4" maxLength="35"size="20"></input>
+                    onChange={(e) => changeInputLogin(e)} required minLength="8" maxLength="35"size="20"></input>
                 </div>
             </div>
+
+            {
+                response.status ?
+                <div>response.message</div> 
+                :<div>response.message</div>
+            }
 
             <div className="action-box">
 

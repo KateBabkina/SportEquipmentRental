@@ -11,6 +11,14 @@ function RegisterPage({ setIsLogged }) {
             password: ""
         }
     })
+
+    const [response, setResponse] = useState(() => {
+        return {
+            message: "",
+            status: true,
+            person: null
+        }
+    });
      
     const changeInputRegister = event => {
         event.persist()
@@ -21,7 +29,9 @@ function RegisterPage({ setIsLogged }) {
             }
         })
     }
-     
+
+    var username = 'sport';
+    var password = '123';
      
     function submitChacking(event) {
         event.preventDefault();
@@ -31,14 +41,20 @@ function RegisterPage({ setIsLogged }) {
             alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
             axios.post("http://localhost:8080/api/person/add", { 
-                usermame: register.usermame,
+                name: register.usermame,
                 email: register.email,
                 password: register.password
-            }).then(res => {
-                if (res.data === true) {
+            },
+            {auth: {
+            username: username,
+            password: password
+            }}).then(res => {
+                if (res.data.status === true) {
+                    localStorage.setItem("isLogged", true)
                     setIsLogged(true)
+                    setResponse(res.data)
                     window.location.href = "/"
-                    console.log("Nice")
+                    
                 } else {
                     alert("There is already a user with this email")
                 }
@@ -62,7 +78,7 @@ function RegisterPage({ setIsLogged }) {
                 </div>
                 <div className="login-field">
                     <input type="text" id="usermame" name="usermame" value={register.usermame} 
-                    onChange={(e) => changeInputRegister(e)} required minLength="4" maxLength="35" size="20"></input>
+                    onChange={(e) => changeInputRegister(e)} required minLength="8" maxLength="35" size="20"></input>
                 </div>
             </div>
 
@@ -72,7 +88,7 @@ function RegisterPage({ setIsLogged }) {
                 </div>
                 <div className="login-field">
                     <input type="text" id="email" name="email" value={register.email}
-                     onChange={(e) => changeInputRegister(e)} required minLength="4" maxLength="35" size="20"></input>
+                     onChange={(e) => changeInputRegister(e)} required minLength="8" maxLength="35" size="20"></input>
                 </div>
             </div>
 
@@ -82,9 +98,15 @@ function RegisterPage({ setIsLogged }) {
                 </div>
                 <div className="password-field">
                     <input type="password" id="password" name="password" value={register.password} 
-                    onChange={(e) => changeInputRegister(e) } required minLength="4" maxLength="35"size="20"></input>
+                    onChange={(e) => changeInputRegister(e) } required minLength="8" maxLength="35"size="20"></input>
                 </div>
             </div>
+
+            {
+                response.status ?
+                <div>response.message</div> 
+                :<div>response.message</div>
+            }
 
             <div className="action-box">
                 <div className="action-buttons">
