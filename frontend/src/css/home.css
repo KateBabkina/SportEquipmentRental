@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+
+.logo {
+    text-align: center;
+}
+
+.logo a {
+    font-size: 48px;
+    font-family: 'Staatliches';
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.menu {
+    height: 70px;
+    background-color: #DCDCDF;
+}
+
+.left-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 65px;
+}
+
+.left-menu li {
+    text-align: center;
+    float: left;
+    width: 15%;
+}
+
+.left-menu li a {
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'Oswald';
+    color: black;
+}
+
+.right-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 65px;
+}
+
+.right-menu li {
+    text-align: center;
+    float: right;
+    width: 5%;
+}
+
+.right-menu li a {
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'Oswald';
+    color: black;
+}
+
+.profile-icon {
+    margin-top: 8.75px;
+    float: left;
+    height: 48px;
+    width: 48px;
+}
+
+.profile-icon svg {
+    color: black;
+}
+
+.clear {
+    clear: both;
+    background-color: #DCDCDF;
+}
+
+.base-part {
+    height: 1061px;
+    background-image: url(../images/backgroundfon.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.left-column {
+    float: left;
+    background-color: rgb(255, 255, 255);
+    height: 1061px;
+    width: 4%;
+}
+
+.centre-column {
+    position: relative;
+    height: 1061px;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.description {
+    padding-top: 25%;
+    padding-right: 25%;
+    padding-left: 25%;
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.right-column {
+    float: right;
+    background-color: rgb(255, 255, 255);
+    height: 1061px;
+    width: 4%;
+}
+
+.footer {
+    height: 180px;
+    background-color: #DCDCDF;
+}
+
+.contacts {
+    float: left;
+    height: 150px;
+    width: 50%;
+    background-color: #DCDCDF;
+}
+
+
+.contacts p {
+    text-align: left;
+    float: right;
+    height: 150px;
+    width: 50%;
+}
+
+.developers {
+    float: right;
+    height: 150px;
+    width: 50%;
+    background-color: #DCDCDF;
+}
+
+.developers p {
+    text-align: left;
+    float: right;
+    height: 150px;
+    width: 50%;
+}

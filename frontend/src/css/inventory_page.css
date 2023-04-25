@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+
+/* Начало Страница Спортивного инвентаря */
+.base-part-sportEquipment-page {
+    height: 1061px;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+}
+
+.left-column-filters {
+    float: left;
+    background-color: rgb(255, 255, 255);
+    height: 1061px;
+    width: 25%;
+}
+
+.filter-panel {
+    height: 80%;
+    box-shadow: 2px 5px 5px -3px #848484;
+}
+
+.filters-label {
+    margin-top: 40px;
+    text-decoration-skip-ink: none;
+    font-size: 36px;
+    text-align: center;
+    font-weight: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: rgb(28, 98, 205);
+    margin-bottom: 100px;
+}
+
+.type-equipment-box {
+    height: 100px;
+    text-align: center;
+    font-style: inherit;
+}
+
+.type-equipment-box {
+    height: 120px;
+}
+
+.label-type-equipment-box {
+    text-align: center;
+    font-size: 26px;
+}
+
+.field-type-equipment-box {
+    margin-right: 15px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+}
+
+.field-type-equipment-box input {
+
+    font-size: medium;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    border: none;
+}
+
+.start-data-box {
+    margin-top: 50px;
+    height: 120px;
+}
+
+.label-start-data-box {
+    text-align: center;
+    font-size: 26px;
+}
+
+.field-start-data-box {
+    margin-right: 15px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+}
+
+.field-start-data-box input {
+
+    font-size: medium;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    border: none;
+}
+
+.end-data-box {
+    height: 120px;
+}
+
+.label-end-data-box {
+    text-align: center;
+    font-size: 26px;
+}
+
+.field-end-data-box {
+    margin-right: 15px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+}
+
+.field-end-data-box input {
+
+    font-size: medium;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    border: none;
+}
+
+.button-find {
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 80px;
+    height: 80px;
+    background-color: rgb(28, 98, 205);
+}
+
+.button-find .find-button {
+    padding: 5%;
+    border: none;
+    font-size: 26px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5ch;
+    background-color: rgb(28, 98, 205);
+}
+
+.button-find :hover {
+    background-color: rgb(16, 54, 111);
+    transition: 0.7s;
+}
+
+.button-find .find-button-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.centre-column-content {
+    margin-left: 25px;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    height: 1061px;
+    width: 72%;
+}
+
+.event {
+    display: block;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    width: 100%;
+    height: 25%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 6px 0px #2D2D2D;
+}
+
+.event-img {
+    position: absolute;
+    display: block;
+    margin-left: 20px;
+    height: 100%;
+    width: 25%;
+    /*background-image: url(../images/testimg.jpg);*/
+    background-size: cover;
+    background-position: center;
+}
+
+.event-info {
+    position: relative;
+    left: 27%;
+    display: block;
+    margin: 15px;
+    width: 69%;
+    height: 100%;
+}
+
+.event-name {
+    font-weight: bolder;
+    font-size: 30px;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.event-description {
+    font-size: 20px;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.event-equipment {
+    font-size: 20px;
+    text-align: center;
+    word-break: break-all;
+    height: 20%;
+    width: 100%;
+}
+
+.event-date {
+    font-size: 20px;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.event-price {
+    color: rgb(28, 98, 205);
+    font-size: 26px;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.pagination-bar {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100%;
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {
+    display: inline;
+}
+
+ul.pagination li a {
+    color: rgb(0, 0, 0);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    transition: 0.4s;
+}
+
+a.active-page{
+    background-color: rgb(28, 98, 205);
+    
+}
+
+a:hover:not(a.active-page){
+    background-color: rgb(203, 203, 203);
+}
+
+
+/* Конец Страница Спортивного инвентаря */
+
+
+/* Для отображения пароля
+/*  */
+/* .password {
+	position: relative;
+}
+.password-control {
+	position: absolute;
+	top: 11px;
+	right: 6px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(/view.svg) 0 0 no-repeat;
+}
+.password-control.view {
+	background: url(/no-view.svg) 0 0 no-repeat;
+} */
