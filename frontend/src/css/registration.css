@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+/* Начало Страница Регистрация */
+
+.base-part-registration {
+    height: 1061px;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+}
+
+.centre-column-registration {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    height: 1061px;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.create-label {
+    margin-bottom: 60px;
+    padding-top: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    line-height: 1.2;
+    color: #000000;
+    font-size: 35px;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+}
+
+
+.fullname-box {
+    padding-right: 20%;
+    margin: auto;
+    text-align: center;
+    height: 80px;
+    width: 80%;
+    margin-bottom: 2%;
+}
+
+.fullname-box-label {
+    float: left;
+    line-height: 80px;
+    font-size: large;
+    height: 80px;
+    width: 20%;
+    text-align: right;
+}
+
+.fullname-box-field {
+    float: right;
+    height: 80px;
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(203, 203, 203);
+}
+
+.fullname-box-field input {
+    font-size: medium;
+    text-align: center;
+    border: none;
+    height: 80px;
+    width: 100%;
+    background-color: rgb(203, 203, 203);
+}
+
+.account-box {
+    padding-right: 20%;
+    margin: auto;
+    text-align: center;
+    height: 80px;
+    width: 80%;
+    margin-bottom: 2%;
+}
+
+.account-box-label {
+    float: left;
+    line-height: 80px;
+    font-size: large;
+    height: 80px;
+    width: 20%;
+    text-align: right;
+}
+
+.account-box-field {
+    float: right;
+    height: 80px;
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(203, 203, 203);
+}
+
+.account-box-field input {
+    font-size: medium;
+    text-align: center;
+    border: none;
+    height: 80px;
+    width: 100%;
+    background-color: rgb(203, 203, 203);
+}
+
+.firstpassword-box {
+    padding-right: 20%;
+    margin: auto;
+    text-align: center;
+    height: 80px;
+    width: 80%;
+    margin-bottom: 2%;
+}
+
+.firstpassword-box-label {
+    float: left;
+    line-height: 80px;
+    font-size: large;
+    height: 80px;
+    width: 20%;
+    text-align: right;
+}
+
+.firstpassword-box-field {
+    float: right;
+    height: 80px;
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(203, 203, 203);
+}
+
+.firstpassword-box-field input {
+    font-size: medium;
+    text-align: center;
+    border: none;
+    height: 80px;
+    width: 100%;
+    background-color: rgb(203, 203, 203);
+}
+
+.lastpassword-box {
+    padding-right: 20%;
+    margin: auto;
+    text-align: center;
+    height: 80px;
+    width: 80%;
+    margin-bottom: 2%;
+}
+
+.lastpassword-box-label {
+    float: left;
+    line-height: 80px;
+    font-size: large;
+    height: 80px;
+    width: 20%;
+    text-align: right;
+}
+
+.lastpassword-box-field {
+    float: right;
+    height: 80px;
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(203, 203, 203);
+}
+
+.lastpassword-box-field input {
+    font-size: medium;
+    text-align: center;
+    border: none;
+    height: 80px;
+    width: 100%;
+    background-color: rgb(203, 203, 203);
+}
+
+.registration-box-action-box {
+    margin: auto;
+    margin-top: 80px;
+    border: none;
+    text-align: center;
+    height: 50px;
+    width: 25%;
+}
+
+.registration-box-action-box .create-new-user-button .create-new-user-button-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: #000000;
+    font-size: 24px;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+}
+
+.registration-box-action-box .create-new-user-button {
+    border: none;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5ch;
+    box-shadow: 0px 10px 18px 0px #474747;
+    text-shadow: 0px 10px 18px 0px #474747;
+}
+
+.create-new-user-button:hover {
+    background-color: rgb(203, 203, 203);
+    transition: 0.7s;
+}
+
+.create-new-user-button:active {
+    border: 1ch;
+    border-color: #000000;
+}
+
+/* Конец Страница Регистрация */
