@@ -1,6 +1,9 @@
 package ru.vsu.cs.sportbox.Controller;
 
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,11 +22,13 @@ import java.util.UUID;
 @RequestMapping("/api/person")
 @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@Tag(name = "Пользователи", description = "Методы для работы с пользователями")
 public class PersonController {
 
     private PersonService personService;
 
     @PostMapping("/add")
+    @Operation(summary = "Регистрация нового пользователя")
     public ResponseEntity<PersonResponse> addNewPerson(@RequestBody PersonCreateDto personCreateDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse registrationResponse = personService.addNewPerson(personCreateDto);
@@ -31,6 +36,7 @@ public class PersonController {
     }
 
     @GetMapping("/login")
+    @Operation(summary = "Авторизация пользователя")
     public ResponseEntity<PersonResponse> loginPerson(@RequestBody PersonLoginDto personLoginDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse loginResponse = personService.loginPerson(personLoginDto);
@@ -38,42 +44,53 @@ public class PersonController {
     }
 
     @GetMapping("/profile")
-    public ResponseEntity<PersonResponse> getProfile(@RequestParam(value="id") int id) {
+    @Operation(summary = "Получение информации для профиля пользователя")
+    public ResponseEntity<PersonResponse> getProfile(@Parameter(description = "Уникальный идентификатор пользователя")
+                                                         @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse profileResponse = personService.getPersonById(id);
         return new ResponseEntity<>(profileResponse, httpStatus);
     }
 
     @GetMapping("/filter")
-    public ResponseEntity<Person> filterPerson(@RequestBody PersonFilterDto personFilterDto) {
+    @Operation(summary = "Фильтрация списка пользователей")
+    public ResponseEntity<List<Person>> filterPerson(@RequestBody PersonFilterDto personFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;
-        Person person = personService.filterPerson(personFilterDto);
-        return new ResponseEntity<>(person, httpStatus);
+        List<Person> persons = personService.filterPerson(personFilterDto);
+        return new ResponseEntity<>(persons, httpStatus);
     }
 
     @GetMapping("/get_by_id")
-    public ResponseEntity<PersonResponse> getPersonById(@RequestParam(value="id") int id) {
+    @Operation(summary = "Получение информации о пользователе по его id")
+    public ResponseEntity<PersonResponse> getPersonById(@Parameter(description = "Уникальный идентификатор пользователя")
+                                                            @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse personResponse = personService.getPersonById(id);
         return new ResponseEntity<>(personResponse, httpStatus);
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<PersonResponse> deletePersonById(@RequestParam(value="id") int id) {
+    @Operation(summary = "Удаление пользователя по его id")
+    public ResponseEntity<PersonResponse> deletePersonById(@Parameter(description = "Уникальный идентификатор пользователя")
+                                                               @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse personResponse = personService.deletePersonById(id);
         return new ResponseEntity<>(personResponse, httpStatus);
     }
 
     @PutMapping("/ban")
-    public ResponseEntity<PersonResponse> banPerson(@RequestParam(value="id") int id) {
+    @Operation(summary = "Внесение пользователя в черный список по его id")
+    public ResponseEntity<PersonResponse> banPerson(@Parameter(description = "Уникальный идентификатор пользователя")
+                                                        @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse personResponse = personService.banPerson(id);
         return new ResponseEntity<>(personResponse, httpStatus);
     }
 
     @PutMapping("/unban")
-    public ResponseEntity<PersonResponse> unbanPerson(@RequestParam(value="id") int id) {
+    @Operation(summary = "Вынесение пользователя из черного списка по его id")
+    public ResponseEntity<PersonResponse> unbanPerson(@Parameter(description = "Уникальный идентификатор пользователя")
+                                                          @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse personResponse = personService.unbanPerson(id);
         return new ResponseEntity<>(personResponse, httpStatus);

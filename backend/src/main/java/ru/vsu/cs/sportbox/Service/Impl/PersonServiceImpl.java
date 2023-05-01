@@ -17,6 +17,8 @@ import ru.vsu.cs.sportbox.Responses.InventoryResponse;
 import ru.vsu.cs.sportbox.Responses.PersonResponse;
 import ru.vsu.cs.sportbox.Service.PersonService;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class PersonServiceImpl implements PersonService {
@@ -39,7 +41,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     @Transactional
     public PersonResponse loginPerson(PersonLoginDto personLoginDto) {
-        Person person = personRepository.findByEmail(personLoginDto.getEmail());
+        Person person = personRepository.findByEmail(personLoginDto.getEmail()).get(0);
         if (person != null) {
             String rawPassword = personLoginDto.getPassword();
             String encodedPassword = person.getPassword();
@@ -67,9 +69,15 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
-    public Person filterPerson(PersonFilterDto personFilterDto) {
-        Person person = personRepository.findByEmail(personFilterDto.getEmail());
-        return person;
+    public List<Person> filterPerson(PersonFilterDto personFilterDto) {
+        List<Person> persons;
+        if (StringUtils.isNotBlank(personFilterDto.getEmail())){
+            persons = personRepository.findByEmail(personFilterDto.getEmail());
+        } else {
+            persons = personRepository.findAll();
+        }
+
+        return persons;
     }
 
     @Override

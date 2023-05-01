@@ -1,10 +1,12 @@
 package ru.vsu.cs.sportbox.Data.Dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Schema(description = "Информация, необходимая для создания нгового заказа")
 public class BookingCreateDto {
     private int personId;
     private int inventoryTypeId;
