@@ -1,5 +1,7 @@
 package ru.vsu.cs.sportbox.Controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +19,11 @@ import java.util.List;
 @RequestMapping("/api/inventory_type")
 @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@Tag(name = "Типы оборудования", description = "Методы для работы с типами оборудования")
 public class InventoryTypeController {
     private InventoryTypeService inventoryTypeService;
     @GetMapping("/filter")
+    @Operation(summary = "Фильтрация списка типов оборудования")
     public ResponseEntity<List<InventoryType>> filterInventoryType(@RequestBody InventoryTypeFilterDto inventoryTypeFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         List<InventoryType> inventoryTypes = inventoryTypeService.filterInventoryType(inventoryTypeFilterDto);
@@ -27,6 +31,7 @@ public class InventoryTypeController {
     }
 
     @GetMapping("/get_all")
+    @Operation(summary = "Получение всех типов оборудования для выпадающего списка")
     public ResponseEntity<List<InventoryType>> getAllInventoryTypes() {
         HttpStatus httpStatus = HttpStatus.OK;
         List<InventoryType> inventoryTypes = inventoryTypeService.getAllInventoryTypes();

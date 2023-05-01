@@ -1,5 +1,8 @@
 package ru.vsu.cs.sportbox.Controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,17 +19,21 @@ import java.util.List;
 @RequestMapping("/api/booking")
 @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@Tag(name = "Заказы", description = "Методы для работы с заказами")
 public class BookingController {
     private BookingService bookingService;
 
     @DeleteMapping("/cancel")
-    public ResponseEntity<BookingResponse> deleteBookingById(@RequestParam(value="id") int id) {
+    @Operation(summary = "Отмена заказа по его id")
+    public ResponseEntity<BookingResponse> deleteBookingById(@Parameter(description = "Уникальный идентификатор заказа")
+                                                                 @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         BookingResponse bookingDeleteResponse = bookingService.deleteBookingById(id);
         return new ResponseEntity<>(bookingDeleteResponse, httpStatus);
     }
 
     @PostMapping("/add")
+    @Operation(summary = "Создание нового заказа")
     public ResponseEntity<BookingResponse> addNewBooking(@RequestBody BookingCreateDto bookingCreateDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         BookingResponse bookingCreateResponse = bookingService.addNewBooking(bookingCreateDto);
@@ -34,7 +41,9 @@ public class BookingController {
     }
 
     @GetMapping("/get_by_id")
-    public ResponseEntity<BookingResponse> getBookingById(@RequestParam(value="id") int id) {
+    @Operation(summary = "Получение информации о заказе по его id")
+    public ResponseEntity<BookingResponse> getBookingById(@Parameter(description = "Уникальный идентификатор заказа")
+                                                              @RequestParam(value="id") int id) {
 //        HttpStatus httpStatus;
         BookingResponse bookingGetResponse = bookingService.getBookingById(id);
 //        if (bookingGetResponse.isStatus()) {
@@ -46,13 +55,16 @@ public class BookingController {
     }
 
     @PutMapping("/return")
-    public ResponseEntity<BookingResponse> changeBooking(@RequestParam(value="id") int id) {
+    @Operation(summary = "Принятие возвращенного оборудование, закрытие заказа")
+    public ResponseEntity<BookingResponse> changeBooking(@Parameter(description = "Уникальный идентификатор заказа")
+                                                             @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         BookingResponse bookingReturnResponse = bookingService.returnBooking(id);
         return new ResponseEntity<>(bookingReturnResponse, httpStatus);
     }
 
     @GetMapping("/filter")
+    @Operation(summary = "Фильтрация списка заказов")
     public ResponseEntity<List<Booking>> filterBooking(@RequestBody BookingFilterDto bookingFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         List<Booking> bookings = bookingService.filterBooking(bookingFilterDto);

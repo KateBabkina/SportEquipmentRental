@@ -1,5 +1,8 @@
 package ru.vsu.cs.sportbox.Controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +19,13 @@ import java.util.List;
 @RequestMapping("/api/inventory")
 @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@Tag(name = "Оборудование", description = "Методы для работы с оборудованием")
 public class InventoryController {
 
     private InventoryService inventoryService;
 
     @GetMapping("/filter")
+    @Operation(summary = "Фильтрация списка оборудования")
     public ResponseEntity<List<Inventory>> filterInventory(@RequestBody InventoryFilterDto inventoryFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         List<Inventory> inventories = inventoryService.filterInventory(inventoryFilterDto);
@@ -28,6 +33,7 @@ public class InventoryController {
     }
 
     @PostMapping("/add")
+    @Operation(summary = "Добавление нового оборудования")
     public ResponseEntity<InventoryResponse> addNewInventory(@RequestBody InventoryCreateDto inventoryCreateDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         InventoryResponse inventoryCreateResponse = inventoryService.addNewInventory(inventoryCreateDto);
@@ -35,21 +41,27 @@ public class InventoryController {
     }
 
     @GetMapping("/get_by_id")
-    public ResponseEntity<InventoryResponse> getInventoryById(@RequestParam(value="id") int id) {
+    @Operation(summary = "Получение информации об оборудовании по его id")
+    public ResponseEntity<InventoryResponse> getInventoryById(@Parameter(description = "Уникальный идентификатор оборудования")
+                                                                  @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         InventoryResponse inventoryGetResponse = inventoryService.getInventoryById(id);
         return new ResponseEntity<>(inventoryGetResponse, httpStatus);
     }
 
     @PutMapping("/change")
-    public ResponseEntity<InventoryResponse> changeInventory(@RequestParam(value="id") int id, @RequestBody InventoryChangeDto inventoryChangeDto) {
+    @Operation(summary = "Изменение информации об оборудовании")
+    public ResponseEntity<InventoryResponse> changeInventory(@Parameter(description = "Уникальный идентификатор оборудования")
+                                                                 @RequestParam(value="id") int id, @RequestBody InventoryChangeDto inventoryChangeDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         InventoryResponse inventoryChangeResponse = inventoryService.changeInventory(id, inventoryChangeDto);
         return new ResponseEntity<>(inventoryChangeResponse, httpStatus);
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<InventoryResponse> deleteInventoryById(@RequestParam(value="id") int id) {
+    @Operation(summary = "Удаление оборудования по его id")
+    public ResponseEntity<InventoryResponse> deleteInventoryById(@Parameter(description = "Уникальный идентификатор оборудования")
+                                                                     @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
         InventoryResponse inventoryDeleteResponse = inventoryService.deleteInventoryById(id);
         return new ResponseEntity<>(inventoryDeleteResponse, httpStatus);

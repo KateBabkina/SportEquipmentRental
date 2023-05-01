@@ -1,6 +1,7 @@
 package ru.vsu.cs.sportbox.Data.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,6 +18,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "event")
+@Schema(description = "Информация о мероприятии")
 public class Event {
     @Id
     @Column(name = "id", unique = true)
