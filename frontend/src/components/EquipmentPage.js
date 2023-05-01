@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from 'react';
 import ItemList from "./ItemList";
+import FilterField from "./FiltreField";
 
 function EquipmentPage() {
 
+  const [searchTerm, setSearchTerm] = useState("")
   const [itemList, setItemList] = useState({
     items: [
       {
@@ -38,8 +40,9 @@ function EquipmentPage() {
   })
 
   return (
-    <div>
-        <ItemList items={itemList} />
+    <div className="inventoryPage">
+      <FilterField />
+      <ItemList items={itemList} />
     </div>
   );
 };

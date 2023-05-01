@@ -273,6 +273,23 @@ a:hover:not(a.active-page){
     background-color: rgb(203, 203, 203);
 }
 
+.inventoryPage {
+    display: flex;
+    width: 100%;
+}
+
+ .main {
+    width: 70%;
+    display: inline-block;
+}
+.filter {
+    width: 30%;
+    display: inline-block;
+    border: 4px solid;
+    justify-content: center;
+    text-align: center;
+}
+
 
 /* Конец Страница Спортивного инвентаря */
 
