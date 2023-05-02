@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+
+/*Стили шапки*/
+.logo {
+    text-align: center;
+}
+
+.logo a {
+    font-size: 48px;
+    font-family: 'Staatliches';
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.menu {
+    height: 70px;
+    background-color: #DCDCDF;
+}
+
+.left-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 65px;
+}
+
+.left-menu li {
+    text-align: center;
+    float: left;
+    width: 15%;
+}
+
+.left-menu li a {
+    font-weight: bold;
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(47, 48, 53);
+}
+
+.right-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 65px;
+}
+
+.right-menu li {
+    text-align: center;
+    float: right;
+    width: 5%;
+}
+
+.right-menu li a {
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    color: rgb(47, 48, 53);
+}
+/*Конец стили шапки*/
+
+/* Начало Страница Мероприятия */
+.base-part-sportEquipment-page {
+    height: 1061px;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Начало Колонка с фильтрами*/
+
+.left-column-filters {
+    box-shadow: 2px 5px 5px -3px #848484;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    height: 855px;
+    width: 25%;
+}
+
+.filter-panel {
+    height: 80%;
+}
+
+.filters-label {
+    margin-top: 40px;
+    text-decoration-skip-ink: none;
+    font-size: 36px;
+    text-align: center;
+    font-weight: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: rgb(28, 98, 205);
+    margin-bottom: 100px;
+}
+
+.type-equipment-box {
+    height: 100px;
+    text-align: center;
+    font-style: inherit;
+}
+
+.type-equipment-box {
+    height: 120px;
+}
+
+.label-type-equipment-box {
+    text-align: center;
+    font-size: 26px;
+}
+
+.field-type-equipment-box {
+    margin-right: 15px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+}
+
+.field-type-equipment-box select {
+    color: rgb(0, 0, 0, 50%);
+    overflow: auto;
+    font-size: 24px;
+    text-align: left;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    border: none;
+}
+
+.field-type-equipment-box option{
+    overflow: auto;
+}
+
+.start-data-box {
+    margin-top: 50px;
+    height: 120px;
+}
+
+.label-start-data-box {
+    text-align: center;
+    font-size: 26px;
+}
+
+.field-start-data-box {
+    margin-right: 15px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+}
+
+.field-start-data-box input {
+
+    font-size: 24px;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    border: none;
+    color: rgb(0, 0, 0, 50%);
+}
+
+.end-data-box {
+    height: 120px;
+}
+
+.label-end-data-box {
+    text-align: center;
+    font-size: 26px;
+}
+
+.field-end-data-box {
+    margin-right: 15px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+}
+
+.field-end-data-box input {
+    font-size: 24px;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    border: none;
+    color: rgb(0, 0, 0, 50%);
+}
+
+.button-find {
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 80px;
+    height: 80px;
+    background-color: rgb(28, 98, 205);
+}
+
+.button-find .find-button {
+    padding: 5%;
+    border: none;
+    font-size: 26px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5ch;
+    background-color: rgb(28, 98, 205);
+}
+
+.button-find :hover {
+    background-color: rgb(16, 54, 111);
+    transition: 0.7s;
+}
+
+.button-find .find-button-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: lighter;
+}
+/* Конец Колонка с фильтрами*/
+
+.centre-column-content {
+    margin-top: 50px;
+    margin-left: 25px;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    height: 1400px;
+    width: 72%;
+}
+
+.events {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: repeat(2, 1fr); */
+    width: 100%;
+    height: 90%;
+    max-width: 100%;
+    /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center;
+    /* Размещаем карточку по центру */
+    column-gap: 30px;
+    /* Отступ между колонками */
+    row-gap: 40px;
+    /* Отступ между рядами */
+    margin: 0 auto;
+}
+
+.event-wrapper{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-width: 1px;
+    border-color: rgb(205, 205, 205);
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    max-width: 100%;
+    /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center;
+    /* Размещаем карточку по центру */
+    /* column-gap: 30px; */
+    /* Отступ между колонками */
+     row-gap: 3px;
+    /* Отступ между рядами */
+    margin: 0 auto;
+}
+
+.event-img {
+    display: flex;
+    height: 285px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.event-info {
+    flex-direction: column;
+    display: flex;
+    margin: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+.event-name {
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.event-description {
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.event-equipment {
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+    word-break: break-all;
+    height: 20%;
+    width: 100%;
+}
+
+.event-date {
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.event-price {
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(28, 98, 205);
+    font-size: 26px;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.pagination-bar {
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {
+    display: inline;
+}
+
+ul.pagination li a {
+    color: rgb(0, 0, 0);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    transition: 0.4s;
+}
+
+ul.pagination li a.active-page {
+    background-color: rgb(28, 98, 205);
+    color: rgb(255, 255, 255);
+}
+
+ul.pagination li a:hover:not(a.active-page) {
+    background-color: rgb(203, 203, 203);
+}
+
+/* Начало стили Футтер */
+.footer {
+    background-color: #DCDCDF;
+}
+
+.contacts {
+    margin-top:50px;
+    float: left;
+    height: 200px;
+    width: 50%;
+    background-color: #DCDCDF;
+}
+
+
+.contacts p {
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    float: right;
+    height: 200px;
+    width: 50%;
+}
+
+.developers {
+    margin-top:50px;
+    float: right;
+    height: 200px;
+    width: 50%;
+    background-color: #DCDCDF;
+}
+
+.developers p {
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    float: right;
+    height: 200px;
+    width: 50%;
+}
+/* Конец стили Футтер */

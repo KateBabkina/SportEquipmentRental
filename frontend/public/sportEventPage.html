@@ -5,7 +5,7 @@
 
     <title>Мероприятия</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css" media="screen">
+    <link rel="stylesheet" href="../src/css/event_page.css" media="screen">
 
 </head>
 
@@ -20,29 +20,16 @@
 
             <ul class="left-menu">
                 <li><a href="">Главная</a></li>
-                <li><a href="sportEquipmentPage.html">Оборудование</a></li>
+                <li><a href="">Оборудование</a></li>
                 <li><a href="">Мероприятия</a></li>
-                <li><a href="">О нас</a></li>
             </ul>
-            <!-- <div class="clear"></div> -->
             <ul class="right-menu">
-                <li>
-                    <div class="profile-icon">
-                        <?xml version="1.0" encoding="unt-8"?>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
-                            <path
-                                d="M480 575q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42ZM160 896v-94q0-38 19-65t49-41q67-30 128.5-45T480 636q62 0 123 15.5T731 696q31 14 50 41t19 65v94H160Z" />
-                        </svg>
-                    </div>
-                </li>
-                <li><a href="loginPage.html">Войти</a></li>
+                <li><a href="loginPage.html">Вход</a></li>
             </ul>
 
         </div>
 
     </div>
-
-    <div class="clear"></div>
 
     <div class="base-part-sportEquipment-page">
 
@@ -60,8 +47,51 @@
                     </div>
 
                     <div class="field-type-equipment-box">
-                        <input type="text" id="fullName" name="fullName" required minlength="4" maxlength="35"
-                            size="20">
+                        <select id="type-equipment" name="type-equipment">
+                            <option value="Мяч">Выберите тип</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                        </select>
                     </div>
 
                 </div>
@@ -104,87 +134,119 @@
         </div>
 
         <div class="centre-column-content">
-            <div class="event">
+            <div class="events">
 
-                <div class="event-img">
+                <div class="event-wrapper">
+                    <div class="event-img">
+                        <img src="../src/images/inventory/ball.jpg" alt="">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-name">
+                            Баскетбольный матч
+                        </div>
+    
+                        <div class="event-description">
+                            Для участия в игре необходимо сформировать команду.
+                        </div>
+    
+                        <div class="event-equipment">
+                            Необходимое оборудование: мяч баскетбольный
+                        </div>
+    
+                        <div class="event-date">
+                            Даты проведения: с 2023-05-12 по 2023-05-13
+                        </div>
+                    
+                        <div class="event-price">
+                            300 руб.
+                        </div>
+                    </div>
+                </div>
 
+                <div class="event-wrapper">
+                    <div class="event-img">
+                        <img src="../src/images/inventory/ski.jpg" alt="">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-name">
+                            Баскетбольный матч
+                        </div>
+    
+                        <div class="event-description">
+                            Для участия в игре необходимо сформировать команду.
+                        </div>
+    
+                        <div class="event-equipment">
+                            Необходимое оборудование: мяч баскетбольный
+                        </div>
+    
+                        <div class="event-date">
+                            Даты проведения: с 2023-05-12 по 2023-05-13
+                        </div>
+                    
+                        <div class="event-price">
+                            300 руб.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-wrapper">
+                    <div class="event-img">
+                        <img src="../src/images/inventory/frisbee.jpg" alt="">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-name">
+                            Баскетбольный матч
+                        </div>
+    
+                        <div class="event-description">
+                            Для участия в игре необходимо сформировать команду.
+                        </div>
+    
+                        <div class="event-equipment">
+                            Необходимое оборудование: мяч баскетбольный
+                        </div>
+    
+                        <div class="event-date">
+                            Даты проведения: с 2023-05-12 по 2023-05-13
+                        </div>
+                    
+                        <div class="event-price">
+                            300 руб.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-wrapper">
+                    <div class="event-img">
+                        <img src="../src/images/backgroundfon.jpg" alt="">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-name">
+                            Баскетбольный матч
+                        </div>
+    
+                        <div class="event-description">
+                            Для участия в игре необходимо сформировать команду.
+                        </div>
+    
+                        <div class="event-equipment">
+                            Необходимое оборудование: мяч баскетбольный
+                        </div>
+    
+                        <div class="event-date">
+                            Даты проведения: с 2023-05-12 по 2023-05-13
+                        </div>
+                    
+                        <div class="event-price">
+                            300 руб.
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="event-info">
-                    <div class="event-name">
-
-                    </div>
-
-                    <div class="event-description">
-
-                    </div>
-
-                    <div class="event-equipment">
-
-                    </div>
-
-                    <div class="event-date">
-
-                    </div>
-                
-                    <div class="event-price">
-                        
-                    </div>
-                </div>
             </div>
             
-            <div class="event">
-                <div class="event-img">
-
-                </div>
-                <div class="event-info">
-                    <div class="event-name">
-
-                    </div>
-
-                    <div class="event-description">
-
-                    </div>
-
-                    <div class="event-equipment">
-
-                    </div>
-
-                    <div class="event-date">
-
-                    </div>
-                
-                    <div class="event-price">
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="event">
-                <div class="event-img">
-
-                </div>
-                <div class="event-info">
-                    <div class="event-name">
-                        Баскетбольный матч
-                    </div>
-
-                    <div class="event-description">
-                        Для участия в игре необходимо сформировать команду.
-                    </div>
-
-                    <div class="event-equipment">
-                        Необходимое оборудование: мяч баскетбольный
-                    </div>
-
-                    <div class="event-date">
-                        Даты проведения: с 2023-05-12 по 2023-05-13
-                    </div>
-
-                    <div class="event-price">
-                        300 руб.
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="pagination-bar">
                 <ul class="pagination">
