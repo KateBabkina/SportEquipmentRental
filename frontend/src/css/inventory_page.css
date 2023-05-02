@@ -1,28 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
+
+/*Стили шапки*/
+.logo {
+    text-align: center;
+}
+
+.logo a {
+    font-size: 48px;
+    font-family: 'Staatliches';
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.menu {
+    height: 70px;
+    background-color: #DCDCDF;
+}
+
+.left-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 65px;
+}
+
+.left-menu li {
+    text-align: center;
+    float: left;
+    width: 15%;
+}
+
+.left-menu li a {
+    font-weight: bold;
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(47, 48, 53);
+}
+
+.right-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 65px;
+}
+
+.right-menu li {
+    text-align: center;
+    float: right;
+    width: 5%;
+}
+
+.right-menu li a {
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    color: rgb(47, 48, 53);
+}
+/*Конец стили шапки*/
 
 /* Начало Страница Спортивного инвентаря */
 .base-part-sportEquipment-page {
-    height: 1061px;
+    height: 1400px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
 }
 
+/* Начало Колонка с фильтрами*/
+
 .left-column-filters {
+    box-shadow: 2px 5px 5px -3px #848484;
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 1061px;
+    height: 855px;
     width: 25%;
 }
 
 .filter-panel {
     height: 80%;
-    box-shadow: 2px 5px 5px -3px #848484;
 }
 
 .filters-label {
+    font-family: 'PT Sans', sans-serif;
     margin-top: 40px;
     text-decoration-skip-ink: none;
     font-size: 36px;
@@ -45,6 +115,7 @@
 }
 
 .label-type-equipment-box {
+    font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
@@ -57,14 +128,20 @@
     background-color: rgb(255, 255, 255);
 }
 
-.field-type-equipment-box input {
-
-    font-size: medium;
-    text-align: center;
+.field-type-equipment-box select {
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(0, 0, 0, 50%);
+    overflow: auto;
+    font-size: 24px;
+    text-align: left;
     height: 60px;
     width: 100%;
     background-color: rgb(221, 221, 221);
     border: none;
+}
+
+.field-type-equipment-box option{
+    overflow: auto;
 }
 
 .start-data-box {
@@ -73,6 +150,7 @@
 }
 
 .label-start-data-box {
+    font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
@@ -86,13 +164,13 @@
 }
 
 .field-start-data-box input {
-
-    font-size: medium;
+    font-size: 24px;
     text-align: center;
     height: 60px;
     width: 100%;
     background-color: rgb(221, 221, 221);
     border: none;
+    color: rgb(0, 0, 0, 50%);
 }
 
 .end-data-box {
@@ -100,6 +178,7 @@
 }
 
 .label-end-data-box {
+    font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
@@ -113,7 +192,109 @@
 }
 
 .field-end-data-box input {
+    font-size: 24px;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    border: none;
+    color: rgb(0, 0, 0, 50%);
+}
 
+.button-find {
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 80px;
+    height: 80px;
+    background-color: rgb(28, 98, 205);
+}
+
+.button-find .find-button {
+    padding: 5%;
+    border: none;
+    font-size: 26px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5ch;
+    background-color: rgb(28, 98, 205);
+}
+
+.button-find :hover {
+    background-color: rgb(16, 54, 111);
+    transition: 0.7s;
+}
+
+.button-find .find-button-text {
+    font-family: 'PT Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.price-for-day-box {
+    margin-bottom: 115px;
+}
+
+.label-price-for-day-box {
+    text-align: center;
+    font-size: 26px;
+}
+
+.label-price-from {
+    font-family: 'PT Sans', sans-serif;
+    line-height: 52px;
+    width: 10%;
+    float: left;
+    text-align: left;
+    font-size: 26px;
+}
+
+.label-price-to {
+    font-family: 'PT Sans', sans-serif;
+    line-height: 52px;
+    width: 10%;
+    float: left;
+    text-align: right;
+    font-size: 26px;
+}
+
+.field-price-from {
+    /* margin-right: 35px; */
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+    width: 35%;
+    float: left;
+}
+
+.field-price-from input {
+    font-family: 'PT Sans', sans-serif;
+    font-size: medium;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    border: none;
+}
+
+.field-price-to {
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(255, 255, 255);
+    width: 35%;
+    float: left;
+}
+
+.field-price-to input {
+    font-family: 'PT Sans', sans-serif;
     font-size: medium;
     text-align: center;
     height: 60px;
@@ -148,6 +329,134 @@
 }
 
 .button-find .find-button-text {
+    font-family: 'PT Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: lighter;
+}
+/* Конец Колонка с фильтрами*/
+
+.centre-column-content {
+    margin-top: 50px;
+    margin-left: 25px;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    height: 1061px;
+    width: 72%;
+}
+
+.equipments {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    /* grid-template-rows: repeat(2, 1fr); */
+    width: 100%;
+    max-width: 100%;
+    /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center;
+    /* Размещаем карточку по центру */
+    column-gap: 30px;
+    /* Отступ между колонками */
+    row-gap: 40px;
+    /* Отступ между рядами */
+    margin: 0 auto;
+}
+
+.equipment-wrapper{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-width: 1px;
+    border-color: rgb(205, 205, 205);
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: 1.5fr;
+    grid-template-rows: 2.8fr 1fr 1fr;
+    width: 75%;
+    max-width: 100%;
+    /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center;
+    /* Размещаем карточку по центру */
+    /* column-gap: 30px; */
+    /* Отступ между колонками */
+     row-gap: 3px;
+    /* Отступ между рядами */
+    margin: 0 auto;
+}
+
+.equipment {
+    margin: 40px;
+    display: flex;
+    flex-direction: column; 
+    margin-top: 70px;
+    margin-bottom: 40px;
+    width: 75%;
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 6px 0px #2D2D2D;
+}
+
+.equipment-img {
+    display: flex;
+    height: 220px;
+    width: 225px;
+    background-size: cover;
+    background-position: center;
+}
+
+.equipment-info {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.equipment-name {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 30px;
+    word-break: break-all;
+    text-align: center;
+    width: 100%;
+}
+
+.equipment-price {
+    font-weight: bolder;
+    color: rgb(28, 98, 205);
+    font-size: 32px;
+    word-break: break-all;
+    text-align: center;
+    width: 100%;
+}
+
+.button-rent {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    background-color: rgb(28, 98, 205);
+}
+
+.button-rent .rent-button {
+    border: none;
+    font-size: 26px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5ch;
+    background-color: rgb(28, 98, 205);
+}
+
+.button-rent :hover {
+    background-color: rgb(16, 54, 111);
+    transition: 0.7s;
+}
+
+.button-rent .rent-button-text {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,91 +466,9 @@
     font-weight: lighter;
 }
 
-.centre-column-content {
-    margin-left: 25px;
-    float: left;
-    background-color: rgb(255, 255, 255);
-    height: 1061px;
-    width: 72%;
-}
-
-.event {
-    display: block;
-    position: relative;
-    margin-top: 15px;
-    margin-bottom: 40px;
-    width: 100%;
-    height: 25%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 6px 0px #2D2D2D;
-}
-
-.event-img {
-    position: absolute;
-    display: block;
-    margin-left: 20px;
-    height: 100%;
-    width: 25%;
-    /*background-image: url(../images/testimg.jpg);*/
-    background-size: cover;
-    background-position: center;
-}
-
-.event-info {
-    position: relative;
-    left: 27%;
-    display: block;
-    margin: 15px;
-    width: 69%;
-    height: 100%;
-}
-
-.event-name {
-    font-weight: bolder;
-    font-size: 30px;
-    word-break: break-all;
-    text-align: center;
-    height: 20%;
-    width: 100%;
-}
-
-.event-description {
-    font-size: 20px;
-    word-break: break-all;
-    text-align: center;
-    height: 20%;
-    width: 100%;
-}
-
-.event-equipment {
-    font-size: 20px;
-    text-align: center;
-    word-break: break-all;
-    height: 20%;
-    width: 100%;
-}
-
-.event-date {
-    font-size: 20px;
-    word-break: break-all;
-    text-align: center;
-    height: 20%;
-    width: 100%;
-}
-
-.event-price {
-    color: rgb(28, 98, 205);
-    font-size: 26px;
-    word-break: break-all;
-    text-align: center;
-    height: 20%;
-    width: 100%;
-}
-
 .pagination-bar {
-    position: relative;
-    left: 50%;
-    right: 50%;
+    margin-top: 50px;
+    text-align: center;
     width: 100%;
 }
 
@@ -264,33 +491,52 @@ ul.pagination li a {
     transition: 0.4s;
 }
 
-a.active-page{
+ul.pagination li a.active-page {
     background-color: rgb(28, 98, 205);
-    
+    color: rgb(255, 255, 255);
 }
 
-a:hover:not(a.active-page){
+ul.pagination li a:hover:not(a.active-page) {
     background-color: rgb(203, 203, 203);
 }
 
-
 /* Конец Страница Спортивного инвентаря */
 
+/* Начало стили Футтер */
+.footer {
+    background-color: #DCDCDF;
+}
 
-/* Для отображения пароля
-/*  */
-/* .password {
-	position: relative;
+.contacts {
+    margin-top:50px;
+    float: left;
+    height: 200px;
+    width: 50%;
+    background-color: #DCDCDF;
 }
-.password-control {
-	position: absolute;
-	top: 11px;
-	right: 6px;
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	background: url(/view.svg) 0 0 no-repeat;
+
+
+.contacts p {
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    float: right;
+    height: 200px;
+    width: 50%;
 }
-.password-control.view {
-	background: url(/no-view.svg) 0 0 no-repeat;
-} */
+
+.developers {
+    margin-top:50px;
+    float: right;
+    height: 200px;
+    width: 50%;
+    background-color: #DCDCDF;
+}
+
+.developers p {
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    float: right;
+    height: 200px;
+    width: 50%;
+}
+/* Конец стили Футтер */

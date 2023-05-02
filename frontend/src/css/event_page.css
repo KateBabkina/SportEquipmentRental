@@ -83,7 +83,7 @@
     box-shadow: 2px 5px 5px -3px #848484;
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 855px;
+    height: 790px;
     width: 25%;
 }
 
@@ -92,6 +92,7 @@
 }
 
 .filters-label {
+    font-family: 'PT Sans', sans-serif;
     margin-top: 40px;
     text-decoration-skip-ink: none;
     font-size: 36px;
@@ -104,21 +105,17 @@
 }
 
 .type-equipment-box {
-    height: 100px;
-    text-align: center;
-    font-style: inherit;
-}
-
-.type-equipment-box {
     height: 120px;
 }
 
 .label-type-equipment-box {
+    font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
 
 .field-type-equipment-box {
+    font-family: 'PT Sans', sans-serif;
     margin-right: 15px;
     height: 60px;
     text-align: center;
@@ -127,6 +124,7 @@
 }
 
 .field-type-equipment-box select {
+    font-family: 'PT Sans', sans-serif;
     color: rgb(0, 0, 0, 50%);
     overflow: auto;
     font-size: 24px;
@@ -147,6 +145,7 @@
 }
 
 .label-start-data-box {
+    font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
@@ -160,7 +159,7 @@
 }
 
 .field-start-data-box input {
-
+    font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: center;
     height: 60px;
@@ -175,6 +174,7 @@
 }
 
 .label-end-data-box {
+    font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
@@ -188,6 +188,7 @@
 }
 
 .field-end-data-box input {
+    font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: center;
     height: 60px;
@@ -223,6 +224,7 @@
 }
 
 .button-find .find-button-text {
+    font-family: 'PT Sans', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
