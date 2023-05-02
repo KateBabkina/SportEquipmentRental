@@ -39,7 +39,7 @@ const EnterPage = ({ setIsLogged }) => {
         } else if (!validator.isStrongPassword(login.password, { minSymbols: 0 })) {
             alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
-            axios.get("http://localhost:8080/api/person/login", {
+            axios.post("http://localhost:8080/api/person/login", {
                 email: login.email,
                 password: login.password
             },

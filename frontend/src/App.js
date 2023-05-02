@@ -15,7 +15,6 @@ const App = () => {
 
     const [isLogged, setIsLogged] = useState(localStorage.getItem("isLogged") === "true");
 
-
     return (<div>
         <Router>
         <Header isLogged={isLogged}/>

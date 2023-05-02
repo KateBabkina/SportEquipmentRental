@@ -1,45 +1,43 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ItemList from "./ItemList";
+import FilterField from "./FiltreField";
+import axios from 'axios';
 
 function EquipmentPage() {
 
-  const [itemList, setItemList] = useState({
-    items: [
+  var username = 'sport';
+  var password = '123';
+
+
+  const [itemList, setItemList] = useState([])
+  const [currentItems, setCurrentItems] = useState(itemList)
+
+  useEffect(() => {
+    axios.post("http://localhost:8080/api/inventory_type/filter", {},
       {
-        id: 1,
-        title: "Лыжи",
-        img: "лыжи.jpg",
-        category: "лыжи",
-        price: "123"
-      },
-      {
-        id: 2,
-        title: "Велосипед",
-        img: "велосипед.jpg",
-        category: "велосипед",
-        price: "234"
-      },
-      {
-        id: 3,
-        title: "Мяч футбольный",
-        img: "мяч футбольный.jpg",
-        category: "мяч",
-        price: "345"
-      },
-      {
-        id: 4,
-        title: "Фрисби",
-        img: "фрисби.jpg",
-        category: "фрисби",
-        price: "456"
-      }
-    ]
-  })
+        auth: {
+          username: username,
+          password: password
+        }
+      }).then(res => {
+        console.log(res.data);
+        setItemList(res.data)
+        setCurrentItems(res.data)
+      }).catch(() => {
+        alert("An error occurred on the server")
+      })
+  }, [])
+
+  const changeFilter = (items) => {
+      setCurrentItems(items)
+      console.log(items);
+  }
 
   return (
-    <div>
-        <ItemList items={itemList} />
+    <div className="inventoryPage">
+      <FilterField changeFilter={changeFilter} />
+      <ItemList items={currentItems} />
     </div>
   );
 };

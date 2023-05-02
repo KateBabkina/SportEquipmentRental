@@ -63,7 +63,7 @@ public class BookingController {
         return new ResponseEntity<>(bookingReturnResponse, httpStatus);
     }
 
-    @GetMapping("/filter")
+    @PostMapping("/filter")
     @Operation(summary = "Фильтрация списка заказов")
     public ResponseEntity<List<Booking>> filterBooking(@RequestBody BookingFilterDto bookingFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;
