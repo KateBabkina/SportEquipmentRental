@@ -10,64 +10,33 @@ function EquipmentPage() {
   var password = '123';
 
 
-  const [itemList, setItemList] = useState([
-      {
-        id: 1,
-        title: "лыжи",
-        img: "лыжи.jpg",
-        category: "лыжи",
-        price: "123"
-      },
-      {
-        id: 2,
-        title: "велосипед",
-        img: "велосипед.jpg",
-        category: "велосипед",
-        price: "234"
-      },
-      {
-        id: 3,
-        title: "мяч футбольный",
-        img: "мяч футбольный.jpg",
-        category: "мяч",
-        price: "345"
-      },
-      {
-        id: 4,
-        title: "фрисби",
-        img: "фрисби.jpg",
-        category: "фрисби",
-        price: "456"
-      }
-    ])
+  const [itemList, setItemList] = useState([])
   const [currentItems, setCurrentItems] = useState(itemList)
-  
 
-  
+  useEffect(() => {
+    axios.post("http://localhost:8080/api/inventory_type/filter", {},
+      {
+        auth: {
+          username: username,
+          password: password
+        }
+      }).then(res => {
+        console.log(res.data);
+        setItemList(res.data)
+        setCurrentItems(res.data)
+      }).catch(() => {
+        alert("An error occurred on the server")
+      })
+  }, [])
 
-//   useEffect(() => {
-//     axios.post("http://localhost:8080/api/inventory/filter", {},
-//         {
-//             auth: {
-//                 username: username,
-//                 password: password
-//             }
-//         }).then(res => {
-//             console.log(res.data);
-//         }).catch(() => {
-//             alert("An error occurred on the server")
-//         })
-// }, [])
-
-  
-
-  const sendRequest = () => {
-    console.log();
+  const changeFilter = (items) => {
+      setCurrentItems(items)
+      console.log(items);
   }
 
   return (
     <div className="inventoryPage">
-      <FilterField sendRequest={() => sendRequest()}/>
+      <FilterField changeFilter={changeFilter} />
       <ItemList items={currentItems} />
     </div>
   );
