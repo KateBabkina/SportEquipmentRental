@@ -35,7 +35,7 @@ public class PersonController {
         return new ResponseEntity<>(registrationResponse, httpStatus);
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     @Operation(summary = "Авторизация пользователя")
     public ResponseEntity<PersonResponse> loginPerson(@RequestBody PersonLoginDto personLoginDto) {
         HttpStatus httpStatus = HttpStatus.OK;
@@ -52,7 +52,7 @@ public class PersonController {
         return new ResponseEntity<>(profileResponse, httpStatus);
     }
 
-    @GetMapping("/filter")
+    @PostMapping("/filter")
     @Operation(summary = "Фильтрация списка пользователей")
     public ResponseEntity<List<Person>> filterPerson(@RequestBody PersonFilterDto personFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;

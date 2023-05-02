@@ -24,7 +24,7 @@ public class InventoryController {
 
     private InventoryService inventoryService;
 
-    @GetMapping("/filter")
+    @PostMapping("/filter")
     @Operation(summary = "Фильтрация списка оборудования")
     public ResponseEntity<List<Inventory>> filterInventory(@RequestBody InventoryFilterDto inventoryFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;

@@ -22,7 +22,7 @@ import java.util.List;
 @Tag(name = "Типы оборудования", description = "Методы для работы с типами оборудования")
 public class InventoryTypeController {
     private InventoryTypeService inventoryTypeService;
-    @GetMapping("/filter")
+    @PostMapping("/filter")
     @Operation(summary = "Фильтрация списка типов оборудования")
     public ResponseEntity<List<InventoryType>> filterInventoryType(@RequestBody InventoryTypeFilterDto inventoryTypeFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;
