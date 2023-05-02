@@ -2,6 +2,7 @@ package ru.vsu.cs.sportbox.Data.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "booking")
+@Schema(description = "Информация о заказе")
 public class Booking {
 
     @Id
