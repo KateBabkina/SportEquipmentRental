@@ -36,6 +36,7 @@ public class Inventory {
     private InventoryType inventoryType;
 
     @OneToMany(mappedBy = "inventory", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private Set<Booking> bookings;
 
     @PrePersist

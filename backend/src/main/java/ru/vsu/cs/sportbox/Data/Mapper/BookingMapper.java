@@ -28,6 +28,11 @@ public class BookingMapper {
     public Booking bookingCreateDtoToBooking (BookingCreateDto bookingCreateDto){
         Booking booking = new Booking();
 
+        Person person = personRepository.findById(bookingCreateDto.getPersonId());
+        if (person == null){
+            return null;
+        }
+
         Date sDate;
         Date eDate;
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -41,7 +46,6 @@ public class BookingMapper {
         booking.setStartDate(sDate);
         booking.setEndDate(eDate);
         booking.setDebt(0.);
-        Person person = personRepository.findById(bookingCreateDto.getPersonId());
         booking.setPerson(person);
 
         InventoryType inventoryType = inventoryTypeRepository.findById(bookingCreateDto.getInventoryTypeId());

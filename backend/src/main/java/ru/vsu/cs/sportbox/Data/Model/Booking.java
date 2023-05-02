@@ -50,7 +50,6 @@ public class Booking {
 
     @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "inventory_id")
-    @JsonIgnore
     private Inventory inventory;
 
     @Column(name = "debt")
