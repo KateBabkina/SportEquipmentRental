@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import validator from 'validator';
 
-const EnterPage = ({ setIsLogged }) => {
+const EnterPage = ({ setIsLogged, changeUser }) => {
 
     const [login, setLogin] = useState(() => {
         return {
@@ -49,24 +49,28 @@ const EnterPage = ({ setIsLogged }) => {
                         password: password
                     }
                 }).then(res => {
-                    if (res.data.status === true) { //возможно нужны ""
+                    if (res.data.status === true) {
                         localStorage.setItem("isLogged", true)
                         setIsLogged(true)
                         setResponse(res.data)
-                        window.location.href = "/"
+                        console.log(res.data);
+                        changeUser(res.data.person)
+                        //window.location.href = "/"  // при переходе на другую страницу не сохраняет состояние response
+
                     } else {
                         setResponse(res.data)
-                        //alert("There is already a user with this email")
                     }
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })
+            window.location.href = "/"
         }
+
     }
 
     return (
         <div className='login-main'>
-            <form name="login-form" method="GET" onSubmit={(e) => submitChacking(e)}>
+            <form name="login-form" method="POST" onSubmit={(e) => submitChacking(e)}>
 
                 <div className="login-panel">
 
@@ -92,8 +96,8 @@ const EnterPage = ({ setIsLogged }) => {
 
                     {
                         response.status ?
-                            ""
-                            : <div>response.message</div>
+                            <div>{response.message}</div>
+                            : <div>{response.message}</div>
                     }
 
                     <div className="action-box">
