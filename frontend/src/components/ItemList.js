@@ -4,7 +4,7 @@ import Item from "./Item";
 function ItemList({ items }) {
   return (
     <div className="main">
-        {items.items.map(el => (
+        {items.map(el => (
             <Item key={el.id} item={el}/>
         ))}
     </div>

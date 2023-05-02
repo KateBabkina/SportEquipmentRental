@@ -1,13 +1,16 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ItemList from "./ItemList";
 import FilterField from "./FiltreField";
+import axios from 'axios';
 
 function EquipmentPage() {
 
-  const [searchTerm, setSearchTerm] = useState("")
-  const [itemList, setItemList] = useState({
-    items: [
+  var username = 'sport';
+  var password = '123';
+
+
+  const [itemList, setItemList] = useState([
       {
         id: 1,
         title: "лыжи",
@@ -36,13 +39,36 @@ function EquipmentPage() {
         category: "фрисби",
         price: "456"
       }
-    ]
-  })
+    ])
+  const [currentItems, setCurrentItems] = useState(itemList)
+  
+
+  
+
+//   useEffect(() => {
+//     axios.post("http://localhost:8080/api/inventory/filter", {},
+//         {
+//             auth: {
+//                 username: username,
+//                 password: password
+//             }
+//         }).then(res => {
+//             console.log(res.data);
+//         }).catch(() => {
+//             alert("An error occurred on the server")
+//         })
+// }, [])
+
+  
+
+  const sendRequest = () => {
+    console.log();
+  }
 
   return (
     <div className="inventoryPage">
-      <FilterField />
-      <ItemList items={itemList} />
+      <FilterField sendRequest={() => sendRequest()}/>
+      <ItemList items={currentItems} />
     </div>
   );
 };

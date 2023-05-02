@@ -279,11 +279,11 @@ a:hover:not(a.active-page){
 }
 
  .main {
-    width: 70%;
+    width: 65%;
     display: inline-block;
 }
 .filter {
-    width: 30%;
+    width: 35%;
     display: inline-block;
     border: 4px solid;
     justify-content: center;
