@@ -14,15 +14,17 @@ import UserProfile from "./components/UserProfile"
 const App = () => {
 
     const [isLogged, setIsLogged] = useState(localStorage.getItem("isLogged") === "true");
-    const [user, setUser] = useState({
-        person: {}
+    const [userId, setUserId] = useState(() => {
+       if (localStorage.getItem("isLogged") === "true"){
+        return localStorage.getItem("userId")
+       } else {
+        return -1
+       }
     })
 
-    const changeUser = (state) => {
-        console.log(state);
-        setUser({
-            person: state
-        })
+    const changeUser = (id) => {
+        console.log(id);
+        setUserId(id)
     }
 
     return (<div>
@@ -36,7 +38,7 @@ const App = () => {
 
                 <Route path="/events" element={<EventPage setIsLogged={setIsLogged}></EventPage>} />
 
-                <Route path="/profile" element={<UserProfile setIsLogged={setIsLogged} user={user}></UserProfile>} />
+                <Route path="/profile" element={<UserProfile setIsLogged={setIsLogged}></UserProfile>} />
 
                 <Route path="/enter" element={<EnterPage setIsLogged={setIsLogged} changeUser={changeUser}></EnterPage>} />
 

@@ -54,7 +54,8 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                         setIsLogged(true)
                         setResponse(res.data)
                         console.log(res.data);
-                        changeUser(res.data.person)
+                        localStorage.setItem("userId", res.data.person.id)
+                        changeUser(res.data.person.id)
                         //window.location.href = "/"  // при переходе на другую страницу не сохраняет состояние response
 
                     } else {
