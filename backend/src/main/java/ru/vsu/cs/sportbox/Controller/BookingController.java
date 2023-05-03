@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.vsu.cs.sportbox.Data.Dto.BookingAdminDto;
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
 import ru.vsu.cs.sportbox.Data.Dto.BookingFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Booking;
@@ -65,9 +66,9 @@ public class BookingController {
 
     @PostMapping("/filter")
     @Operation(summary = "Фильтрация списка заказов")
-    public ResponseEntity<List<Booking>> filterBooking(@RequestBody BookingFilterDto bookingFilterDto) {
+    public ResponseEntity<List<BookingAdminDto>> filterBooking(@RequestBody BookingFilterDto bookingFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;
-        List<Booking> bookings = bookingService.filterBooking(bookingFilterDto);
+        List<BookingAdminDto> bookings = bookingService.filterBooking(bookingFilterDto);
         return new ResponseEntity<>(bookings, httpStatus);
     }
 }

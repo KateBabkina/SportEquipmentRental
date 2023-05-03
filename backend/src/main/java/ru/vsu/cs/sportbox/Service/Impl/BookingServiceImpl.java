@@ -4,6 +4,7 @@ import io.micrometer.common.util.StringUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.vsu.cs.sportbox.Data.Dto.BookingAdminDto;
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
 import ru.vsu.cs.sportbox.Data.Dto.BookingFilterDto;
 import ru.vsu.cs.sportbox.Data.Mapper.BookingMapper;
@@ -19,6 +20,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -87,7 +89,17 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<Booking> filterBooking(BookingFilterDto bookingFilterDto) {
-        return bookingRepository.findAll(BookingSpecification.getBookingByIdAndEmailAndDate(bookingFilterDto));
+    public List<BookingAdminDto> filterBooking(BookingFilterDto bookingFilterDto) {
+        return bookingRepository.findAll(BookingSpecification.getBookingByIdAndEmailAndDate(bookingFilterDto))
+                .stream()
+                .map(booking -> new BookingAdminDto(booking.getId(),
+                        booking.getInventory().getName(),
+                        booking.getPerson().getEmail(),
+                        booking.getPrice(),
+                        booking.getDate().toString(),
+                        booking.getStartDate().toString(),
+                        booking.getEndDate().toString(),
+                        booking.getDebt()))
+                .collect(Collectors.toList());
     }
 }
