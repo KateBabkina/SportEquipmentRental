@@ -1,5 +1,6 @@
 package ru.vsu.cs.sportbox.Data.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -37,8 +38,10 @@ public class InventoryType {
     private Boolean isSizable;
 
     @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private Set<Inventory> inventories;
 
     @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private Set<Event> events;
 }

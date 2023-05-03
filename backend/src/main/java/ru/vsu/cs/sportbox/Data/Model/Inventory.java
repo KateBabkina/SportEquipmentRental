@@ -32,7 +32,6 @@ public class Inventory {
 
     @ManyToOne (optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn (name="inventory_type_id")
-    @JsonIgnore
     private InventoryType inventoryType;
 
     @OneToMany(mappedBy = "inventory", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
