@@ -55,6 +55,7 @@ function RegisterPage({ setIsLogged }) {
                         localStorage.setItem("isLogged", true)
                         setIsLogged(true)
                         setResponse(res.data)
+                        localStorage.setItem("userId", res.data.person.id)
                         window.location.href = "/"
 
                     } else {
