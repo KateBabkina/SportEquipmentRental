@@ -161,7 +161,7 @@
 .field-start-data-box input {
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
-    text-align: center;
+    text-align: left;
     height: 60px;
     width: 100%;
     background-color: rgb(221, 221, 221);
@@ -190,7 +190,7 @@
 .field-end-data-box input {
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
-    text-align: center;
+    text-align: left;
     height: 60px;
     width: 100%;
     background-color: rgb(221, 221, 221);
@@ -368,6 +368,7 @@ ul.pagination li {
 }
 
 ul.pagination li a {
+    font-family: 'PT Sans', sans-serif;
     color: rgb(0, 0, 0);
     float: left;
     padding: 8px 16px;

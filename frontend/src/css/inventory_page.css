@@ -158,14 +158,14 @@
 .field-start-data-box {
     margin-right: 15px;
     height: 60px;
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     background-color: rgb(255, 255, 255);
 }
 
 .field-start-data-box input {
     font-size: 24px;
-    text-align: center;
+    text-align: left;
     height: 60px;
     width: 100%;
     background-color: rgb(221, 221, 221);
@@ -186,14 +186,14 @@
 .field-end-data-box {
     margin-right: 15px;
     height: 60px;
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     background-color: rgb(255, 255, 255);
 }
 
 .field-end-data-box input {
     font-size: 24px;
-    text-align: center;
+    text-align: left;
     height: 60px;
     width: 100%;
     background-color: rgb(221, 221, 221);
@@ -256,11 +256,12 @@
 }
 
 .label-price-to {
+    margin-left: 10px;
     font-family: 'PT Sans', sans-serif;
     line-height: 52px;
     width: 10%;
     float: left;
-    text-align: right;
+    text-align: left;
     font-size: 26px;
 }
 
@@ -276,31 +277,34 @@
 
 .field-price-from input {
     font-family: 'PT Sans', sans-serif;
-    font-size: medium;
-    text-align: center;
+    font-size: 24px;
+    text-align: left;
     height: 60px;
     width: 100%;
     background-color: rgb(221, 221, 221);
     border: none;
+    color: rgb(0, 0, 0, 50%);
 }
 
 .field-price-to {
     height: 60px;
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     background-color: rgb(255, 255, 255);
-    width: 35%;
+    width: 39%;
     float: left;
 }
 
 .field-price-to input {
     font-family: 'PT Sans', sans-serif;
-    font-size: medium;
-    text-align: center;
+    font-size: 24px;
+    text-align: left;
     height: 60px;
     width: 100%;
     background-color: rgb(221, 221, 221);
     border: none;
+    border: none;
+    color: rgb(0, 0, 0, 50%);
 }
 
 .button-find {
@@ -483,6 +487,7 @@ ul.pagination li {
 }
 
 ul.pagination li a {
+    font-family: 'PT Sans', sans-serif;
     color: rgb(0, 0, 0);
     float: left;
     padding: 8px 16px;
