@@ -1,5 +1,6 @@
 package ru.vsu.cs.sportbox.Data.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +23,7 @@ public class Role {
     private String name;
 
     @OneToMany (mappedBy="role", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private Set<Person> persons;
 
 }

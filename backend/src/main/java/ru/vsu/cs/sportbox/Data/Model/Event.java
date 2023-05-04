@@ -46,7 +46,6 @@ public class Event {
 
     @ManyToOne (optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn (name="inventory_type_id")
-    @JsonIgnore
     private InventoryType inventoryType;
 
     @ManyToMany(mappedBy="events", fetch = FetchType.EAGER)

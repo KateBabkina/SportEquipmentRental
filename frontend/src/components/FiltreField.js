@@ -63,8 +63,7 @@ function FilterField({ changeFilter }) {
 
     const getTypes = () => {
         return types.map((type) => {
-            return <option key={type.id} value={type.type}>{type.type}
-            </option>;
+            return <option key={type.id} value={type.type}>{type.type}</option>;
         });
     }
 

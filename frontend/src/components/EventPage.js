@@ -1,8 +1,11 @@
 import React from "react";
+import { useEffect } from 'react';
   
-function EventPage(props){
+function EventPage({ isLogged }){
 
-  console.log(props)
+  useEffect(() => {
+    console.log(isLogged);
+  }, [])
 
   return (
     <div>

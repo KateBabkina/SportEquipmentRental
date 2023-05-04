@@ -1,5 +1,6 @@
 package ru.vsu.cs.sportbox.Service;
 
+import ru.vsu.cs.sportbox.Data.Dto.BookingAdminDto;
 import ru.vsu.cs.sportbox.Data.Dto.BookingCreateDto;
 import ru.vsu.cs.sportbox.Data.Dto.BookingFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Booking;
@@ -15,5 +16,5 @@ public interface BookingService {
 
     BookingResponse returnBooking(int id);
 
-    List<Booking> filterBooking(BookingFilterDto bookingFilterDto);
+    List<BookingAdminDto> filterBooking(BookingFilterDto bookingFilterDto);
 }

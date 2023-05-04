@@ -40,7 +40,6 @@ public class Person {
 
     @ManyToOne (optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn (name="role_id")
-    @JsonIgnore
     private Role role;
 
     @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
