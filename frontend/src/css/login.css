@@ -1,156 +1,316 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
-/* Начало Страница Логин */
-.login-panel {
-    background-color: white;
-    height: 800px;
-    width: 100%;
+/* Начало Страница Регистрация */
+
+/*Стили шапки*/
+.logo {
+    text-align: center;
 }
 
-.login-profile-icon {
-    margin-top: 50px;
-    height: 125px;
-    width: 125px;
-    color: rgb(0, 0, 0);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.logo a {
+    font-size: 48px;
+    font-family: 'Staatliches';
+    color: black;
+    text-decoration: none;
+    padding: 20px;
 }
 
-.login-title {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.menu {
+    height: 70px;
+    background-color: #DCDCDF;
+}
+
+.left-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 65px;
+}
+
+.left-menu li {
+    text-align: center;
+    float: left;
+    width: 15%;
+}
+
+.left-menu li a {
+    font-weight: bold;
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
     font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(47, 48, 53);
+}
+
+.right-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 65px;
+}
+
+.right-menu li {
     text-align: center;
+    float: right;
+    width: 5%;
 }
 
-.login-field {
-    height: 40px;
-    width: 20%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(203, 203, 203);
-}
-
-.login-field input {
-    font-size: medium;
-    text-align: center;
-    border: none;
-    height: 40px;
-    width: 100%;
-    background-color: rgb(203, 203, 203);
-}
-
-.password-field {
-    height: 40px;
-    width: 20%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(203, 203, 203);
-}
-
-.password-field input {
-    text-align: center;
-    border: none;
-    height: 40px;
-    width: 100%;
-    background-color: rgb(203, 203, 203);
-}
-
-.password-title {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.right-menu li a {
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
     font-size: 24px;
-    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    color: rgb(47, 48, 53);
+}
+/*Конец стили шапки*/
+
+/*Начало стили Регистрация*/
+.base-part-registration {
+    height: 615px;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
 }
 
-.password-box {
-    margin-top: 50px;
-}
-
-.action-box {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.action-buttons {
+.centre-column-registration {
+    background-color: rgb(255, 255, 255);
     position: relative;
+    height: 615px;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.create-label {
+    font-family: 'PT Sans', sans-serif;
+    margin-bottom: 60px;
+    padding-top: 40px;
+    display: flex;
     text-align: center;
+    justify-content: center;
+    line-height: 1.2;
+    color: #000000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+.fullname-box {
+    padding-right: 20%;
+    margin: auto;
+    text-align: center;
+    height: 80px;
+    width: 80%;
+    margin-bottom: 2%;
+}
+
+.fullname-box-label {
+    font-weight: bold;
+    font-family: 'PT Sans', sans-serif;
+    float: left;
+    line-height: 80px;
+    font-size: large;
+    height: 80px;
+    width: 20%;
+    text-align: right;
+}
+
+.fullname-box-field {
+    float: right;
+    height: 80px;
+    width: 75%;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    line-height: 50px;
-    height: 120px;
+}
+
+.fullname-box-field input {
+    padding-left: 10px;
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    border: none;
+    height: 80px;
+    width: 100%;
+    font-weight: bold;
+    color: rgb(0, 0, 0, 50%);
+    background-color: rgb(0, 0, 0, 5%);
+}
+
+.account-box {
+    margin: auto;
+    text-align: center;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.account-box-label {
+    font-weight: bold;
+    font-family: 'PT Sans', sans-serif;
+    float: left;
+    line-height: 80px;
+    font-size: large;
+    height: 80px;
+    width: 30%;
+    text-align: right;
+}
+
+.account-box-field {
+    height: 80px;
+    width: 27%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.account-box-field input {
+    padding-left: 10px;
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    border: none;
+    height: 80px;
+    width: 100%;
+    color: rgb(0, 0, 0, 50%);
+    background-color: rgb(0, 0, 0, 5%);
+}
+
+.firstpassword-box {
+    margin: auto;
+    text-align: center;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.firstpassword-box-label {
+    font-weight: bold;
+    font-family: 'PT Sans', sans-serif;
+    float: left;
+    line-height: 80px;
+    font-size: large;
+    height: 80px;
+    width: 30%;
+    text-align: right;
+}
+
+.firstpassword-box-field {
+    height: 80px;
+    width: 27%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.firstpassword-box-field input {
+    padding-left: 10px;
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    border: none;
+    height: 80px;
+    width: 100%;
+    color: rgb(0, 0, 0, 50%);
+    background-color: rgb(0, 0, 0, 5%);
+}
+
+.login-box-action-box{
+    text-align: center;
     width: 20%;
-    font-size: 26px;
-    color: rgb(220, 220, 223);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.action-buttons .login-button {
-    padding: 5%;
-    border: none;
-    font-size: 26px;
+.login-box-action-box a{ 
     text-align: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 0.5ch;
-    box-shadow: 0px 10px 18px 0px #474747;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
 }
 
-.login-button:hover {
-    background-color: rgb(203, 203, 203);
-    transition: 0.7s;
+
+.registration-box-action-box {
+    margin: auto;
+    margin-top: 80px;
+    border: none;
+    text-align: center;
+    height: 60px;
+    width: 40%;
 }
 
-.register-button:hover {
-    background-color: rgb(203, 203, 203);
-    transition: 0.7s;
-}
-
-.login-button:active {
-    border: 1ch;
-    border-color: #000000;
-    transition: 0.7s;
-}
-
-.register-button:active {
-    border: 1ch;
-    border-color: #000000;
-    transition: 0.7s;
-}
-
-.action-buttons .login-button .login-button-text {
+.registration-box-action-box .create-new-user-button .create-new-user-button-text {
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
-    color: #000000;
+    color: #ffffff;
     font-size: 24px;
-    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-    font-weight: bold;
+    font-family: 'PT Sans', sans-serif;
 }
 
-.action-buttons .register-button {
-    padding: 5%;
-    margin-top: 25px;
+.registration-box-action-box .create-new-user-button {
+    background-color: rgb(28, 98, 205);
     border: none;
     text-align: center;
     height: 100%;
-    width: 100%;
-    border-radius: 0.5ch;
-    box-shadow: 0px 10px 18px 0px #474747;
-    text-shadow: 0px 10px 18px 0px #474747;
+    width: 60%;
 }
 
-.action-buttons .register-button .register-button-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    color: #000000;
-    font-size: 24px;
-    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-    font-weight: bold;
+.create-new-user-button:hover {
+    background-color: rgb(30, 15, 129);
+    transition: 0.7s;
 }
 
-/* Конец Страница Логин */
+.create-new-user-button:active {
+    border: 1ch;
+    border-color: #000000;
+}
+
+/* Конец стили Регистрация*/
+
+/* Начало стили Футтер */
+.footer {
+    background-color: #DCDCDF;
+}
+
+.contacts {
+    margin-top:50px;
+    float: left;
+    height: 200px;
+    width: 50%;
+    background-color: #DCDCDF;
+}
+
+
+.contacts p {
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    float: right;
+    height: 200px;
+    width: 50%;
+}
+
+.developers {
+    margin-top:50px;
+    float: right;
+    height: 200px;
+    width: 50%;
+    background-color: #DCDCDF;
+}
+
+.developers p {
+    font-family: 'PT Sans', sans-serif;
+    text-align: left;
+    float: right;
+    height: 200px;
+    width: 50%;
+}
+/* Конец стили Футтер */
