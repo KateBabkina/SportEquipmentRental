@@ -53,6 +53,9 @@ public class BookingServiceImpl implements BookingService {
         if (booking == null) {
             return new BookingResponse("Нет свободного инвентаря с указанными параметрами.", false, null);
         }
+        if (booking.getPerson().getIsBaned()){
+            return new BookingResponse("Ваш аккаунт был заблокирован за нарушение условий аренды. Обратитесь к сотрудникам компании для разблокировки аккаунта.", false, null);
+        }
         Booking savedBooking = bookingRepository.save(booking);
         return new BookingResponse("Заказ был успешно оформлен.", true, savedBooking);
 
