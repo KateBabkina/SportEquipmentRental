@@ -40,7 +40,7 @@ public class SecurityConfig{
         UserDetails user = User.builder()
                 .username("sport")
                 .password(passwordEncoder().encode("123"))
-                .roles("ADMIN")
+                .roles("USER")
                 .build();
 
         return new InMemoryUserDetailsManager(user);

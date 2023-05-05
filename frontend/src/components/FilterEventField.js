@@ -2,21 +2,16 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
-
-
-function FilterField({ changeFilter }) {
+function FilterEventField({ changeFilter }) {
 
     var username = 'sport';
     var password = '123';
 
-    const [types, setTypes] = useState([])
-    const [filter, setFilter] = useState({
+    const [typesForEvent, setTypesForEvent] = useState([])
+    const [filterForEvent, setFilterForEvent] = useState({
         inventoryType: "",
         startDate: "",
         endDate: "",
-        minPrice: 0,
-        maxPrice: 0
     })
 
     useEffect(() => {
@@ -27,17 +22,14 @@ function FilterField({ changeFilter }) {
                     password: password
                 }
             }).then(res => {
-                console.log(res.data);
-                setTypes(res.data)
+                setTypesForEvent(res.data)
             }).catch(() => {
                 alert("An error occurred on the server")
             })
     }, [])
 
     const sendFilter = () => {
-        console.log("-----------");
-        console.log(filter);
-        axios.post("http://localhost:8080/api/inventory_type/filter", filter,
+        axios.post("http://localhost:8080/api/event/filter", filterForEvent,
             {
                 auth: {
                     username: username,
@@ -52,7 +44,7 @@ function FilterField({ changeFilter }) {
     }
 
     const filtredInput = (event) => {
-        setFilter((prev) => {
+        setFilterForEvent((prev) => {
             return {
                 ...prev,
                 [event.target.id]: event.target.value
@@ -62,7 +54,7 @@ function FilterField({ changeFilter }) {
     }
 
     const getTypes = () => {
-        return types.map((type) => {
+        return typesForEvent.map((type) => {
             return <option key={type.id} value={type.type}>{type.type}</option>;
         });
     }
@@ -95,7 +87,7 @@ function FilterField({ changeFilter }) {
                 <div className="start-data-box">
 
                     <div className="label-start-data-box">
-                        Дата начала аренды:
+                        Дата начала:
                     </div>
 
                     <div className="field-start-data-box">
@@ -108,7 +100,7 @@ function FilterField({ changeFilter }) {
                 <div className="end-data-box">
 
                     <div className="label-end-data-box">
-                        Дата окончания аренды:
+                        Дата окончания:
                     </div>
 
                     <div className="field-end-data-box">
@@ -118,33 +110,9 @@ function FilterField({ changeFilter }) {
 
                 </div>
 
-                <div className="price-for-day-box">
-                    <div className="label-price-for-day-box">
-                        Цена за день:
-                    </div>
-
-
-                    <div className="label-price-from">
-                        от:
-                    </div>
-                    <div className="field-price-from">
-                        <input id="minPrice" type="number" name="fullName" onChange={e => filtredInput(e)}
-                            minLength="4" maxLength="35" size="20"></input>
-                    </div>
-
-                    <div className="label-price-to">
-                        до:
-                    </div>
-
-                    <div className="field-price-to">
-                        <input id="maxPrice" type="number" name="fullName" onChange={e => filtredInput(e)}
-                            minLength="4" maxLength="35" size="20"></input>
-                    </div>
-                </div>
-
-                <div class="button-find">
-                    <button class="find-button" type="submit" onClick={sendFilter}>
-                        <div class="find-button-text">
+                <div className="button-find">
+                    <button className="find-button" type="submit" onClick={sendFilter}>
+                        <div className="find-button-text">
                             Найти
                         </div>
                     </button>
@@ -155,4 +123,4 @@ function FilterField({ changeFilter }) {
     )
 }
 
-export default FilterField;
+export default FilterEventField;

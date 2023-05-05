@@ -43,6 +43,9 @@ public class PersonServiceImpl implements PersonService {
     public PersonResponse loginPerson(PersonLoginDto personLoginDto) {
         Person person = personRepository.findByEmail(personLoginDto.getEmail()).get(0);
         if (person != null) {
+            if (person.getIsBaned()){
+                return new PersonResponse("Ваш аккаунт был заблокирован за нарушение условий аренды. Обратитесь к сотрудникам компании для разблокировки аккаунта.", false, person);
+            }
             String rawPassword = personLoginDto.getPassword();
             String encodedPassword = person.getPassword();
             Boolean isPasswordRight = passwordEncoder.matches(rawPassword, encodedPassword);

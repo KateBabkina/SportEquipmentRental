@@ -35,7 +35,7 @@ function EquipmentPage() {
   }
 
   return (
-    <div className="inventoryPage">
+    <div className="base-part-sportEquipment-page">
       <FilterField changeFilter={changeFilter} />
       <ItemList items={currentItems} />
     </div>
