@@ -10,6 +10,7 @@ import EventPage from "./components/EventPage";
 import EnterPage from "./components/EnterPage";
 import RegisterPage from "./components/RegisterPage";
 import UserProfile from "./components/UserProfile"
+import AboutEquipment from "./components/AboutEquipment"
 
 const App = () => {
 
@@ -34,7 +35,9 @@ const App = () => {
 
                 <Route exact path="/" element={<Home></Home>} />
 
-                <Route path="/equipments" element={<EquipmentPage></EquipmentPage>} />
+                <Route path="/equipments" element={<EquipmentPage ></EquipmentPage>} />
+
+                <Route path="/about" element={<AboutEquipment></AboutEquipment>} />
 
                 <Route path="/events" element={<EventPage setIsLogged={setIsLogged}></EventPage>} />
 

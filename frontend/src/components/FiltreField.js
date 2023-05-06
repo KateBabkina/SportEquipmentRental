@@ -37,7 +37,7 @@ function FilterField({ changeFilter }) {
     const sendFilter = () => {
         console.log("-----------");
         console.log(filter);
-        axios.post("http://localhost:8080/api/inventory_type/filter", filter,
+        axios.post("http://localhost:8080/api/inventory/filter", filter,
             {
                 auth: {
                     username: username,
@@ -142,9 +142,9 @@ function FilterField({ changeFilter }) {
                     </div>
                 </div>
 
-                <div class="button-find">
-                    <button class="find-button" type="submit" onClick={sendFilter}>
-                        <div class="find-button-text">
+                <div className="button-find">
+                    <button className="find-button" type="submit" onClick={sendFilter}>
+                        <div className="find-button-text">
                             Найти
                         </div>
                     </button>
