@@ -37,7 +37,7 @@ function FilterField({ changeFilter }) {
     const sendFilter = () => {
         console.log("-----------");
         console.log(filter);
-        axios.post("http://localhost:8080/api/inventory/filter", filter,
+        axios.post("http://localhost:8080/api/inventory_type/filter", filter,
             {
                 auth: {
                     username: username,

@@ -14,7 +14,7 @@ function EquipmentPage() {
   const [currentItems, setCurrentItems] = useState(itemList)
 
   useEffect(() => {
-    axios.post("http://localhost:8080/api/inventory/filter", {},
+    axios.get("http://localhost:8080/api/inventory_type/get_all", 
       {
         auth: {
           username: username,

@@ -45,11 +45,11 @@ function RenderAboutEquipment({ item }) {
                 <div className="about-equipment-wrapper">
 
                     <div className="about-equipment-img">
-                        <img src={require("../images/inventory/" + item.name + ".jpg")} alt="MISSING JPG" />
+                        <img src={require("../images/inventory/" + item.inventoryType.type + ".jpg")} alt="MISSING JPG" />
                     </div>
 
                     <div className="about-equipment-name">
-                        {item.name}
+                        {item.inventoryType.type}
                     </div>
 
                     <div className="about-equipment-description">

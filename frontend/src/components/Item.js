@@ -6,7 +6,6 @@ function Item({ item }) {
     if (localStorage.getItem("isLogged") === "true"){
       localStorage.setItem("equipmentId", item.id)
       window.location.href = "/about"
-      console.log("true");
     } else {
       window.location.href = "/enter"
     }
@@ -16,16 +15,16 @@ function Item({ item }) {
     <div className="equipment-wrapper">
 
       <div className="equipment-img">
-        <img src={require("../images/inventory/" + item.name + ".jpg")} alt="MISSING JPG" />
+        <img src={require("../images/inventory/" + item.type + ".jpg")} alt="MISSING JPG" />
       </div>
 
       <div className="equipment-info">
         <div className="equipment-name">
-          {item.name}
+          {item.type}
         </div>
 
         <div className="equipment-price">
-          {item.inventoryType.price} руб./день
+          {item.price} руб./день
         </div>
       </div>
 

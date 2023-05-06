@@ -14,7 +14,7 @@ function AboutEquipment() {
     useEffect(() => {
         let cleanupFunction = false;
         const fetchData = async () => {
-            await axios.get(`http://localhost:8080/api/inventory/get_by_id?id=${localStorage.getItem("equipmentId")}`,
+            await axios.get(`http://localhost:8080/api/inventory_type/get_by_id?id=${localStorage.getItem("equipmentId")}`,
                 {
                     auth: {
                         username: username,
@@ -22,7 +22,7 @@ function AboutEquipment() {
                     }
                 }).then(res => {
                     console.log(res.data);
-                    if (!cleanupFunction) setItem(res.data.inventory);
+                    if (!cleanupFunction) setItem(res.data);
 
                 }).catch(() => {
                     alert("An error occurred on the server")
