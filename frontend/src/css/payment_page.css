@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 
+.body{
+    height: 1600px;
+}
+
 /*Стили шапки*/
 .logo {
     text-align: center;
@@ -71,7 +75,7 @@
 
 /* Начало Страница Спортивного инвентаря */
 .base-part-sportEquipment-page {
-    height: 1400px;
+    height: 1061px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
@@ -86,11 +90,11 @@
     width: 100%;
 }
 
-.about-equipment-wrapper {
+.payment-wrapper {
     display: grid;
+    height: 1061px;
     /* Автоматически заполняем на всю ширину grid-контейнера */
-    grid-template-columns: 1fr;
-    grid-template-rows: 15fr 1fr 4fr 7fr 4fr;
+    grid-template-columns: 1.3fr 0.7fr; 
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
     max-width: 100%;
@@ -98,206 +102,232 @@
     justify-content: center;
     justify-items: center;
     /* Размещаем карточку по центру */
-    column-gap: 30px;
     /* Отступ между колонками */
-    row-gap: 40px;
     /* Отступ между рядами */
     margin: 0 auto;
 }
 
-.about-equipment-img {
-    display: flex;
-    height: 600px;
-    width: 600px;
-    background-size: cover;
-    background-position: center;
+.payment-box-wrapper {
+    height: 1061px;
+    margin-left: 60px;
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.4fr 0.3fr 0.8fr 0.1fr;
+    /* grid-template-rows: repeat(2, 1fr); */
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto;
 }
 
-.about-equipment-name {
+.order-number{
     font-weight: bold;
+}
+
+.order-price{
+    width: 70%;
+    text-align: center;
+    border-top: 2px solid;
+    border-color: rgb(28, 98, 205);
+    font-family: 'PT Sans', sans-serif;
+}
+
+.payment-instruction{
+    /* border:solid; */
+    font-size: 30px;
+    padding-top: 50px;
+    text-align: center;
+    width: 70%;
+}
+
+.qr-code-box {
+    height: 1061px;
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1.7fr; 
+    /* grid-template-rows: repeat(2, 1fr); */
+    width: 100%;
+    max-width: 100%;
+    /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center;
+    /* Размещаем карточку по центру */
+    /* Отступ между колонками */
+    /* Отступ между рядами */
+    margin: 0 auto;
+}
+
+.qr-code{
+    padding-top: 30%;
+}
+
+.information-about-order-wrapper {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 30px;
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(5, 1fr); 
+    /* grid-template-rows: repeat(2, 1fr); */
+    width: 100%;
+    max-width: 100%;
+    /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center;
+    /* Размещаем карточку по центру */
+    /* Отступ между колонками */
+    /* Отступ между рядами */
+    margin: 0 auto;
+}
+
+.payment-card-information-wrapper {
+    display: grid;
+    background-color: rgb(0, 0, 0, 5%);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.3fr 1.3fr;
+    /* grid-template-rows: repeat(2, 1fr); */
+    width: 70%;
+    height: 80%;
+    max-width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+.card-number{
+    width: 80%;
+    padding-left: 5%;
+}
+
+.card-number input {
+    padding-left: 10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+    text-align: left;
+    height: 60px;
+    width: 100%;
+    background-color: rgba(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0, 50%);
+}
+
+.card-month{
+    width: 100%;
+    height: 100%;
+}
+
+.card-month input {
+    padding-left: 10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0, 50%);
+}
+
+.separator{
     font-family: 'PT Sans', sans-serif;
     font-size: 30px;
     text-align: center;
-    width: 100%;
+    border: none;
+    color: rgb(0, 0, 0, 50%);
 }
 
-.about-equipment-description{
+.card-year{
+    width: 100%;
+    height: 100%;
+}
+
+.card-year input {
+    padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
-    text-align: center;
+    text-align: left;
     width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0, 50%);
 }
 
-.about-equipment-rent-data-wrapper{
-    display: grid;
-    /* Автоматически заполняем на всю ширину grid-контейнера */
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    /* grid-template-rows: repeat(2, 1fr); */
+.card-cvc-lable{
+    padding-left: 10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 26px;
+    text-align: center;
+    border: none;
+    color: rgb(0, 0, 0, 50%);
+}
+
+.card-cvc{
     width: 100%;
+    height: 100%;
+}
+
+.card-cvc input {
+    padding-left: 10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0, 50%);
+}
+
+.other-information-card-wrapper {
+    padding-left: 5%;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 1fr 2.8fr 1fr;
+    grid-template-rows: 1fr;
+    /* grid-template-rows: repeat(2, 1fr); */
+    width: 80%;
     max-width: 100%;
-    /* Ширина grid-контейнера */
     justify-content: center;
     justify-items: center;
-    /* Размещаем карточку по центру */
-    column-gap: 30px;
-    /* Отступ между колонками */
-    row-gap: 40px;
-    /* Отступ между рядами */
     margin: 0 auto;
+    align-content: center;
+    align-items: center;
 }
 
-.rent-data-from-lable{
-    font-family: 'PT Sans', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    width: 100%;
-}
-
-.rent-data-to-lable{
-    font-family: 'PT Sans', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    width: 100%;
-}
-
-.rent-size-lable{
-    font-family: 'PT Sans', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    width: 100%;
-}
-
-.field-rent-data-from {
-    float: right;
-    height: 80px;
-    width: 75%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.field-rent-data-from input {
-    padding-left: 10px;
-    font-size: 24px;
-    font-family: 'PT Sans', sans-serif;
-    text-align: left;
-    border: none;
-    height: 80px;
-    width: 100%;
-    font-weight: bold;
-    color: rgb(0, 0, 0, 50%);
-    background-color: rgb(0, 0, 0, 5%);
-}
-
-.field-rent-data-to {
-    float: right;
-    height: 80px;
-    width: 75%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.field-rent-data-to input {
-    padding-left: 10px;
-    font-size: 24px;
-    font-family: 'PT Sans', sans-serif;
-    text-align: left;
-    border: none;
-    height: 80px;
-    width: 100%;
-    font-weight: bold;
-    color: rgb(0, 0, 0, 50%);
-    background-color: rgb(0, 0, 0, 5%);
-}
-
-.field-rent-size {
-    float: right;
-    height: 80px;
-    width: 75%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.field-rent-size input {
-    padding-left: 10px;
-    font-size: 24px;
-    font-family: 'PT Sans', sans-serif;
-    text-align: left;
-    border: none;
-    height: 80px;
-    width: 100%;
-    font-weight: bold;
-    color: rgb(0, 0, 0, 50%);
-    background-color: rgb(0, 0, 0, 5%);
-}
-
-.button-rent {
+.button-pay {
     width: 35%;
-    height: 50%;
+    height: 100%;
     display: block;
     text-align: center;
     background-color: rgb(28, 98, 205);
 }
 
-.button-rent .rent-button {
+.button-pay .pay-button {
     border: none;
+    padding: 0px;
     font-size: 26px;
     text-align: center;
     height: 100%;
     width: 100%;
-    border-radius: 0.5ch;
     background-color: rgb(28, 98, 205);
-    font-family: 'PT Sans', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
     color: rgb(255, 255, 255);
     font-size: 30px;
-    font-weight: lighter;
 }
 
-.button-rent :hover {
+.button-pay :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
-.pagination-bar {
-    margin-top: 50px;
-    text-align: center;
-    width: 100%;
-}
-
-ul.pagination {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-}
-
-ul.pagination li {
-    display: inline;
-}
-
-ul.pagination li a {
-    color: rgb(0, 0, 0);
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    transition: 0.4s;
-}
-
-ul.pagination li a.active-page {
-    background-color: rgb(28, 98, 205);
-    color: rgb(255, 255, 255);
-}
-
-ul.pagination li a:hover:not(a.active-page) {
-    background-color: rgb(203, 203, 203);
-}
 
 /* Конец Страница Спортивного инвентаря */
 

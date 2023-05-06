@@ -120,18 +120,18 @@
     height: 60px;
     text-align: center;
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
 }
 
 .field-type-equipment-box select {
+    padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     color: rgb(0, 0, 0, 50%);
     overflow: auto;
     font-size: 24px;
     text-align: left;
     height: 60px;
-    width: 100%;
-    background-color: rgb(221, 221, 221);
+    width: 102%;
+    background-color: rgb(0, 0, 0, 5%);
     border: none;
 }
 
@@ -155,16 +155,16 @@
     height: 60px;
     text-align: center;
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
 }
 
 .field-start-data-box input {
+    padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: left;
     height: 60px;
     width: 100%;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(0, 0, 0, 5%);
     border: none;
     color: rgb(0, 0, 0, 50%);
 }
@@ -184,16 +184,16 @@
     height: 60px;
     text-align: center;
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
 }
 
 .field-end-data-box input {
+    padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: left;
     height: 60px;
     width: 100%;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(0, 0, 0, 5%);
     border: none;
     color: rgb(0, 0, 0, 50%);
 }
@@ -208,22 +208,13 @@
 }
 
 .button-find .find-button {
-    padding: 5%;
+    background-color: rgb(28, 98, 205);
     border: none;
     font-size: 26px;
     text-align: center;
     height: 100%;
     width: 100%;
-    border-radius: 0.5ch;
-    background-color: rgb(28, 98, 205);
-}
-
-.button-find :hover {
-    background-color: rgb(16, 54, 111);
-    transition: 0.7s;
-}
-
-.button-find .find-button-text {
+    padding: 0px;
     font-family: 'PT Sans', sans-serif;
     display: flex;
     align-items: center;
@@ -231,7 +222,11 @@
     line-height: 1;
     color: rgb(255, 255, 255);
     font-size: 30px;
-    font-weight: lighter;
+}
+
+.button-find :hover {
+    background-color: rgb(16, 54, 111);
+    transition: 0.7s;
 }
 /* Конец Колонка с фильтрами*/
 
@@ -341,10 +336,10 @@
 }
 
 .event-price {
-    font-size: 24px;
+    font-weight: bold;
     font-family: 'PT Sans', sans-serif;
     color: rgb(28, 98, 205);
-    font-size: 26px;
+    font-size: 30px;
     word-break: break-all;
     text-align: center;
     height: 20%;

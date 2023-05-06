@@ -71,25 +71,16 @@
 
 /* Начало Главная страница */
 .base-part {
-    height: 1061px;
-    background-image: url(../src/images/backgroundfon.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.left-column {
-    float: left;
-    background-color: rgb(255, 255, 255);
-    height: 1061px;
-    width: 4%;
+    height: 1061px;  
 }
 
 .centre-column {
+    background-image: url(/src/images/backgroundfon.jpg);
     position: relative;
-    height: 1061px;
-    width: 92%;
-    margin-left: 4%;
-    margin-right: 4%;
+    height: 1112px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 .description {
@@ -99,13 +90,6 @@
     text-align: center;
     font-size: 30px;
     font-family: 'PT Sans', sans-serif;
-}
-
-.right-column {
-    float: right;
-    background-color: rgb(255, 255, 255);
-    height: 1061px;
-    width: 4%;
 }
 
 /* Конец Главная страница */

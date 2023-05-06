@@ -125,18 +125,18 @@
     height: 60px;
     text-align: center;
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
 }
 
 .field-type-equipment-box select {
+    padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     color: rgb(0, 0, 0, 50%);
     overflow: auto;
     font-size: 24px;
     text-align: left;
     height: 60px;
-    width: 100%;
-    background-color: rgb(221, 221, 221);
+    width: 102%;
+    background-color: rgb(0, 0, 0, 5%);
     border: none;
 }
 
@@ -160,15 +160,16 @@
     height: 60px;
     text-align: left;
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
 }
 
 .field-start-data-box input {
+    padding-left: 10px;
+    font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: left;
     height: 60px;
     width: 100%;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(0, 0, 0, 5%);
     border: none;
     color: rgb(0, 0, 0, 50%);
 }
@@ -188,53 +189,18 @@
     height: 60px;
     text-align: left;
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
 }
 
 .field-end-data-box input {
+    padding-left: 10px;
+    font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: left;
     height: 60px;
     width: 100%;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(0, 0, 0, 5%);
     border: none;
     color: rgb(0, 0, 0, 50%);
-}
-
-.button-find {
-    text-align: center;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 80px;
-    height: 80px;
-    background-color: rgb(28, 98, 205);
-}
-
-.button-find .find-button {
-    padding: 5%;
-    border: none;
-    font-size: 26px;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 0.5ch;
-    background-color: rgb(28, 98, 205);
-}
-
-.button-find :hover {
-    background-color: rgb(16, 54, 111);
-    transition: 0.7s;
-}
-
-.button-find .find-button-text {
-    font-family: 'PT Sans', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    color: rgb(255, 255, 255);
-    font-size: 30px;
-    font-weight: lighter;
 }
 
 .price-for-day-box {
@@ -242,6 +208,7 @@
 }
 
 .label-price-for-day-box {
+    font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
@@ -270,18 +237,18 @@
     height: 60px;
     text-align: center;
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
     width: 35%;
     float: left;
 }
 
 .field-price-from input {
+    padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: left;
     height: 60px;
-    width: 100%;
-    background-color: rgb(221, 221, 221);
+    width: 95%;
+    background-color: rgb(0, 0, 0, 5%);
     border: none;
     color: rgb(0, 0, 0, 50%);
 }
@@ -290,18 +257,18 @@
     height: 60px;
     text-align: left;
     font-size: 24px;
-    background-color: rgb(255, 255, 255);
     width: 39%;
     float: left;
 }
 
 .field-price-to input {
+    padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: left;
     height: 60px;
     width: 100%;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(0, 0, 0, 5%);
     border: none;
     border: none;
     color: rgb(0, 0, 0, 50%);
@@ -317,22 +284,13 @@
 }
 
 .button-find .find-button {
-    padding: 5%;
+    background-color: rgb(28, 98, 205);
     border: none;
     font-size: 26px;
     text-align: center;
     height: 100%;
     width: 100%;
-    border-radius: 0.5ch;
-    background-color: rgb(28, 98, 205);
-}
-
-.button-find :hover {
-    background-color: rgb(16, 54, 111);
-    transition: 0.7s;
-}
-
-.button-find .find-button-text {
+    padding: 0px;
     font-family: 'PT Sans', sans-serif;
     display: flex;
     align-items: center;
@@ -340,8 +298,13 @@
     line-height: 1;
     color: rgb(255, 255, 255);
     font-size: 30px;
-    font-weight: lighter;
 }
+
+.button-find :hover {
+    background-color: rgb(16, 54, 111);
+    transition: 0.7s;
+}
+
 /* Конец Колонка с фильтрами*/
 
 .centre-column-content {
@@ -422,16 +385,17 @@
 
 .equipment-name {
     font-family: 'PT Sans', sans-serif;
-    font-size: 30px;
+    font-size: 26px;
     word-break: break-all;
     text-align: center;
     width: 100%;
 }
 
 .equipment-price {
-    font-weight: bolder;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
     color: rgb(28, 98, 205);
-    font-size: 32px;
+    font-size: 30px;
     word-break: break-all;
     text-align: center;
     width: 100%;
@@ -446,12 +410,20 @@
 }
 
 .button-rent .rent-button {
+    font-family: 'PT Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: lighter;
     border: none;
+    padding: 0px;
     font-size: 26px;
     text-align: center;
     height: 100%;
     width: 100%;
-    border-radius: 0.5ch;
     background-color: rgb(28, 98, 205);
 }
 
@@ -460,15 +432,6 @@
     transition: 0.7s;
 }
 
-.button-rent .rent-button-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    color: rgb(255, 255, 255);
-    font-size: 30px;
-    font-weight: lighter;
-}
 
 .pagination-bar {
     margin-top: 50px;
