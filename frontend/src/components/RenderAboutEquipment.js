@@ -11,7 +11,8 @@ function RenderAboutEquipment({ item }) {
         personId: localStorage.getItem("userId"),
         inventoryTypeId: localStorage.getItem("equipmentId"),
         startDate: "",
-        endDate: ""
+        endDate: "",
+        size: 0
     })
 
     const filtredInput = (event) => {
@@ -25,6 +26,7 @@ function RenderAboutEquipment({ item }) {
     }
 
     const handleRentButton = () => {
+        console.log(rentRequest);
         axios.post(`http://localhost:8080/api/booking/add`, { rentRequest },
             {
                 auth: {
@@ -63,9 +65,12 @@ function RenderAboutEquipment({ item }) {
                         <div className="rent-data-to-lable">
                             Дата окончания аренды:
                         </div>
-                        <div className="rent-size-lable">
-                            Размер:
-                        </div>
+                        {
+                            item.inventoryType.isSizable ? <div className="rent-size-lable">
+                                Размер:
+                            </div> : false
+                        }
+
                         <div className="field-rent-data-from">
                             <input id="startDate" type="date" name="data-from" onChange={e => filtredInput(e)}
                                 minLength="4" maxLength="35" size="20"></input>
@@ -74,9 +79,12 @@ function RenderAboutEquipment({ item }) {
                             <input id="endDate" type="date" name="data-to" onChange={e => filtredInput(e)}
                                 minLength="4" maxLength="35" size="20"></input>
                         </div>
-                        <div className="field-rent-size">
-                            <input type="number" id="size" name="fullName"></input>
-                        </div>
+                        {
+                            item.inventoryType.isSizable ? <div className="field-rent-size">
+                                <input type="number" id="size" name="fullName" onChange={e => filtredInput(e)}
+                                ></input>
+                            </div> : false
+                        }
 
                         <div className="button-rent">
                             <button className="rent-button" type="submit" onClick={() => handleRentButton()}>
