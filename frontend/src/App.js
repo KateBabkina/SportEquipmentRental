@@ -11,6 +11,7 @@ import EnterPage from "./components/EnterPage";
 import RegisterPage from "./components/RegisterPage";
 import UserProfile from "./components/UserProfile"
 import AboutEquipment from "./components/AboutEquipment"
+import PaymentPage from './components/PaymentPage';
 
 const App = () => {
 
@@ -38,6 +39,8 @@ const App = () => {
                 <Route path="/equipments" element={<EquipmentPage ></EquipmentPage>} />
 
                 <Route path="/about" element={<AboutEquipment></AboutEquipment>} />
+
+                <Route path="/payment" element={<PaymentPage></PaymentPage>} />
 
                 <Route path="/events" element={<EventPage setIsLogged={setIsLogged}></EventPage>} />
 

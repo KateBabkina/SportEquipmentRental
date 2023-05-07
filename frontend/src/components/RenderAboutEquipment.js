@@ -8,26 +8,34 @@ function RenderAboutEquipment({ item }) {
     var password = '123';
 
     const [rentRequest, setRentRequest] = useState({
-        personId: localStorage.getItem("userId"),
-        inventoryTypeId: localStorage.getItem("equipmentId"),
+        personId: Number(localStorage.getItem("userId")),
+        inventoryTypeId: Number(localStorage.getItem("equipmentId")),
         startDate: "",
         endDate: "",
         size: 0
     })
 
     const filtredInput = (event) => {
-        setRentRequest((prev) => {
-            return {
-                ...prev,
-                [event.target.id]: event.target.value
-            }
-        })
-
+        if (event.target.id === "size") {
+            setRentRequest((prev) => {
+                return {
+                    ...prev,
+                    [event.target.id]: Number(event.target.value)
+                }
+            })
+        } else {
+            setRentRequest((prev) => {
+                return {
+                    ...prev,
+                    [event.target.id]: event.target.value
+                }
+            })
+        }
     }
 
     const handleRentButton = () => {
         console.log(rentRequest);
-        axios.post(`http://localhost:8080/api/booking/add`, { rentRequest },
+        axios.post(`http://localhost:8080/api/booking/add`, rentRequest,
             {
                 auth: {
                     username: username,
@@ -35,6 +43,8 @@ function RenderAboutEquipment({ item }) {
                 }
             }).then(res => {
                 console.log(res.data);
+                localStorage.setItem("bookingId", res.data.booking.id)
+                window.location.href = "/payment"
             }).catch(() => {
                 alert("An error occurred on the server")
             })
@@ -58,42 +68,46 @@ function RenderAboutEquipment({ item }) {
                         {item.inventoryType.description}
                     </div>
 
-                    <div className="about-equipment-rent-data-wrapper">
-                        <div className="rent-data-from-lable">
-                            Дата начала аренды:
-                        </div>
-                        <div className="rent-data-to-lable">
-                            Дата окончания аренды:
-                        </div>
-                        {
-                            item.inventoryType.isSizable ? <div className="rent-size-lable">
-                                Размер:
-                            </div> : false
-                        }
+                    <form>
 
-                        <div className="field-rent-data-from">
-                            <input id="startDate" type="date" name="data-from" onChange={e => filtredInput(e)}
-                                minLength="4" maxLength="35" size="20"></input>
-                        </div>
-                        <div className="field-rent-data-to">
-                            <input id="endDate" type="date" name="data-to" onChange={e => filtredInput(e)}
-                                minLength="4" maxLength="35" size="20"></input>
-                        </div>
-                        {
-                            item.inventoryType.isSizable ? <div className="field-rent-size">
-                                <input type="number" id="size" name="fullName" onChange={e => filtredInput(e)}
-                                ></input>
-                            </div> : false
-                        }
+                        <div className="about-equipment-rent-data-wrapper">
+                            <div className="rent-data-from-lable">
+                                Дата начала аренды:
+                            </div>
+                            <div className="rent-data-to-lable">
+                                Дата окончания аренды:
+                            </div>
+                            {
+                                item.inventoryType.isSizable ? <div className="rent-size-lable">
+                                    Размер:
+                                </div> : false
+                            }
 
-                        <div className="button-rent">
-                            <button className="rent-button" type="submit" onClick={() => handleRentButton()}>
-                                <div className="rent-button-text">
-                                    Арендовать
-                                </div>
-                            </button>
+                            <div className="field-rent-data-from">
+                                <input id="startDate" type="date" name="data-from" required={true} onChange={e => filtredInput(e)}
+                                    minLength="4" maxLength="35" size="20"></input>
+                            </div>
+                            <div className="field-rent-data-to">
+                                <input id="endDate" type="date" name="data-to" onChange={e => filtredInput(e)}
+                                    minLength="4" maxLength="35" size="20"></input>
+                            </div>
+                            {
+                                item.inventoryType.isSizable ? <div className="field-rent-size">
+                                    <input type="number" id="size" name="fullName" onChange={e => filtredInput(e)}
+                                        min="29" maxLength="46"></input>
+                                </div> : false
+                            }
+
+                            <div className="button-rent">
+                                <button className="rent-button" type="submit" onClick={() => handleRentButton()}>
+                                    <div className="rent-button-text">
+                                        Арендовать
+                                    </div>
+                                </button>
+                            </div>
+
                         </div>
-                    </div>
+                    </form>
 
                 </div>
             </div>

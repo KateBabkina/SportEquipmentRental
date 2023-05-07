@@ -56,10 +56,9 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                         console.log(res.data);
                         localStorage.setItem("userId", res.data.person.id)
                         changeUser(res.data.person.id)
-                        //window.location.href = "/"  // при переходе на другую страницу не сохраняет состояние response
-
+                        window.location.href = "/"  // при переходе на другую страницу не сохраняет состояние response
                     } else {
-                        setResponse(res.data)
+                        alert(res.message)
                     }
                 }).catch(() => {
                     alert("An error occurred on the server")
@@ -94,12 +93,6 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                                 onChange={(e) => changeInputLogin(e)} required minLength="8" maxLength="35" size="20"></input>
                         </div>
                     </div>
-
-                    {
-                        response.status ?
-                            <div>{response.message}</div>
-                            : <div>{response.message}</div>
-                    }
 
                     <div className="action-box">
 
