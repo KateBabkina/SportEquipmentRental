@@ -31,6 +31,8 @@ export default function EventPage({ setIsLogged }) {
 
   const logOut = () => {
     localStorage.setItem("isLogged", false)
+    localStorage.setItem("equipmentId", -1)
+    localStorage.setItem("bookingId", -1)
     setIsLogged(false)
     localStorage.setItem("userId", -1)
     window.location.href = "/"

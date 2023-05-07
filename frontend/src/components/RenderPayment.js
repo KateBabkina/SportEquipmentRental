@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import img from "../images/QR-code.JPG"
+import qr from "../images/QR-code.JPG"
 
 function RenderAboutEquipment({ booking }) {
 
@@ -23,7 +23,7 @@ function RenderAboutEquipment({ booking }) {
 
     function handlePaymentButton() {
         console.log(data);
-
+        window.location.href = "/reccomendation"
     }
 
     return (
@@ -103,7 +103,7 @@ function RenderAboutEquipment({ booking }) {
 
                 <div className="qr-code-box">
                     <div className="qr-code">
-                        <img src={img} alt="Missing picture" />
+                        <img src={qr} alt="Missing picture" />
                     </div>
                 </div>
             </div>
