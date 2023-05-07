@@ -64,7 +64,7 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })
-            window.location.href = "/"
+            //window.location.href = "/"
         }
 
     }

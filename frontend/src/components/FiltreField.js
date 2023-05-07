@@ -142,9 +142,9 @@ function FilterField({ changeFilter }) {
                     </div>
                 </div>
 
-                <div class="button-find">
-                    <button class="find-button" type="submit" onClick={sendFilter}>
-                        <div class="find-button-text">
+                <div className="button-find">
+                    <button className="find-button" type="submit" onClick={sendFilter}>
+                        <div className="find-button-text">
                             Найти
                         </div>
                     </button>

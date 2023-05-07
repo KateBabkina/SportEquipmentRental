@@ -14,7 +14,7 @@ function EquipmentPage() {
   const [currentItems, setCurrentItems] = useState(itemList)
 
   useEffect(() => {
-    axios.post("http://localhost:8080/api/inventory_type/filter", {},
+    axios.get("http://localhost:8080/api/inventory_type/get_all", 
       {
         auth: {
           username: username,
@@ -37,7 +37,7 @@ function EquipmentPage() {
   return (
     <div className="base-part-sportEquipment-page">
       <FilterField changeFilter={changeFilter} />
-      <ItemList items={currentItems} />
+      <ItemList items={currentItems}/>
     </div>
   );
 };

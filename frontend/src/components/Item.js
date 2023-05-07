@@ -1,6 +1,16 @@
 import React from "react";
 
 function Item({ item }) {
+
+  const handleRentButton = () => {
+    if (localStorage.getItem("isLogged") === "true"){
+      localStorage.setItem("equipmentId", item.id)
+      window.location.href = "/about"
+    } else {
+      window.location.href = "/enter"
+    }
+  }
+
   return (
     <div className="equipment-wrapper">
 
@@ -19,7 +29,7 @@ function Item({ item }) {
       </div>
 
       <div className="button-rent">
-        <button className="rent-button" type="submit">
+        <button className="rent-button" type="submit" onClick={() => handleRentButton()}>
           <div className="rent-button-text">
             Арендовать
           </div>
