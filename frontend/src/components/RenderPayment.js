@@ -21,7 +21,7 @@ function RenderAboutEquipment({ booking }) {
     }
 
 
-    function handlePaymentButton() {
+    const handlePaymentButton = () => {
         console.log(data);
         window.location.href = "/reccomendation"
     }

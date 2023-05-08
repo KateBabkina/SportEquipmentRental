@@ -6,10 +6,13 @@ export default function EventPage({ setIsLogged }) {
 
   var username = 'sport';
   var password = '123';
+  var now = new Date();
 
   const [booking, setBooking] = useState([])
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+
+  
 
   useEffect(() => {
     axios.get(`http://localhost:8080/api/person/profile?id=${localStorage.getItem("userId")}`,
@@ -28,6 +31,23 @@ export default function EventPage({ setIsLogged }) {
         alert("An error occurred on the server")
       })
   }, [])
+
+  const cancelBooking = (id) => {
+    axios.delete(`http://localhost:8080/api/booking/cancel?id=${id}`,
+    {
+      auth: {
+        username: username,
+        password: password
+      }
+    }).then(res => {
+      console.log(res.data);
+      alert(res.data.message);
+      window.location.reload();
+    }).catch(() => {
+      alert("An error occurred on the server")
+    })
+  }
+
 
   const logOut = () => {
     localStorage.setItem("isLogged", false)
@@ -70,15 +90,18 @@ export default function EventPage({ setIsLogged }) {
           {el.debt}
         </div>
 
-        <div className="order-action-row">
-          <div className="button-cancel">
-            <button className="cancel-button" type="submit">
-              <div className="cancel-button-text">
-                Отменить
-              </div>
-            </button>
-          </div>
-        </div>
+        {
+          now < new Date(el.startDate) ? <div className="order-action-row">
+            <div className="button-cancel">
+              <button className="cancel-button" type="submit" onClick={() => cancelBooking(el.id)}>
+                <div className="cancel-button-text">
+                  Отменить
+                </div>
+              </button>
+            </div>
+          </div> : false
+
+        }
 
       </div>)
     });
@@ -160,12 +183,12 @@ export default function EventPage({ setIsLogged }) {
       </div>
 
       <div className="button-exit">
-            <button className="exit-button" type="submit" onClick={logOut}>
-                <div className="exit-button-text">
-                    Выйти
-                </div>
-            </button>
-        </div>
+        <button className="exit-button" type="submit" onClick={logOut}>
+          <div className="exit-button-text">
+            Выйти
+          </div>
+        </button>
+      </div>
 
     </div>
   );
