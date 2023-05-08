@@ -4,6 +4,7 @@ import qr from "../images/QR-code.JPG"
 
 function RenderAboutEquipment({ booking }) {
 
+    const [check, setCheck] = useState(false)
     const [data, setData] = useState({
         numderCard: 0,
         yearCard: 0,
@@ -22,8 +23,33 @@ function RenderAboutEquipment({ booking }) {
 
 
     const handlePaymentButton = () => {
-        console.log(data);
-        window.location.href = "/reccomendation"
+        checkData()
+        if (check){
+            console.log(data);
+            window.location.href = "/reccomendation"
+        } 
+    }
+
+    function checkData(){
+        setCheck(false)
+
+        var numderCard = document.getElementById("numderCard").value
+        var yearCard = document.getElementById("yearCard").value
+        var monthCard = document.getElementById("monthCard").value
+        var cvc = document.getElementById("cvc").value
+
+        if (numderCard.lenght !== 16){
+            alert("Проверьте номер карты")
+        } else if (monthCard.lenght !== 2){
+            alert("Проверьте месяц")
+        } else if (yearCard.lenght !== 2){
+            alert("Проверьте год")
+        } else if (cvc.lenght !== 3) {
+            alert("Проверьте CVC")
+        } else {
+            setCheck(true)
+        }
+        
     }
 
     return (

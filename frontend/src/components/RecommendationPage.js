@@ -32,7 +32,7 @@ function ReccomendationPage() {
         return () => cleanupFunction = true;
     }, [])
 
-    const getReccomrndation = () => {
+    const getReccomendation = () => {
         return (
             <div className="centre-column-content">
                 <div className="recommendation-wrapper">
@@ -63,7 +63,7 @@ function ReccomendationPage() {
     return (
         <div>
             {
-                booking ? getReccomrndation() : false
+                booking ? getReccomendation() : false
             }
         </div>
     );

@@ -36,8 +36,6 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
         event.preventDefault();
         if (!validator.isEmail(login.email)) {
             alert("You did not enter email")
-        } else if (!validator.isStrongPassword(login.password, { minSymbols: 0 })) {
-            alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
             axios.post("http://localhost:8080/api/person/login", {
                 email: login.email,
@@ -63,7 +61,6 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })
-            //window.location.href = "/"
         }
 
     }

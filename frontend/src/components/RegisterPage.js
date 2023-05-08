@@ -59,7 +59,7 @@ function RegisterPage({ setIsLogged }) {
                         window.location.href = "/"
 
                     } else {
-                        alert("There is already a user with this email")
+                        alert(res.data.message)
                     }
                 }).catch(() => {
                     alert("An error occurred on the server")

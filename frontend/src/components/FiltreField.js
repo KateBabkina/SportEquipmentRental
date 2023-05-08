@@ -10,6 +10,7 @@ function FilterField({ changeFilter }) {
     var username = 'sport';
     var password = '123';
 
+    const [check, setCheck] = useState(false)
     const [types, setTypes] = useState([])
     const [filter, setFilter] = useState({
         inventoryType: "",
@@ -34,21 +35,43 @@ function FilterField({ changeFilter }) {
             })
     }, [])
 
+    function checkData(){
+        setCheck(false)
+
+        var startDate = document.getElementById("startDate").value
+        var endDate = document.getElementById("endDate").value
+        var startTime = new Date(startDate)
+        var endTime = new Date(endDate)
+
+        if (startDate === "" && endDate !== ""){
+            alert("Заполните дату начала")
+        } else if (startDate !== "" && endDate === "") {
+            alert("Заполните дату окончания")
+        } else if (startTime.getTime() > endTime.getTime()) {
+            alert("Дата начала не может превышать дату окончания")
+        } else {
+            setCheck(true)
+        }
+    }
+
     const sendFilter = () => {
-        console.log("-----------");
-        console.log(filter);
-        axios.post("http://localhost:8080/api/inventory_type/filter", filter,
-            {
-                auth: {
-                    username: username,
-                    password: password
-                }
-            }).then(res => {
-                console.log(res.data);
-                changeFilter(res.data)
-            }).catch(() => {
-                alert("An error occurred on the server")
-            })
+        checkData()
+        if (check){
+            console.log("-----------");
+            console.log(filter);
+            axios.post("http://localhost:8080/api/inventory_type/filter", filter,
+                {
+                    auth: {
+                        username: username,
+                        password: password
+                    }
+                }).then(res => {
+                    console.log(res.data);
+                    changeFilter(res.data)
+                }).catch(() => {
+                    alert("An error occurred on the server")
+                })
+        } 
     }
 
     const filtredInput = (event) => {
