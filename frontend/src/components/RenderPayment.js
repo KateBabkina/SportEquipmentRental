@@ -4,7 +4,6 @@ import qr from "../images/QR-code.JPG"
 
 function RenderAboutEquipment({ booking }) {
 
-    const [check, setCheck] = useState(false)
     const [data, setData] = useState({
         numderCard: 0,
         yearCard: 0,
@@ -22,32 +21,41 @@ function RenderAboutEquipment({ booking }) {
     }
 
 
-    const handlePaymentButton = () => {
-        checkData()
+    const handlePaymentButton = (e) => {
+
+        var check = checkData(e)
+        console.log(check);
         if (check){
             console.log(data);
             window.location.href = "/reccomendation"
         } 
     }
 
-    function checkData(){
-        setCheck(false)
+    function checkData(e){
 
         var numderCard = document.getElementById("numderCard").value
         var yearCard = document.getElementById("yearCard").value
         var monthCard = document.getElementById("monthCard").value
         var cvc = document.getElementById("cvc").value
 
-        if (numderCard.lenght !== 16){
+        if (numderCard.length !== 16){
+            e.preventDefault()
             alert("Проверьте номер карты")
-        } else if (monthCard.lenght !== 2){
+            return false
+        } else if (monthCard.length !== 2){
+            e.preventDefault()
             alert("Проверьте месяц")
-        } else if (yearCard.lenght !== 2){
+            return false
+        } else if (yearCard.length !== 2){
+            e.preventDefault()
             alert("Проверьте год")
-        } else if (cvc.lenght !== 3) {
+            return false
+        } else if (cvc.length !== 3) {
+            e.preventDefault()
             alert("Проверьте CVC")
+            return false
         } else {
-            setCheck(true)
+            return true
         }
         
     }
@@ -119,7 +127,7 @@ function RenderAboutEquipment({ booking }) {
                             </div>
                         </div>
                         <div className="button-pay">
-                            <button className="pay-button" type="submit" onClick={() => handlePaymentButton()}>
+                            <button className="pay-button" type="button" onClick={(e) => handlePaymentButton(e)}>
                                 Оплатить
                             </button>
                         </div>

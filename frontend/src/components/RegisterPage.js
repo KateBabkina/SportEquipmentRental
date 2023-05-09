@@ -52,11 +52,11 @@ function RegisterPage({ setIsLogged }) {
                     }
                 }).then(res => {
                     if (res.data.status === true) {
-                        localStorage.setItem("isLogged", true)
-                        setIsLogged(true)
-                        setResponse(res.data)
-                        localStorage.setItem("userId", res.data.person.id)
-                        window.location.href = "/"
+                        // localStorage.setItem("isLogged", true)
+                        // setIsLogged(true)
+                        // setResponse(res.data)
+                        // localStorage.setItem("userId", res.data.person.id)
+                        window.location.href = "/enter"
 
                     } else {
                         alert(res.data.message)
@@ -83,7 +83,7 @@ function RegisterPage({ setIsLogged }) {
                     </div>
                     <div className="fullname-box-field">
                         <input type="text" id="usermame" name="usermame" value={register.usermame}
-                            onChange={(e) => changeInputRegister(e)} required minLength="8" maxLength="35" size="20"></input>
+                            onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@ function RegisterPage({ setIsLogged }) {
                     </div>
                     <div className="account-box-field">
                         <input type="text" id="email" name="email" value={register.email}
-                            onChange={(e) => changeInputRegister(e)} required minLength="8" maxLength="35" size="20"></input>
+                            onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@ function RegisterPage({ setIsLogged }) {
                     </div>
                     <div className="firstpassword-box-field">
                         <input type="password" id="password" name="password" value={register.password}
-                            onChange={(e) => changeInputRegister(e)} required minLength="8" maxLength="35" size="20"></input>
+                            onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
                     </div>
                 </div>
 

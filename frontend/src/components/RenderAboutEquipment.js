@@ -1,13 +1,11 @@
-import React from "react";
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function RenderAboutEquipment({ item }) {
 
     var username = 'sport';
     var password = '123';
 
-    const [check, setCheck] = useState(false)
     const [rentRequest, setRentRequest] = useState({
         personId: Number(localStorage.getItem("userId")),
         inventoryTypeId: Number(localStorage.getItem("equipmentId")),
@@ -34,8 +32,9 @@ function RenderAboutEquipment({ item }) {
         }
     }
 
-    function checkData(){
-        setCheck(false)
+    
+
+    function checkData(e){
 
         var startDate = document.getElementById("startDate").value
         var endDate = document.getElementById("endDate").value
@@ -43,18 +42,29 @@ function RenderAboutEquipment({ item }) {
         var endTime = new Date(endDate)
 
         if (startDate === "" && endDate !== ""){
+            e.preventDefault()
             alert("Заполните дату начала")
+            return false
+            
         } else if (startDate !== "" && endDate === "") {
+            e.preventDefault()
             alert("Заполните дату окончания")
+            return false
+            
         } else if (startTime.getTime() > endTime.getTime()) {
+            e.preventDefault()
             alert("Дата начала не может превышать дату окончания")
+            return false
+            
         } else {
-            setCheck(true)
+            return true
         }
     }
 
-    const handleRentButton = () => {
-        checkData()
+    const handleRentButton = (e) => {
+
+        var check = checkData(e)
+        console.log(check);
         if (check) {
             console.log(rentRequest);
             axios.post(`http://localhost:8080/api/booking/add`, rentRequest,
@@ -65,13 +75,13 @@ function RenderAboutEquipment({ item }) {
                     }
                 }).then(res => {
                     if (res.data.status === true){
+                        e.returnValue = true;
                         console.log(res.data);
                         localStorage.setItem("bookingId", res.data.booking.id)
                         window.location.href = "/payment"
                     } else {
                         alert(res.data.message)
                     }
-                    
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })
@@ -127,7 +137,7 @@ function RenderAboutEquipment({ item }) {
                             }
 
                             <div className="button-rent">
-                                <button className="rent-button" type="submit" onClick={() => handleRentButton()}>
+                                <button className="rent-button" type="button" onClick={(e) => handleRentButton(e)}>
                                     <div className="rent-button-text">
                                         Арендовать
                                     </div>

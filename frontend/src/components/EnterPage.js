@@ -56,7 +56,7 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                         changeUser(res.data.person.id)
                         window.location.href = "/"  // при переходе на другую страницу не сохраняет состояние response
                     } else {
-                        alert(res.message)
+                        alert(res.data.message)
                     }
                 }).catch(() => {
                     alert("An error occurred on the server")
@@ -77,7 +77,7 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                         </div>
                         <div className="login-field">
                             <input type="text" id="email" name="email" value={login.email}
-                                onChange={(e) => changeInputLogin(e)} required minLength="8" maxLength="35" size="20"></input>
+                                onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
@@ -87,7 +87,7 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                         </div>
                         <div className="password-field">
                             <input type="password" id="password" name="password" value={login.password}
-                                onChange={(e) => changeInputLogin(e)} required minLength="8" maxLength="35" size="20"></input>
+                                onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
