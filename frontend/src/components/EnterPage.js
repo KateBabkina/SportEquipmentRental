@@ -1,8 +1,18 @@
 import React, { useState } from 'react'
+import {useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
+import {authorizeUser} from "../store/userSlice"
+
 import axios from 'axios';
 import validator from 'validator';
 
 const EnterPage = ({ setIsLogged, changeUser }) => {
+
+    const dispatch = useDispatch();
+
+    const authorize = (person) => {
+        dispatch(authorizeUser(person));
+    }
 
     const [login, setLogin] = useState(() => {
         return {
@@ -10,14 +20,6 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
             password: ""
         }
     })
-
-    const [response, setResponse] = useState(() => {
-        return {
-            message: "",
-            status: true,
-            person: null
-        }
-    });
 
     const changeInputLogin = event => {
         event.persist()
@@ -48,12 +50,8 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
                     }
                 }).then(res => {
                     if (res.data.status === true) {
-                        localStorage.setItem("isLogged", true)
-                        setIsLogged(true)
-                        setResponse(res.data)
                         console.log(res.data);
-                        localStorage.setItem("userId", res.data.person.id)
-                        changeUser(res.data.person.id)
+                        authorize(res.data.person)
                         window.location.href = "/"  // при переходе на другую страницу не сохраняет состояние response
                     } else {
                         alert(res.data.message)

@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import {useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
+import {authorizeUser} from "../store/userSlice"
 import axios from 'axios';
 import validator from 'validator';
 
@@ -12,14 +15,6 @@ function RegisterPage({ setIsLogged }) {
         }
     })
 
-    const [response, setResponse] = useState(() => {
-        return {
-            message: "",
-            status: true,
-            person: null
-        }
-    });
-
     const changeInputRegister = event => {
         event.persist()
         setRegister(prev => {
@@ -28,6 +23,12 @@ function RegisterPage({ setIsLogged }) {
                 [event.target.name]: event.target.value,
             }
         })
+    }
+
+    const dispatch = useDispatch();
+
+    const authorize = (person) => {
+        dispatch(authorizeUser(person));
     }
 
     var username = 'sport';
@@ -52,12 +53,8 @@ function RegisterPage({ setIsLogged }) {
                     }
                 }).then(res => {
                     if (res.data.status === true) {
-                        // localStorage.setItem("isLogged", true)
-                        // setIsLogged(true)
-                        // setResponse(res.data)
-                        // localStorage.setItem("userId", res.data.person.id)
+                        authorize(res.data.person)
                         window.location.href = "/enter"
-
                     } else {
                         alert(res.data.message)
                     }
@@ -107,12 +104,6 @@ function RegisterPage({ setIsLogged }) {
                     </div>
                 </div>
 
-                {
-                    response.status ?
-                        ""
-                        : <div>response.message</div>
-                }
-
                 <div className="action-box">
                     <div className="action-buttons">
 
@@ -123,6 +114,8 @@ function RegisterPage({ setIsLogged }) {
                                 </div>
                             </button>
                         </div>
+
+                        <a href="/enter">Войти, если есть аккаунт</a>
 
                     </div>
 

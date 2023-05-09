@@ -1,5 +1,8 @@
 import React from "react";
 import { useState, useEffect } from 'react';
+import {useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
+import {unauthorizeUser} from "../store/userSlice"
 import axios from 'axios';
 
 export default function EventPage({ setIsLogged }) {
@@ -8,29 +11,8 @@ export default function EventPage({ setIsLogged }) {
   var password = '123';
   var now = new Date();
 
-  const [booking, setBooking] = useState([])
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-
-  
-
-  useEffect(() => {
-    axios.get(`http://localhost:8080/api/person/profile?id=${localStorage.getItem("userId")}`,
-      {
-        auth: {
-          username: username,
-          password: password
-        }
-      }).then(res => {
-        console.log(res.data);
-        setBooking(res.data.person.bookings)
-        setName(res.data.person.name)
-        setEmail(res.data.person.email)
-
-      }).catch(() => {
-        alert("An error occurred on the server")
-      })
-  }, [])
+  const user = useSelector(state => state.user.user);
+  const dispatch = useDispatch();
 
   const cancelBooking = (id) => {
     axios.delete(`http://localhost:8080/api/booking/cancel?id=${id}`,
@@ -50,16 +32,12 @@ export default function EventPage({ setIsLogged }) {
 
 
   const logOut = () => {
-    localStorage.setItem("isLogged", false)
-    localStorage.setItem("equipmentId", -1)
-    localStorage.setItem("bookingId", -1)
-    setIsLogged(false)
-    localStorage.setItem("userId", -1)
+    dispatch(unauthorizeUser())
     window.location.href = "/"
   }
 
   const getHistory = () => {
-    return booking?.map((el) => {
+    return user.bookings?.map((el) => {
       return (<div className="row" key={el.id}>
 
         <div className="order-number-row">
@@ -120,7 +98,7 @@ export default function EventPage({ setIsLogged }) {
           ФИО:
         </div>
         <div className="full-name-user">
-          {name}
+          {user.name}
         </div>
 
         <div className="email-user-lable">
@@ -128,7 +106,7 @@ export default function EventPage({ setIsLogged }) {
         </div>
 
         <div className="email-user">
-          {email}
+          {user.email}
         </div>
 
       </div>
@@ -176,7 +154,7 @@ export default function EventPage({ setIsLogged }) {
 
         <div className="information-about-orders-table-wrapper">
           <div className="table-rows">
-            {booking?.length === 0 ? <h3>Пусто</h3> : getHistory()}
+            {user.bookings?.length === 0 ? <h3>Пусто</h3> : getHistory()}
           </div>
         </div>
 

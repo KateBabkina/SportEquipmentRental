@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {useSelector} from "react-redux"
 import logo from "../images/person.png";
 
-function Header({ isLogged }) {
+function Header() {
 
+    const isLogged = useSelector(state => state.user.isLogged);
 
     return (
     <header className="header">

@@ -1,10 +1,20 @@
 import React from "react";
+import {useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
+import {setEquipmentForRent} from "../store/userSlice"
 
 function Item({ item }) {
 
+  const isLogged = useSelector(state => state.user.isLogged);
+  const dispatch = useDispatch();
+
+  const preRent = (item) => {
+    dispatch(setEquipmentForRent(item))
+  }
+
   const handleRentButton = () => {
-    if (localStorage.getItem("isLogged") === "true"){
-      localStorage.setItem("equipmentId", item.id)
+    if (isLogged === true){
+      preRent(item)
       window.location.href = "/about"
     } else {
       window.location.href = "/enter"
