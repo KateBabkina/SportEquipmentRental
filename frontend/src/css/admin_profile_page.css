@@ -3,7 +3,7 @@
 
 
 .body{
-    height: 1600px;
+    height: 800px;
 }
 
 /*Стили шапки*/
@@ -75,7 +75,7 @@
 
 /* Начало Страница Спортивного инвентаря */
 .base-part-sportEquipment-page {
-    height: 1400px;
+    height: 800px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
@@ -86,16 +86,16 @@
     margin-top: 50px;
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 1061px;
+    height: 800px;
     width: 100%;
 }
 
 .profile-wrapper {
     display: grid;
-    height: 1400px;
+    height: 800px;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.5fr 2.3fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.7fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
     max-width: 100%;
@@ -178,7 +178,7 @@
     margin-bottom: 40px;
 }
 
-.table-wrapper{
+.information-about-orders-table-wrapper{
     overflow: auto;
     overflow-x: hidden;
     height: 100%;
