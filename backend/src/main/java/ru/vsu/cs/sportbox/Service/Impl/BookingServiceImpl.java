@@ -63,6 +63,19 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     @Transactional
+    public BookingResponse checkBooking(BookingCreateDto bookingCreateDto) {
+        Booking booking = bookingMapper.bookingCreateDtoToBooking(bookingCreateDto);
+        if (booking == null) {
+            return new BookingResponse("Нет свободного инвентаря с указанными параметрами.", false, null);
+        }
+        if (booking.getPerson().getIsBaned()){
+            return new BookingResponse("Ваш аккаунт был заблокирован за нарушение условий аренды. Обратитесь к сотрудникам компании для разблокировки аккаунта.", false, null);
+        }
+        return new BookingResponse("Заказ может быть оформлен.", true, booking);
+    }
+
+    @Override
+    @Transactional
     public BookingResponse getBookingById(int id) {
         Booking booking = bookingRepository.findById(id);
         if (booking == null) {

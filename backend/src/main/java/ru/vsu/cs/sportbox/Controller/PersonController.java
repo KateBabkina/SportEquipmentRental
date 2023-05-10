@@ -5,18 +5,15 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.vsu.cs.sportbox.Data.Dto.*;
-import ru.vsu.cs.sportbox.Data.Model.Inventory;
 import ru.vsu.cs.sportbox.Data.Model.Person;
 import ru.vsu.cs.sportbox.Responses.*;
 import ru.vsu.cs.sportbox.Service.PersonService;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/person")
@@ -32,6 +29,14 @@ public class PersonController {
     public ResponseEntity<PersonResponse> addNewPerson(@RequestBody PersonCreateDto personCreateDto) {
         HttpStatus httpStatus = HttpStatus.OK;
         PersonResponse registrationResponse = personService.addNewPerson(personCreateDto);
+        return new ResponseEntity<>(registrationResponse, httpStatus);
+    }
+
+    @PostMapping("/add_admin")
+    @Operation(summary = "Регистрация администратора")
+    public ResponseEntity<PersonResponse> addNewAdmin(@RequestBody PersonCreateDto personCreateDto) {
+        HttpStatus httpStatus = HttpStatus.OK;
+        PersonResponse registrationResponse = personService.addNewAdmin(personCreateDto);
         return new ResponseEntity<>(registrationResponse, httpStatus);
     }
 

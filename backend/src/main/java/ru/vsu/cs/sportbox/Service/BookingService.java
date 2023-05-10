@@ -11,6 +11,7 @@ import java.util.List;
 public interface BookingService {
     BookingResponse deleteBookingById(int id);
     BookingResponse addNewBooking(BookingCreateDto bookingCreateDto);
+    BookingResponse checkBooking(BookingCreateDto bookingCreateDto);
 
     BookingResponse getBookingById(int id);
 

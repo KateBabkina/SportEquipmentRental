@@ -41,6 +41,18 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
+    public PersonResponse addNewAdmin(PersonCreateDto personCreateDto) {
+        Person person = personMapper.personCreateDtoToAdmin(personCreateDto);
+
+        if (personRepository.existsByEmail(person.getEmail()))
+            return new PersonResponse("К указанной почте уже привязан аккаунт.", false, null);
+
+        personRepository.save(person);
+        return new PersonResponse("Регистрация прошла успешно.", true, person);
+    }
+
+    @Override
+    @Transactional
     public PersonResponse loginPerson(PersonLoginDto personLoginDto) {
         Person person = personRepository.findByEmail(personLoginDto.getEmail());
         if (person != null) {
