@@ -27,10 +27,13 @@ const userSlice = createSlice({
         },
         setBooking(state, action) {
             state.booking = action.payload
+        },
+        updateUser(state, action){
+            state.user = action.payload
         }
     },
 });
 
-export const {authorizeUser, unauthorizeUser, setEquipmentForRent,  setBooking} = userSlice.actions;
+export const {authorizeUser, unauthorizeUser, setEquipmentForRent,  setBooking, updateUser} = userSlice.actions;
 
 export default userSlice.reducer;

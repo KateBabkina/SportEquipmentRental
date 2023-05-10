@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import {useSelector} from "react-redux"
 import {useDispatch} from "react-redux"
-import {unauthorizeUser} from "../store/userSlice"
+import {unauthorizeUser, updateUser} from "../store/userSlice"
 import axios from 'axios';
 
 export default function EventPage({ setIsLogged }) {
@@ -11,8 +11,33 @@ export default function EventPage({ setIsLogged }) {
   var password = '123';
   var now = new Date();
 
-  const user = useSelector(state => state.user.user);
+  const userId = useSelector(state => state.user.userId);
+  const [user, setUser] = useState({})
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    let cleanupFunction = false;
+    const fetchData = async () => {
+        await axios.get(`https://sportbox.up.railway.app/api/person/profile?id=${userId}`,
+            {
+                auth: {
+                    username: username,
+                    password: password
+                }
+            }).then(res => {
+                console.log(res.data);
+                if (!cleanupFunction) {
+                  dispatch(updateUser(res.data.person))
+                  setUser(res.data.person)
+                }
+
+            }).catch(() => {
+                alert("An error occurred on the server")
+            })
+    };
+    fetchData();
+    return () => cleanupFunction = true;
+}, [])
 
   const cancelBooking = (id) => {
     axios.delete(`https://sportbox.up.railway.app/api/booking/cancel?id=${id}`,
