@@ -38,8 +38,8 @@ public class SecurityConfig{
     @Bean
     public UserDetailsService userDetailsService(){
         UserDetails user = User.builder()
-                .username("sport")
-                .password(passwordEncoder().encode("123"))
+                .username(System.getenv("SECURITY_USERNAME"))
+                .password(passwordEncoder().encode(System.getenv("SECURITY_PASSWORD")))
                 .roles("USER")
                 .build();
 
