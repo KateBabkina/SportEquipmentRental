@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
-import {setBookingId} from "../store/userSlice"
+import { setBookingId } from "../store/userSlice"
 import axios from 'axios';
 import qr from "../images/QR-code.JPG"
 
@@ -29,23 +29,23 @@ function PaymentPage() {
             }
         })
     }
-    
-    function checkData(e){
+
+    function checkData(e) {
 
         var numderCard = document.getElementById("numderCard").value
         var yearCard = document.getElementById("yearCard").value
         var monthCard = document.getElementById("monthCard").value
         var cvc = document.getElementById("cvc").value
 
-        if (numderCard.length !== 16){
+        if (numderCard.length !== 16) {
             e.preventDefault()
             alert("Проверьте номер карты")
             return false
-        } else if (monthCard.length !== 2){
+        } else if (monthCard.length !== 2) {
             e.preventDefault()
             alert("Проверьте месяц")
             return false
-        } else if (yearCard.length !== 2){
+        } else if (yearCard.length !== 2) {
             e.preventDefault()
             alert("Проверьте год")
             return false
@@ -56,46 +56,41 @@ function PaymentPage() {
         } else {
             return true
         }
-        
+
     }
 
     const personId = useSelector(state => state.user.userId)
-
-    const dispatch = useDispatch();
-    const bookingId = (id) => {
-        dispatch(setBookingId(id))
-    }
 
     const handlePaymentButton = (e) => {
 
         var check = checkData(e)
         console.log(check);
-        if (check){
+        if (check) {
             console.log(data);
-            axios.post(`http://localhost:8080/api/booking/add`, {
+            axios.post(`https://sportbox.up.railway.app/api/booking/add`, {
                 personId: personId,
                 inventoryTypeId: booking.inventory.inventoryType.id,
                 startDate: booking.startDate,
                 endDate: booking.endDate,
                 size: booking.inventory.size
             },
-            {
-                auth: {
-                    username: username,
-                    password: password
-                }
-            }).then(res => {
-                if (res.data.status === true) {
-                    console.log(res.data);
-                    window.location.href = "/reccomendation"
-                } else {
-                    alert(res.data.message)
-                }
-            }).catch(() => {
-                alert("An error occurred on the server")
-            })
-           
-        } 
+                {
+                    auth: {
+                        username: username,
+                        password: password
+                    }
+                }).then(res => {
+                    if (res.data.status === true) {
+                        console.log(res.data);
+                        window.location.href = "/reccomendation"
+                    } else {
+                        alert(res.data.message)
+                    }
+                }).catch(() => {
+                    alert("An error occurred on the server")
+                })
+
+        }
     }
 
     return (
@@ -106,24 +101,22 @@ function PaymentPage() {
                         <div className="information-about-order-wrapper">
 
                             <div className="order-equipment">
-                                {equipmentForRent.inventory.name}
+                                {booking.inventory.name}
                             </div>
 
                             <div className="order-data">
-                                С {dataForBooking.startDate} по {dataForBooking.endDate}
+                                С {booking.startDate} по {booking.endDate}
                             </div>
-
-                            <div className="order-equipment-size">
-                                {dataForBooking.inventory.size} размер
-                            </div>
-
-
                             {
-                                equipmentForRent.inventory.isSizable ?
-                                    <div className="order-price">
-                                        {equipmentForRent.price} руб.
+                                booking.inventory.isSizable ?
+                                    <div className="order-equipment-size">
+                                        {booking.inventory.size} размер
                                     </div> : false
                             }
+                            
+                            <div className="order-price">
+                                {booking.price} руб.
+                            </div>
 
 
                         </div>

@@ -16,7 +16,7 @@ function FilterEventField({ changeFilter }) {
     })
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/inventory_type/get_all",
+        axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {
                 auth: {
                     username: username,
@@ -51,7 +51,7 @@ function FilterEventField({ changeFilter }) {
     const sendFilter = () => {
         checkData()
         if (check) {
-            axios.post("http://localhost:8080/api/event/filter", filterForEvent,
+            axios.post("https://sportbox.up.railway.app/api/event/filter", filterForEvent,
                 {
                     auth: {
                         username: username,

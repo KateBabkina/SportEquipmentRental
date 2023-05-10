@@ -41,7 +41,7 @@ function RegisterPage({ setIsLogged }) {
         } else if (!validator.isStrongPassword(register.password, { minSymbols: 0 })) {
             alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
-            axios.post("http://localhost:8080/api/person/add", {
+            axios.post("https://sportbox.up.railway.app/api/person/add", {
                 name: register.usermame,
                 email: register.email,
                 password: register.password

@@ -21,7 +21,7 @@ function FilterField({ changeFilter }) {
     })
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/inventory_type/get_all",
+        axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {
                 auth: {
                     username: username,
@@ -59,7 +59,7 @@ function FilterField({ changeFilter }) {
         if (check){
             console.log("-----------");
             console.log(filter);
-            axios.post("http://localhost:8080/api/inventory_type/filter", filter,
+            axios.post("https://sportbox.up.railway.app/api/inventory_type/filter", filter,
                 {
                     auth: {
                         username: username,

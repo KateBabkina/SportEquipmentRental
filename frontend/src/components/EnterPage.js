@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import {useSelector} from "react-redux"
 import {useDispatch} from "react-redux"
 import {authorizeUser} from "../store/userSlice"
 
@@ -39,7 +38,7 @@ const EnterPage = ({ setIsLogged, changeUser }) => {
         if (!validator.isEmail(login.email)) {
             alert("You did not enter email")
         } else {
-            axios.post("http://localhost:8080/api/person/login", {
+            axios.post("https://sportbox.up.railway.app/api/person/login", {
                 email: login.email,
                 password: login.password
             },

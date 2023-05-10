@@ -14,7 +14,7 @@ function EquipmentPage() {
   const [currentItems, setCurrentItems] = useState(itemList)
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/inventory_type/get_all", 
+    axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all", 
       {
         auth: {
           username: username,

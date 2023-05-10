@@ -14,7 +14,7 @@ function EventPage({ isLogged }){
 
 
   useEffect(() => {
-    axios.post("http://localhost:8080/api/event/filter", {},
+    axios.post("https://sportbox.up.railway.app/api/event/filter", {},
       {
         auth: {
           username: username,

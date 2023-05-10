@@ -7,6 +7,9 @@ import axios from 'axios';
 
 
 function AboutEquipment() {
+    
+    var username = 'sport';
+    var password = '123';
 
     const equipmentForRent = useSelector(state => state.user.equipmentForRent)
     const personId = useSelector(state => state.user.userId)

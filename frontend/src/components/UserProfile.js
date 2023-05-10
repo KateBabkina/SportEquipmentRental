@@ -15,7 +15,7 @@ export default function EventPage({ setIsLogged }) {
   const dispatch = useDispatch();
 
   const cancelBooking = (id) => {
-    axios.delete(`http://localhost:8080/api/booking/cancel?id=${id}`,
+    axios.delete(`https://sportbox.up.railway.app/api/booking/cancel?id=${id}`,
     {
       auth: {
         username: username,
