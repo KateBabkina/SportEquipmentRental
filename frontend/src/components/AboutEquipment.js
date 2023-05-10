@@ -2,15 +2,19 @@ import React from "react";
 import { useState } from 'react';
 import {useSelector} from "react-redux"
 import {useDispatch} from "react-redux"
-import {setDataForBooking} from "../store/userSlice"
+import {setBooking} from "../store/userSlice"
 import axios from 'axios';
 
 
 function AboutEquipment() {
 
     const equipmentForRent = useSelector(state => state.user.equipmentForRent)
+    const personId = useSelector(state => state.user.userId)
+    const inventoryTypeId = equipmentForRent.id
 
     const [rentRequest, setRentRequest] = useState({
+        personId: personId,
+        inventoryTypeId: inventoryTypeId,
         startDate: "",
         endDate: "",
         size: 0
@@ -62,18 +66,31 @@ function AboutEquipment() {
     }
 
     const dispatch = useDispatch()
-    const sendDataForBooking = (request) => {
-        dispatch(setDataForBooking(request))
+    const sendBooking = (request) => {
+        dispatch(setBooking(request))
     }
 
     const handleRentButton = (e) => {
-
         var check = checkData(e)
-        console.log(check);
         if (check) {
             console.log(rentRequest);
-            sendDataForBooking(rentRequest)
-            window.location.href = "/payment"
+            axios.post(`https://sportbox.up.railway.app/api/booking/check`, rentRequest,
+            {
+                auth: {
+                    username: username,
+                    password: password
+                }
+            }).then(res => {
+                if (res.data.status === true) {
+                    console.log(res.data);
+                    sendBooking(res.data.booking)
+                    window.location.href = "/payment"
+                } else {
+                    alert(res.data.message)
+                }
+            }).catch(() => {
+                alert("An error occurred on the server")
+            })
         } 
     }
 

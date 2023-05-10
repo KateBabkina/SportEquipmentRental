@@ -12,7 +12,7 @@ function PaymentPage() {
     var username = 'sport';
     var password = '123';
 
-    const equipmentForRent = useSelector(state => state.user.equipmentForRent)
+    const booking = useSelector(state => state.user.booking)
 
     const [data, setData] = useState({
         numderCard: 0,
@@ -60,9 +60,6 @@ function PaymentPage() {
     }
 
     const personId = useSelector(state => state.user.userId)
-    const inventoryTypeId = equipmentForRent.id
-    const dataForBooking = useSelector(state => state.user.dataForBooking)
-    console.log(equipmentForRent);
 
     const dispatch = useDispatch();
     const bookingId = (id) => {
@@ -77,10 +74,10 @@ function PaymentPage() {
             console.log(data);
             axios.post(`http://localhost:8080/api/booking/add`, {
                 personId: personId,
-                inventoryTypeId: inventoryTypeId,
-                startDate: dataForBooking.startDate,
-                endDate: dataForBooking.endDate,
-                size: dataForBooking.size
+                inventoryTypeId: booking.inventory.inventoryType.id,
+                startDate: booking.startDate,
+                endDate: booking.endDate,
+                size: booking.inventory.size
             },
             {
                 auth: {
@@ -90,7 +87,6 @@ function PaymentPage() {
             }).then(res => {
                 if (res.data.status === true) {
                     console.log(res.data);
-                    bookingId(res.data.booking.id)
                     window.location.href = "/reccomendation"
                 } else {
                     alert(res.data.message)

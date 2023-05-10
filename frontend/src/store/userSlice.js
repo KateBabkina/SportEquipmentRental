@@ -7,8 +7,7 @@ const userSlice = createSlice({
         user: {},
         isLogged: false,
         equipmentForRent: {},
-        dataForBooking: {},
-        bookingId: -1
+        booking: {}
     }, 
     reducers: {
         authorizeUser(state, action) {
@@ -20,22 +19,18 @@ const userSlice = createSlice({
             state.user = {}
             state.userId = -1
             state.isLogged = false
-            state.dataForBooking = {}
             state.equipmentForRent = {}
-            state.bookingId = -1
+            state.booking = {}
         },
         setEquipmentForRent(state, action) {
             state.equipmentForRent = action.payload
         },
-        setDataForBooking(state, action) {
-            state.dataForBooking = action.payload
-        },
-        setBookingId(state, action) {
-            state.bookingId = action.payload
+        setBooking(state, action) {
+            state.booking = action.payload
         }
     },
 });
 
-export const {authorizeUser, unauthorizeUser, setEquipmentForRent, setDataForBooking, setBookingId} = userSlice.actions;
+export const {authorizeUser, unauthorizeUser, setEquipmentForRent,  setBooking} = userSlice.actions;
 
 export default userSlice.reducer;
