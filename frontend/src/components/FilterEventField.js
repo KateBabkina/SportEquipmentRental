@@ -7,7 +7,6 @@ function FilterEventField({ changeFilter }) {
     var username = 'sport';
     var password = '123';
 
-    const [check, setCheck] = useState(false)
     const [typesForEvent, setTypesForEvent] = useState([])
     const [filterForEvent, setFilterForEvent] = useState({
         inventoryType: "",
@@ -30,7 +29,6 @@ function FilterEventField({ changeFilter }) {
     }, [])
 
     function checkData() {
-        setCheck(false)
 
         var startDate = document.getElementById("startDate").value
         var endDate = document.getElementById("endDate").value
@@ -39,17 +37,20 @@ function FilterEventField({ changeFilter }) {
 
         if (startDate === "" && endDate !== "") {
             alert("Заполните дату начала")
+            return false
         } else if (startDate !== "" && endDate === "") {
             alert("Заполните дату окончания")
+            return false
         } else if (startTime.getTime() > endTime.getTime()) {
             alert("Дата начала не может превышать дату окончания")
+            return false
         } else {
-            setCheck(true)
+            return true
         }
     }
 
     const sendFilter = () => {
-        checkData()
+        var check = checkData()
         if (check) {
             axios.post("https://sportbox.up.railway.app/api/event/filter", filterForEvent,
                 {
@@ -135,7 +136,7 @@ function FilterEventField({ changeFilter }) {
                 </div>
 
                 <div className="button-find">
-                    <button className="find-button" type="submit" onClick={sendFilter}>
+                    <button className="find-button" type="submit" onClick={() => sendFilter()}>
                         <div className="find-button-text">
                             Найти
                         </div>

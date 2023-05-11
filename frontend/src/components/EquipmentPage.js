@@ -4,6 +4,7 @@ import ItemList from "./ItemList";
 import FilterField from "./FiltreField";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
+import Pagination from "./Pagination";
 
 function EquipmentPage() {
 
@@ -14,6 +15,9 @@ function EquipmentPage() {
   const [itemList, setItemList] = useState([])
   const [currentItems, setCurrentItems] = useState(itemList)
   const [loading, setLoading] = useState(true)
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage] = useState(6)
 
   useEffect(() => {
     setLoading(true)
@@ -39,6 +43,15 @@ function EquipmentPage() {
   }
   
 
+  const lastItemIndex = currentPage * itemsPerPage
+  const firstItemIndex = lastItemIndex - itemsPerPage
+  const currentItemsOnPage = currentItems.slice(firstItemIndex, lastItemIndex) 
+
+
+  const paginate = (pageNumder) => {
+    setCurrentPage(pageNumder)
+  }
+
   return (
     <div className="base-part-sportEquipment-page">
       {
@@ -51,7 +64,8 @@ function EquipmentPage() {
           :
           <div>
             <FilterField changeFilter={changeFilter} />
-            <ItemList items={currentItems} />
+            <ItemList items={currentItemsOnPage} />
+            <Pagination itemsPerPage={itemsPerPage}  totalItems={currentItems.length} paginate={paginate}/>
           </div>
       }
     </div>

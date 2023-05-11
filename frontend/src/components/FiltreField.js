@@ -10,7 +10,6 @@ function FilterField({ changeFilter }) {
     var username = 'sport';
     var password = '123';
 
-    const [check, setCheck] = useState(false)
     const [types, setTypes] = useState([])
     const [filter, setFilter] = useState({
         inventoryType: "",
@@ -36,7 +35,6 @@ function FilterField({ changeFilter }) {
     }, [])
 
     function checkData(){
-        setCheck(false)
 
         var startDate = document.getElementById("startDate").value
         var endDate = document.getElementById("endDate").value
@@ -45,17 +43,20 @@ function FilterField({ changeFilter }) {
 
         if (startDate === "" && endDate !== ""){
             alert("Заполните дату начала")
+            return false
         } else if (startDate !== "" && endDate === "") {
             alert("Заполните дату окончания")
+            return false
         } else if (startTime.getTime() > endTime.getTime()) {
             alert("Дата начала не может превышать дату окончания")
+            return false
         } else {
-            setCheck(true)
+            return true
         }
     }
 
     const sendFilter = () => {
-        checkData()
+        var check = checkData()
         if (check){
             console.log("-----------");
             console.log(filter);
@@ -166,7 +167,7 @@ function FilterField({ changeFilter }) {
                 </div>
 
                 <div className="button-find">
-                    <button className="find-button" type="submit" onClick={sendFilter}>
+                    <button className="find-button" type="submit" onClick={() => sendFilter()}>
                         <div className="find-button-text">
                             Найти
                         </div>
