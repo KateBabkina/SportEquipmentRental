@@ -2,8 +2,10 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
-import { setBookingId } from "../store/userSlice"
+import { setBooking } from "../store/userSlice"
+
 import axios from 'axios';
+import validator from 'validator';
 import qr from "../images/QR-code.JPG"
 
 
@@ -30,6 +32,42 @@ function PaymentPage() {
         })
     }
 
+    const checkMonthCard = (monthCard) => {
+        if(monthCard.length !== 2){
+            return false
+        } 
+        if(monthCard.charAt(0) === "0"){
+            var num = Number(monthCard.charAt(1))
+            if(num < 1 || num > 9){
+                return false
+            }
+        } else {
+            var num = Number(monthCard)
+            if(num < 1 || num > 12){
+                return false
+            }
+        }
+        return true
+    }
+
+    const checkYearCard = (yearCard) => {
+        if(yearCard.length !== 2){
+            return false
+        } 
+        if(yearCard.charAt(0) === "0"){
+            var num = Number(yearCard.charAt(1))
+            if(num < 1 || num > 9){
+                return false
+            }
+        } else {
+            var num = Number(yearCard)
+            if(num < 1 || num > 99){
+                return false
+            }
+        }
+        return true
+    }
+
     function checkData(e) {
 
         var numderCard = document.getElementById("numderCard").value
@@ -37,15 +75,15 @@ function PaymentPage() {
         var monthCard = document.getElementById("monthCard").value
         var cvc = document.getElementById("cvc").value
 
-        if (numderCard.length !== 16) {
+        if (!validator.isCreditCard(numderCard)) {
             e.preventDefault()
             alert("Проверьте номер карты")
             return false
-        } else if (monthCard.length !== 2) {
+        } else if (!checkMonthCard(monthCard)) {
             e.preventDefault()
             alert("Проверьте месяц")
             return false
-        } else if (yearCard.length !== 2) {
+        } else if (!checkYearCard(yearCard)) {
             e.preventDefault()
             alert("Проверьте год")
             return false
@@ -60,6 +98,7 @@ function PaymentPage() {
     }
 
     const personId = useSelector(state => state.user.userId)
+    const dispatch = useDispatch()
 
     const handlePaymentButton = (e) => {
 
@@ -82,6 +121,7 @@ function PaymentPage() {
                 }).then(res => {
                     if (res.data.status === true) {
                         console.log(res.data);
+                        dispatch(setBooking(res.data.booking))
                         window.location.href = "/reccomendation"
                     } else {
                         alert(res.data.message)
@@ -105,10 +145,11 @@ function PaymentPage() {
                             </div>
 
                             <div className="order-data">
-                                С {booking.startDate} по {booking.endDate}
+                                С {booking.startDate.substring(0, 10)} по {booking.endDate.substring(0, 10)}
+                                
                             </div>
                             {
-                                booking.inventory.isSizable ?
+                                booking.inventory.inventoryType.isSizable ?
                                     <div className="order-equipment-size">
                                         {booking.inventory.size} размер
                                     </div> : false

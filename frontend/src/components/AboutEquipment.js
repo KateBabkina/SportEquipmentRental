@@ -14,6 +14,7 @@ function AboutEquipment() {
     const equipmentForRent = useSelector(state => state.user.equipmentForRent)
     const personId = useSelector(state => state.user.userId)
     const inventoryTypeId = equipmentForRent.id
+    const now = new Date()
 
     const [rentRequest, setRentRequest] = useState({
         personId: personId,
@@ -63,6 +64,10 @@ function AboutEquipment() {
             alert("Дата начала не может превышать дату окончания")
             return false
             
+        } else if (startTime.getTime() < now.getTime() || endTime.getTime() < now.getTime()) {
+            e.preventDefault()
+            alert("Дата не может находиться в прошлом")
+            return false
         } else {
             return true
         }
