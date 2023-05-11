@@ -40,6 +40,7 @@ function EquipmentPage() {
   const changeFilter = (items) => {
     setCurrentItems(items)
     console.log(items);
+    setCurrentPage(1)
   }
   
 

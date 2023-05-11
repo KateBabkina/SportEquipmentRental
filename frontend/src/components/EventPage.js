@@ -39,6 +39,7 @@ function EventPage({ isLogged }) {
 
   const changeFilter = (items) => {
     setCurrentEvents(items)
+    setCurrentPage(1)
   }
 
   const lastEventIndex = currentPage * eventsPerPage
