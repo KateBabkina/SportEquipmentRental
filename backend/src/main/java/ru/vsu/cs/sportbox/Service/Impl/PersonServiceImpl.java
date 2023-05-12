@@ -17,6 +17,7 @@ import ru.vsu.cs.sportbox.Responses.InventoryResponse;
 import ru.vsu.cs.sportbox.Responses.PersonResponse;
 import ru.vsu.cs.sportbox.Service.PersonService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -40,8 +41,20 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
+    public PersonResponse addNewAdmin(PersonCreateDto personCreateDto) {
+        Person person = personMapper.personCreateDtoToAdmin(personCreateDto);
+
+        if (personRepository.existsByEmail(person.getEmail()))
+            return new PersonResponse("К указанной почте уже привязан аккаунт.", false, null);
+
+        personRepository.save(person);
+        return new PersonResponse("Регистрация прошла успешно.", true, person);
+    }
+
+    @Override
+    @Transactional
     public PersonResponse loginPerson(PersonLoginDto personLoginDto) {
-        Person person = personRepository.findByEmail(personLoginDto.getEmail()).get(0);
+        Person person = personRepository.findByEmail(personLoginDto.getEmail());
         if (person != null) {
             if (person.getIsBaned()){
                 return new PersonResponse("Ваш аккаунт был заблокирован за нарушение условий аренды. Обратитесь к сотрудникам компании для разблокировки аккаунта.", false, person);
@@ -73,9 +86,9 @@ public class PersonServiceImpl implements PersonService {
     @Override
     @Transactional
     public List<Person> filterPerson(PersonFilterDto personFilterDto) {
-        List<Person> persons;
+        List<Person> persons = new ArrayList<>();
         if (StringUtils.isNotBlank(personFilterDto.getEmail())){
-            persons = personRepository.findByEmail(personFilterDto.getEmail());
+            persons.add(personRepository.findByEmail(personFilterDto.getEmail()));
         } else {
             persons = personRepository.findAll();
         }

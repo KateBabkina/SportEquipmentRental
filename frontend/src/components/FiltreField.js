@@ -20,7 +20,7 @@ function FilterField({ changeFilter }) {
     })
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/inventory_type/get_all",
+        axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {
                 auth: {
                     username: username,
@@ -34,21 +34,45 @@ function FilterField({ changeFilter }) {
             })
     }, [])
 
+    function checkData(){
+
+        var startDate = document.getElementById("startDate").value
+        var endDate = document.getElementById("endDate").value
+        var startTime = new Date(startDate)
+        var endTime = new Date(endDate)
+
+        if (startDate === "" && endDate !== ""){
+            alert("Заполните дату начала")
+            return false
+        } else if (startDate !== "" && endDate === "") {
+            alert("Заполните дату окончания")
+            return false
+        } else if (startTime.getTime() > endTime.getTime()) {
+            alert("Дата начала не может превышать дату окончания")
+            return false
+        } else {
+            return true
+        }
+    }
+
     const sendFilter = () => {
-        console.log("-----------");
-        console.log(filter);
-        axios.post("http://localhost:8080/api/inventory_type/filter", filter,
-            {
-                auth: {
-                    username: username,
-                    password: password
-                }
-            }).then(res => {
-                console.log(res.data);
-                changeFilter(res.data)
-            }).catch(() => {
-                alert("An error occurred on the server")
-            })
+        var check = checkData()
+        if (check){
+            console.log("-----------");
+            console.log(filter);
+            axios.post("https://sportbox.up.railway.app/api/inventory_type/filter", filter,
+                {
+                    auth: {
+                        username: username,
+                        password: password
+                    }
+                }).then(res => {
+                    console.log(res.data);
+                    changeFilter(res.data)
+                }).catch(() => {
+                    alert("An error occurred on the server")
+                })
+        } 
     }
 
     const filtredInput = (event) => {
@@ -143,7 +167,7 @@ function FilterField({ changeFilter }) {
                 </div>
 
                 <div className="button-find">
-                    <button className="find-button" type="submit" onClick={sendFilter}>
+                    <button className="find-button" type="submit" onClick={() => sendFilter()}>
                         <div className="find-button-text">
                             Найти
                         </div>

@@ -32,12 +32,10 @@ public class EventSpecification {
 
                 Join<Event, InventoryType> inventoryTypeJoin = root.join("inventoryType", JoinType.LEFT);
 
-                if (StringUtils.isNotBlank(inventoryType))
-                {
+                if (StringUtils.isNotBlank(inventoryType)) {
                     predicates.add(criteriaBuilder.equal(inventoryTypeJoin.get("type"), inventoryType));
                 }
-                if (StringUtils.isNotBlank(startDate) && StringUtils.isNotBlank(endDate))
-                {
+                if (StringUtils.isNotBlank(startDate) && StringUtils.isNotBlank(endDate)) {
                     Date sDate;
                     Date eDate;
                     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -48,8 +46,17 @@ public class EventSpecification {
                         throw new RuntimeException(e);
                     }
 
-                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.<Date>get("startDate"), sDate));
-                    predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.<Date>get("endDate"), eDate));
+                    predicates.add(criteriaBuilder.or(
+                            criteriaBuilder.or(
+                                    criteriaBuilder.and(criteriaBuilder.lessThanOrEqualTo(root.<Date>get("startDate"), sDate),
+                                            criteriaBuilder.greaterThanOrEqualTo(root.<Date>get("endDate"), eDate)),
+                                    criteriaBuilder.and(criteriaBuilder.greaterThanOrEqualTo(root.<Date>get("startDate"), sDate),
+                                            criteriaBuilder.lessThanOrEqualTo(root.<Date>get("endDate"), eDate))),
+                            criteriaBuilder.or(
+                                    criteriaBuilder.and(criteriaBuilder.lessThanOrEqualTo(root.<Date>get("startDate"), sDate),
+                                            criteriaBuilder.and(criteriaBuilder.lessThanOrEqualTo(root.<Date>get("endDate"), eDate), criteriaBuilder.greaterThanOrEqualTo(root.<Date>get("endDate"), sDate))),
+                                    criteriaBuilder.and(criteriaBuilder.and(criteriaBuilder.lessThanOrEqualTo(root.<Date>get("startDate"), eDate), criteriaBuilder.greaterThanOrEqualTo(root.<Date>get("startDate"), sDate)),
+                                            criteriaBuilder.greaterThanOrEqualTo(root.<Date>get("endDate"), eDate)))));
 
                 }
 

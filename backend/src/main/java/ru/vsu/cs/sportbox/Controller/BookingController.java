@@ -41,6 +41,14 @@ public class BookingController {
         return new ResponseEntity<>(bookingCreateResponse, httpStatus);
     }
 
+    @PostMapping("/check")
+    @Operation(summary = "Проверка на возможность создания нового заказа")
+    public ResponseEntity<BookingResponse> checkBooking(@RequestBody BookingCreateDto bookingCreateDto) {
+        HttpStatus httpStatus = HttpStatus.OK;
+        BookingResponse bookingCreateResponse = bookingService.checkBooking(bookingCreateDto);
+        return new ResponseEntity<>(bookingCreateResponse, httpStatus);
+    }
+
     @GetMapping("/get_by_id")
     @Operation(summary = "Получение информации о заказе по его id")
     public ResponseEntity<BookingResponse> getBookingById(@Parameter(description = "Уникальный идентификатор заказа")

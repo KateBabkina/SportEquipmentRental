@@ -23,7 +23,8 @@ public class Person {
 
     @Id
     @Column(name = "id", unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="person_identifier", sequenceName="person_sequence", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="person_identifier")
     private Integer id;
 
     @Column(name = "name")

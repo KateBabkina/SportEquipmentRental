@@ -54,7 +54,7 @@ public class BookingMapper {
         Instant eDateInstant = eDate.toInstant();
         long days = ChronoUnit.DAYS.between(sDateInstant,eDateInstant);
         double price = priceForDay * days;
-        for (Booking currBooking : person.getBookings()) {
+        for (Booking currBooking : Set.copyOf(person.getBookings())) {
             price += currBooking.getDebt();
             currBooking.setDebt(0.);
             bookingRepository.save(currBooking);

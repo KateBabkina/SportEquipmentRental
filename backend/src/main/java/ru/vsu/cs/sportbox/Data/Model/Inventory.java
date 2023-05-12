@@ -21,7 +21,8 @@ import java.util.Set;
 public class Inventory {
     @Id
     @Column(name = "id", unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="inventory_identifier", sequenceName="inventory_sequence", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="inventory_identifier")
     private Integer id;
 
     @Column(name = "name")
