@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Добавление мероприятия</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/css/admin_event_add_page.css" media="screen">
+
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="logo">
+            <a href="mainPage.html">SPORTBOX</a>
+        </div>
+
+        <div class="menu">
+
+            <ul class="left-menu">
+                <li><a href="">Главная</a></li>
+                <li><a href="">Оборудование</a></li>
+                <li><a href="">Мероприятия</a></li>
+                <li><a href="">Клиенты</a></li>
+                <li><a href="">Заказы</a></li>
+            </ul>
+            <ul class="right-menu">
+                <li><a href="loginPage.html">Профиль</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="base-part-registration">
+
+        <div class="centre-column-registration">
+            <form name="registration-form-wraper" method="POST" action="test.php">
+                <div class="create-label">
+                    Для добавления мероприятия введите данные
+                </div>
+
+                <div class="account-box">
+                    <div class="account-box-label">
+                        Название:
+                    </div>
+                    <div class="account-box-field">
+                        <input type="text" placeholder="example@example.ru" id="login" name="login" required minlength="4" maxlength="35" size="20">
+                    </div>
+                </div>
+
+                <div class="fullname-box">
+                    <div class="fullname-box-label">
+                        Тип оборудования:
+                    </div>
+                    <div class="field-type-equipment-box">
+                        <select id="field-type-equipment-box" name="type-equipment">
+                            <option value="Мяч">Выберите тип</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                            <option value="Мяч">Мяч</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="firstpassword-box">
+                    <div class="firstpassword-box-label">
+                        Цена, руб:
+                    </div>
+                    <div class="firstpassword-box-field">
+                        <input type="text" placeholder="********" id="password" name="password" required minlength="4" maxlength="35"
+                            size="20">
+                    </div>
+                </div>
+
+                <div class="firstpassword-box">
+                    <div class="firstpassword-box-label">
+                        Дата начала:
+                    </div>
+                    <div class="firstpassword-box-field">
+                        <input type="data" placeholder="********" id="password" name="password" required minlength="4" maxlength="35"
+                            size="20">
+                    </div>
+                </div>
+
+                <div class="firstpassword-box">
+                    <div class="firstpassword-box-label">
+                        Дата окончания:
+                    </div>
+                    <div class="firstpassword-box-field">
+                        <input type="data" placeholder="********" id="password" name="password" required minlength="4" maxlength="35"
+                            size="20">
+                    </div>
+                </div>
+
+
+                <div class="registration-box-action-box">
+                    <button class="create-new-user-button" type="submit">
+                        <div class="create-new-user-button-text">
+                            Добавить
+                        </div>
+                    </button>
+                </div>
+
+        </div>
+
+
+    </div>
+
+    </form>
+
+    <div class="footer">
+
+        <div class="contacts">
+            <p>
+                КОНТАКТНАЯ ИНФОРМАЦИЯ:
+                <br />
+                <br />
+                394018, Россия, г. Воронеж,
+                <br />
+                Университетская площадь, 1
+                <br />
+                +7 (495) 900-56-56
+                <br />
+                bkatya5577@gmail.com
+                <br />
+                ignat_kandaurov@mail.ru
+                <br />
+                kornilov.ilja@rambler.ru
+
+            </p>
+        </div>
+
+        <div class="developers">
+            <p>
+                РАЗРАБОТЧИКИ:
+                <br />
+                <br />
+                И.Р. Корнилов,
+                <br />
+                <br />
+                Е.А. Бабкина,
+                <br />
+                <br />
+                И.А. Кандауров
+            </p>
+        </div>
+
+    </div>
+
+</body>
+
+
+</html>
