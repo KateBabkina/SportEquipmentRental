@@ -3,9 +3,9 @@
 
 <head>
 
-    <title>Изменение оборудования</title>
+    <title>Изменение мероприятия</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../src/css/admin_equipment_add_page.css" media="screen">
+    <link rel="stylesheet" href="../src/css/admin_event_add_page.css" media="screen">
 
 </head>
 
@@ -38,9 +38,17 @@
         <div class="centre-column-registration">
             <form name="registration-form-wraper" method="POST" action="test.php">
                 <div class="create-label">
-                    Для изменения оборудования введите новые данные
+                    Для изменения мероприятия введите новые данные
                 </div>
 
+                <div class="account-box">
+                    <div class="account-box-label">
+                        Название:
+                    </div>
+                    <div class="account-box-field">
+                        <input type="text" placeholder="example@example.ru" id="login" name="login" required minlength="4" maxlength="35" size="20">
+                    </div>
+                </div>
 
                 <div class="fullname-box">
                     <div class="fullname-box-label">
@@ -95,22 +103,32 @@
                     </div>
                 </div>
 
-                <div class="account-box">
-                    <div class="account-box-label">
-                        Название:
-                    </div>
-                    <div class="account-box-field">
-                        <input type="text" placeholder="example@example.ru" id="login" name="login" required minlength="4" maxlength="35" size="20">
-                    </div>
-                </div>
-
-
                 <div class="firstpassword-box">
                     <div class="firstpassword-box-label">
-                        Размер:
+                        Цена, руб:
                     </div>
                     <div class="firstpassword-box-field">
                         <input type="text" placeholder="********" id="password" name="password" required minlength="4" maxlength="35"
+                            size="20">
+                    </div>
+                </div>
+
+                <div class="firstpassword-box">
+                    <div class="firstpassword-box-label">
+                        Дата начала:
+                    </div>
+                    <div class="firstpassword-box-field">
+                        <input type="data" placeholder="********" id="password" name="password" required minlength="4" maxlength="35"
+                            size="20">
+                    </div>
+                </div>
+
+                <div class="firstpassword-box">
+                    <div class="firstpassword-box-label">
+                        Дата окончания:
+                    </div>
+                    <div class="firstpassword-box-field">
+                        <input type="data" placeholder="********" id="password" name="password" required minlength="4" maxlength="35"
                             size="20">
                     </div>
                 </div>

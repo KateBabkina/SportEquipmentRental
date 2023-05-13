@@ -72,6 +72,7 @@
 
 /*Начало стили Регистрация*/
 .base-part-registration {
+    margin-top: 50px;
     height: 615px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
@@ -115,7 +116,7 @@
     font-family: 'PT Sans', sans-serif;
     float: left;
     line-height: 80px;
-    font-size: large;
+    font-size: 24px;
     height: 80px;
     width: 20%;
     text-align: right;
@@ -156,15 +157,15 @@
     font-family: 'PT Sans', sans-serif;
     float: left;
     line-height: 80px;
-    font-size: large;
+    font-size: 24px;
     height: 80px;
-    width: 30%;
+    width: 25%;
     text-align: right;
 }
 
 .account-box-field {
     height: 80px;
-    width: 27%;
+    width: 45%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -195,15 +196,15 @@
     font-family: 'PT Sans', sans-serif;
     float: left;
     line-height: 80px;
-    font-size: large;
+    font-size: 24px;
     height: 80px;
-    width: 30%;
+    width: 25%;
     text-align: right;
 }
 
 .firstpassword-box-field {
     height: 80px;
-    width: 27%;
+    width: 45%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -260,7 +261,7 @@
     background-color: rgb(28, 98, 205);
     border: none;
     text-align: center;
-    height: 100%;
+    height: 80px;
     width: 60%;
 }
 

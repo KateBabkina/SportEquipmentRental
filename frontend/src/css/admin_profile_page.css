@@ -91,6 +91,7 @@
 }
 
 .profile-wrapper {
+    margin-top: 50px;
     display: grid;
     height: 800px;
     /* Автоматически заполняем на всю ширину grid-контейнера */
@@ -377,43 +378,9 @@
     background-color: white;
 }
 
-.button-cancel {
-    width: 100%;
-    height: 100%;
-    display: block;
-    text-align: center;
-    background-color: rgb(28, 98, 205);
-}
-
-.button-cancel .cancel-button {
-    border: none;
-    padding: 0px;
-    font-size: 26px;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(28, 98, 205);
-}
-
-.cancel-button  :hover {
-    background-color: rgb(16, 54, 111);
-    transition: 0.7s;
-}
-
-.button-cancel .cancel-button-text {
-    padding: 10px 5px 10px 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    font-weight: lighter;
-}
-
 .button-exit {
     width: 25%;
-    height: 100%;
+    height: 80px;
     display: block;
     text-align: center;
     background-color: rgb(28, 98, 205);

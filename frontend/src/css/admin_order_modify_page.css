@@ -88,6 +88,7 @@
 }
 
 .order-wrapper{
+    margin-top: 50px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
     display: grid;
@@ -154,13 +155,14 @@
 }
 
 .button-find .find-button {
+    padding-left: 50px;
+    padding-right: 50px;
     background-color: rgb(28, 98, 205);
     border: none;
     font-size: 26px;
     text-align: center;
     height: 100%;
     width: 100%;
-    padding: 0px;
     font-family: 'PT Sans', sans-serif;
     display: flex;
     align-items: center;

@@ -129,17 +129,15 @@
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.7fr 0.8fr 0.8fr 0.4fr;
+    grid-template-rows: 0.1fr 0fr 0fr 0fr 0.4fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
-    height: 70%;
+    height: 55%;
     max-width: 100%;
     /* Ширина grid-контейнера */
     justify-content: center;
     justify-items: center;
     /* Размещаем карточку по центру */
-    column-gap: 8px;
-    row-gap: 20px;
     /* Отступ между рядами */
     margin: 0 auto;
 
@@ -154,6 +152,7 @@
 }
 
 .field-type-equipment {
+    height: 60px;
     box-sizing: border-box;
     font-size: 24px;
     width: 98%;
@@ -177,13 +176,14 @@
 }
 
 .type-equipment-wrapper{
+    margin-bottom: 40px;
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 0fr 2fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
-    height: 55%;
+    height: 100%;
     /* Ширина grid-контейнера */
     justify-content: center;
     justify-items: center;
@@ -192,13 +192,14 @@
 }
 
 .id-equipment-wrapper{
+    margin-top: 15px;
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 0fr 2fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
-    height: 50%;
+    height: 100%;
     /* Ширина grid-контейнера */
     justify-content: center;
     justify-items: center;
@@ -213,6 +214,7 @@
 }
 
 .field-id-equipment {
+    height: 60px;
     box-sizing: border-box;
     font-size: 24px;
     width: 98%;
@@ -232,7 +234,9 @@
 }
 
 .button-find {
+    height: 80px;
     margin-bottom: 40px;
+    margin-top: 80px;
     width: 70%;
     text-align: center;
     background-color: rgb(28, 98, 205);
@@ -278,7 +282,9 @@
 }
 
 .button-add {
-    height: 30%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 80px;
     width: 35%;
     text-align: center;
     background-color: rgb(28, 98, 205);
@@ -286,6 +292,8 @@
 
 .button-add .add-button {
     background-color: rgb(28, 98, 205);
+    padding-left: 50px;
+    padding-right: 50px;
     border: none;
     font-size: 26px;
     text-align: center;

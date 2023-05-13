@@ -92,7 +92,8 @@
 
 .profile-wrapper {
     display: grid;
-    height: 1400px;
+    margin-top: 50px;
+    height: 1600px;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 0.5fr 2.3fr 1fr;
@@ -106,7 +107,6 @@
     /* Отступ между колонками */
     row-gap: 40px;
     /* Отступ между рядами */
-    margin: 0 auto;
 }
 
 .information-about-user-lable{
@@ -413,7 +413,7 @@
 
 .button-exit {
     width: 25%;
-    height: 100%;
+    height: 80px;
     display: block;
     text-align: center;
     background-color: rgb(28, 98, 205);
@@ -422,27 +422,23 @@
 .button-exit .exit-button {
     border: none;
     padding: 0px;
-    font-size: 26px;
+    font-size: 30px;
     text-align: center;
     height: 100%;
     width: 100%;
     background-color: rgb(28, 98, 205);
-}
 
-.button-exit :hover {
-    background-color: rgb(16, 54, 111);
-    transition: 0.7s;
-}
-
-.button-exit .exit-button-text {
-    padding: 10px 5px 10px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
     color: rgb(255, 255, 255);
-    font-size: 32px;
     font-weight: lighter;
+}
+
+.button-exit :hover {
+    background-color: rgb(16, 54, 111);
+    transition: 0.7s;
 }
 
 /* Конец Страница Спортивного инвентаря */
