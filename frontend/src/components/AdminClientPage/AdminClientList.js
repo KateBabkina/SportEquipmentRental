@@ -46,7 +46,7 @@ export default function AdminClientList({ clients }) {
                     {
                         clients.map(client => {
                             console.log(clients.length);
-                            if (clients.length === 1) {
+                            if (clients[0] === null) {
                                 return false
                             } else {
                                 return <Client key={client.id} client={client}></Client>
