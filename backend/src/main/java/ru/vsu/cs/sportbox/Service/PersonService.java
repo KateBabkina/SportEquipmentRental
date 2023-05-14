@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface PersonService {
     PersonResponse addNewPerson(PersonCreateDto personCreateDto);
+    PersonResponse addNewAdmin(PersonCreateDto personCreateDto);
     PersonResponse loginPerson(PersonLoginDto personLoginDto);
     PersonResponse getPersonById(int id);
 

@@ -9,6 +9,8 @@ import ru.vsu.cs.sportbox.Data.Model.Booking;
 import ru.vsu.cs.sportbox.Data.Model.Inventory;
 import ru.vsu.cs.sportbox.Data.Model.InventoryType;
 import ru.vsu.cs.sportbox.Data.Repository.InventoryTypeRepository;
+import ru.vsu.cs.sportbox.Responses.InventoryResponse;
+import ru.vsu.cs.sportbox.Responses.InventoryTypeResponse;
 import ru.vsu.cs.sportbox.Specification.InventoryTypeSpecification;
 
 import java.text.ParseException;
@@ -61,7 +63,18 @@ public class InventoryTypeServiceImpl implements ru.vsu.cs.sportbox.Service.Inve
     }
 
     @Override
+    @Transactional
     public List<InventoryType> getAllInventoryTypes() {
         return inventoryTypeRepository.findAll();
+    }
+
+    @Override
+    @Transactional
+    public InventoryTypeResponse getInventoryTypeById(int id) {
+        InventoryType inventoryType = inventoryTypeRepository.findById(id);
+        if (inventoryType == null) {
+            return new InventoryTypeResponse("Инвентаря с указанным идентификатором не существует.", false, null);
+        }
+        return new InventoryTypeResponse("Инвентарь был успешно найден.", true, inventoryType);
     }
 }

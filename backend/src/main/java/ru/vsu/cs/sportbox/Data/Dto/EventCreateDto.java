@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "Информация, необходимая для добавдения нового мероприятия")
+@Schema(description = "Информация, необходимая для добавления нового мероприятия")
 public class EventCreateDto {
     private String name;
     private double price;

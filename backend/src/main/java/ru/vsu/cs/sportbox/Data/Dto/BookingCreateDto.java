@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Schema(description = "Информация, необходимая для создания нгового заказа")
+@Schema(description = "Информация, необходимая для создания нового заказа")
 public class BookingCreateDto {
     private int personId;
     private int inventoryTypeId;

@@ -1,8 +1,17 @@
 import React, { useState } from 'react'
+import {useDispatch} from "react-redux"
+import {authorizeUser} from "../store/userSlice"
+
 import axios from 'axios';
 import validator from 'validator';
 
-const EnterPage = ({ setIsLogged }) => {
+const EnterPage = ({ setIsLogged, changeUser }) => {
+
+    const dispatch = useDispatch();
+
+    const authorize = (person) => {
+        dispatch(authorizeUser(person));
+    }
 
     const [login, setLogin] = useState(() => {
         return {
@@ -10,14 +19,6 @@ const EnterPage = ({ setIsLogged }) => {
             password: ""
         }
     })
-
-    const [response, setResponse] = useState(() => {
-        return {
-            message: "",
-            status: true,
-            person: null
-        }
-    });
 
     const changeInputLogin = event => {
         event.persist()
@@ -36,10 +37,8 @@ const EnterPage = ({ setIsLogged }) => {
         event.preventDefault();
         if (!validator.isEmail(login.email)) {
             alert("You did not enter email")
-        } else if (!validator.isStrongPassword(login.password, { minSymbols: 0 })) {
-            alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
-            axios.get("http://localhost:8080/api/person/login", {
+            axios.post("https://sportbox.up.railway.app/api/person/login", {
                 email: login.email,
                 password: login.password
             },
@@ -49,24 +48,23 @@ const EnterPage = ({ setIsLogged }) => {
                         password: password
                     }
                 }).then(res => {
-                    if (res.data.status === true) { //возможно нужны ""
-                        localStorage.setItem("isLogged", true)
-                        setIsLogged(true)
-                        setResponse(res.data)
-                        window.location.href = "/"
+                    if (res.data.status === true) {
+                        console.log(res.data);
+                        authorize(res.data.person)
+                        window.location.href = "/"  // при переходе на другую страницу не сохраняет состояние response
                     } else {
-                        setResponse(res.data)
-                        //alert("There is already a user with this email")
+                        alert(res.data.message)
                     }
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })
         }
+
     }
 
     return (
         <div className='login-main'>
-            <form name="login-form" method="GET" onSubmit={(e) => submitChacking(e)}>
+            <form name="login-form" method="POST" onSubmit={(e) => submitChacking(e)}>
 
                 <div className="login-panel">
 
@@ -76,7 +74,7 @@ const EnterPage = ({ setIsLogged }) => {
                         </div>
                         <div className="login-field">
                             <input type="text" id="email" name="email" value={login.email}
-                                onChange={(e) => changeInputLogin(e)} required minLength="8" maxLength="35" size="20"></input>
+                                onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
@@ -86,15 +84,9 @@ const EnterPage = ({ setIsLogged }) => {
                         </div>
                         <div className="password-field">
                             <input type="password" id="password" name="password" value={login.password}
-                                onChange={(e) => changeInputLogin(e)} required minLength="8" maxLength="35" size="20"></input>
+                                onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
-
-                    {
-                        response.status ?
-                            ""
-                            : <div>response.message</div>
-                    }
 
                     <div className="action-box">
 

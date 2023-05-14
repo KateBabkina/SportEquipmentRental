@@ -1,5 +1,6 @@
 package ru.vsu.cs.sportbox.Data.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,7 @@ public class InventoryType {
 
     @Id
     @Column(name = "id", unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "type", unique = true)
@@ -37,8 +38,10 @@ public class InventoryType {
     private Boolean isSizable;
 
     @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private Set<Inventory> inventories;
 
     @OneToMany (mappedBy="inventoryType", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private Set<Event> events;
 }

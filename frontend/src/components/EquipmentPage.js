@@ -1,45 +1,74 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ItemList from "./ItemList";
+import FilterField from "./FiltreField";
+import ClipLoader from "react-spinners/ClipLoader";
+import axios from 'axios';
+import Pagination from "./Pagination";
 
 function EquipmentPage() {
 
-  const [itemList, setItemList] = useState({
-    items: [
+  var username = 'sport';
+  var password = '123';
+
+
+  const [itemList, setItemList] = useState([])
+  const [currentItems, setCurrentItems] = useState(itemList)
+  const [loading, setLoading] = useState(true)
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage] = useState(6)
+
+  useEffect(() => {
+    setLoading(true)
+    axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
       {
-        id: 1,
-        title: "Лыжи",
-        img: "лыжи.jpg",
-        category: "лыжи",
-        price: "123"
-      },
-      {
-        id: 2,
-        title: "Велосипед",
-        img: "велосипед.jpg",
-        category: "велосипед",
-        price: "234"
-      },
-      {
-        id: 3,
-        title: "Мяч футбольный",
-        img: "мяч футбольный.jpg",
-        category: "мяч",
-        price: "345"
-      },
-      {
-        id: 4,
-        title: "Фрисби",
-        img: "фрисби.jpg",
-        category: "фрисби",
-        price: "456"
-      }
-    ]
-  })
+        auth: {
+          username: username,
+          password: password
+        }
+      }).then(res => {
+        console.log(res.data);
+        setItemList(res.data)
+        setCurrentItems(res.data)
+        setLoading(false)
+      }).catch(() => {
+        alert("An error occurred on the server")
+      })
+  }, [])
+
+  const changeFilter = (items) => {
+    setCurrentItems(items)
+    console.log(items);
+    setCurrentPage(1)
+  }
+  
+
+  const lastItemIndex = currentPage * itemsPerPage
+  const firstItemIndex = lastItemIndex - itemsPerPage
+  const currentItemsOnPage = currentItems.slice(firstItemIndex, lastItemIndex) 
+
+
+  const paginate = (pageNumder) => {
+    setCurrentPage(pageNumder)
+  }
 
   return (
-    <div>
-        <ItemList items={itemList} />
+    <div className="base-part-sportEquipment-page">
+      {
+        loading ?
+          <ClipLoader
+            color={"#1C62CD"}
+            loading={loading}
+            size={100}
+          />
+          :
+          <div>
+            <FilterField changeFilter={changeFilter} />
+            <ItemList items={currentItemsOnPage} />
+            <Pagination itemsPerPage={itemsPerPage}  totalItems={currentItems.length} paginate={paginate}/>
+          </div>
+      }
     </div>
   );
 };

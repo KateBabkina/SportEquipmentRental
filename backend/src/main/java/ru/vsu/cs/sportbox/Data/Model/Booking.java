@@ -21,7 +21,8 @@ public class Booking {
 
     @Id
     @Column(name = "id", unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="booking_identifier", sequenceName="booking_sequence", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="booking_identifier")
     private Integer id;
 
     @Column(name = "price")
@@ -50,7 +51,6 @@ public class Booking {
 
     @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "inventory_id")
-    @JsonIgnore
     private Inventory inventory;
 
     @Column(name = "debt")

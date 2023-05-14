@@ -22,7 +22,8 @@ import java.util.Set;
 public class Event {
     @Id
     @Column(name = "id", unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="event_identifier", sequenceName="event_sequence", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="event_identifier")
     private Integer id;
 
     @Column(name = "name")
@@ -46,7 +47,6 @@ public class Event {
 
     @ManyToOne (optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn (name="inventory_type_id")
-    @JsonIgnore
     private InventoryType inventoryType;
 
     @ManyToMany(mappedBy="events", fetch = FetchType.EAGER)

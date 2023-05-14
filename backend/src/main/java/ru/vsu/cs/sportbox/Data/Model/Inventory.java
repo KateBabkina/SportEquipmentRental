@@ -21,7 +21,8 @@ import java.util.Set;
 public class Inventory {
     @Id
     @Column(name = "id", unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="inventory_identifier", sequenceName="inventory_sequence", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="inventory_identifier")
     private Integer id;
 
     @Column(name = "name")
@@ -32,10 +33,10 @@ public class Inventory {
 
     @ManyToOne (optional=false, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn (name="inventory_type_id")
-    @JsonIgnore
     private InventoryType inventoryType;
 
     @OneToMany(mappedBy = "inventory", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private Set<Booking> bookings;
 
     @PrePersist

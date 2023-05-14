@@ -28,4 +28,15 @@ public class PersonMapper {
 
         return person;
     }
+
+    public Person personCreateDtoToAdmin(PersonCreateDto personCreateDto) {
+        Person person = new Person();
+
+        person.setName(personCreateDto.getName());
+        person.setPassword(passwordEncoder.encode(personCreateDto.getPassword()));
+        person.setEmail(personCreateDto.getEmail());
+        person.setRole(roleRepository.findByName("Admin"));
+
+        return person;
+    }
 }

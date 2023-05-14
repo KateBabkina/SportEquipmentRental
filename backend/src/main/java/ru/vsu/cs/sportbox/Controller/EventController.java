@@ -23,7 +23,7 @@ import java.util.Set;
 public class EventController {
     private EventService eventService;
 
-    @GetMapping("/filter")
+    @PostMapping("/filter")
     @Operation(summary = "Фильтрация списка мероприятий")
     public ResponseEntity<List<Event>> filterEvent(@RequestBody EventFilterDto eventFilterDto) {
         HttpStatus httpStatus = HttpStatus.OK;
