@@ -29,6 +29,7 @@ export default function AdminClientFilterField({ changeFilter }) {
         if (validator.isEmail(email) || email === ""){
             return true
         } else {
+            alert("Проверьте почту")
             return false
         }
     }

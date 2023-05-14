@@ -56,6 +56,7 @@ export default function AdminAddClient() {
                 }).then(res => {
                     console.log(res.data);
                     alert(res.data.message)
+                    window.location.href = "/admin/clients"
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })

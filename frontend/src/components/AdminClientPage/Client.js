@@ -92,7 +92,7 @@ export default function Client({ client }) {
                 {client.isBaned ? <div>Заблокирован</div> : <div>Не заблокирован</div>}
             </div>
             <div className="order-data-from-row">
-                {client.role.name}
+                {client.role.name === "Customer" ? <div>Покупатель</div> : <div>Админ</div>}
             </div>
             <div className="order-action-row">
                 <div className="button-cancel">

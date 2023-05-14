@@ -44,10 +44,14 @@ export default function AdminClientList({ clients }) {
 
                 <div className="table-rows">
                     {
-                        clients.length !== 0 ? clients.map(client => (
-                            <Client key={client.id} client={client}></Client>
-                        )) : <div>Empty</div>
-
+                        clients.map(client => {
+                            console.log(clients.length);
+                            if (clients.length === 1) {
+                                return false
+                            } else {
+                                return <Client key={client.id} client={client}></Client>
+                            }
+                        })
                     }
                 </div>
 
