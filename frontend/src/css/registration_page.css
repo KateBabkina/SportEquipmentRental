@@ -73,7 +73,7 @@
 /*Начало стили Регистрация*/
 .base-part-registration {
     margin-top: 50px;
-    height: 615px;
+    height: 650px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
@@ -82,7 +82,7 @@
 .centre-column-registration {
     background-color: rgb(255, 255, 255);
     position: relative;
-    height: 615px;
+    height: 650px;
     width: 92%;
     margin-left: 4%;
     margin-right: 4%;
@@ -181,7 +181,6 @@
 }
 
 .firstpassword-box {
-    padding-right: 20%;
     margin: auto;
     text-align: center;
     height: 80px;
@@ -221,7 +220,7 @@
 }
 
 .login-box-action-box{
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
 }
 
@@ -247,7 +246,7 @@
     justify-content: center;
     line-height: 1;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 30px;
     font-family: 'PT Sans', sans-serif;
 }
 

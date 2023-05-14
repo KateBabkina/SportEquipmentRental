@@ -323,7 +323,7 @@
     /* overflow: auto;
     overflow-x: hidden; */
     height: 100%;
-    width: 100%;
+    width: 99%;
     max-width: 100%;
     /* Ширина grid-контейнера */
     justify-content: center;
@@ -348,7 +348,7 @@
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: repeat(8, 1fr);
     /* grid-template-rows: repeat(2, 1fr); */
-    width: 100%;
+    width: 98%;
     max-width: 100%;
     /* Ширина grid-контейнера */
     align-items: center;
@@ -456,9 +456,7 @@
     text-align: center;
     width: 100%;
     height: 100%;
-    border: 1px solid;
-    border-width: 1px;
-    border-color: rgb(205, 205, 205);
+    border-right: 1px solid rgb(205, 205, 205);
 }
 
 .table-rows{
@@ -471,7 +469,7 @@
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
-    width: 100%;
+    width: 99%;
     max-width: 100%;
     /* Ширина grid-контейнера */
     justify-content: center;
@@ -492,7 +490,7 @@
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: repeat(8, 1fr);
-    width: 100%;
+    width: 99%;
     justify-content: center;
     justify-items: center;
     margin: 0 auto;

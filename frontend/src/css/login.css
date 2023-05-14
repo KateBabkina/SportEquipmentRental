@@ -223,9 +223,9 @@
 }
 
 .login-box-action-box{
+    margin-top:40px;
     text-align: center;
     width: 20%;
-    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -253,7 +253,7 @@
     justify-content: center;
     line-height: 1;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 30px;
     font-family: 'PT Sans', sans-serif;
 }
 

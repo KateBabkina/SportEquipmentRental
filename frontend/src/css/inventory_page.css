@@ -286,7 +286,7 @@
 .button-find .find-button {
     background-color: rgb(28, 98, 205);
     border: none;
-    font-size: 26px;
+    font-size: 30x;
     text-align: center;
     height: 100%;
     width: 100%;
@@ -416,11 +416,10 @@
     justify-content: center;
     line-height: 1;
     color: rgb(255, 255, 255);
-    font-size: 24px;
     font-weight: lighter;
     border: none;
     padding: 0px;
-    font-size: 26px;
+    font-size: 30px;
     text-align: center;
     height: 100%;
     width: 100%;

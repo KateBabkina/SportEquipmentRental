@@ -103,7 +103,6 @@
 
 
 .fullname-box {
-    padding-right: 20%;
     margin: auto;
     text-align: center;
     height: 80px;
@@ -275,7 +274,7 @@
     justify-content: center;
     line-height: 1;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 30px;
     font-family: 'PT Sans', sans-serif;
 }
 
