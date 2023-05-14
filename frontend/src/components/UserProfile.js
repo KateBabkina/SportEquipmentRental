@@ -16,6 +16,7 @@ export default function EventPage({ setIsLogged }) {
   const userId = useSelector(state => state.user.userId);
   const [user, setUser] = useState({})
   const dispatch = useDispatch();
+  const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
     let cleanupFunction = false;
@@ -32,6 +33,11 @@ export default function EventPage({ setIsLogged }) {
           if (!cleanupFunction) {
             dispatch(updateUser(res.data.person))
             setUser(res.data.person)
+            if (res.data.person.role.name === "Admin") {
+              setIsAdmin(true)
+            } else {
+              setIsAdmin(false)
+            }
             setLoading(false)
           }
 
@@ -149,54 +155,60 @@ export default function EventPage({ setIsLogged }) {
 
             </div>
 
-            <div className="information-about-orders-wrapper">
+            {
+              isAdmin ?
+                <div></div>
+                :
+                <div className="information-about-orders-wrapper">
 
-              <div className="information-about-orders-lable">
-                История заказов:
-              </div>
+                  <div className="information-about-orders-lable">
+                    История заказов:
+                  </div>
 
-              <div className="column-lables">
+                  <div className="column-lables">
 
-                <div className="order-number-lable">
-                  №
+                    <div className="order-number-lable">
+                      №
+                    </div>
+
+                    <div className="order-equipment-lable">
+                      Оборудование
+                    </div>
+
+                    <div className="order-price-lable">
+                      Цена, руб.
+                    </div>
+
+                    <div className="order-data-lable">
+                      Дата заказа
+                    </div>
+
+                    <div className="order-data-from-lable">
+                      Дата начала
+                    </div>
+
+                    <div className="order-data-to-lable">
+                      Дата окончания
+                    </div>
+
+                    <div className="order-debt-lable">
+                      Долг, руб.
+                    </div>
+
+                    <div className="order-action-lable">
+
+                    </div>
+                  </div>
+
+                  <div className="information-about-orders-table-wrapper">
+                    <div className="table-rows">
+                      {user.bookings?.length === 0 ? <h3>Пусто</h3> : getHistory()}
+                    </div>
+                  </div>
+
                 </div>
 
-                <div className="order-equipment-lable">
-                  Оборудование
-                </div>
-
-                <div className="order-price-lable">
-                  Цена, руб.
-                </div>
-
-                <div className="order-data-lable">
-                  Дата заказа
-                </div>
-
-                <div className="order-data-from-lable">
-                  Дата начала
-                </div>
-
-                <div className="order-data-to-lable">
-                  Дата окончания
-                </div>
-
-                <div className="order-debt-lable">
-                  Долг, руб.
-                </div>
-
-                <div className="order-action-lable">
-
-                </div>
-              </div>
-
-              <div className="information-about-orders-table-wrapper">
-                <div className="table-rows">
-                  {user.bookings?.length === 0 ? <h3>Пусто</h3> : getHistory()}
-                </div>
-              </div>
-
-            </div>
+            }
 
             <div className="button-exit">
               <button className="exit-button" type="submit" onClick={logOut}>

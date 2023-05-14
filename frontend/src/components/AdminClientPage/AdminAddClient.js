@@ -45,8 +45,9 @@ export default function AdminAddClient() {
     const addClient = () => {
         var check = checkData()
         console.log(check);
+        console.log(requestToAdd);
         if (check) {
-            axios.post("https://sportbox.up.railway.app/api/person/filter", requestToAdd,
+            axios.post("https://sportbox.up.railway.app/api/person/add", requestToAdd,
                 {
                     auth: {
                         username: username,
@@ -65,7 +66,7 @@ export default function AdminAddClient() {
         <div className="base-part-registration">
 
             <div className="centre-column-registration">
-                <form name="registration-form-wraper" method="POST" action="test.php">
+                <form name="registration-form-wraper">
                     <div className="create-label">
                         Для добавления клиента введите данные
                     </div>
@@ -104,7 +105,7 @@ export default function AdminAddClient() {
 
 
                     <div className="registration-box-action-box">
-                        <button className="create-new-user-button" type="submit" onClick={() => addClient()}>
+                        <button className="create-new-user-button" type="button" onClick={() => addClient()}>
                             <div className="create-new-user-button-text">
                                 Добавить
                             </div>

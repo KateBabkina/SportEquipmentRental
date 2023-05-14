@@ -7,16 +7,20 @@ export default function Client({ client }) {
     var password = '123';
 
     const banUser = () => {
-        axios.put(`https://sportbox.up.railway.app/api/person/ban?id=${client.id}`,
+        axios.put(`https://sportbox.up.railway.app/api/person/ban?id=${client.id}`, {
+            isBaned: true
+        },
             {
                 auth: {
                     username: username,
                     password: password
                 }
             }).then(res => {
+                console.log(res.data);
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
+                    window.location.reload()
                 } else {
                     alert(res.data.message)
                 }
@@ -25,7 +29,9 @@ export default function Client({ client }) {
             })
     }
     const unbanUser = () => {
-        axios.put(`https://sportbox.up.railway.app/api/person/unban?id=${client.id}`,
+        axios.put(`https://sportbox.up.railway.app/api/person/unban?id=${client.id}`, {
+            isBaned: false
+        },
             {
                 auth: {
                     username: username,
@@ -35,6 +41,7 @@ export default function Client({ client }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
+                    window.location.reload()
                 } else {
                     alert(res.data.message)
                 }
@@ -53,6 +60,7 @@ export default function Client({ client }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
+                    window.location.reload()
                 } else {
                     alert(res.data.message)
                 }

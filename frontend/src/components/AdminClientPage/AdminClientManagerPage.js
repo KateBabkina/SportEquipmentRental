@@ -3,7 +3,6 @@ import AdminClientFilterField from './AdminClientFilterField'
 import AdminClientList from './AdminClientList'
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
-import Pagination from '../Pagination';
 
 export default function AdminClientManagerPage() {
 
@@ -14,8 +13,6 @@ export default function AdminClientManagerPage() {
   const [currentClients, setCurrentClients] = useState(clients)
   const [loading, setLoading] = useState(true)
 
-  const [currentPage, setCurrentPage] = useState(1)
-  const [clientsPerPage] = useState(5)
 
   useEffect(() => {
     setLoading(true)
@@ -37,16 +34,7 @@ export default function AdminClientManagerPage() {
 
   const changeFilter = (clients) => {
     setCurrentClients(clients)
-    setCurrentPage(1)
   }
-
-  const paginate = (pageNumder) => {
-    setCurrentPage(pageNumder)
-  }
-
-  const lastItemIndex = currentPage * clientsPerPage
-  const firstItemIndex = lastItemIndex - clientsPerPage
-  const currentItemsOnPage = currentClients.slice(firstItemIndex, lastItemIndex)
 
   return (
     <div className="manager-wrapper">
@@ -60,8 +48,7 @@ export default function AdminClientManagerPage() {
           :
           <div>
             <AdminClientFilterField changeFilter={changeFilter} ></AdminClientFilterField>
-            <AdminClientList clients={currentItemsOnPage}></AdminClientList>
-            <Pagination itemsPerPage={clientsPerPage} totalItems={currentClients.length} paginate={paginate} />
+            <AdminClientList clients={currentClients}></AdminClientList>
           </div>
       }
     </div>
