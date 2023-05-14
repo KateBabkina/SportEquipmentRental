@@ -72,7 +72,6 @@
 
 /*Начало стили Регистрация*/
 .base-part-registration {
-    margin-top: 50px;
     height: 615px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
@@ -116,13 +115,22 @@
     font-family: 'PT Sans', sans-serif;
     float: left;
     line-height: 80px;
-    font-size: 24px;
+    font-size: large;
     height: 80px;
     width: 20%;
     text-align: right;
 }
 
 .fullname-box-field {
+    float: right;
+    height: 80px;
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.field-type-equipment-box {
     float: right;
     height: 80px;
     width: 75%;
@@ -139,16 +147,16 @@
     border: none;
     height: 80px;
     width: 100%;
-    font-weight: bold;
     color: rgb(0, 0, 0, 50%);
     background-color: rgb(0, 0, 0, 5%);
 }
 
 .account-box {
+    padding-right: 20%;
     margin: auto;
     text-align: center;
     height: 80px;
-    width: 100%;
+    width: 80%;
     margin-bottom: 2%;
 }
 
@@ -157,15 +165,16 @@
     font-family: 'PT Sans', sans-serif;
     float: left;
     line-height: 80px;
-    font-size: 24px;
+    font-size: large;
     height: 80px;
-    width: 25%;
+    width: 20%;
     text-align: right;
 }
 
 .account-box-field {
+    float: right;
     height: 80px;
-    width: 45%;
+    width: 75%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -184,10 +193,11 @@
 }
 
 .firstpassword-box {
+    padding-right: 20%;
     margin: auto;
     text-align: center;
     height: 80px;
-    width: 100%;
+    width: 80%;
     margin-bottom: 2%;
 }
 
@@ -196,15 +206,16 @@
     font-family: 'PT Sans', sans-serif;
     float: left;
     line-height: 80px;
-    font-size: 24px;
+    font-size: large;
     height: 80px;
-    width: 25%;
+    width: 20%;
     text-align: right;
 }
 
 .firstpassword-box-field {
+    float: right;
     height: 80px;
-    width: 45%;
+    width: 75%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -223,15 +234,11 @@
 }
 
 .login-box-action-box{
-    margin-top:40px;
+    margin-top: 20px;
     text-align: center;
-    width: 20%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.login-box-action-box a{ 
-    text-align: center;
+.login-box-action-box a{
     font-family: 'PT Sans', sans-serif;
     color: rgb(0, 0, 0);
     font-size: 24px;
@@ -253,7 +260,7 @@
     justify-content: center;
     line-height: 1;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -261,8 +268,8 @@
     background-color: rgb(28, 98, 205);
     border: none;
     text-align: center;
-    height: 80px;
-    width: 60%;
+    height: 100%;
+    width: 100%;
 }
 
 .create-new-user-button:hover {

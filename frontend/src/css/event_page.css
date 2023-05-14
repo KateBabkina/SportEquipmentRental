@@ -69,9 +69,9 @@
 }
 /*Конец стили шапки*/
 
-/* Начало Страница Спортивного инвентаря */
+/* Начало Страница Мероприятия */
 .base-part-sportEquipment-page {
-    height: 1400px;
+    height: 1061px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
@@ -83,7 +83,7 @@
     box-shadow: 2px 5px 5px -3px #848484;
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 855px;
+    height: 790px;
     width: 25%;
 }
 
@@ -105,12 +105,6 @@
 }
 
 .type-equipment-box {
-    height: 100px;
-    text-align: center;
-    font-style: inherit;
-}
-
-.type-equipment-box {
     height: 120px;
 }
 
@@ -121,6 +115,7 @@
 }
 
 .field-type-equipment-box {
+    font-family: 'PT Sans', sans-serif;
     margin-right: 15px;
     height: 60px;
     text-align: center;
@@ -158,7 +153,7 @@
 .field-start-data-box {
     margin-right: 15px;
     height: 60px;
-    text-align: left;
+    text-align: center;
     font-size: 24px;
 }
 
@@ -187,7 +182,7 @@
 .field-end-data-box {
     margin-right: 15px;
     height: 60px;
-    text-align: left;
+    text-align: center;
     font-size: 24px;
 }
 
@@ -199,77 +194,6 @@
     height: 60px;
     width: 100%;
     background-color: rgb(0, 0, 0, 5%);
-    border: none;
-    color: rgb(0, 0, 0, 50%);
-}
-
-.price-for-day-box {
-    margin-bottom: 115px;
-}
-
-.label-price-for-day-box {
-    font-family: 'PT Sans', sans-serif;
-    text-align: center;
-    font-size: 26px;
-}
-
-.label-price-from {
-    font-family: 'PT Sans', sans-serif;
-    line-height: 52px;
-    width: 10%;
-    float: left;
-    text-align: left;
-    font-size: 26px;
-}
-
-.label-price-to {
-    margin-left: 10px;
-    font-family: 'PT Sans', sans-serif;
-    line-height: 52px;
-    width: 10%;
-    float: left;
-    text-align: left;
-    font-size: 26px;
-}
-
-.field-price-from {
-    /* margin-right: 35px; */
-    height: 60px;
-    text-align: center;
-    font-size: 24px;
-    width: 35%;
-    float: left;
-}
-
-.field-price-from input {
-    padding-left: 10px;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 24px;
-    text-align: left;
-    height: 60px;
-    width: 95%;
-    background-color: rgb(0, 0, 0, 5%);
-    border: none;
-    color: rgb(0, 0, 0, 50%);
-}
-
-.field-price-to {
-    height: 60px;
-    text-align: left;
-    font-size: 24px;
-    width: 39%;
-    float: left;
-}
-
-.field-price-to input {
-    padding-left: 10px;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 24px;
-    text-align: left;
-    height: 60px;
-    width: 100%;
-    background-color: rgb(0, 0, 0, 5%);
-    border: none;
     border: none;
     color: rgb(0, 0, 0, 50%);
 }
@@ -286,7 +210,7 @@
 .button-find .find-button {
     background-color: rgb(28, 98, 205);
     border: none;
-    font-size: 30x;
+    font-size: 26px;
     text-align: center;
     height: 100%;
     width: 100%;
@@ -304,7 +228,6 @@
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
-
 /* Конец Колонка с фильтрами*/
 
 .centre-column-content {
@@ -312,17 +235,18 @@
     margin-left: 25px;
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 1061px;
+    height: 1400px;
     width: 72%;
 }
 
-.equipments {
+.events {
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: 2fr 2fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
+    height: 90%;
     max-width: 100%;
     /* Ширина grid-контейнера */
     justify-content: center;
@@ -335,16 +259,16 @@
     margin: 0 auto;
 }
 
-.equipment-wrapper{
+.event-wrapper{
     background-color: rgb(255, 255, 255);
     border: 1px solid;
     border-width: 1px;
     border-color: rgb(205, 205, 205);
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
-    grid-template-columns: 1.5fr;
-    grid-template-rows: 2.8fr 1fr 1fr;
-    width: 75%;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
     max-width: 100%;
     /* Ширина grid-контейнера */
     justify-content: center;
@@ -357,80 +281,70 @@
     margin: 0 auto;
 }
 
-.equipment {
-    margin: 40px;
+.event-img {
     display: flex;
-    flex-direction: column; 
-    margin-top: 70px;
-    margin-bottom: 40px;
-    width: 75%;
-    height: 70%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 6px 0px #2D2D2D;
-}
-
-.equipment-img {
-    display: flex;
-    height: 220px;
-    width: 225px;
+    height: 285px;
+    width: 300px;
     background-size: cover;
     background-position: center;
 }
 
-.equipment-info {
-    display: block;
+.event-info {
+    flex-direction: column;
+    display: flex;
+    margin: 15px;
     width: 100%;
     height: 100%;
 }
 
-.equipment-name {
+.event-name {
+    font-size: 24px;
     font-family: 'PT Sans', sans-serif;
-    font-size: 26px;
+    font-weight: bolder;
+    font-size: 30px;
     word-break: break-all;
     text-align: center;
+    height: 20%;
     width: 100%;
 }
 
-.equipment-price {
+.event-description {
+    font-size: 24px;
     font-family: 'PT Sans', sans-serif;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.event-equipment {
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+    word-break: break-all;
+    height: 20%;
+    width: 100%;
+}
+
+.event-date {
+    font-size: 24px;
+    font-family: 'PT Sans', sans-serif;
+    word-break: break-all;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.event-price {
     font-weight: bold;
+    font-family: 'PT Sans', sans-serif;
     color: rgb(28, 98, 205);
     font-size: 30px;
     word-break: break-all;
     text-align: center;
+    height: 20%;
     width: 100%;
 }
-
-.button-rent {
-    width: 100%;
-    height: 100%;
-    display: block;
-    text-align: center;
-    background-color: rgb(28, 98, 205);
-}
-
-.button-rent .rent-button {
-    font-family: 'PT Sans', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    color: rgb(255, 255, 255);
-    font-weight: lighter;
-    border: none;
-    padding: 0px;
-    font-size: 30px;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(28, 98, 205);
-}
-
-.button-rent :hover {
-    background-color: rgb(16, 54, 111);
-    transition: 0.7s;
-}
-
 
 .pagination-bar {
     margin-top: 50px;
@@ -466,8 +380,6 @@ ul.pagination li a.active-page {
 ul.pagination li a:hover:not(a.active-page) {
     background-color: rgb(203, 203, 203);
 }
-
-/* Конец Страница Спортивного инвентаря */
 
 /* Начало стили Футтер */
 .footer {

@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>Менеджер мероприятий</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/css/admin_event_manager_page.css" media="screen">
+
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="logo">
+            <a href="mainPage.html">SPORTBOX</a>
+        </div>
+
+        <div class="menu">
+
+            <ul class="left-menu">
+                <li><a href="">Главная</a></li>
+                <li><a href="">Оборудование</a></li>
+                <li><a href="">Мероприятия</a></li>
+                <li><a href="">Клиенты</a></li>
+                <li><a href="">Заказы</a></li>
+            </ul>
+            <ul class="right-menu">
+                <li><a href="loginPage.html">Профиль</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="manager-wrapper">
+
+        <div class="filter-panel-wrapper">
+
+            <div class="filter-lable">
+                Фильтры поиска
+            </div>
+
+            <div class="type-equipment-wrapper">
+
+                <div class="type-equipment-lable">
+                    Тип оборудования:
+                </div>
+
+                <div class="field-type-equipment">
+
+                    <select id="type-equipment" name="type-equipment">
+                        <option value="Мяч">Выберите тип</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                        <option value="Мяч">Мяч</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="id-equipment-wrapper">
+                
+                <div class="id-equipment-lable">
+                    Дата начала:
+                </div>
+
+                <div class="field-id-equipment">
+
+                    <input type="date" id="fullName" name="fullName" required minlength="4" maxlength="35"
+                            size="20">
+
+                </div>
+
+            </div>
+
+            <div class="id-equipment-wrapper">
+                
+                <div class="id-equipment-lable">
+                    Дата окончания:
+                </div>
+
+                <div class="field-id-equipment">
+
+                    <input type="date" id="fullName" name="fullName" required minlength="4" maxlength="35"
+                            size="20">
+
+                </div>
+
+            </div>
+
+
+            
+
+            <div class="button-find">
+                <button class="find-button" type="submit">
+                    Найти
+                </button>
+            </div>
+        </div>
+
+        <div class="table-manager-wrapper">
+
+            <div class="button-add">
+                <button class="add-button" type="submit">
+                    Добавить мероприятие
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+                <div class="column-lables">
+                    <div class="event-id-lable">
+                        Id
+                    </div>
+                    <div class="event-name-lable">
+                        Название
+                    </div>
+                    <div class="event-equipment-type-lable">
+                        Тип оборудования
+                    </div>
+                    <div class="event-price-lable">
+                        Цена, руб.
+                    </div>
+                    <div class="event-data-from-lable">
+                        Дата начала
+                    </div>
+                    <div class="event-data-from-lable">
+                        Дата окончания
+                    </div>
+                    <div class="event-action-lable">
+
+                    </div>
+                    <div class="event-action-lable">
+
+                    </div>
+                </div>
+
+                <div class="table-rows">
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            2
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                                Волейбольный матч
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                            Мяч волейбольный
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            300
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-05-01
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-05-01
+                        </div>
+                        <div class="event-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="event-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="event-id-row">
+                            1
+                        </div>
+
+                        <div class="event-name-row">
+                            <div class="fullname-cell">
+                            Лыжная гонка
+                            </div>
+                        </div>
+                        <div class="event-equipment-type-row">
+                            <div class="event-equipment-type-cell">
+                                Лыжи
+                        </div>
+                        </div>
+
+                        <div class="event-price-row">
+                            200
+                        </div>
+                        <div class="event-data-from-row">
+                            2023-04-13
+                        </div>
+                        <div class="event-data-to-row">
+                            2023-04-13
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Удалить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-action-row">
+                            <div class="button-cancel">
+                                <button class="cancel-button" type="submit">
+                                    <div class="cancel-button-text">
+                                        Изменить
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+
+        <div class="contacts">
+            <p>
+                КОНТАКТНАЯ ИНФОРМАЦИЯ:
+                <br />
+                <br />
+                394018, Россия, г. Воронеж,
+                <br />
+                Университетская площадь, 1
+                <br />
+                +7 (495) 900-56-56
+                <br />
+                bkatya5577@gmail.com
+                <br />
+                ignat_kandaurov@mail.ru
+                <br />
+                kornilov.ilja@rambler.ru
+
+            </p>
+        </div>
+
+        <div class="developers">
+            <p>
+                РАЗРАБОТЧИКИ:
+                <br />
+                <br />
+                И.Р. Корнилов,
+                <br />
+                <br />
+                Е.А. Бабкина,
+                <br />
+                <br />
+                И.А. Кандауров
+            </p>
+        </div>
+
+    </div>
+
+</body>
+
+
+</html>
