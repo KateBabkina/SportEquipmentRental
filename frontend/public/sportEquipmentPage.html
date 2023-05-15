@@ -3,9 +3,9 @@
 
 <head>
 
-    <title>Мероприятия</title>
+    <title>Оборудование</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../src/css/event_page.css" media="screen">
+    <link rel="stylesheet" href="../src/css/inventory_page.css" media="screen">
 
 </head>
 
@@ -99,7 +99,7 @@
                 <div class="start-data-box">
 
                     <div class="label-start-data-box">
-                        Дата начала:
+                        Дата начала аренды:
                     </div>
 
                     <div class="field-start-data-box">
@@ -112,7 +112,7 @@
                 <div class="end-data-box">
 
                     <div class="label-end-data-box">
-                        Дата окончания:
+                        Дата окончания аренды:
                     </div>
 
                     <div class="field-end-data-box">
@@ -120,6 +120,30 @@
                             size="20">
                     </div>
 
+                </div>
+
+                <div class="price-for-day-box">
+                    <div class="label-price-for-day-box">
+                        Цена за день:
+                    </div>
+
+
+                    <div class="label-price-from">
+                        от:
+                    </div>
+                    <div class="field-price-from">
+                        <input type="number" id="fullName" name="fullName" required minlength="4" maxlength="35"
+                            size="20">
+                    </div>
+
+                    <div class="label-price-to">
+                        до:
+                    </div>
+
+                    <div class="field-price-to">
+                        <input type="number" id="fullName" name="fullName" required minlength="4" maxlength="35"
+                            size="20">
+                    </div>
                 </div>
 
                 <div class="button-find">
@@ -132,119 +156,147 @@
         </div>
 
         <div class="centre-column-content">
-            <div class="events">
+            <div class="equipments">
+                <div class="equipment-wrapper">
 
-                <div class="event-wrapper">
-                    <div class="event-img">
+                    <div class="equipment-img">
                         <img src="../src/images/inventory/ball.jpg" alt="">
                     </div>
-                    <div class="event-info">
-                        <div class="event-name">
-                            Баскетбольный матч
+
+                    <div class="equipment-info">
+                        <div class="equipment-name">
+                            Лыжи
                         </div>
 
-                        <div class="event-description">
-                            Для участия в игре необходимо сформировать команду.
+                        <div class="equipment-price">
+                            1000 руб./день
                         </div>
+                    </div>
 
-                        <div class="event-equipment">
-                            Необходимое оборудование: мяч баскетбольный
-                        </div>
-
-                        <div class="event-date">
-                            Даты проведения: с 2023-05-12 по 2023-05-13
-                        </div>
-
-                        <div class="event-price">
-                            300 руб.
-                        </div>
+                    <div class="button-rent">
+                        <button class="rent-button" type="submit">
+                            Арендовать
+                        </button>
                     </div>
                 </div>
 
-                <div class="event-wrapper">
-                    <div class="event-img">
+                <div class="equipment-wrapper">
+
+                    <div class="equipment-img">
                         <img src="../src/images/inventory/ski.jpg" alt="">
                     </div>
-                    <div class="event-info">
-                        <div class="event-name">
-                            Баскетбольный матч
+
+                    <div class="equipment-info">
+                        <div class="equipment-name">
+                            Лыжи
                         </div>
 
-                        <div class="event-description">
-                            Для участия в игре необходимо сформировать команду.
+                        <div class="equipment-price">
+                            1000 руб./день
                         </div>
+                    </div>
 
-                        <div class="event-equipment">
-                            Необходимое оборудование: мяч баскетбольный
-                        </div>
-
-                        <div class="event-date">
-                            Даты проведения: с 2023-05-12 по 2023-05-13
-                        </div>
-
-                        <div class="event-price">
-                            300 руб.
-                        </div>
+                    <div class="button-rent">
+                        <button class="rent-button" type="submit">
+                            Арендовать
+                        </button>
                     </div>
                 </div>
 
-                <div class="event-wrapper">
-                    <div class="event-img">
-                        <img src="../src/images/inventory/ball.jpg" alt="">
+                <div class="equipment-wrapper">
+
+                    <div class="equipment-img">
+                        <img src="../src/images/inventory/frisbee.jpg" alt="">
                     </div>
-                    <div class="event-info">
-                        <div class="event-name">
-                            Баскетбольный матч
+
+                    <div class="equipment-info">
+                        <div class="equipment-name">
+                            Лыжи
                         </div>
 
-                        <div class="event-description">
-                            Для участия в игре необходимо сформировать команду.
+                        <div class="equipment-price">
+                            1000 руб./день
                         </div>
+                    </div>
 
-                        <div class="event-equipment">
-                            Необходимое оборудование: мяч баскетбольный
-                        </div>
-
-                        <div class="event-date">
-                            Даты проведения: с 2023-05-12 по 2023-05-13
-                        </div>
-
-                        <div class="event-price">
-                            300 руб.
-                        </div>
+                    <div class="button-rent">
+                        <button class="rent-button" type="submit">
+                            Арендовать
+                        </button>
                     </div>
                 </div>
 
-                <div class="event-wrapper">
-                    <div class="event-img">
-                        <img src="../src/images/ball.jpg" alt="">
+                <div class="equipment-wrapper">
+
+                    <div class="equipment-img">
+                        <img src="../src/images/inventory/bicycle.jpg" alt="">
                     </div>
-                    <div class="event-info">
-                        <div class="event-name">
-                            Баскетбольный матч
+
+                    <div class="equipment-info">
+                        <div class="equipment-name">
+                            Лыжи
                         </div>
 
-                        <div class="event-description">
-                            Для участия в игре необходимо сформировать команду.
+                        <div class="equipment-price">
+                            1000 руб./день
                         </div>
+                    </div>
 
-                        <div class="event-equipment">
-                            Необходимое оборудование: мяч баскетбольный
-                        </div>
-
-                        <div class="event-date">
-                            Даты проведения: с 2023-05-12 по 2023-05-13
-                        </div>
-
-                        <div class="event-price">
-                            300 руб.
-                        </div>
+                    <div class="button-rent">
+                        <button class="rent-button" type="submit">
+                            <div class="rent-button-text">
+                                Арендовать
+                            </div>
+                        </button>
                     </div>
                 </div>
 
+                <div class="equipment-wrapper">
+
+                    <div class="equipment-img">
+                        <img src="../src/images/backgroundfon.jpg" alt="">
+                    </div>
+
+                    <div class="equipment-info">
+                        <div class="equipment-name">
+                            Лыжи
+                        </div>
+
+                        <div class="equipment-price">
+                            1000 руб./день
+                        </div>
+                    </div>
+
+                    <div class="button-rent">
+                        <button class="rent-button" type="submit">
+                            Арендовать
+                        </button>
+                    </div>
+                </div>
+
+                <div class="equipment-wrapper">
+
+                    <div class="equipment-img">
+
+                    </div>
+
+                    <div class="equipment-info">
+                        <div class="equipment-name">
+                            Лыжи
+                        </div>
+
+                        <div class="equipment-price">
+                            1000 руб./день
+                        </div>
+                    </div>
+
+                    <div class="button-rent">
+                        <button class="rent-button" type="submit">
+                            Арендовать
+                        </button>
+                    </div>
+                </div>
             </div>
-
-
 
             <div class="pagination-bar">
                 <ul class="pagination">
@@ -259,9 +311,8 @@
                 </ul>
             </div>
 
+
         </div>
-
-
     </div>
 
     <div class="footer">
