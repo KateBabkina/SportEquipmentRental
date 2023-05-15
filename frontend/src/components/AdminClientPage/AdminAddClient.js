@@ -99,7 +99,7 @@ export default function AdminAddClient() {
                             Пароль:
                         </div>
                         <div className="firstpassword-box-field">
-                            <input type="text" placeholder="********" id="password" name="password" required
+                            <input type="password" placeholder="********" id="password" name="password" required
                                 minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                         </div>
                     </div>
