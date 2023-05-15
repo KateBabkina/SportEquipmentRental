@@ -15,6 +15,9 @@ import PaymentPage from './components/PaymentPage';
 import ReccomendationPage from './components/RecommendationPage';
 import AdminClientMenager from './components/AdminClientPage/AdminClientManagerPage';
 import AdminAddClient from './components/AdminClientPage/AdminAddClient';
+import AdminEquipmentManagerPage from './components/AdminEquipmentPage/AdminEquipmentManagerPage';
+import AdminAddEquipmentPage from './components/AdminEquipmentPage/AdminAddEquipmentPage';
+import AdminChangeEquipment from './components/AdminEquipmentPage/AdminChangeEquipment';
 
 const App = () => {
 
@@ -46,6 +49,12 @@ const App = () => {
                 <Route path="/admin/clients" element={<AdminClientMenager></AdminClientMenager>} />
 
                 <Route path="/admin/clients/add" element={<AdminAddClient></AdminAddClient>} />
+
+                <Route path="/admin/equipments" element={<AdminEquipmentManagerPage></AdminEquipmentManagerPage>} />
+
+                <Route path="/admin/equipments/add" element={<AdminAddEquipmentPage></AdminAddEquipmentPage>} />
+                
+                <Route path="/admin/equipments/change" element={<AdminChangeEquipment></AdminChangeEquipment>} />
 
             </Routes>
         </Router>
