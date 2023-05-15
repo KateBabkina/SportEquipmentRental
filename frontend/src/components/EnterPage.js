@@ -5,7 +5,7 @@ import {authorizeUser} from "../store/userSlice"
 import axios from 'axios';
 import validator from 'validator';
 
-const EnterPage = ({ setIsLogged, changeUser }) => {
+const EnterPage = () => {
 
     const dispatch = useDispatch();
 

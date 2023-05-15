@@ -13,22 +13,12 @@ import UserProfile from "./components/UserProfile"
 import AboutEquipment from "./components/AboutEquipment"
 import PaymentPage from './components/PaymentPage';
 import ReccomendationPage from './components/RecommendationPage';
+import AdminClientMenager from './components/AdminClientPage/AdminClientManagerPage';
+import AdminAddClient from './components/AdminClientPage/AdminAddClient';
 
 const App = () => {
 
     const [isLogged, setIsLogged] = useState(localStorage.getItem("isLogged") === "true");
-    const [userId, setUserId] = useState(() => {
-       if (localStorage.getItem("isLogged") === "true"){
-        return localStorage.getItem("userId")
-       } else {
-        return -1
-       }
-    })
-
-    const changeUser = (id) => {
-        console.log(id);
-        setUserId(id)
-    }
 
     return (<div>
         <Router>
@@ -49,9 +39,13 @@ const App = () => {
 
                 <Route path="/profile" element={<UserProfile setIsLogged={setIsLogged}></UserProfile>} />
 
-                <Route path="/enter" element={<EnterPage setIsLogged={setIsLogged} changeUser={changeUser}></EnterPage>} />
+                <Route path="/enter" element={<EnterPage></EnterPage>} />
 
                 <Route path="/api/person/add" element={<RegisterPage setIsLogged={setIsLogged}></RegisterPage>} />
+
+                <Route path="/admin/clients" element={<AdminClientMenager></AdminClientMenager>} />
+
+                <Route path="/admin/clients/add" element={<AdminAddClient></AdminAddClient>} />
 
             </Routes>
         </Router>
