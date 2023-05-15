@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux"
-import logo from "../images/person.png";
 
 function Header() {
 
@@ -38,11 +37,6 @@ function Header() {
                         </ul>
                         <ul className="right-menu">
                             <div>
-                                <li>
-                                    <div className="profile-icon">
-                                        <a href="/"><img src={logo} height="48" width="48" alt="nice"></img></a>
-                                    </div>
-                                </li>
                                 <li><Link className="headLink" to="/profile">Профиль</Link></li>
                             </div>
 
@@ -59,19 +53,9 @@ function Header() {
                             {
                                 isLogged ?
                                     <div>
-                                        <li>
-                                            <div className="profile-icon">
-                                                <a href="/"><img src={logo} height="48" width="48" alt="nice"></img></a>
-                                            </div>
-                                        </li>
                                         <li><Link className="headLink" to="/profile">Профиль</Link></li>
                                     </div>
                                     : <div>
-                                        <li>
-                                            <div className="profile-icon">
-                                                <a href="/"><img src={logo} height="48" width="48" alt="nice"></img></a>
-                                            </div>
-                                        </li>
                                         <li><Link className="headLink" to="/enter">Войти</Link></li>
                                     </div>
                             }
