@@ -12,8 +12,9 @@ export default function AdminChangeEquipment() {
     const [types, setTypes] = useState([])
     const [loading, setLoading] = useState(true)
     const [requestToChange, setRequestToChange] = useState({
-        inventoryType: "",
-        name: ""
+        inventoryType: equipment.inventoryType.type,
+        name: equipment.name
+        
     })
 
     useEffect(() => {
@@ -118,7 +119,7 @@ export default function AdminChangeEquipment() {
                                     Тип оборудования:
                                 </div>
                                 <div className="field-type-equipment-box">
-                                    <select id="field-type-equipment-box" name="type-equipment" value={equipment.inventoryType.type}
+                                    <select id="inventoryType" name="type-equipment" value={requestToChange.inventoryType}
                                         onChange={(e) => filtredInput(e)}>
                                         <option key="-" value="">
                                             Выберите тип
@@ -133,7 +134,7 @@ export default function AdminChangeEquipment() {
                                     Название:
                                 </div>
                                 <div className="account-box-field">
-                                    <input type="text" value={equipment.name} id="login" name="login" required onChange={(e) => filtredInput(e)}
+                                    <input type="text" value={requestToChange.name} id="name" name="login" required onChange={(e) => filtredInput(e)}
                                         minLength="4" maxLength="35" size="20" />
                                 </div>
                             </div>
@@ -144,7 +145,7 @@ export default function AdminChangeEquipment() {
                                         Размер:
                                     </div>
                                     <div className="firstpassword-box-field">
-                                        <input type="text" id="password" name="password" required onChange={(e) => filtredInput(e)}
+                                        <input type="text" value={equipment.size} id="size" name="password" required onChange={(e) => filtredInput(e)}
                                             minLength="4" maxLength="35" size="20" />
                                     </div>
                                 </div> : false

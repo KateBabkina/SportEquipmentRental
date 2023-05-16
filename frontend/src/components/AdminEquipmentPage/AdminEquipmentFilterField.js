@@ -27,16 +27,18 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
 
   const filtredInput = (event) => {
     if (event.target.id === "id") {
-      setFilter(() => {
+      setFilter((prev) => {
         return {
+          ...prev,
           [event.target.id]: Number(event.target.value)
         }
       })
     } else if (event.target.id === "inventoryType" && event.target.value === ""){
       setFilter({})
     } else {
-      setFilter(() => {
+      setFilter((prev) => {
         return {
+          ...prev,
           [event.target.id]: event.target.value
         }
       })
