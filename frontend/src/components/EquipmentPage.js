@@ -4,7 +4,8 @@ import ItemList from "./ItemList";
 import FilterField from "./FiltreField";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
-import Pagination from "./Pagination";
+
+import '../css/inventory_page.css'
 
 function EquipmentPage() {
 
@@ -63,11 +64,10 @@ function EquipmentPage() {
             size={100}
           />
           :
-          <div>
+          <>
             <FilterField changeFilter={changeFilter} />
-            <ItemList items={currentItemsOnPage} />
-            <Pagination itemsPerPage={itemsPerPage}  totalItems={currentItems.length} paginate={paginate}/>
-          </div>
+            <ItemList items={currentItemsOnPage} itemsPerPage={itemsPerPage} currentItems={currentItems} paginate={paginate}/>
+          </>
       }
     </div>
   );

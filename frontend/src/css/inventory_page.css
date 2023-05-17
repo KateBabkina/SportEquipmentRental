@@ -71,7 +71,7 @@
 
 /* Начало Страница Спортивного инвентаря */
 .base-part-sportEquipment-page {
-    height: 1400px;
+    /* height: 1400px; */
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
@@ -312,7 +312,7 @@
     margin-left: 25px;
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 1061px;
+    /* height: 1061px; */
     width: 72%;
 }
 
@@ -372,7 +372,6 @@
 .equipment-img {
     display: flex;
     height: 220px;
-    width: 225px;
     background-size: cover;
     background-position: center;
 }

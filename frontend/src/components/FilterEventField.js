@@ -116,7 +116,7 @@ function FilterEventField({ changeFilter }) {
                     </div>
 
                     <div className="field-start-data-box">
-                        <input id="startDate" type="date" name="fullName" placeholder="гггг-мм--дд" onChange={e => filtredInput(e)}
+                        <input id="startDate" type="date" name="fullName" onChange={e => filtredInput(e)}
                             minLength="4" maxLength="35" size="20"></input>
                     </div>
 
@@ -129,7 +129,7 @@ function FilterEventField({ changeFilter }) {
                     </div>
 
                     <div className="field-end-data-box">
-                        <input id="endDate" type="date" name="fullName" placeholder="гггг-мм--дд" onChange={e => filtredInput(e)}
+                        <input id="endDate" type="date" name="fullName" onChange={e => filtredInput(e)}
                             minLength="4" maxLength="35" size="20"></input>
                     </div>
 
@@ -137,9 +137,7 @@ function FilterEventField({ changeFilter }) {
 
                 <div className="button-find">
                     <button className="find-button" type="submit" onClick={() => sendFilter()}>
-                        <div className="find-button-text">
-                            Найти
-                        </div>
+                        Найти
                     </button>
                 </div>
 

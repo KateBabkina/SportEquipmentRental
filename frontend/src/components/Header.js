@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux"
 
+import '../css/main_page.css'
+
 function Header() {
 
     const isLogged = useSelector(state => state.user.isLogged);
@@ -56,7 +58,7 @@ function Header() {
                                         <li><Link className="headLink" to="/profile">Профиль</Link></li>
                                     </div>
                                     : <div>
-                                        <li><Link className="headLink" to="/enter">Войти</Link></li>
+                                        <li><Link className="headLink" to="/enter">Вход</Link></li>
                                     </div>
                             }
 

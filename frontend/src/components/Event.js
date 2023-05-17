@@ -4,9 +4,9 @@ function Event({ event }) {
     return (
         <div className="event-wrapper">
             <div className="event-img">
-                <img src={require("../images/events/" + event.name + ".jpg")} alt="MISSING JPG"></img>
+                <img src={require("../images/events/" + event.name + ".jpg") } alt="MISSING JPG"></img>
             </div>
-            <div className="event-info">
+            <div className="event-info-wrapper">
                 <div className="event-name">
                     {event.name}
                 </div>

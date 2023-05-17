@@ -103,7 +103,6 @@
 
 
 .fullname-box {
-    padding-right: 20%;
     margin: auto;
     text-align: center;
     height: 80px;
@@ -123,9 +122,8 @@
 }
 
 .fullname-box-field {
-    float: right;
     height: 80px;
-    width: 75%;
+    width: 45%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -139,7 +137,6 @@
     border: none;
     height: 80px;
     width: 100%;
-    font-weight: bold;
     color: rgb(0, 0, 0, 50%);
     background-color: rgb(0, 0, 0, 5%);
 }

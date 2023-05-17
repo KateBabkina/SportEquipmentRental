@@ -3,6 +3,8 @@ import {useSelector} from "react-redux"
 import {useDispatch} from "react-redux"
 import {setEquipmentForRent} from "../store/userSlice"
 
+
+
 function Item({ item }) {
 
   const isLogged = useSelector(state => state.user.isLogged);
@@ -40,9 +42,7 @@ function Item({ item }) {
 
       <div className="button-rent">
         <button className="rent-button" type="submit" onClick={() => handleRentButton()}>
-          <div className="rent-button-text">
             Арендовать
-          </div>
         </button>
       </div>
 

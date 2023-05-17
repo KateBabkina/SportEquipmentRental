@@ -1,7 +1,8 @@
 import React from "react";
 import Event from "./Event"
+import Pagination from "./Pagination";
 
-function EventList({ events }) {
+function EventList({ events, eventsPerPage, currentEvents, paginate}) {
     return (
         <div className="centre-column-content">
             <div className="events">
@@ -9,6 +10,7 @@ function EventList({ events }) {
                     <Event key={el.id} event={el} />
                 ))}
             </div>
+            <Pagination itemsPerPage={eventsPerPage}  totalItems={currentEvents.length} paginate={paginate}/>
         </div>
     );
 };
