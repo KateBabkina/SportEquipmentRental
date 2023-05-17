@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
-import ClipLoader from "react-spinners/ClipLoader";
 
 export default function AdminChangeEquipment() {
 
@@ -9,10 +8,8 @@ export default function AdminChangeEquipment() {
     var password = '123';
 
     const equipment = useSelector(state => state.user.dataForChange);
-    const [types, setTypes] = useState([])
-    const [loading, setLoading] = useState(true)
     const [requestToChange, setRequestToChange] = useState(() => {
-        if(equipment.inventoryType.isSizable === true) {
+        if (equipment.inventoryType.isSizable === true) {
             return {
                 inventoryType: equipment.inventoryType.type,
                 name: equipment.name,
@@ -24,25 +21,8 @@ export default function AdminChangeEquipment() {
                 name: equipment.name
             }
         }
-        
-    })
 
-    useEffect(() => {
-        setLoading(true)
-        axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
-            {
-                auth: {
-                    username: username,
-                    password: password
-                }
-            }).then(res => {
-                console.log(res.data);
-                setTypes(res.data)
-                setLoading(false)
-            }).catch(() => {
-                alert("An error occurred on the server")
-            })
-    }, [])
+    })
 
     const filtredInput = (event) => {
 
@@ -75,7 +55,7 @@ export default function AdminChangeEquipment() {
             if (Number(size) > 45 || Number(size) < 29) {
                 alert("Размер должен быть в диапазоне от 29 до 45")
                 return false
-            } 
+            }
         }
 
         if (inventoryType === "") {
@@ -110,79 +90,58 @@ export default function AdminChangeEquipment() {
         }
     }
 
-
-    const getTypes = () => {
-        return types.map((type) => {
-            return <option key={type.id} value={type.type}>{type.type}</option>;
-        });
-    }
-
     return (
 
         <div className="base-part-registration">
-            {
-                loading ?
-                    <ClipLoader
-                        color={"#1C62CD"}
-                        loading={loading}
-                        size={100} />
-                    : <div className="centre-column-registration">
-                        <form name="registration-form-wraper">
-                            <div className="create-label">
-                                Для изменения оборудования введите новые данные
-                            </div>
-
-
-                            <div className="fullname-box">
-                                <div className="fullname-box-label">
-                                    Тип оборудования:
-                                </div>
-                                <div className="field-type-equipment-box">
-                                    <select id="inventoryType" name="type-equipment" value={equipment.inventoryType.type}
-                                        onChange={(e) => filtredInput(e)}>
-                                        <option key="-" value="">
-                                            Выберите тип
-                                        </option>
-                                        {getTypes()}
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="account-box">
-                                <div className="account-box-label">
-                                    Название:
-                                </div>
-                                <div className="account-box-field">
-                                    <input type="text" value={requestToChange.name} id="name" name="login" required onChange={(e) => filtredInput(e)}
-                                        minLength="4" maxLength="50" size="20" />
-                                </div>
-                            </div>
-
-                            {
-                                equipment.inventoryType.isSizable ? <div className="firstpassword-box">
-                                    <div className="firstpassword-box-label">
-                                        Размер:
-                                    </div>
-                                    <div className="firstpassword-box-field">
-                                        <input type="text" value={requestToChange.size} id="size" name="password" required onChange={(e) => filtredInput(e)}
-                                        />
-                                    </div>
-                                </div> : false
-                            }
-
-
-
-                            <div className="registration-box-action-box">
-                                <button className="create-new-user-button" type="button" onClick={() => changeEquipment()}>
-                                    <div className="create-new-user-button-text">
-                                        Изменить
-                                    </div>
-                                </button>
-                            </div>
-                        </form>
+            <div className="centre-column-registration">
+                <form name="registration-form-wraper">
+                    <div className="create-label">
+                        Для изменения оборудования введите новые данные
                     </div>
 
-            }
+
+                    <div className="fullname-box">
+                        <div className="fullname-box-label">
+                            Тип оборудования:
+                        </div>
+                        <div className="field-type-equipment-box">
+                            <input id="inventoryType" name="type-equipment" value={equipment.inventoryType.type} readOnly></input>
+                        </div>
+                    </div>
+
+                    <div className="account-box">
+                        <div className="account-box-label">
+                            Название:
+                        </div>
+                        <div className="account-box-field">
+                            <input type="text" value={requestToChange.name} id="name" name="login" required onChange={(e) => filtredInput(e)}
+                                minLength="4" maxLength="50" size="20" />
+                        </div>
+                    </div>
+
+                    {
+                        equipment.inventoryType.isSizable ? <div className="firstpassword-box">
+                            <div className="firstpassword-box-label">
+                                Размер:
+                            </div>
+                            <div className="firstpassword-box-field">
+                                <input type="text" value={requestToChange.size} id="size" name="password" required onChange={(e) => filtredInput(e)}
+                                />
+                            </div>
+                        </div> : false
+                    }
+
+
+
+                    <div className="registration-box-action-box">
+                        <button className="create-new-user-button" type="button" onClick={() => changeEquipment()}>
+                            <div className="create-new-user-button-text">
+                                Изменить
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </div>
 
         </div>
     )
