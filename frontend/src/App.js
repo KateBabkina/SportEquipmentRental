@@ -18,6 +18,8 @@ import AdminAddClient from './components/AdminClientPage/AdminAddClient';
 import AdminEquipmentManagerPage from './components/AdminEquipmentPage/AdminEquipmentManagerPage';
 import AdminAddEquipmentPage from './components/AdminEquipmentPage/AdminAddEquipmentPage';
 import AdminChangeEquipment from './components/AdminEquipmentPage/AdminChangeEquipment';
+import AdminOrderManagerPage from "./components/AdminOrderPage/AdminOrderManagerPage";
+import AdminOrderChangePage from "./components/AdminOrderPage/AdminOrderChangePage"
 
 const App = () => {
 
@@ -55,6 +57,10 @@ const App = () => {
                 <Route path="/admin/equipments/add" element={<AdminAddEquipmentPage></AdminAddEquipmentPage>} />
                 
                 <Route path="/admin/equipments/change" element={<AdminChangeEquipment></AdminChangeEquipment>} />
+
+                <Route path="/admin/orders" element={<AdminOrderManagerPage></AdminOrderManagerPage>} />
+
+                <Route path="/admin/orders/change" element={<AdminOrderChangePage></AdminOrderChangePage>} />
 
             </Routes>
         </Router>
