@@ -19,7 +19,7 @@ export default function AdminOrderChangePage() {
         }).then(res => {
             console.log(res.data);
             alert(res.data.message)
-            //window.location.href = "/admin/orders"
+            window.location.href = "/admin/orders"
         }).catch(() => {
             alert("An error occurred on the server")
         })
