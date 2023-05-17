@@ -11,9 +11,19 @@ export default function AdminChangeEquipment() {
     const equipment = useSelector(state => state.user.dataForChange);
     const [types, setTypes] = useState([])
     const [loading, setLoading] = useState(true)
-    const [requestToChange, setRequestToChange] = useState({
-        inventoryType: equipment.inventoryType.type,
-        name: equipment.name
+    const [requestToChange, setRequestToChange] = useState(() => {
+        if(equipment.inventoryType.isSizable === true) {
+            return {
+                inventoryType: equipment.inventoryType.type,
+                name: equipment.name,
+                size: equipment.size
+            }
+        } else {
+            return {
+                inventoryType: equipment.inventoryType.type,
+                name: equipment.name
+            }
+        }
         
     })
 
@@ -58,11 +68,20 @@ export default function AdminChangeEquipment() {
 
         var inventoryType = document.getElementById("inventoryType").value
         var name = document.getElementById("name").value
+        var size = "";
 
-        if(inventoryType === "") {
+        if (equipment.inventoryType.isSizable === true) {
+            size = document.getElementById("size").value
+            if (Number(size) > 45 || Number(size) < 29) {
+                alert("Размер должен быть в диапазоне от 29 до 45")
+                return false
+            } 
+        }
+
+        if (inventoryType === "") {
             alert("Пожалуйста выберете тип оборудования")
             return false
-        } else if (name === ""){
+        } else if (name === "") {
             alert("Введите название")
             return false
         } else {
@@ -75,7 +94,7 @@ export default function AdminChangeEquipment() {
         console.log(check);
         console.log(requestToChange);
         if (check) {
-            axios.put("https://sportbox.up.railway.app/api/inventory/add", requestToChange,
+            axios.put(`https://sportbox.up.railway.app/api/inventory/change?id=${equipment.id}`, requestToChange,
                 {
                     auth: {
                         username: username,
@@ -119,7 +138,7 @@ export default function AdminChangeEquipment() {
                                     Тип оборудования:
                                 </div>
                                 <div className="field-type-equipment-box">
-                                    <select id="inventoryType" name="type-equipment" value={requestToChange.inventoryType}
+                                    <select id="inventoryType" name="type-equipment" value={equipment.inventoryType.type}
                                         onChange={(e) => filtredInput(e)}>
                                         <option key="-" value="">
                                             Выберите тип
@@ -135,7 +154,7 @@ export default function AdminChangeEquipment() {
                                 </div>
                                 <div className="account-box-field">
                                     <input type="text" value={requestToChange.name} id="name" name="login" required onChange={(e) => filtredInput(e)}
-                                        minLength="4" maxLength="35" size="20" />
+                                        minLength="4" maxLength="50" size="20" />
                                 </div>
                             </div>
 
@@ -145,8 +164,8 @@ export default function AdminChangeEquipment() {
                                         Размер:
                                     </div>
                                     <div className="firstpassword-box-field">
-                                        <input type="text" value={equipment.size} id="size" name="password" required onChange={(e) => filtredInput(e)}
-                                            minLength="4" maxLength="35" size="20" />
+                                        <input type="text" value={requestToChange.size} id="size" name="password" required onChange={(e) => filtredInput(e)}
+                                        />
                                     </div>
                                 </div> : false
                             }
