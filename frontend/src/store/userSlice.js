@@ -7,7 +7,8 @@ const userSlice = createSlice({
         user: {},
         isLogged: false,
         equipmentForRent: {},
-        booking: {}
+        booking: {},
+        dataForChange: {}
     }, 
     reducers: {
         authorizeUser(state, action) {
@@ -30,10 +31,13 @@ const userSlice = createSlice({
         },
         updateUser(state, action){
             state.user = action.payload
+        },
+        setDataForChange(state, action){
+            state.dataForChange = action.payload
         }
     },
 });
 
-export const {authorizeUser, unauthorizeUser, setEquipmentForRent,  setBooking, updateUser} = userSlice.actions;
+export const {authorizeUser, unauthorizeUser, setEquipmentForRent,  setBooking, updateUser, setDataForChange} = userSlice.actions;
 
 export default userSlice.reducer;

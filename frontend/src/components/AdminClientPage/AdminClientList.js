@@ -6,7 +6,6 @@ export default function AdminClientList({ clients }) {
     const linkToAddPage = () => {
         window.location.href = "/admin/clients/add"
     }
-    console.log(clients.length);
 
     return (
         <div className="table-manager-wrapper">
