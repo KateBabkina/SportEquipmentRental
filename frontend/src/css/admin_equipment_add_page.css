@@ -191,7 +191,7 @@
     margin-right: auto;
 }
 
-.field-type-equipment-box select {
+.field-type-equipment-box input {
     box-sizing: content-box;
     padding-left: 10px;
     font-size: 24px;
