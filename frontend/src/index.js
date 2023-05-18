@@ -25,6 +25,7 @@ import './css/home.css'
 import './css/inventory_page.css'
 import './css/registration_page.css'
 import './css/item_list.css'
+import "./css/spin.css"
 import App from "./App";
 
 

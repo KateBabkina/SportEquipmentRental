@@ -20,6 +20,9 @@ import AdminAddEquipmentPage from './components/AdminEquipmentPage/AdminAddEquip
 import AdminChangeEquipment from './components/AdminEquipmentPage/AdminChangeEquipment';
 import AdminOrderManagerPage from "./components/AdminOrderPage/AdminOrderManagerPage";
 import AdminOrderChangePage from "./components/AdminOrderPage/AdminOrderChangePage"
+import AdminEventManagerPage from './components/AdminEventPage/AdminEventManagerPage';
+import AdminAddEventPage from './components/AdminEventPage/AdminAddEventPage';
+import AdminChangeEventPage from './components/AdminEventPage/AdminChangeEventPage';
 
 const App = () => {
 
@@ -61,6 +64,13 @@ const App = () => {
                 <Route path="/admin/orders" element={<AdminOrderManagerPage></AdminOrderManagerPage>} />
 
                 <Route path="/admin/orders/change" element={<AdminOrderChangePage></AdminOrderChangePage>} />
+
+                <Route path="/admin/events" element={<AdminEventManagerPage></AdminEventManagerPage>} />
+
+                <Route path="/admin/events/add" element={<AdminAddEventPage></AdminAddEventPage>} />
+
+                <Route path="/admin/events/change" element={<AdminChangeEventPage></AdminChangeEventPage>} />
+
 
             </Routes>
         </Router>

@@ -43,7 +43,8 @@ export default function AdminEquipmentManagerPage() {
         <ClipLoader
           color={"#1C62CD"}
           loading={loading}
-          size={100}
+          size={200}
+          className="spin"
         />
         :
         <>
