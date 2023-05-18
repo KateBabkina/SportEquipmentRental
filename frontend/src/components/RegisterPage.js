@@ -5,7 +5,7 @@ import { authorizeUser } from "../store/userSlice"
 import axios from 'axios';
 import validator from 'validator';
 
-import '../css/registration_page.css'
+import classes from '../css/registration_page.module.css';
 
 function RegisterPage({ setIsLogged }) {
 
@@ -67,41 +67,41 @@ function RegisterPage({ setIsLogged }) {
     }
 
     return (
-        <div className="base-part-registration">
-            <div className="centre-column-registration">
-                <form name="registration-form-wraper" method="POST" onSubmit={(e) => submitChacking(e)}>
+        <div className={classes.basePartRegistration}>
+            <div className={classes.centreColumnRegistration}>
+                <form name={classes.registrationFormWraper} method="POST" onSubmit={(e) => submitChacking(e)}>
 
-                    <div className="create-label">
+                    <div className={classes.createLabel}>
 
                         Для регистрации введите данные
 
                     </div>
 
-                    <div className="fullname-box">
-                        <div className="fullname-box-label">
+                    <div className={classes.fullnameBox}>
+                        <div className={classes.fullnameBoxLabel}>
                             ФИО:
                         </div>
-                        <div className="fullname-box-field">
+                        <div className={classes.fullnameBoxField}>
                             <input type="text" placeholder="Иванов Иван Иванович" id="usermame" name="usermame" value={register.usermame}
                                 onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
-                    <div className="account-box">
-                        <div className="account-box-label">
+                    <div className={classes.accountBox}>
+                        <div className={classes.accountBoxLabel}>
                             Адрес эл. почты:
                         </div>
-                        <div className="account-box-field">
+                        <div className={classes.accountBoxField}>
                             <input type="text" placeholder="example@example.ru" id="email" name="email" value={register.email}
                                 onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
-                    <div className="firstpassword-box">
-                        <div className="firstpassword-box-label">
+                    <div className={classes.firstpasswordBox}>
+                        <div className={classes.firstpasswordBoxLabel}>
                             Пароль:
                         </div>
-                        <div className="firstpassword-box-field">
+                        <div className={classes.firstpasswordBoxField}>
                             <input type="password" placeholder="********" id="password" name="password" value={register.password}
                                 onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
                         </div>
@@ -109,15 +109,15 @@ function RegisterPage({ setIsLogged }) {
 
 
 
-                    <div className="registration-box-action-box">
-                        <button className="create-new-user-button" type="submit">
-                            <div className="create-new-user-button-text">
+                    <div className={classes.registrationBoxActionBox}>
+                        <button className={classes.createNewUserButton} type="submit">
+                            <div className={classes.createNewUserButtonText}>
                                 Зарегистрироваться
                             </div>
                         </button>
                     </div>
 
-                    <div className="login-box-action-box">
+                    <div className={classes.loginBoxActionBox}>
                         <a href="/enter">Войти, если есть аккаунт</a>
                     </div>
 

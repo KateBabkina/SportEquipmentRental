@@ -6,7 +6,7 @@ import EventList from "./EventList";
 import ClipLoader from "react-spinners/ClipLoader";
 
 
-import '../css/event_page.css'
+import '../css/event_page.css';
 
 function EventPage({ isLogged }) {
 

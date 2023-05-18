@@ -70,7 +70,7 @@
 /*Конец стили шапки*/
 
 /* Начало Страница Спортивного инвентаря */
-.base-part-sportEquipment-page {
+.basePartSportEquipmentPage {
     /* height: 1400px; */
     background-color: rgb(255, 255, 255);
     background-size: cover;
@@ -79,7 +79,7 @@
 
 /* Начало Колонка с фильтрами*/
 
-.left-column-filters {
+.leftColumnFilters {
     box-shadow: 2px 5px 5px -3px #848484;
     float: left;
     background-color: rgb(255, 255, 255);
@@ -87,11 +87,11 @@
     width: 25%;
 }
 
-.filter-panel {
+.filterPanel {
     height: 80%;
 }
 
-.filters-label {
+.filtersLabel {
     font-family: 'PT Sans', sans-serif;
     margin-top: 40px;
     text-decoration-skip-ink: none;
@@ -104,30 +104,30 @@
     margin-bottom: 100px;
 }
 
-.type-equipment-box {
+.typeEquipmentBox {
     height: 100px;
     text-align: center;
     font-style: inherit;
 }
 
-.type-equipment-box {
+.typeEquipmentBox {
     height: 120px;
 }
 
-.label-type-equipment-box {
+.labelTypeEquipmentBox {
     font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
 
-.field-type-equipment-box {
+.fieldTypeEquipmentBox {
     margin-right: 15px;
     height: 60px;
     text-align: center;
     font-size: 24px;
 }
 
-.field-type-equipment-box select {
+.fieldTypeEquipmentBox select {
     padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     color: rgb(0, 0, 0, 50%);
@@ -140,29 +140,29 @@
     border: none;
 }
 
-.field-type-equipment-box option{
+.fieldTypeEquipmentBox option{
     overflow: auto;
 }
 
-.start-data-box {
+.startDataBox {
     margin-top: 50px;
     height: 120px;
 }
 
-.label-start-data-box {
+.labelStartDataBox {
     font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
 
-.field-start-data-box {
+.fieldStartDataBox {
     margin-right: 15px;
     height: 60px;
     text-align: left;
     font-size: 24px;
 }
 
-.field-start-data-box input {
+.fieldStartDataBox input {
     padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
@@ -174,24 +174,24 @@
     color: rgb(0, 0, 0, 50%);
 }
 
-.end-data-box {
+.endDataBox {
     height: 120px;
 }
 
-.label-end-data-box {
+.labelEndDataBox {
     font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
 
-.field-end-data-box {
+.fieldEndDataBox {
     margin-right: 15px;
     height: 60px;
     text-align: left;
     font-size: 24px;
 }
 
-.field-end-data-box input {
+.fieldEndDataBox input {
     padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
@@ -203,17 +203,17 @@
     color: rgb(0, 0, 0, 50%);
 }
 
-.price-for-day-box {
+.priceForDayBox {
     margin-bottom: 115px;
 }
 
-.label-price-for-day-box {
+.labelPriceForDayBox {
     font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
 }
 
-.label-price-from {
+.labelPriceFrom {
     font-family: 'PT Sans', sans-serif;
     line-height: 52px;
     width: 10%;
@@ -222,7 +222,7 @@
     font-size: 26px;
 }
 
-.label-price-to {
+.labelPriceTo {
     margin-left: 10px;
     font-family: 'PT Sans', sans-serif;
     line-height: 52px;
@@ -232,7 +232,7 @@
     font-size: 26px;
 }
 
-.field-price-from {
+.fieldPriceFrom {
     /* margin-right: 35px; */
     height: 60px;
     text-align: center;
@@ -241,7 +241,7 @@
     float: left;
 }
 
-.field-price-from input {
+.fieldPriceFrom input {
     padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
@@ -253,7 +253,7 @@
     color: rgb(0, 0, 0, 50%);
 }
 
-.field-price-to {
+.fieldPriceTo {
     height: 60px;
     text-align: left;
     font-size: 24px;
@@ -261,7 +261,7 @@
     float: left;
 }
 
-.field-price-to input {
+.fieldPriceTo input {
     padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
@@ -274,7 +274,7 @@
     color: rgb(0, 0, 0, 50%);
 }
 
-.button-find {
+.buttonFind {
     text-align: center;
     margin-left: 15%;
     margin-right: 15%;
@@ -283,7 +283,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-find .find-button {
+.buttonFind .findButton {
     background-color: rgb(28, 98, 205);
     border: none;
     font-size: 30x;
@@ -300,14 +300,14 @@
     font-size: 30px;
 }
 
-.button-find :hover {
+.buttonFind :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
 /* Конец Колонка с фильтрами*/
 
-.centre-column-content {
+.centreColumnContent {
     margin-top: 50px;
     margin-left: 25px;
     float: left;
@@ -335,7 +335,7 @@
     margin: 0 auto;
 }
 
-.equipment-wrapper{
+.equipmentWrapper{
     background-color: rgb(255, 255, 255);
     border: 1px solid;
     border-width: 1px;
@@ -369,20 +369,20 @@
     box-shadow: 0px 0px 6px 0px #2D2D2D;
 }
 
-.equipment-img {
+.equipmentImg {
     display: flex;
     height: 220px;
     background-size: cover;
     background-position: center;
 }
 
-.equipment-info {
+.equipmentInfo {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.equipment-name {
+.equipmentName {
     font-family: 'PT Sans', sans-serif;
     font-size: 26px;
     word-break: break-all;
@@ -390,7 +390,7 @@
     width: 100%;
 }
 
-.equipment-price {
+.equipmentPrice {
     font-family: 'PT Sans', sans-serif;
     font-weight: bold;
     color: rgb(28, 98, 205);
@@ -400,7 +400,7 @@
     width: 100%;
 }
 
-.button-rent {
+.buttonRent {
     width: 100%;
     height: 100%;
     display: block;
@@ -408,7 +408,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-rent .rent-button {
+.buttonRent .rentButton {
     font-family: 'PT Sans', sans-serif;
     display: flex;
     align-items: center;
@@ -425,13 +425,13 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-rent :hover {
+.buttonRent :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
 
-.pagination-bar {
+.paginationBar {
     margin-top: 50px;
     text-align: center;
     width: 100%;

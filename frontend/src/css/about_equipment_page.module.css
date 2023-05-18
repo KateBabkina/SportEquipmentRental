@@ -70,7 +70,7 @@
 /*Конец стили шапки*/
 
 /* Начало Страница Спортивного инвентаря */
-.base-part-sportEquipment-page {
+.basePartSportEquipmentPage {
     height: 1400px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
@@ -78,7 +78,7 @@
 }
 
 
-.centre-column-content {
+.centreColumnContent {
     margin-top: 50px;
     float: left;
     background-color: rgb(255, 255, 255);
@@ -86,7 +86,7 @@
     width: 100%;
 }
 
-.about-equipment-wrapper {
+.aboutEquipmentWrapper {
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
@@ -105,7 +105,7 @@
     margin: 0 auto;
 }
 
-.about-equipment-img {
+.aboutEquipmentImg {
     display: flex;
     height: 600px;
     width: 600px;
@@ -113,7 +113,7 @@
     background-position: center;
 }
 
-.about-equipment-name {
+.aboutEquipmentName {
     font-weight: bold;
     font-family: 'PT Sans', sans-serif;
     font-size: 30px;
@@ -121,14 +121,14 @@
     width: 100%;
 }
 
-.about-equipment-description{
+.aboutEquipmentDescription{
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: center;
     width: 100%;
 }
 
-.about-equipment-rent-data-wrapper{
+.aboutEquipmentRentDataWrapper{
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr 1fr 1fr;
@@ -147,28 +147,28 @@
     margin: 0 auto;
 }
 
-.rent-data-from-lable{
+.rentDataFromLable{
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: center;
     width: 100%;
 }
 
-.rent-data-to-lable{
+.rentDataToLable{
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: center;
     width: 100%;
 }
 
-.rent-size-lable{
+.rentSizeLable{
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     text-align: center;
     width: 100%;
 }
 
-.field-rent-data-from {
+.fieldRentDataFrom {
     float: right;
     height: 80px;
     width: 75%;
@@ -177,7 +177,7 @@
     margin-right: auto;
 }
 
-.field-rent-data-from input {
+.fieldRentDataFrom input {
     padding-left: 10px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
@@ -190,7 +190,7 @@
     background-color: rgb(0, 0, 0, 5%);
 }
 
-.field-rent-data-to {
+.fieldRentDataTo {
     float: right;
     height: 80px;
     width: 75%;
@@ -199,7 +199,7 @@
     margin-right: auto;
 }
 
-.field-rent-data-to input {
+.fieldRentDataTo input {
     padding-left: 10px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
@@ -212,7 +212,7 @@
     background-color: rgb(0, 0, 0, 5%);
 }
 
-.field-rent-size {
+.fieldRentSize {
     float: right;
     height: 80px;
     width: 75%;
@@ -221,7 +221,7 @@
     margin-right: auto;
 }
 
-.field-rent-size input {
+.fieldRentSize input {
     padding-left: 10px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
@@ -234,7 +234,7 @@
     background-color: rgb(0, 0, 0, 5%);
 }
 
-.button-rent {
+.buttonRent {
     width: 35%;
     height: 80px;
     display: block;
@@ -242,7 +242,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-rent .rent-button {
+.buttonRent .rentButton {
     border: none;
     font-size: 26px;
     text-align: center;
@@ -260,12 +260,12 @@
     font-weight: lighter;
 }
 
-.button-rent :hover {
+.buttonRent :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
-.pagination-bar {
+.paginationBar {
     margin-top: 50px;
     text-align: center;
     width: 100%;

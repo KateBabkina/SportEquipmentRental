@@ -5,7 +5,7 @@ import FilterField from "./FiltreField";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
-import '../css/inventory_page.css'
+import classes from '../css/inventory_page.module.css';
 
 function EquipmentPage() {
 
@@ -55,7 +55,7 @@ function EquipmentPage() {
   }
 
   return (
-    <div className="base-part-sportEquipment-page">
+    <div className={classes.basePartSportEquipmentPage}>
       {
         loading ?
           <ClipLoader

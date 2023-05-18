@@ -71,7 +71,7 @@
 /*Конец стили шапки*/
 
 /*Начало стили Регистрация*/
-.base-part-registration {
+.basePartRegistration {
     margin-top: 50px;
     height: 615px;
     background-color: rgb(255, 255, 255);
@@ -79,7 +79,7 @@
     background-position: center;
 }
 
-.centre-column-registration {
+.centreColumnRegistration {
     background-color: rgb(255, 255, 255);
     position: relative;
     height: 615px;
@@ -88,7 +88,7 @@
     margin-right: 4%;
 }
 
-.create-label {
+.createLabel {
     font-family: 'PT Sans', sans-serif;
     margin-bottom: 60px;
     padding-top: 40px;
@@ -102,8 +102,7 @@
 }
 
 
-.fullname-box {
-    padding-right: 20%;
+.fullnameBox {
     margin: auto;
     text-align: center;
     height: 80px;
@@ -111,7 +110,7 @@
     margin-bottom: 2%;
 }
 
-.fullname-box-label {
+.fullnameBoxLabel {
     font-weight: bold;
     font-family: 'PT Sans', sans-serif;
     float: left;
@@ -122,7 +121,7 @@
     text-align: right;
 }
 
-.fullname-box-field {
+.fullnameBoxField {
     height: 80px;
     width: 45%;
     display: block;
@@ -130,7 +129,7 @@
     margin-right: auto;
 }
 
-.fullname-box-field input {
+.fullnameBoxField input {
     box-sizing: content-box;
     padding-left: 10px;
     font-size: 24px;
@@ -143,7 +142,7 @@
     background-color: rgb(0, 0, 0, 5%);
 }
 
-.account-box {
+.accountBox {
     margin: auto;
     text-align: center;
     height: 80px;
@@ -151,7 +150,7 @@
     margin-bottom: 2%;
 }
 
-.account-box-label {
+.accountBoxLabel {
     font-weight: bold;
     font-family: 'PT Sans', sans-serif;
     float: left;
@@ -162,7 +161,7 @@
     text-align: right;
 }
 
-.account-box-field {
+.accountBoxField {
     height: 80px;
     width: 45%;
     display: block;
@@ -170,7 +169,7 @@
     margin-right: auto;
 }
 
-.account-box-field input {
+.accountBoxField input {
     padding-left: 10px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
@@ -182,7 +181,7 @@
     background-color: rgb(0, 0, 0, 5%);
 }
 
-.field-type-equipment-box {
+.fieldTypeEquipmentBox {
     box-sizing: content-box;
     height: 80px;
     width: 45%;
@@ -191,7 +190,7 @@
     margin-right: auto;
 }
 
-.field-type-equipment-box input {
+.fieldTypeEquipmentBox select {
     box-sizing: content-box;
     padding-left: 10px;
     font-size: 24px;
@@ -204,12 +203,12 @@
     background-color: rgb(0, 0, 0, 5%);
 }
 
-.field-type-equipment-box option{
+.fieldTypeEquipmentBox option{
     overflow: auto;
 }
 
 
-.firstpassword-box {
+.firstpasswordBox {
     margin: auto;
     text-align: center;
     height: 80px;
@@ -217,7 +216,7 @@
     margin-bottom: 2%;
 }
 
-.firstpassword-box-label {
+.firstpasswordBoxLabel {
     font-weight: bold;
     font-family: 'PT Sans', sans-serif;
     float: left;
@@ -228,7 +227,7 @@
     text-align: right;
 }
 
-.firstpassword-box-field {
+.firstpasswordBoxField {
     height: 80px;
     width: 45%;
     display: block;
@@ -236,7 +235,7 @@
     margin-right: auto;
 }
 
-.firstpassword-box-field input {
+.firstpasswordBoxField input {
     padding-left: 10px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
@@ -248,19 +247,19 @@
     background-color: rgb(0, 0, 0, 5%);
 }
 
-.login-box-action-box{
+.loginBoxActionBox{
     margin-top: 20px;
     text-align: center;
 }
 
-.login-box-action-box a{
+.loginBoxActionBox a{
     font-family: 'PT Sans', sans-serif;
     color: rgb(0, 0, 0);
     font-size: 24px;
 }
 
 
-.registration-box-action-box {
+.registrationBoxActionBox {
     margin: auto;
     margin-top: 80px;
     border: none;
@@ -269,7 +268,7 @@
     width: 40%;
 }
 
-.registration-box-action-box .create-new-user-button .create-new-user-button-text {
+.registrationBoxActionBox .createNewUserButton .createNewUserButtonText {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -279,7 +278,7 @@
     font-family: 'PT Sans', sans-serif;
 }
 
-.registration-box-action-box .create-new-user-button {
+.registrationBoxActionBox .createNewUserButton {
     background-color: rgb(28, 98, 205);
     border: none;
     text-align: center;
@@ -287,12 +286,12 @@
     width: 100%;
 }
 
-.create-new-user-button:hover {
+.createNewUserButton:hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
-.create-new-user-button:active {
+.createNewUserButton:active {
     border: 1ch;
     border-color: #000000;
 }

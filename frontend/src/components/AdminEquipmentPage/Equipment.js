@@ -4,6 +4,8 @@ import axios from 'axios';
 import {useDispatch} from "react-redux"
 import {setDataForChange} from "../../store/userSlice"
 
+import classes from '../../css/admin_equipment_manager_page.module.css';
+
 export default function Equipment({ equipment }) {
 
     var username = 'sport';
@@ -37,40 +39,40 @@ export default function Equipment({ equipment }) {
     }
 
     return (
-        <div className="row">
+        <div className={classes.row}>
 
-            <div className="order-number-row">
+            <div className={classes.orderNumberRow}>
                 {equipment.id}
             </div>
 
-            <div className="order-equipment-row">
+            <div className={classes.orderEquipmentRow}>
 
                 {equipment.name}
 
             </div>
-            <div className="order-price-row">
+            <div className={classes.orderPriceRow}>
                 {equipment.inventoryType.type}
             </div>
 
-            <div className="order-data-row">
+            <div className={classes.orderDataRow}>
                 {equipment.inventoryType.isSizable ? equipment.size : "-"}
             </div>
-            <div className="order-data-from-row">
+            <div className={classes.orderDataFromRow}>
                 {equipment.inventoryType.price}
             </div>
-            <div className="order-action-row">
-                <div className="button-cancel">
-                    <button className="cancel-button" type="submit" onClick={() => deleteUser()}>
-                        <div className="cancel-button-text">
+            <div className={classes.orderActionRow}>
+                <div className={classes.buttonCancel}>
+                    <button className={classes.cancelButton} type="submit" onClick={() => deleteUser()}>
+                        <div className={classes.cancelButtonText}>
                             Удалить
                         </div>
                     </button>
                 </div>
             </div>
-            <div className="order-action-row">
-                <div className="button-cancel">
-                    <button className="cancel-button" type="submit" onClick={() => changeUser()}>
-                        <div className="cancel-button-text">
+            <div className={classes.orderActionRow}>
+                <div className={classes.buttonCancel}>
+                    <button className={classes.cancelButton} type="submit" onClick={() => changeUser()}>
+                        <div className={classes.cancelButtonText}>
                             Изменить
                         </div>
                     </button>

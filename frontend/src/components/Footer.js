@@ -1,11 +1,11 @@
 import React from "react";
 
-import '../css/main_page.css'
+import classes from '../css/main_page.module.css';
 
 function Footer(props) {
     return (
-        <footer className="footer">
-            <div className="contacts">
+        <footer className={classes.footer}>
+            <div className={classes.contacts}>
                 <p>
                     КОНТАКТНАЯ ИНФОРМАЦИЯ:
                     <br />
@@ -25,7 +25,7 @@ function Footer(props) {
                 </p>
             </div>
 
-            <div className="developers">
+            <div className={classes.developers}>
                 <p>
                     РАЗРАБОТЧИКИ:
                     <br />

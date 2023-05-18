@@ -2,11 +2,13 @@ import React from "react";
 import Item from "./Item";
 import Pagination from "./Pagination";
 
+import classes from '../css/inventory_page.module.css';
+
 
 function ItemList({ items, itemsPerPage, currentItems, paginate }) {
   return (
-    <div className="centre-column-content">
-      <div className="equipments">
+    <div className={classes.centreColumnContent}>
+      <div className={classes.equipments}>
 
         {items.map(el => (
           <Item key={el.id} item={el} />

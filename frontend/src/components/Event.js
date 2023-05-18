@@ -1,5 +1,7 @@
 import React from "react";
 
+import '../css/event_page.css';
+
 function Event({ event }) {
     return (
         <div className="event-wrapper">

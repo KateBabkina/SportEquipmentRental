@@ -2,6 +2,8 @@ import React from "react";
 import Event from "./Event"
 import Pagination from "./Pagination";
 
+import '../css/event_page.css';
+
 function EventList({ events, eventsPerPage, currentEvents, paginate}) {
     return (
         <div className="centre-column-content">

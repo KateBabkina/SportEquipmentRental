@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux"
 
-import '../css/main_page.css'
+import classes from '../css/main_page.module.css';
 
 function Header() {
 
@@ -23,21 +23,21 @@ function Header() {
     }
 
     return (
-        <header className="header">
-            <div className="logo">
+        <header className={classes.header}>
+            <div className={classes.logo}>
                 <a href="/">SPORTBOX</a>
             </div>
             {
                 isAdmin ?
-                    <div className="menu">
-                        <ul className="left-menu">
+                    <div className={classes.menu}>
+                        <ul className={classes.leftMenu}>
                             <li><Link className="headLink" to="/">Главная</Link></li>
                             <li><Link className="headLink" to="/admin/equipments">Оборудование</Link></li>
                             <li><Link className="headLink" to="/admin/events">Мероприятия</Link></li>
                             <li><Link className="headLink" to="/admin/clients">Клиенты</Link></li>
                             <li><Link className="headLink" to="/admin/orders">Заказы</Link></li>
                         </ul>
-                        <ul className="right-menu">
+                        <ul className={classes.rightMenu}>
                             <div>
                                 <li><Link className="headLink" to="/profile">Профиль</Link></li>
                             </div>
@@ -45,13 +45,13 @@ function Header() {
                         </ul>
                     </div>
                     :
-                    <div className="menu">
-                        <ul className="left-menu">
+                    <div className={classes.menu}>
+                        <ul className={classes.leftMenu}>
                             <li><Link className="headLink" to="/">Главная</Link></li>
                             <li><Link className="headLink" to="/equipments">Оборудование</Link></li>
                             <li><Link className="headLink" to="/events">Мероприятия</Link></li>
                         </ul>
-                        <ul className="right-menu">
+                        <ul className={classes.rightMenu}>
                             {
                                 isLogged ?
                                     <div>

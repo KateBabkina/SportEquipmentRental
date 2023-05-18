@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import '../css/event_page.css';
+
 function FilterEventField({ changeFilter }) {
 
     var username = 'sport';
