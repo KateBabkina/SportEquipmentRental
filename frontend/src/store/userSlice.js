@@ -8,7 +8,8 @@ const userSlice = createSlice({
         isLogged: false,
         equipmentForRent: {},
         booking: {},
-        dataForChange: {}
+        dataForChange: {},
+        orderForChange: {}
     }, 
     reducers: {
         authorizeUser(state, action) {
@@ -34,10 +35,13 @@ const userSlice = createSlice({
         },
         setDataForChange(state, action){
             state.dataForChange = action.payload
+        },
+        setOrderForChange(state, action){
+            state.orderForChange = action.payload
         }
     },
 });
 
-export const {authorizeUser, unauthorizeUser, setEquipmentForRent,  setBooking, updateUser, setDataForChange} = userSlice.actions;
+export const {authorizeUser, unauthorizeUser, setEquipmentForRent,  setBooking, updateUser, setDataForChange, setOrderForChange} = userSlice.actions;
 
 export default userSlice.reducer;
