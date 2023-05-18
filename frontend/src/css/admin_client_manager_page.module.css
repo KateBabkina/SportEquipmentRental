@@ -74,7 +74,7 @@
 /*Конец стили шапки*/
 
 /* Начало Страница Спортивного инвентаря */
-.base-part-sportEquipment-page {
+.basePartSportEquipmentPage {
     height: 1400px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
@@ -82,7 +82,7 @@
 }
 
 
-.centre-column-content {
+.centreColumnContent {
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
     margin-top: 50px;
@@ -91,7 +91,7 @@
     width: 100%;
 }
 
-.manager-wrapper {
+.managerWrapper {
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
     display: grid;
@@ -112,7 +112,7 @@
     margin: 0 auto;
 }
 
-.filter-lable{
+.filterLable{
     font-family: 'PT Sans', sans-serif;
     margin-top: 40px;
     text-decoration-skip-ink: none;
@@ -125,7 +125,7 @@
     margin-bottom: 100px;
 }
 
-.filter-panel-wrapper{
+.filterPanelWrapper{
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
@@ -145,7 +145,7 @@
     background-color: rgb(255, 255, 255);
 }
 
-.email-wrapper{
+.emailWrapper{
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
@@ -160,20 +160,20 @@
     /* Отступ между рядами */
 }
 
-.email-lable {
+.emailLable {
     text-align: center;
     font-family: 'PT Sans', sans-serif;
     font-size: 26px;
 }
 
-.field-email {
+.fieldEmail {
     height: 60px;
     box-sizing: border-box;
     font-size: 24px;
     width: 98%;
 }
 
-.field-email input {
+.fieldEmail input {
     box-sizing: border-box;
     padding-left: 10px;
     font-family: 'PT Sans', sans-serif;
@@ -186,14 +186,14 @@
     color: rgb(0, 0, 0, 50%);
 }
 
-.button-find {
+.buttonFind {
     height: 80px;
     width: 70%;
     text-align: center;
     background-color: rgb(28, 98, 205);
 }
 
-.button-find .find-button {
+.buttonFind .findButton {
     background-color: rgb(28, 98, 205);
     border: none;
     font-size: 26px;
@@ -210,12 +210,12 @@
     font-size: 30px;
 }
 
-.button-find :hover {
+.buttonFind :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
-.table-manager-wrapper{
+.tableManagerWrapper{
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
@@ -232,7 +232,7 @@
     margin-right: 50px;
 }
 
-.button-add {
+.buttonAdd {
     margin-top: 50px;
     margin-bottom: 50px;
     height: 80px;
@@ -241,7 +241,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-add .add-button {
+.buttonAdd .addButton {
     background-color: rgb(28, 98, 205);
     border: none;
     font-size: 26px;
@@ -258,12 +258,12 @@
     font-size: 30px;
 }
 
-.button-add :hover {
+.buttonAdd :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
-.table-wrapper{
+.tableWrapper{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 2fr;
@@ -285,7 +285,7 @@
     overflow-x: hidden;
 }
 
-.column-lables{
+.columnLables{
     font-weight: bold;
     height: 100%;
     display: grid;
@@ -308,35 +308,35 @@
     margin: 0 auto;
 }
 
-.full-name-user-lable{
+.fullNameUserLable{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
-.full-name-user{
+.fullNameUser{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
-.email-user-lable{
+.emailUserLable{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
-.email-user{
+.emailUser{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
 
-.order-number-cell{
+.orderNumberCell{
     border: 1px solid;
     border-width: 1px;
     border-right: 1px solid rgb(205, 205, 205);
 }
 
 
-.order-number-lable{
+.orderNumberLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -350,7 +350,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-equipment-lable{
+.orderEquipmentLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -364,7 +364,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-price-lable{
+.orderPriceLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -378,7 +378,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-data-lable{
+.orderDataLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -392,7 +392,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-data-from-lable{
+.orderDataFromLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -406,7 +406,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-data-to-lable{
+.orderDataToLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -420,7 +420,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-debt-lable{
+.orderDebtLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -434,7 +434,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-action-lable{
+.orderActionLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -447,7 +447,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.table-rows{
+.tableRows{
     overflow-y: auto;
     overflow-x: hidden;
     padding-top: 20px;
@@ -486,7 +486,7 @@
 }
 
 
-.fullname-cell{
+.fullnameCell{
     display: grid;
     grid-template-columns: fit-content(100px) fit-content(100px) 1fr;
     box-sizing: border-box;
@@ -494,7 +494,7 @@
     width: 100%;
 }
 
-.email-cell{
+.emailCell{
     display: grid;
     grid-template-columns: fit-content(100px) fit-content(100px) 1fr;
     box-sizing: border-box;
@@ -504,13 +504,13 @@
 
 
 
-.order-number-container{
+.orderNumberContainer{
     height: 100%;
     width: 100%;
     background-color: white;
 }
 
-.button-cancel {
+.buttonCancel {
     width: 100%;
     height: 100%;
     display: block;
@@ -518,7 +518,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-cancel .cancel-button {
+.buttonCancel .cancelButton {
     border: none;
     padding: 0px;
     font-size: 26px;
@@ -528,12 +528,12 @@
     background-color: rgb(28, 98, 205);
 }
 
-.cancel-button  :hover {
+.cancelButton  :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
-.button-cancel .cancel-button-text {
+.buttonCancel .cancelButtonText {
     padding: 10px 5px 10px 5px;
     display: flex;
     align-items: center;
@@ -544,7 +544,7 @@
     font-weight: lighter;
 }
 
-.button-exit {
+.buttonExit {
     width: 25%;
     height: 100%;
     display: block;
@@ -552,7 +552,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-exit .exit-button {
+.buttonExit .exitButton {
     border: none;
     padding: 0px;
     font-size: 26px;
@@ -562,12 +562,12 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-exit :hover {
+.buttonExit :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
-.button-exit .exit-button-text {
+.buttonExit .exitButtonText {
     padding: 10px 5px 10px 5px;
     display: flex;
     align-items: center;

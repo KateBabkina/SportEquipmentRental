@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux"
 import Event from "./Event";
 
+import classes from '../css/recommendation_page.module.css';
 
 function ReccomendationPage() {
 
@@ -9,8 +10,8 @@ function ReccomendationPage() {
 
     const getReccomendation = () => {
         return (
-            <div className="recommendation-event">
-                <div className="event-wrapper">
+            <div className={classes.recommendationEvent}>
+                <div className={classes.eventWrapper}>
 
                     {booking.events.map(el => (
                         <Event key={el.id} event={el} />
@@ -23,14 +24,14 @@ function ReccomendationPage() {
 
     return (
         <div>
-            <div className="centre-column-content">
-                <div className="recommendation-wrapper">
+            <div className={classes.centreColumnContent}>
+                <div className={classes.recommendationWrapper}>
 
-                    <div className="order-status">
+                    <div className={classes.orderStatus}>
                         Заказ № {booking.id} успешно оплачен.
                     </div>
 
-                    <div className="recommendation-lable">
+                    <div className={classes.recommendationLable}>
                         Рекомендуем принять участие в следующих мероприятиях:
                     </div>
                     {

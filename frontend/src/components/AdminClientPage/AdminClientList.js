@@ -1,6 +1,8 @@
 import React from 'react'
 import Client from './Client'
 
+import classes from '../../css/admin_client_manager_page.module.css';
+
 export default function AdminClientList({ clients }) {
 
     const linkToAddPage = () => {
@@ -8,40 +10,40 @@ export default function AdminClientList({ clients }) {
     }
 
     return (
-        <div className="table-manager-wrapper">
+        <div className={classes.tableManagerWrapper}>
 
-            <div className="button-add">
-                <button className="add-button" type="submit" onClick={() => linkToAddPage()}>
+            <div className={classes.buttonAdd}>
+                <button className={classes.addButton} type="submit" onClick={() => linkToAddPage()}>
                     Добавить клиента
                 </button>
             </div>
 
-            <div className="table-wrapper">
-                <div className="column-lables">
-                    <div className="order-number-lable">
+            <div className={classes.tableWrapper}>
+                <div className={classes.columnLables}>
+                    <div className={classes.orderNumberLable}>
                         Id
                     </div>
-                    <div className="order-equipment-lable">
+                    <div className={classes.orderEquipmentLable}>
                         ФИО
                     </div>
-                    <div className="order-price-lable">
+                    <div className={classes.orderPriceLable}>
                         Email
                     </div>
-                    <div className="order-data-lable">
+                    <div className={classes.orderDataLable}>
                         Статус
                     </div>
-                    <div className="order-data-from-lable">
+                    <div className={classes.orderDataFromLable}>
                         Роль
                     </div>
-                    <div className="order-action-lable">
+                    <div className={classes.orderActionLable}>
 
                     </div>
-                    <div className="order-action-lable">
+                    <div className={classes.orderActionLable}>
 
                     </div>
                 </div>
 
-                <div className="table-rows">
+                <div className={classes.tableRows}>
                     {
                         clients.map(client => {
                             console.log(clients.length);

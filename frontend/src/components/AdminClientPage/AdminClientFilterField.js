@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import validator from 'validator';
 
+import classes from '../../css/admin_client_manager_page.module.css';
+
 export default function AdminClientFilterField({ changeFilter }) {
 
     var username = 'sport';
@@ -56,27 +58,27 @@ export default function AdminClientFilterField({ changeFilter }) {
     }
 
     return (
-        <div className="filter-panel-wrapper">
+        <div className={classes.filterPanelWrapper}>
 
-            <div className="filter-lable">
+            <div className={classes.filterLable}>
                 Фильтры поиска
             </div>
 
-            <div className="email-wrapper">
+            <div className={classes.emailWrapper}>
 
-                <div className="email-lable">
+                <div className={classes.emailLable}>
                     Email:
                 </div>
 
-                <div className="field-email">
+                <div className={classes.fieldEmail}>
                     <input type="email" placeholder="example@example.ru" id="email" name="email"
                         minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                 </div>
 
             </div>
 
-            <div className="button-find">
-                <button className="find-button" type="submit" onClick={() => sendRequest()}>
+            <div className={classes.buttonFind}>
+                <button className={classes.findButton} type="submit" onClick={() => sendRequest()}>
                     Найти
                 </button>
             </div>

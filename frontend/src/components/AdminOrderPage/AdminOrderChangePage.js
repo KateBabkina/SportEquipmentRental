@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
 
+import classes from '../../css/admin_order_modify_page.module.css';
+
 export default function AdminOrderChangePage() {
 
     var username = 'sport';
@@ -26,73 +28,73 @@ export default function AdminOrderChangePage() {
     }
 
     return (
-        <div className="base-part-registration">
+        <div className={classes.basePartRegistration}>
 
-            <div className="centre-column-registration">
+            <div className={classes.centreColumnRegistration}>
 
-                <div className="order-wrapper">
+                <div className={classes.orderWrapper}>
 
-                    <div className="order-information-lable">
+                    <div className={classes.orderInformationLable}>
                         Информация о заказе:
                     </div>
 
-                    <div className="order-information-wrapper">
-                        <div className="row-information">
-                            <div className="id-lable">
+                    <div className={classes.orderInformationWrapper}>
+                        <div className={classes.rowInformation}>
+                            <div className={classes.idLable}>
                                 Id:
                             </div>
-                            <div className="id">
+                            <div className={classes.id}>
                                 {order.id}
                             </div>
                         </div>
-                        <div className="row-information">
-                            <div className="id-lable">
+                        <div className={classes.rowInformation}>
+                            <div className={classes.idLable}>
                                 Оборудование:
                             </div>
 
-                            <div className="equipment">
+                            <div className={classes.equipment}>
                                 {order.inventory}
                             </div>
                         </div>
 
-                        <div className="row-information">
-                            <div className="id-lable">
+                        <div className={classes.rowInformation}>
+                            <div className={classes.idLable}>
                                 email:
                             </div>
                             {order.email}
                         </div>
 
-                        <div className="row-information">
-                            <div className="id-lable">
+                        <div className={classes.rowInformation}>
+                            <div className={classes.idLable}>
                                 Дата начала:
                             </div>
                             {order.startDate}
                         </div>
 
-                        <div className="row-information">
-                            <div className="id-lable">
+                        <div className={classes.rowInformation}>
+                            <div className={classes.idLable}>
                                 Дата окончания:
                             </div>
                             {order.endDate}
                         </div>
 
-                        <div className="row-information">
-                            <div className="id-lable">
+                        <div className={classes.rowInformation}>
+                            <div className={classes.idLable}>
                                 Дата:
                             </div>
                             {order.date}
                         </div>
 
-                        <div className="row-information">
-                            <div className="id-lable">
+                        <div className={classes.rowInformation}>
+                            <div className={classes.idLable}>
                                 Долг:
                             </div>
                             {order.debt}
                         </div>
                     </div>
 
-                    <div className="button-find">
-                        <button className="find-button" type="button" onClick={() => acceptOrder()} >
+                    <div className={classes.buttonFind}>
+                        <button className={classes.findButton} type="button" onClick={() => acceptOrder()} >
                             Принять оборудование
                         </button>
                     </div>

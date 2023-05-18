@@ -203,8 +203,10 @@ export default function EventPage({ setIsLogged }) {
                   </div>
 
                   <div className={classes.informationAboutOrdersTableWrapper}>
-                    <div className={classes.tableRows}>
-                      {user.bookings?.length === 0 ? <h3>Пусто</h3> : getHistory()}
+                    <div className={classes.tableWrapper}>
+                      <div className={classes.tableRows}>
+                        {user.bookings?.length === 0 ? <h3>Пусто</h3> : getHistory()}
+                      </div>
                     </div>
                   </div>
 

@@ -6,6 +6,8 @@ import AdminOrderList from "./AdminOrderList"
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
+import classes from '../../css/admin_order_manager_page.module.css';
+
 export default function AdminOrderManagerPage() {
 
     var username = 'sport';
@@ -38,7 +40,7 @@ export default function AdminOrderManagerPage() {
     }
 
     return (
-        <div className="manager-wrapper">
+        <div className={classes.managerWrapper}>
             {
                 loading ?
                     <ClipLoader

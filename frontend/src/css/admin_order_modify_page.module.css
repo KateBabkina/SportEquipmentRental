@@ -71,14 +71,14 @@
 /*Конец стили шапки*/
 
 /*Начало стили Регистрация*/
-.base-part-registration {
+.basePartRegistration {
     height: 800px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
 }
 
-.centre-column-registration {
+.centreColumnRegistration {
     background-color: rgb(255, 255, 255);
     position: relative;
     height: 800px;
@@ -87,7 +87,7 @@
     margin-right: 4%;
 }
 
-.order-wrapper{
+.orderWrapper{
     margin-top: 50px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
@@ -106,7 +106,7 @@
     /* Отступ между рядами */
 }
 
-.order-information-wrapper{
+.orderInformationWrapper{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
     display: grid;
@@ -123,12 +123,12 @@
     /* Отступ между рядами */
 }
 
-.order-information-lable{
+.orderInformationLable{
     font-size: 30px;
     font-weight: bold;
 }
 
-.row-information{
+.rowInformation{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
     display: grid;
@@ -145,7 +145,7 @@
     /* Отступ между рядами */
 }
 
-.button-find {
+.buttonFind {
     text-align: center;
     margin-left: 15%;
     margin-right: 15%;
@@ -154,7 +154,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-find .find-button {
+.buttonFind .findButton {
     padding-left: 50px;
     padding-right: 50px;
     background-color: rgb(28, 98, 205);
@@ -172,7 +172,7 @@
     font-size: 30px;
 }
 
-.button-find :hover {
+.buttonFind :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }

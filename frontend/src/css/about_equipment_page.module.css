@@ -71,7 +71,7 @@
 
 /* Начало Страница Спортивного инвентаря */
 .basePartSportEquipmentPage {
-    height: 1400px;
+    /* height: 1400px; */
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
@@ -82,7 +82,7 @@
     margin-top: 50px;
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 1061px;
+    /* height: 1061px; */
     width: 100%;
 }
 
@@ -90,7 +90,7 @@
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 15fr 1fr 4fr 7fr 4fr;
+    grid-template-rows: 0fr 0fr 0fr 0fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
     max-width: 100%;
@@ -103,12 +103,15 @@
     row-gap: 40px;
     /* Отступ между рядами */
     margin: 0 auto;
+
+    align-items: center;
+    align-content: center;
 }
 
 .aboutEquipmentImg {
     display: flex;
     height: 600px;
-    width: 600px;
+    /* width: 600px; */
     background-size: cover;
     background-position: center;
 }
@@ -178,6 +181,7 @@
 }
 
 .fieldRentDataFrom input {
+    box-sizing: border-box;
     padding-left: 10px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
@@ -191,6 +195,8 @@
 }
 
 .fieldRentDataTo {
+    box-sizing: border-box;
+    padding: 0;
     float: right;
     height: 80px;
     width: 75%;
@@ -200,6 +206,7 @@
 }
 
 .fieldRentDataTo input {
+    box-sizing: border-box;
     padding-left: 10px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
@@ -213,6 +220,7 @@
 }
 
 .fieldRentSize {
+    box-sizing: border-box;
     float: right;
     height: 80px;
     width: 75%;
@@ -222,6 +230,7 @@
 }
 
 .fieldRentSize input {
+    box-sizing: border-box;
     padding-left: 10px;
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;

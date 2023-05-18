@@ -12,7 +12,8 @@
     font-family: 'Staatliches';
     color: black;
     text-decoration: none;
-    padding: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .menu {
