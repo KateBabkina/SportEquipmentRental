@@ -41,9 +41,7 @@ export default function AdminOrderManagerPage() {
     }
 
     return (
-        <div className={classes.managerWrapper}>
-            {
-                loading ?
+        loading ?
                     <ClipLoader
                         color={"#1C62CD"}
                         loading={loading}
@@ -51,6 +49,8 @@ export default function AdminOrderManagerPage() {
                         className="spin"
                     />
                     :
+        <div className={classes.managerWrapper}>
+            {
                     <>
                         <AdminOrderFilterField changeFilter={changeFilter} ></AdminOrderFilterField>
                         <AdminOrderList orders={currentOrders}></AdminOrderList>
