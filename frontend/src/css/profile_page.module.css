@@ -74,7 +74,7 @@
 /*Конец стили шапки*/
 
 /* Начало Страница Спортивного инвентаря */
-.base-part-sportEquipment-page {
+.basePartSportEquipmentPage {
     height: 1400px;
     background-color: rgb(255, 255, 255);
     background-size: cover;
@@ -82,7 +82,7 @@
 }
 
 
-.centre-column-content {
+.centreColumnContent {
     margin-top: 50px;
     float: left;
     background-color: rgb(255, 255, 255);
@@ -90,13 +90,13 @@
     width: 100%;
 }
 
-.profile-wrapper {
+.profileWrapper {
     display: grid;
     margin-top: 50px;
-    height: 1600px;
+    /* height: 1600px; */
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.5fr 2.3fr 1fr;
+    grid-template-rows: 0.2fr 0.5fr 0fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
     max-width: 100%;
@@ -109,17 +109,17 @@
     /* Отступ между рядами */
 }
 
-.information-about-user-lable{
+.informationAboutUserLable{
     font-weight: bold;
     font-size: 30px;
     font-family: 'PT Sans', sans-serif;
 }
 
-.information-about-user-wrapper{
+.informationAboutUserWrapper{
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 25%;
     max-width: 100%;
@@ -128,37 +128,40 @@
     justify-items: center;
     /* Размещаем карточку по центру */
     column-gap: 8px;
-    row-gap: 20px;
+    row-gap: 30px;
     /* Отступ между рядами */
     margin: 0 auto;
+
+    align-items: center;
+    align-content: center;
 }
 
-.full-name-user-lable{
+.fullNameUserLable{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
-.full-name-user{
+.fullNameUser{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
-.email-user-lable{
+.emailUserLable{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
-.email-user{
+.emailUser{
     font-size: 24px;
     font-family: 'PT Sans', sans-serif;
 }
 
-.information-about-orders-wrapper{
-    height: 1080px;
+.informationAboutOrdersWrapper{
+    height: 780px;
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 0fr 1fr 14fr;
+    grid-template-rows: 0fr 0fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
     max-width: 100%;
@@ -171,17 +174,17 @@
     margin: 0 auto;
 }
 
-.information-about-orders-lable{
+.informationAboutOrdersLable{
     font-size: 30px;
     font-family: 'PT Sans', sans-serif;
     font-weight: bold;
     margin-bottom: 40px;
 }
 
-.table-wrapper{
+.tableWrapper{
     overflow: auto;
     overflow-x: hidden;
-    height: 100%;
+    height: 70%;
     width: 80%;
     max-width: 100%;
     /* Ширина grid-контейнера */
@@ -192,13 +195,13 @@
     margin: 0 auto;
 }
 
-.order-number-cell{
+.orderNumberCell{
     border: 1px solid;
     border-width: 1px;
     border-right: 1px solid rgb(205, 205, 205);
 }
 
-.column-lables{
+.columnLables{
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
     font-weight: bold;
@@ -223,7 +226,7 @@
     margin: 0 auto;
 }
 
-.order-number-lable{
+.orderNumberLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -237,7 +240,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-equipment-lable{
+.orderEquipmentLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -251,7 +254,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-price-lable{
+.orderPriceLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -265,7 +268,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-data-lable{
+.orderDataLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -279,7 +282,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-data-from-lable{
+.orderDataFromLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -293,7 +296,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-data-to-lable{
+.orderDataToLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -307,7 +310,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-debt-lable{
+.orderDebtLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -321,7 +324,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.order-action-lable{
+.orderActionLable{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -334,7 +337,7 @@
     border-color: rgb(205, 205, 205);
 }
 
-.table-rows{
+.tableRows{
     padding-top: 20px;
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;
@@ -371,13 +374,13 @@
     align-content: center;
 }
 
-.order-number-container{
+.orderNumberContainer{
     height: 100%;
     width: 100%;
     background-color: white;
 }
 
-.button-cancel {
+.buttonCancel {
     width: 100%;
     height: 100%;
     display: block;
@@ -385,7 +388,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-cancel .cancel-button {
+.buttonCancel .cancelButton {
     border: none;
     padding: 0px;
     font-size: 26px;
@@ -395,12 +398,12 @@
     background-color: rgb(28, 98, 205);
 }
 
-.cancel-button  :hover {
+.cancelButton  :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }
 
-.button-cancel .cancel-button-text {
+.buttonCancel .cancelButtonText {
     padding: 10px 5px 10px 5px;
     display: flex;
     align-items: center;
@@ -411,7 +414,7 @@
     font-weight: lighter;
 }
 
-.button-exit {
+.buttonExit {
     width: 25%;
     height: 80px;
     display: block;
@@ -419,7 +422,7 @@
     background-color: rgb(28, 98, 205);
 }
 
-.button-exit .exit-button {
+.buttonExit .exitButton {
     border: none;
     padding: 0px;
     font-size: 30px;
@@ -436,7 +439,7 @@
     font-weight: lighter;
 }
 
-.button-exit :hover {
+.buttonExit :hover {
     background-color: rgb(16, 54, 111);
     transition: 0.7s;
 }

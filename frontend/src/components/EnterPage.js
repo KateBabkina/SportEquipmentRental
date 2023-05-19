@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import {useDispatch} from "react-redux"
-import {authorizeUser} from "../store/userSlice"
+import { useDispatch } from "react-redux"
+import { authorizeUser } from "../store/userSlice"
 
 import axios from 'axios';
 import validator from 'validator';
+
+import '../css/login.css'
 
 const EnterPage = () => {
 
@@ -63,51 +65,53 @@ const EnterPage = () => {
     }
 
     return (
-        <div className='login-main'>
-            <form name="login-form" method="POST" onSubmit={(e) => submitChacking(e)}>
+        <div className='base-part-registration'>
+            <div class="centre-column-registration">
+                <form name="registration-form-wraper" method="POST" onSubmit={(e) => submitChacking(e)}>
 
-                <div className="login-panel">
+                    <div class="create-label">
+                        Для входа введите данные
+                    </div>
 
-                    <div className="login-box">
-                        <div className="login-title">
-                            <b>Введите адрес электронной почты:</b>
+                    <div className="account-box">
+                        <div className="account-box-label">
+                            <b>Адрес эл. почты:</b>
                         </div>
-                        <div className="login-field">
-                            <input type="text" id="email" name="email" value={login.email}
+                        <div className="account-box-field">
+                            <input type="text" placeholder="example@example.ru" id="email" name="email" value={login.email}
                                 onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
-                    <div className="password-box">
-                        <div className="password-title">
-                            <b>Введите пароль:</b>
+                    <div className="firstpassword-box">
+                        <div className="firstpassword-box-label">
+                            <b>Пароль:</b>
                         </div>
-                        <div className="password-field">
-                            <input type="password" id="password" name="password" value={login.password}
+                        <div className="firstpassword-box-field">
+                            <input type="password" placeholder="********" id="password" name="password" value={login.password}
                                 onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
-                    <div className="action-box">
 
-                        <div className="action-buttons">
+                    <div className="registration-box-action-box">
 
-                            <div className="button-login">
-                                <button className="login-button" type="submit">
-                                    <div className="login-button-text">
-                                        Вход
-                                    </div>
-                                </button>
+                        <button className="create-new-user-button" type="submit">
+                            <div className="create-new-user-button-text">
+                                Войти
                             </div>
-
-                            <a href="/api/person/add">Зарегистрироваться, если нет аккаунта</a>
-
-                        </div>
+                        </button>
 
                     </div>
 
-                </div>
-            </form>
+                    <div className="login-box-action-box">
+                        <a href="/api/person/add">Зарегистрироваться, если нет аккаунта</a>
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
     );
 };

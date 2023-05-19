@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import classes from '../css/event_page.module.css';
+
 function FilterEventField({ changeFilter }) {
 
     var username = 'sport';
@@ -86,21 +88,21 @@ function FilterEventField({ changeFilter }) {
 
     return (
 
-        <div className="left-column-filters">
-            <div className="filter-panel">
+        <div className={classes.leftColumnFilters}>
+            <div className={classes.filterPanel}>
 
-                <div className="filters-label">
+                <div className={classes.filtersLabel}>
                     Фильтры поиска
                 </div>
 
-                <div className="type-equipment-box">
+                <div className={classes.typeEquipmentBox}>
 
-                    <div className="label-type-equipment-box">
+                    <div className={classes.labelTypeEquipmentBox}>
                         Тип оборудования:
                     </div>
 
-                    <div className="field-type-equipment-box">
-                        <select id="inventoryType" name="type-equipment" onChange={(e) => filtredInput(e)}>
+                    <div className={classes.fieldTypeEquipmentBox}>
+                        <select id={classes.inventoryType} name="type-equipment" onChange={(e) => filtredInput(e)}>
                             <option key="-" value="">
                                 Выберите тип
                             </option>
@@ -109,37 +111,35 @@ function FilterEventField({ changeFilter }) {
                     </div>
                 </div>
 
-                <div className="start-data-box">
+                <div className={classes.startDataBox}>
 
-                    <div className="label-start-data-box">
+                    <div className={classes.labelStartDataBox}>
                         Дата начала:
                     </div>
 
-                    <div className="field-start-data-box">
-                        <input id="startDate" type="date" name="fullName" placeholder="гггг-мм--дд" onChange={e => filtredInput(e)}
+                    <div className={classes.fieldStartDataBox}>
+                        <input id="startDate" type="date" name="fullName" onChange={e => filtredInput(e)}
                             minLength="4" maxLength="35" size="20"></input>
                     </div>
 
                 </div>
 
-                <div className="end-data-box">
+                <div className={classes.endDataBox}>
 
-                    <div className="label-end-data-box">
+                    <div className={classes.labelEndDataBox}>
                         Дата окончания:
                     </div>
 
-                    <div className="field-end-data-box">
-                        <input id="endDate" type="date" name="fullName" placeholder="гггг-мм--дд" onChange={e => filtredInput(e)}
+                    <div className={classes.fieldEndDataBox}>
+                        <input id="endDate" type="date" name="fullName" onChange={e => filtredInput(e)}
                             minLength="4" maxLength="35" size="20"></input>
                     </div>
 
                 </div>
 
-                <div className="button-find">
-                    <button className="find-button" type="submit" onClick={() => sendFilter()}>
-                        <div className="find-button-text">
-                            Найти
-                        </div>
+                <div className={classes.buttonFind}>
+                    <button className={classes.findButton} type="submit" onClick={() => sendFilter()}>
+                        Найти
                     </button>
                 </div>
 

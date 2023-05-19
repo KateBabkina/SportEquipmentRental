@@ -1,13 +1,14 @@
 import React from "react";
 import { useState } from 'react';
-import {useSelector} from "react-redux"
-import {useDispatch} from "react-redux"
-import {setBooking} from "../store/userSlice"
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { setBooking } from "../store/userSlice"
 import axios from 'axios';
 
+import classes from '../css/about_equipment_page.module.css';
 
 function AboutEquipment() {
-    
+
     var username = 'sport';
     var password = '123';
 
@@ -42,28 +43,28 @@ function AboutEquipment() {
         }
     }
 
-    function checkData(e){
+    function checkData(e) {
 
         var startDate = document.getElementById("startDate").value
         var endDate = document.getElementById("endDate").value
         var startTime = new Date(startDate)
         var endTime = new Date(endDate)
 
-        if (startDate === "" && endDate !== ""){
+        if (startDate === "" && endDate !== "") {
             e.preventDefault()
             alert("Заполните дату начала")
             return false
-            
+
         } else if (startDate !== "" && endDate === "") {
             e.preventDefault()
             alert("Заполните дату окончания")
             return false
-            
+
         } else if (startTime.getTime() > endTime.getTime()) {
             e.preventDefault()
             alert("Дата начала не может превышать дату окончания")
             return false
-            
+
         } else if (startTime.getTime() < now.getTime() || endTime.getTime() < now.getTime()) {
             e.preventDefault()
             alert("Дата не может находиться в прошлом")
@@ -83,85 +84,86 @@ function AboutEquipment() {
         if (check) {
             console.log(rentRequest);
             axios.post(`https://sportbox.up.railway.app/api/booking/check`, rentRequest,
-            {
-                auth: {
-                    username: username,
-                    password: password
-                }
-            }).then(res => {
-                if (res.data.status === true) {
-                    console.log(res.data);
-                    sendBooking(res.data.booking)
-                    window.location.href = "/payment"
-                } else {
-                    alert(res.data.message)
-                }
-            }).catch(() => {
-                alert("An error occurred on the server")
-            })
-        } 
+                {
+                    auth: {
+                        username: username,
+                        password: password
+                    }
+                }).then(res => {
+                    if (res.data.status === true) {
+                        console.log(res.data);
+                        sendBooking(res.data.booking)
+                        window.location.href = "/payment"
+                    } else {
+                        alert(res.data.message)
+                    }
+                }).catch(() => {
+                    alert("An error occurred on the server")
+                })
+        }
     }
 
     return (
-        <div className="base-part-sportEquipment-page">
+        <div className={classes.basePartSportEquipmentPage}>
 
-            <div className="centre-column-content">
-                <div className="about-equipment-wrapper">
+            <div className={classes.centreColumnContent}>
+                <form>
+                    <div className={classes.aboutEquipmentWrapper}>
 
-                    <div className="about-equipment-img">
-                        <img src={require("../images/inventory/" + equipmentForRent.type + ".jpg")} alt="MISSING JPG" />
-                    </div>
+                        <div className={classes.aboutEquipmentImg}>
+                            <img src={require("../images/inventory/" + equipmentForRent.type + ".jpg")} alt="MISSING JPG" />
+                        </div>
 
-                    <div className="about-equipment-name">
-                        {equipmentForRent.type}
-                    </div>
+                        <div className={classes.aboutEquipmentName}>
+                            {equipmentForRent.type}
+                        </div>
 
-                    <div className="about-equipment-description">
-                        {equipmentForRent.description}
-                    </div>
+                        <div className={classes.aboutEquipmentDescription}>
+                            {equipmentForRent.description}
+                        </div>
 
-                    <form>
 
-                        <div className="about-equipment-rent-data-wrapper">
-                            <div className="rent-data-from-lable">
+
+                        <div className={classes.aboutEquipmentRentDataWrapper}>
+                            <div className={classes.rentDataFromLable}>
                                 Дата начала аренды:
                             </div>
-                            <div className="rent-data-to-lable">
+                            <div className={classes.rentDataToLable}>
                                 Дата окончания аренды:
                             </div>
-                            {
-                                equipmentForRent.isSizable ? <div className="rent-size-lable">
-                                    Размер:
-                                </div> : false
-                            }
+                            <div className={classes.rentSizeLable}>
+                                Размер:
+                            </div>
 
-                            <div className="field-rent-data-from">
+                            <div className={classes.fieldRentDataFrom}>
                                 <input id="startDate" type="date" name="data-from" required={true} onChange={e => filtredInput(e)}
                                     minLength="4" maxLength="35" size="20"></input>
                             </div>
-                            <div className="field-rent-data-to">
+                            <div className={classes.fieldRentDataTo}>
                                 <input id="endDate" type="date" name="data-to" onChange={e => filtredInput(e)}
                                     minLength="4" maxLength="35" size="20"></input>
                             </div>
                             {
-                                equipmentForRent.isSizable ? <div className="field-rent-size">
+                                equipmentForRent.isSizable ? <div className={classes.fieldRentSize}>
                                     <input type="number" id="size" name="fullName" onChange={e => filtredInput(e)}
                                         min="29" maxLength="46"></input>
-                                </div> : false
-                            }
-
-                            <div className="button-rent">
-                                <button className="rent-button" type="button" onClick={(e) => handleRentButton(e)}>
-                                    <div className="rent-button-text">
-                                        Арендовать
+                                </div>
+                                    :
+                                    <div className={classes.fieldRentSize}>
+                                        <input type="number" value="0" id="size" name="fullName" onChange={e => filtredInput(e)}
+                                            min="29" maxLength="46"></input>
                                     </div>
-                                </button>
-                            </div>
-
+                            }
                         </div>
-                    </form>
 
-                </div>
+                        <div className={classes.buttonRent}>
+                            <button className={classes.rentButton} type="button" onClick={(e) => handleRentButton(e)}>
+                                Арендовать
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
             </div>
         </div>
     );

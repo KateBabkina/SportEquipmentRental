@@ -4,6 +4,8 @@ import AdminClientList from './AdminClientList'
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
+import classes from '../../css/admin_client_manager_page.module.css';
+
 export default function AdminClientManagerPage() {
 
   var username = 'sport';
@@ -37,7 +39,7 @@ export default function AdminClientManagerPage() {
   }
 
   return (
-    <div className="manager-wrapper">
+    <div className={classes.managerWrapper}>
       {
         loading ?
           <ClipLoader
@@ -46,10 +48,10 @@ export default function AdminClientManagerPage() {
             size={100}
           />
           :
-          <div>
+          <>
             <AdminClientFilterField changeFilter={changeFilter} ></AdminClientFilterField>
             <AdminClientList clients={currentClients}></AdminClientList>
-          </div>
+          </>
       }
     </div>
   )

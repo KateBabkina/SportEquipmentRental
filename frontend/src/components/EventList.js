@@ -1,14 +1,18 @@
 import React from "react";
 import Event from "./Event"
+import Pagination from "./Pagination";
 
-function EventList({ events }) {
+import classes from '../css/event_page.module.css';
+
+function EventList({ events, eventsPerPage, currentEvents, paginate}) {
     return (
-        <div className="centre-column-content">
-            <div className="events">
+        <div className={classes.centreColumnContent}>
+            <div className={classes.events}>
                 {events.map(el => (
                     <Event key={el.id} event={el} />
                 ))}
             </div>
+            <Pagination itemsPerPage={eventsPerPage}  totalItems={currentEvents.length} paginate={paginate}/>
         </div>
     );
 };

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 
+import classes from '../../css/admin_order_manager_page.module.css';
+
 export default function AdminOrderFilterField({ changeFilter }) {
 
   var username = 'sport';
@@ -50,20 +52,20 @@ export default function AdminOrderFilterField({ changeFilter }) {
   }
 
   return (
-    <div className="filter-panel-wrapper">
+    <div className={classes.filterPanelWrapper}>
 
-      <div className="filter-lable">
+      <div className={classes.filterLable}>
         Фильтры поиска
       </div>
 
-      <div className="id-order-wrapper">
+      <div className={classes.idOrderWrapper}>
 
 
-        <div className="id-order-lable">
+        <div className={classes.idOrderLable}>
           Id заказа:
         </div>
 
-        <div className="field-id-order">
+        <div className={classes.fieldIdOrder}>
 
           <input type="number" id="id" name="fullName" required onChange={(e) => filtredInput(e)}
            minLength="4" maxLength="35" size="20" />
@@ -73,13 +75,12 @@ export default function AdminOrderFilterField({ changeFilter }) {
 
       </div>
 
-      <div className="id-equipment-wrapper">
-
-        <div className="id-equipment-lable">
+      <div className={classes.idEquipmentWrapper}>
+        <div className={classes.idEquipmentLable}>
           Адрес электронной почты:
         </div>
 
-        <div className="field-id-equipment">
+        <div className={classes.fieldIdEquipment}>
 
           <input type="text" id="email" name="fullName" required onChange={(e) => filtredInput(e)}
            minLength="4" maxLength="35" size="20" />
@@ -88,13 +89,13 @@ export default function AdminOrderFilterField({ changeFilter }) {
 
       </div>
 
-      <div className="id-equipment-wrapper">
+      <div className={classes.idEquipmentWrapper}>
 
-        <div className="id-equipment-lable">
+        <div className={classes.idEquipmentLable}>
           Дата заказа:
         </div>
 
-        <div className="field-id-equipment">
+        <div className={classes.fieldIdEquipment}>
 
           <input type="date" id="date" name="fullName" required onChange={(e) => filtredInput(e)}
            minLength="4" maxLength="35" size="20" />
@@ -103,8 +104,8 @@ export default function AdminOrderFilterField({ changeFilter }) {
 
       </div>
 
-      <div className="button-find">
-        <button className="find-button" type="button" onClick={() => sendFilter()}>
+      <div className={classes.buttonFind}>
+        <button className={classes.findButton} type="button" onClick={() => sendFilter()}>
           Найти
         </button>
       </div>

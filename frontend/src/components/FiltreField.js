@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
+import classes from '../css/inventory_page.module.css';
 
 
 function FilterField({ changeFilter }) {
@@ -93,20 +93,20 @@ function FilterField({ changeFilter }) {
 
     return (
 
-        <div className="left-column-filters">
-            <div className="filter-panel">
+        <div className={classes.leftColumnFilters}>
+            <div className={classes.filterPanel}>
 
-                <div className="filters-label">
+                <div className={classes.filtersLabel}>
                     Фильтры поиска
                 </div>
 
-                <div className="type-equipment-box">
+                <div className={classes.typeEquipmentBox}>
 
-                    <div className="label-type-equipment-box">
+                    <div className={classes.labelTypeEquipmentBox}>
                         Тип оборудования:
                     </div>
 
-                    <div className="field-type-equipment-box">
+                    <div className={classes.fieldTypeEquipmentBox}>
                         <select id="inventoryType" name="type-equipment" onChange={(e) => filtredInput(e)}>
                             <option key="-" value="">
                                 Выберите тип
@@ -116,59 +116,59 @@ function FilterField({ changeFilter }) {
                     </div>
                 </div>
 
-                <div className="start-data-box">
+                <div className={classes.startDataBox}>
 
-                    <div className="label-start-data-box">
+                    <div className={classes.labelStartDataBox}>
                         Дата начала аренды:
                     </div>
 
-                    <div className="field-start-data-box">
+                    <div className={classes.fieldStartDataBox}>
                         <input id="startDate" type="date" name="fullName" placeholder="гггг-мм--дд" onChange={e => filtredInput(e)}
                             minLength="4" maxLength="35" size="20"></input>
                     </div>
 
                 </div>
 
-                <div className="end-data-box">
+                <div className={classes.endDataBox}>
 
-                    <div className="label-end-data-box">
+                    <div className={classes.labelEndDataBox}>
                         Дата окончания аренды:
                     </div>
 
-                    <div className="field-end-data-box">
+                    <div className={classes.fieldEndDataBox}>
                         <input id="endDate" type="date" name="fullName" placeholder="гггг-мм--дд" onChange={e => filtredInput(e)}
                             minLength="4" maxLength="35" size="20"></input>
                     </div>
 
                 </div>
 
-                <div className="price-for-day-box">
-                    <div className="label-price-for-day-box">
+                <div className={classes.priceForDayBox}>
+                    <div className={classes.labelPriceForDayBox}>
                         Цена за день:
                     </div>
 
 
-                    <div className="label-price-from">
+                    <div className={classes.labelPriceFrom}>
                         от:
                     </div>
-                    <div className="field-price-from">
+                    <div className={classes.fieldPriceFrom}>
                         <input id="minPrice" type="number" name="fullName" onChange={e => filtredInput(e)}
                             minLength="4" maxLength="35" size="20"></input>
                     </div>
 
-                    <div className="label-price-to">
+                    <div className={classes.labelPriceTo}>
                         до:
                     </div>
 
-                    <div className="field-price-to">
+                    <div className={classes.fieldPriceTo}>
                         <input id="maxPrice" type="number" name="fullName" onChange={e => filtredInput(e)}
                             minLength="4" maxLength="35" size="20"></input>
                     </div>
                 </div>
 
-                <div className="button-find">
-                    <button className="find-button" type="submit" onClick={() => sendFilter()}>
-                        <div className="find-button-text">
+                <div className={classes.buttonFind}>
+                    <button className={classes.findButton} type="submit" onClick={() => sendFilter()}>
+                        <div className={classes.findButtonText}>
                             Найти
                         </div>
                     </button>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
+import classes from '../../css/admin_equipment_manager_page.module.css';
+
 export default function AdminEquipmentFilterField({ changeFilter }) {
 
   var username = 'sport';
@@ -75,20 +77,20 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
   }
 
   return (
-    <div className="filter-panel-wrapper">
+    <div className={classes.filterPanelWrapper}>
 
-      <div className="filter-lable">
+      <div className={classes.filterLable}>
         Фильтры поиска
       </div>
 
 
-      <div className="type-equipment-wrapper">
+      <div className={classes.typeEquipmentWrapper}>
 
-        <div className="type-equipment-lable">
+        <div className={classes.typeEquipmentLable}>
           Тип оборудования:
         </div>
 
-        <div className="field-type-equipment">
+        <div className={classes.fieldTypeEquipment}>
 
           <select id="inventoryType" name="type-equipment" onChange={(e) => filtredInput(e)}>
             <option key="-" value="">
@@ -99,15 +101,15 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
 
         </div>
 
-        <div className="id-equipment-wrapper">
+        <div className={classes.idEquipmentWrapper}>
 
-          <div className="id-equipment-lable">
+          <div className={classes.idEquipmentLable}>
             Идентификатор
             <br />
             оборудования:
           </div>
 
-          <div className="field-id-equipment">
+          <div className={classes.fieldIdEquipment}>
 
             <input type="number" id="id" name="fullName" required onChange={e => filtredInput(e)}
             minLength="4" maxLength="35"size="20" />
@@ -116,8 +118,8 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
 
         </div>
 
-        <div className="button-find">
-          <button className="find-button" type="button" onClick={() => sendFilter()}>
+        <div className={classes.buttonFind}>
+          <button className={classes.findButton} type="button" onClick={() => sendFilter()}>
             Найти
           </button>
         </div>

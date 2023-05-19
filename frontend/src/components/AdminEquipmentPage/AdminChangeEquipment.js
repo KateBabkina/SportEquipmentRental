@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
 
+import classes from '../../css/admin_equipment_add_page.module.css';
+
 export default function AdminChangeEquipment() {
 
     var username = 'sport';
@@ -92,39 +94,39 @@ export default function AdminChangeEquipment() {
 
     return (
 
-        <div className="base-part-registration">
-            <div className="centre-column-registration">
-                <form name="registration-form-wraper">
-                    <div className="create-label">
+        <div className={classes.basePartRegistration}>
+            <div className={classes.centreColumnRegistration}>
+                <form name={classes.registrationFormWraper}>
+                    <div className={classes.createLabel}>
                         Для изменения оборудования введите новые данные
                     </div>
 
 
-                    <div className="fullname-box">
-                        <div className="fullname-box-label">
+                    <div className={classes.fullnameBox}>
+                        <div className={classes.fullnameBoxLabel}>
                             Тип оборудования:
                         </div>
-                        <div className="field-type-equipment-box">
+                        <div className={classes.fieldTypeEquipmentBox}>
                             <input id="inventoryType" name="type-equipment" value={equipment.inventoryType.type} readOnly></input>
                         </div>
                     </div>
 
-                    <div className="account-box">
-                        <div className="account-box-label">
+                    <div className={classes.accountBox}>
+                        <div className={classes.accountBoxLabel}>
                             Название:
                         </div>
-                        <div className="account-box-field">
+                        <div className={classes.accountBoxField}>
                             <input type="text" value={requestToChange.name} id="name" name="login" required onChange={(e) => filtredInput(e)}
                                 minLength="4" maxLength="50" size="20" />
                         </div>
                     </div>
 
                     {
-                        equipment.inventoryType.isSizable ? <div className="firstpassword-box">
-                            <div className="firstpassword-box-label">
+                        equipment.inventoryType.isSizable ? <div className={classes.firstpasswordBox}>
+                            <div className={classes.firstpasswordBoxLabel}>
                                 Размер:
                             </div>
-                            <div className="firstpassword-box-field">
+                            <div className={classes.firstpasswordBoxField}>
                                 <input type="text" value={requestToChange.size} id="size" name="password" required onChange={(e) => filtredInput(e)}
                                 />
                             </div>
@@ -133,9 +135,9 @@ export default function AdminChangeEquipment() {
 
 
 
-                    <div className="registration-box-action-box">
-                        <button className="create-new-user-button" type="button" onClick={() => changeEquipment()}>
-                            <div className="create-new-user-button-text">
+                    <div className={classes.registrationBoxActionBox}>
+                        <button className={classes.createNewUserButton} type="button" onClick={() => changeEquipment()}>
+                            <div className={classes.createNewUserButtonText}>
                                 Изменить
                             </div>
                         </button>

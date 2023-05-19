@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import validator from 'validator';
 
+import classes from '../../css/admin_client_add_page.module.css';
+
 export default function AdminAddClient() {
 
     var username = 'sport';
@@ -64,50 +66,50 @@ export default function AdminAddClient() {
     }
 
     return (
-        <div className="base-part-registration">
+        <div className={classes.basePartRegistration}>
 
-            <div className="centre-column-registration">
-                <form name="registration-form-wraper">
-                    <div className="create-label">
+            <div className={classes.centreColumnRegistration}>
+                <form name={classes.registrationFormWraper}>
+                    <div className={classes.createLabel}>
                         Для добавления клиента введите данные
                     </div>
 
 
-                    <div className="fullname-box">
-                        <div className="fullname-box-label">
+                    <div className={classes.fullnameBox}>
+                        <div className={classes.fullnameBoxLabel}>
                             ФИО:
                         </div>
-                        <div className="fullname-box-field">
+                        <div className={classes.fullnameBoxField}>
                             <input type="text" placeholder="Иванов Иван Иванович" id="name" name="fullName" required
                                 minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                         </div>
                     </div>
 
-                    <div className="account-box">
-                        <div className="account-box-label">
+                    <div className={classes.accountBox}>
+                        <div className={classes.accountBoxLabel}>
                             Адрес эл. почты:
                         </div>
-                        <div className="account-box-field">
+                        <div className={classes.accountBoxField}>
                             <input type="text" placeholder="example@example.ru" id="email" name="login" required
                                 minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                         </div>
                     </div>
 
 
-                    <div className="firstpassword-box">
-                        <div className="firstpassword-box-label">
+                    <div className={classes.firstpasswordBox}>
+                        <div className={classes.firstpasswordBoxLabel}>
                             Пароль:
                         </div>
-                        <div className="firstpassword-box-field">
+                        <div className={classes.firstpasswordBoxField}>
                             <input type="password" placeholder="********" id="password" name="password" required
                                 minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                         </div>
                     </div>
 
 
-                    <div className="registration-box-action-box">
-                        <button className="create-new-user-button" type="button" onClick={() => addClient()}>
-                            <div className="create-new-user-button-text">
+                    <div className={classes.registrationBoxActionBox}>
+                        <button className={classes.createNewUserButton} type="button" onClick={() => addClient()}>
+                            <div className={classes.createNewUserButtonText}>
                                 Добавить
                             </div>
                         </button>

@@ -3,6 +3,8 @@ import {useSelector} from "react-redux"
 import {useDispatch} from "react-redux"
 import {setEquipmentForRent} from "../store/userSlice"
 
+import classes from '../css/inventory_page.module.css';
+
 function Item({ item }) {
 
   const isLogged = useSelector(state => state.user.isLogged);
@@ -22,27 +24,25 @@ function Item({ item }) {
   }
 
   return (
-    <div className="equipment-wrapper">
+    <div className={classes.equipmentWrapper}>
 
-      <div className="equipment-img">
+      <div className={classes.equipmentImg}>
         <img src={require("../images/inventory/" + item.type + ".jpg")} alt="MISSING JPG" />
       </div>
 
-      <div className="equipment-info">
-        <div className="equipment-name">
+      <div className={classes.equipmentInfo}>
+        <div className={classes.equipmentName}>
           {item.type}
         </div>
 
-        <div className="equipment-price">
+        <div className={classes.equipmentPrice}>
           {item.price} руб./день
         </div>
       </div>
 
-      <div className="button-rent">
-        <button className="rent-button" type="submit" onClick={() => handleRentButton()}>
-          <div className="rent-button-text">
+      <div className={classes.buttonRent}>
+        <button className={classes.rentButton} type="submit" onClick={() => handleRentButton()}>
             Арендовать
-          </div>
         </button>
       </div>
 
