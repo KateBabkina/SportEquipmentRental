@@ -119,7 +119,7 @@
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 25%;
     max-width: 100%;
@@ -128,9 +128,12 @@
     justify-items: center;
     /* Размещаем карточку по центру */
     column-gap: 8px;
-    row-gap: 20px;
+    row-gap: 30px;
     /* Отступ между рядами */
     margin: 0 auto;
+
+    align-items: center;
+    align-content: center;
 }
 
 .fullNameUserLable{

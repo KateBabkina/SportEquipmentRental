@@ -148,7 +148,7 @@ export default function EventPage({ setIsLogged }) {
               </div>
 
               <div className={classes.emailUserLable}>
-                Алрес эл. почты:
+                Адрес эл. почты:
               </div>
 
               <div className={classes.emailUser}>

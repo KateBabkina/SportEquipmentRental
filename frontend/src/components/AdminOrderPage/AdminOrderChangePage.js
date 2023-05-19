@@ -59,7 +59,7 @@ export default function AdminOrderChangePage() {
 
                         <div className={classes.rowInformation}>
                             <div className={classes.idLable}>
-                                email:
+                            Адрес эл. почты:
                             </div>
                             {order.email}
                         </div>
