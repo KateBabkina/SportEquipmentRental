@@ -189,6 +189,8 @@
     justify-items: center;
     /* Размещаем карточку по центру */
     /* Отступ между рядами */
+
+    row-gap: 10px;
 }
 
 .idEquipmentWrapper{
@@ -205,6 +207,8 @@
     justify-items: center;
     /* Размещаем карточку по центру */
     /* Отступ между рядами */
+
+    row-gap: 10px;
 }
 
 .idEquipmentLable {
@@ -546,7 +550,7 @@
     transition: 0.7s;
 }
 
-.buttonCancel .cancelButton-text {
+.buttonCancel .cancelButtonText {
     padding: 10px 5px 10px 5px;
     display: flex;
     align-items: center;

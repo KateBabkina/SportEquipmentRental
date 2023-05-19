@@ -5,7 +5,7 @@ import { authorizeUser } from "../store/userSlice"
 import axios from 'axios';
 import validator from 'validator';
 
-import '../css/login.css'
+import classes from '../css/login.module.css';
 
 const EnterPage = () => {
 
@@ -65,46 +65,46 @@ const EnterPage = () => {
     }
 
     return (
-        <div className='base-part-registration'>
-            <div class="centre-column-registration">
-                <form name="registration-form-wraper" method="POST" onSubmit={(e) => submitChacking(e)}>
+        <div className={classes.basePartRegistration}>
+            <div className={classes.centreColumnRegistration}>
+                <form name={classes.registrationFormWraper} method="POST" onSubmit={(e) => submitChacking(e)}>
 
-                    <div class="create-label">
+                    <div className={classes.createLabel}>
                         Для входа введите данные
                     </div>
 
-                    <div className="account-box">
-                        <div className="account-box-label">
+                    <div className={classes.accountBox}>
+                        <div className={classes.accountBoxLabel}>
                             <b>Адрес эл. почты:</b>
                         </div>
-                        <div className="account-box-field">
+                        <div className={classes.accountBoxField}>
                             <input type="text" placeholder="example@example.ru" id="email" name="email" value={login.email}
                                 onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
-                    <div className="firstpassword-box">
-                        <div className="firstpassword-box-label">
+                    <div className={classes.firstpasswordBox}>
+                        <div className={classes.firstpasswordBoxLabel}>
                             <b>Пароль:</b>
                         </div>
-                        <div className="firstpassword-box-field">
+                        <div className={classes.firstpasswordBoxField}>
                             <input type="password" placeholder="********" id="password" name="password" value={login.password}
                                 onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
 
-                    <div className="registration-box-action-box">
+                    <div className={classes.registrationBoxActionBox}>
 
-                        <button className="create-new-user-button" type="submit">
-                            <div className="create-new-user-button-text">
+                        <button className={classes.createNewUserButton} type="submit">
+                            <div className={classes.createNewUserButtonText}>
                                 Войти
                             </div>
                         </button>
 
                     </div>
 
-                    <div className="login-box-action-box">
+                    <div className={classes.loginBoxActionBox}>
                         <a href="/api/person/add">Зарегистрироваться, если нет аккаунта</a>
                     </div>
 

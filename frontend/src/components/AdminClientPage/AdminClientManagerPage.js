@@ -39,21 +39,22 @@ export default function AdminClientManagerPage() {
   }
 
   return (
-    <div className={classes.managerWrapper}>
-      {
-        loading ?
-          <ClipLoader
-            color={"#1C62CD"}
-            loading={loading}
-            size={200}
-            className="spin"
-          />
-          :
+    loading ?
+      <ClipLoader
+        color={"#1C62CD"}
+        loading={loading}
+        size={200}
+        className="spin"
+      />
+      :
+      <div className={classes.managerWrapper}>
+        {
+
           <>
             <AdminClientFilterField changeFilter={changeFilter} ></AdminClientFilterField>
             <AdminClientList clients={currentClients}></AdminClientList>
           </>
-      }
-    </div>
+        }
+      </div>
   )
 }

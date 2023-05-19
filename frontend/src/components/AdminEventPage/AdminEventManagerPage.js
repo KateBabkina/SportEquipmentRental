@@ -38,21 +38,22 @@ export default function AdminEventManagerPage() {
     }
 
     return (
-        <div className={classes.managerWrapper}>
-            {
-                loading ?
-                    <ClipLoader
-                        color={"#1C62CD"}
-                        loading={loading}
-                        size={200}
-                        className="spin"
-                    />
-                    :
+        loading ?
+            <ClipLoader
+                color={"#1C62CD"}
+                loading={loading}
+                size={200}
+                className="spin"
+            />
+            :
+            <div className={classes.managerWrapper}>
+                {
+
                     <>
                         <AdminEventFilterField changeFilter={changeFilter} ></AdminEventFilterField>
                         <AdminEventList events={currentEvents}></AdminEventList>
                     </>
-            }
-        </div>
+                }
+            </div>
     )
 }
