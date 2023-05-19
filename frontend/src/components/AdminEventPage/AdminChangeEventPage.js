@@ -17,6 +17,7 @@ export default function AdminChangeEventPage() {
     endDate: event.endDate,
     inventoryType: event.inventoryType.type
   })
+  console.log(requestToChange.inventoryType);
 
   const filtredInput = (event) => {
     setRequestToChange((prev) => {
@@ -100,7 +101,7 @@ export default function AdminChangeEventPage() {
               Тип оборудования:
             </div>
             <div className={classes.fieldTypeEquipmentBox}>
-              <input id="inventoryType" value={event.inventoryType} readOnly></input>
+              <input id="inventoryType" value={event.inventoryType.type} readOnly></input>
             </div>
           </div>
 

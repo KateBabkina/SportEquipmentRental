@@ -148,7 +148,7 @@ export default function AdminAddEventPage() {
                                     Дата начала:
                                 </div>
                                 <div className={classes.firstpasswordBoxField}>
-                                    <input type="data" id="startDate" required
+                                    <input type="date" id="startDate" required
                                         minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)}/>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@ export default function AdminAddEventPage() {
                                     Дата окончания:
                                 </div>
                                 <div className={classes.firstpasswordBoxField}>
-                                    <input type="data" id="endDate" required
+                                    <input type="date" id="endDate" required
                                         minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)}/>
                                 </div>
                             </div>
