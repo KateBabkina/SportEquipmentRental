@@ -120,7 +120,7 @@ export default function AdminChangeEventPage() {
               Дата начала:
             </div>
             <div className={classes.firstpasswordBoxField}>
-              <input type="data" id="startDate" value={requestToChange.startDate} required onChange={(e) => filtredInput(e)}
+              <input type="date" id="startDate" value={requestToChange.startDate} required onChange={(e) => filtredInput(e)}
                 minLength="4" maxLength="35" size="20" />
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function AdminChangeEventPage() {
               Дата окончания:
             </div>
             <div className={classes.firstpasswordBoxField}>
-              <input type="data" id="endDate" value={requestToChange.endDate} required onChange={(e) => filtredInput(e)}
+              <input type="date" id="endDate" value={requestToChange.endDate} required onChange={(e) => filtredInput(e)}
                 minLength="4" maxLength="35" size="20" />
             </div>
           </div>

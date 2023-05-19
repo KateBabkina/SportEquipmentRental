@@ -11,20 +11,33 @@ export default function AdminOrderChangePage() {
 
     const order = useSelector(state => state.user.orderForChange);
 
+    function checkData(){
+        var now = new Date();
+        if (order.startDate < now){
+            alert("Пока нельзя принять заказ")
+            return false
+        } else {
+            return true
+        }
+    }
+
     const acceptOrder = () => {
-        axios.put(`https://sportbox.up.railway.app/api/booking/return?id=${order.id}`, {},
-        {
-            auth: {
-                username: username,
-                password: password
-            }
-        }).then(res => {
-            console.log(res.data);
-            alert(res.data.message)
-            window.location.href = "/admin/orders"
-        }).catch(() => {
-            alert("An error occurred on the server")
-        })
+        var check = checkData()
+        if (check) {
+            axios.put(`https://sportbox.up.railway.app/api/booking/return?id=${order.id}`, {},
+                {
+                    auth: {
+                        username: username,
+                        password: password
+                    }
+                }).then(res => {
+                    console.log(res.data);
+                    alert(res.data.message)
+                    window.location.href = "/admin/orders"
+                }).catch(() => {
+                    alert("An error occurred on the server")
+                })
+        }
     }
 
     return (
@@ -59,7 +72,7 @@ export default function AdminOrderChangePage() {
 
                         <div className={classes.rowInformation}>
                             <div className={classes.idLable}>
-                            Адрес эл. почты:
+                                Адрес эл. почты:
                             </div>
                             {order.email}
                         </div>

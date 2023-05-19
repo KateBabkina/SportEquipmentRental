@@ -53,6 +53,7 @@ function FilterEventField({ changeFilter }) {
 
     const sendFilter = () => {
         var check = checkData()
+        console.log(filterForEvent);
         if (check) {
             axios.post("https://sportbox.up.railway.app/api/event/filter", filterForEvent,
                 {
@@ -102,7 +103,7 @@ function FilterEventField({ changeFilter }) {
                     </div>
 
                     <div className={classes.fieldTypeEquipmentBox}>
-                        <select id={classes.inventoryType} name="type-equipment" onChange={(e) => filtredInput(e)}>
+                        <select id="inventoryType" name="type-equipment" onChange={(e) => filtredInput(e)}>
                             <option key="-" value="">
                                 Выберите тип
                             </option>
