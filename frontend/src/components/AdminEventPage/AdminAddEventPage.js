@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import ClipLoader from "react-spinners/ClipLoader";
-import classes from '../../css/admin_event_add_page.css';
+import classes from '../../css/admin_event_add_page.module.css';
 
 export default function AdminAddEventPage() {
 

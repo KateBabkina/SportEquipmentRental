@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import AdminEventFilterField from "./AdminEventFilterField"
 import AdminEventList from "./AdminEventList"
-import classes from '../../css/admin_event_manager_page.css';
+import classes from '../../css/admin_event_manager_page.module.css';
 
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';

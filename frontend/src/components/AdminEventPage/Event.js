@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-import classes from '../../css/admin_event_manager_page.css';
+import classes from '../../css/admin_event_manager_page.module.css';
 
 import { useDispatch } from "react-redux"
 import { setDataForChange } from "../../store/userSlice"

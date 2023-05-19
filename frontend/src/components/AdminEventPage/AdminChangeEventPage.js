@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
-import classes from '../../css/admin_event_add_page.css';
+import classes from '../../css/admin_event_add_page.module.css';
 
 export default function AdminChangeEventPage() {
 

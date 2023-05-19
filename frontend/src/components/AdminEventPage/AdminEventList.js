@@ -1,6 +1,6 @@
 import React from 'react'
 import Event from "./Event"
-import classes from '../../css/admin_event_manager_page.css';
+import classes from '../../css/admin_event_manager_page.module.css';
 
 export default function AdminEventList({ events }) {
 

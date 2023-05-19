@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import classes from '../../css/admin_event_manager_page.css';
+import classes from '../../css/admin_event_manager_page.module.css';
 
 export default function AdminEventFilterField({ changeFilter }) {
 
