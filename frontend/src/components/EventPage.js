@@ -4,7 +4,9 @@ import axios from 'axios';
 import FilterEventField from "./FilterEventField"
 import EventList from "./EventList";
 import ClipLoader from "react-spinners/ClipLoader";
-import Pagination from "./Pagination";
+
+
+import classes from '../css/event_page.module.css';
 
 function EventPage({ isLogged }) {
 
@@ -16,7 +18,7 @@ function EventPage({ isLogged }) {
   const [currentEvents, setCurrentEvents] = useState(eventList)
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [eventsPerPage] = useState(6)
+  const [eventsPerPage] = useState(4)
 
 
   useEffect(() => {
@@ -44,14 +46,14 @@ function EventPage({ isLogged }) {
 
   const lastEventIndex = currentPage * eventsPerPage
   const firstEventIndex = lastEventIndex - eventsPerPage
-  const currentEventsOnPage = currentEvents.slice(firstEventIndex, lastEventIndex) 
+  const currentEventsOnPage = currentEvents.slice(firstEventIndex, lastEventIndex)
 
   const paginate = (pageNumder) => {
     setCurrentPage(pageNumder)
   }
 
   return (
-    <div className="base-part-sportEquipment-page">
+    <div className={classes.basePartSportEquipmentPage}>
       {
         loading ?
           <ClipLoader
@@ -61,11 +63,13 @@ function EventPage({ isLogged }) {
             className="spin"
           />
           :
-          <div>
+          <>
             <FilterEventField changeFilter={changeFilter}></FilterEventField>
-            <EventList events={currentEventsOnPage}></EventList>
-            <Pagination itemsPerPage={eventsPerPage}  totalItems={currentEvents.length} paginate={paginate}/>
-          </div>
+            <EventList events={currentEventsOnPage}
+              eventsPerPage={eventsPerPage} 
+              currentEvents={currentEvents} 
+              paginate={paginate} ></EventList>
+          </>
       }
 
     </div>

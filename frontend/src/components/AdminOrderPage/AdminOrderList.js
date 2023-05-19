@@ -1,47 +1,49 @@
 import React from 'react'
 import Order from "./Order"
 
+import classes from '../../css/admin_order_manager_page.module.css';
+
 export default function AdminOrderList({ orders }) {
 
   console.log(orders);
   return (
-    <div className="table-manager-wrapper">
+    <div className={classes.tableManagerWrapper}>
 
-      <div className="void-box">
+      <div className={classes.voidBox}>
       </div>
 
-      <div className="table-wrapper">
-        <div className="column-lables">
-          <div className="event-id-lable">
+      <div className={classes.tableWrapper}>
+        <div className={classes.columnLables}>
+          <div className={classes.eventIdLable}>
             Id
           </div>
-          <div className="event-name-lable">
+          <div className={classes.eventNameLable}>
             Оборудование
           </div>
-          <div className="event-equipment-type-lable">
+          <div className={classes.eventEquipmentTypeLable}>
             Email
           </div>
-          <div className="event-price-lable">
+          <div className={classes.eventPriceLable}>
             Цена, руб.
           </div>
-          <div className="event-data-from-lable">
+          <div className={classes.eventDataFromLable}>
             Дата заказа
           </div>
-          <div className="event-data-from-lable">
+          <div className={classes.eventDataFromLable}>
             Дата начала
           </div>
-          <div className="event-data-from-lable">
+          <div className={classes.eventDataFromLable}>
             Дата окончания
           </div>
-          <div className='order-debt'>
+          <div className={classes.eventDebtLable}>
             Долг, руб
           </div>
-          <div className="event-action-lable">
+          <div className={classes.eventActionLable}>
 
           </div>
         </div>
 
-        <div className="table-rows">
+        <div className={classes.tableRows}>
         {
             
             orders.map(order => {

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import ClipLoader from "react-spinners/ClipLoader";
 
+import classes from '../../css/admin_equipment_add_page.module.css';
+
 export default function AdminAddEquipmentPage() {
 
     var username = 'sport';
@@ -121,7 +123,7 @@ export default function AdminAddEquipmentPage() {
     }
 
     return (
-        <div className="centre-column-registration">
+        <div className={classes.centreColumnRegistration}>
             {
                 loading ?
                     <ClipLoader
@@ -130,17 +132,17 @@ export default function AdminAddEquipmentPage() {
                         size={100}
                     />
                     :
-                    <form name="registration-form-wraper">
-                        <div className="create-label">
+                    <form name={classes.registrationFormWraper}>
+                        <div className={classes.createLabel}>
                             Для добавления оборудования введите данные
                         </div>
 
 
-                        <div className="fullname-box">
-                            <div className="fullname-box-label">
+                        <div className={classes.fullnameBox}>
+                            <div className={classes.fullnameBoxLabel}>
                                 Тип оборудования:
                             </div>
-                            <div className="field-type-equipment-box">
+                            <div className={classes.fieldTypeEquipmentBox}>
                                 <select id="inventoryType" name="type-equipment" onChange={(e) => filtredInput(e)}>
                                     <option key="-" value="">
                                         Выберите тип
@@ -150,31 +152,31 @@ export default function AdminAddEquipmentPage() {
                             </div>
                         </div>
 
-                        <div className="account-box">
-                            <div className="account-box-label">
+                        <div className={classes.accountBox}>
+                            <div className={classes.accountBoxLabel}>
                                 Название:
                             </div>
-                            <div className="account-box-field">
+                            <div className={classes.accountBoxField}>
                                 <input type="text" id="name" name="login" required onChange={(e) => filtredInput(e)}
                                     minLength="4" maxLength="35" size="20" />
                             </div>
                         </div>
 
 
-                        <div className="firstpassword-box">
-                            <div className="firstpassword-box-label">
+                        <div className={classes.firstpasswordBox}>
+                            <div className={classes.firstpasswordBoxLabel}>
                                 Размер:
                             </div>
-                            <div className="firstpassword-box-field">
+                            <div className={classes.firstpasswordBoxField}>
                                 <input type="text" id="size" name="password" required onChange={(e) => filtredInput(e)}
                                     minLength="4" maxLength="35"
                                     size="20" />
                             </div>
                         </div>
 
-                        <div className="registration-box-action-box">
-                            <button className="create-new-user-button" type="button" onClick={() => addClient()}>
-                                <div className="create-new-user-button-text">
+                        <div className={classes.registrationBoxActionBox}>
+                            <button className={classes.createNewUserButton} type="button" onClick={() => addClient()}>
+                                <div className={classes.createNewUserButtonText}>
                                     Добавить
                                 </div>
                             </button>

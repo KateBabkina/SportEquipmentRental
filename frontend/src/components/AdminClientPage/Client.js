@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios';
 
+import classes from '../../css/admin_client_manager_page.module.css';
+
 export default function Client({ client }) {
 
     var username = 'sport';
@@ -68,55 +70,63 @@ export default function Client({ client }) {
                 alert("An error occurred on the server")
             })
     }
+    
+    const emailSpliter= (email) =>{
+        
+        var list = email.split('@');
+        email = list[0] + ' @' + list[1];
 
+        return email;
+    }
 
     return (
-        <div className="row">
+        <div className={classes.row}>
 
-            <div className="order-number-row">
+            <div className={classes.orderNumberRow}>
                 {client.id}
             </div>
 
-            <div className="order-equipment-row">
-                <div className="fullname-cell">
+            <div className={classes.orderEquipmentRow}>
+                <div className={classes.fullnameCell}>
                     {client.name}
                 </div>
             </div>
-            <div className="order-price-row">
-                <div className="email-cell">
-                    {client.email}
+
+            <div className={classes.orderPriceRow}>
+                <div className={classes.emailCell}>
+                    {emailSpliter(client.email)}
                 </div>
             </div>
 
-            <div className="order-data-row">
+            <div className={classes.orderDataRow}>
                 {client.isBaned ? <div>Заблокирован</div> : <div>Не заблокирован</div>}
             </div>
-            <div className="order-data-from-row">
+            <div className={classes.orderDataFromRow}>
                 {client.role.name === "Customer" ? <div>Покупатель</div> : <div>Админ</div>}
             </div>
-            <div className="order-action-row">
-                <div className="button-cancel">
-                    <button className="cancel-button" type="submit" onClick={() => deleteUser()}>
-                        <div className="cancel-button-text">
+            <div className={classes.orderActionRow}>
+                <div className={classes.buttonCancel}>
+                    <button className={classes.cancelButton} type="submit" onClick={() => deleteUser()}>
+                        <div className={classes.cancelButtonText}>
                             Удалить
                         </div>
                     </button>
                 </div>
             </div>
-            <div className="order-action-row">
+            <div className={classes.orderActionRow}>
                 {
                     client.isBaned ?
-                        <div className="button-cancel">
-                            <button className="cancel-button" type="submit" onClick={() => unbanUser()}>
-                                <div className="cancel-button-text">
+                        <div className={classes.buttonCancel}>
+                            <button className={classes.cancelButton} type="submit" onClick={() => unbanUser()}>
+                                <div className={classes.cancelButtonText}>
                                     Разблокировать
                                 </div>
                             </button>
                         </div>
                         :
-                        <div className="button-cancel">
-                            <button className="cancel-button" type="submit" onClick={() => banUser()}>
-                                <div className="cancel-button-text">
+                        <div className={classes.buttonCancel}>
+                            <button className={classes.cancelButton} type="submit" onClick={() => banUser()}>
+                                <div className={classes.cancelButtonText}>
                                     Заблокировать
                                 </div>
                             </button>

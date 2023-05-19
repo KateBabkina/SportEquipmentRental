@@ -5,6 +5,8 @@ import AdminEquipmentList from "./AdminEquipmentList"
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
+import classes from '../../css/admin_equipment_manager_page.module.css';
+
 export default function AdminEquipmentManagerPage() {
 
     var username = 'sport';
@@ -37,7 +39,7 @@ export default function AdminEquipmentManagerPage() {
       }
 
   return (
-    <div className="manager-wrapper">
+    <div className={classes.managerWrapper}>
     {
       loading ?
         <ClipLoader

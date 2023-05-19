@@ -6,6 +6,8 @@ import { unauthorizeUser, updateUser } from "../store/userSlice"
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
+import classes from '../css/profile_page.module.css'
+
 export default function EventPage({ setIsLogged }) {
 
   var username = 'sport';
@@ -73,41 +75,41 @@ export default function EventPage({ setIsLogged }) {
 
   const getHistory = () => {
     return user.bookings?.map((el) => {
-      return (<div className="row" key={el.id}>
+      return (<div className={classes.row} key={el.id}>
 
-        <div className="order-number-row">
+        <div className={classes.orderNumberRow}>
           {el.id}
         </div>
 
-        <div className="order-equipment-row">
+        <div className={classes.orderEquipmentRow}>
           {el.inventory.name}
         </div>
 
-        <div className="order-price-row">
+        <div className={classes.orderPriceRow}>
           {el.price}
         </div>
 
-        <div className="order-data-row">
+        <div className={classes.orderDataRow}>
           {el.date}
         </div>
 
-        <div className="order-data-from-row">
+        <div className={classes.orderDataFromRow}>
           {el.startDate}
         </div>
 
-        <div className="order-data-to-row">
+        <div className={classes.orderDataToRow}>
           {el.endDate}
         </div>
 
-        <div className="order-debt-row">
+        <div className={classes.orderDebtRow}>
           {el.debt}
         </div>
 
         {
-          now < new Date(el.startDate) ? <div className="order-action-row">
-            <div className="button-cancel">
-              <button className="cancel-button" type="submit" onClick={() => cancelBooking(el.id)}>
-                <div className="cancel-button-text">
+          now < new Date(el.startDate) ? <div className={classes.orderActionRow}>
+            <div className={classes.buttonCancel}>
+              <button className={classes.cancelButton} type="submit" onClick={() => cancelBooking(el.id)}>
+                <div className={classes.cancelButtonText}>
                   Отменить
                 </div>
               </button>
@@ -131,26 +133,26 @@ export default function EventPage({ setIsLogged }) {
             className="spin"
           />
           :
-          <div className="profile-wrapper">
+          <div className={classes.profileWrapper}>
 
-            <div className="information-about-user-lable">
+            <div className={classes.informationAboutUserLable}>
               <p>Информация о пользователе:</p>
             </div>
 
-            <div className="information-about-user-wrapper">
+            <div className={classes.informationAboutUserWrapper}>
 
-              <div className="full-name-user-lable">
+              <div className={classes.fullNameUserLable}>
                 ФИО:
               </div>
-              <div className="full-name-user">
+              <div className={classes.fullNameUser}>
                 {user.name}
               </div>
 
-              <div className="email-user-lable">
-                Алрес эл. почты:
+              <div className={classes.emailUserLable}>
+                Адрес эл. почты:
               </div>
 
-              <div className="email-user">
+              <div className={classes.emailUser}>
                 {user.email}
               </div>
 
@@ -160,50 +162,52 @@ export default function EventPage({ setIsLogged }) {
               isAdmin ?
                 <div></div>
                 :
-                <div className="information-about-orders-wrapper">
+                <div className={classes.informationAboutOrdersWrapper}>
 
-                  <div className="information-about-orders-lable">
+                  <div className={classes.informationAboutOrdersLable}>
                     История заказов:
                   </div>
 
-                  <div className="column-lables">
+                  <div className={classes.columnLables}>
 
-                    <div className="order-number-lable">
+                    <div className={classes.orderNumberLable}>
                       №
                     </div>
 
-                    <div className="order-equipment-lable">
+                    <div className={classes.orderEquipmentLable}>
                       Оборудование
                     </div>
 
-                    <div className="order-price-lable">
+                    <div className={classes.orderPriceLable}>
                       Цена, руб.
                     </div>
 
-                    <div className="order-data-lable">
+                    <div className={classes.orderDataLable}>
                       Дата заказа
                     </div>
 
-                    <div className="order-data-from-lable">
+                    <div className={classes.orderDataFromLable}>
                       Дата начала
                     </div>
 
-                    <div className="order-data-to-lable">
+                    <div className={classes.orderDataToLable}>
                       Дата окончания
                     </div>
 
-                    <div className="order-debt-lable">
+                    <div className={classes.orderDebtLable}>
                       Долг, руб.
                     </div>
 
-                    <div className="order-action-lable">
+                    <div className={classes.orderActionLable}>
 
                     </div>
                   </div>
 
-                  <div className="information-about-orders-table-wrapper">
-                    <div className="table-rows">
-                      {user.bookings?.length === 0 ? <h3>Пусто</h3> : getHistory()}
+                  <div className={classes.informationAboutOrdersTableWrapper}>
+                    <div className={classes.tableWrapper}>
+                      <div className={classes.tableRows}>
+                        {user.bookings?.length === 0 ? <h3>Пусто</h3> : getHistory()}
+                      </div>
                     </div>
                   </div>
 
@@ -211,9 +215,9 @@ export default function EventPage({ setIsLogged }) {
 
             }
 
-            <div className="button-exit">
-              <button className="exit-button" type="submit" onClick={logOut}>
-                <div className="exit-button-text">
+            <div className={classes.buttonExit}>
+              <button className={classes.exitButton} type="submit" onClick={logOut}>
+                <div className={classes.exitButtonText}>
                   Выйти
                 </div>
               </button>

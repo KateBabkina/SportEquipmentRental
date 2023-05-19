@@ -4,7 +4,8 @@ import ItemList from "./ItemList";
 import FilterField from "./FiltreField";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
-import Pagination from "./Pagination";
+
+import classes from '../css/inventory_page.module.css';
 
 function EquipmentPage() {
 
@@ -54,7 +55,7 @@ function EquipmentPage() {
   }
 
   return (
-    <div className="base-part-sportEquipment-page">
+    <div className={classes.basePartSportEquipmentPage}>
       {
         loading ?
           <ClipLoader
@@ -64,11 +65,10 @@ function EquipmentPage() {
             className="spin"
           />
           :
-          <div>
+          <>
             <FilterField changeFilter={changeFilter} />
-            <ItemList items={currentItemsOnPage} />
-            <Pagination itemsPerPage={itemsPerPage}  totalItems={currentItems.length} paginate={paginate}/>
-          </div>
+            <ItemList items={currentItemsOnPage} itemsPerPage={itemsPerPage} currentItems={currentItems} paginate={paginate}/>
+          </>
       }
     </div>
   );

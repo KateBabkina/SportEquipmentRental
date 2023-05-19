@@ -1,6 +1,8 @@
 import React from 'react'
 import Equipment from "./Equipment"
 
+import classes from '../../css/admin_equipment_manager_page.module.css';
+
 export default function AdminEquipmentList({ equipments }) {
 
   const linkToAddPage = () => {
@@ -8,40 +10,40 @@ export default function AdminEquipmentList({ equipments }) {
   }
 
   return (
-    <div className="table-manager-wrapper">
+    <div className={classes.tableManagerWrapper}>
 
-      <div className="button-add">
-        <button className="add-button" type="submit" onClick={() => linkToAddPage()}>
+      <div className={classes.buttonAdd}>
+        <button className={classes.addButton} type="submit" onClick={() => linkToAddPage()}>
           Добавить оборудование
         </button>
       </div>
 
-      <div className="table-wrapper">
-        <div className="column-lables">
-          <div className="order-number-lable">
+      <div className={classes.tableWrapper}>
+        <div className={classes.columnLables}>
+          <div className={classes.orderNumberLable}>
             Id
           </div>
-          <div className="order-equipment-lable">
+          <div className={classes.orderEquipmentLable}>
             Название
           </div>
-          <div className="order-price-lable">
+          <div className={classes.orderPriceLable}>
             Тип
           </div>
-          <div className="order-data-lable">
+          <div className={classes.orderDataLable}>
             Размер
           </div>
-          <div className="order-data-from-lable">
+          <div className={classes.orderDataFromLable}>
             Цена в день, руб.
           </div>
-          <div className="order-action-lable">
+          <div className={classes.orderActionLable}>
 
           </div>
-          <div className="order-action-lable">
+          <div className={classes.orderActionLable}>
 
           </div>
         </div>
 
-        <div className="table-rows">
+        <div className={classes.tableRows}>
 
           {
             equipments.map(equipment => {

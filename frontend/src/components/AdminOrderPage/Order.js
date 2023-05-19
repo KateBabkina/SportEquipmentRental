@@ -3,6 +3,7 @@ import React from 'react'
 import {useDispatch} from "react-redux"
 import {setOrderForChange} from "../../store/userSlice"
 
+import classes from '../../css/admin_order_manager_page.module.css';
 
 export default function Order({ order }) {
 
@@ -13,43 +14,51 @@ export default function Order({ order }) {
         window.location.href = "/admin/orders/change"
     }
 
-    return (
-        <div className="row">
+    const emailSpliter= (email) =>{
+        
+        var list = email.split('@');
+        email = list[0] + ' @' + list[1];
 
-            <div className="event-id-row">
+        return email;
+    }
+
+    return (
+        <div className={classes.row}>
+
+            <div className={""}>
                 {order.id}
             </div>
 
-            <div className="event-name-row">
-                <div className="fullname-cell">
+
+                <div className={classes.fullnameCell}>
                     {order.inventory}
                 </div>
-            </div>
-            <div className="event-equipment-type-row">
-                <div className="event-equipment-type-cell">
-                    {order.email}
+            
+            <div className={classes.eventEquipmentTypeRow}>
+                <div className={classes.eventEquipmentTypeCell}>
+                    {emailSpliter(order.email)}
                 </div>
             </div>
 
-            <div className="event-price-row">
+            <div className={classes.eventPriceRow}>
                 {order.price}
             </div>
-            <div className="event-data-from-row">
+            <div className={classes.eventDataFromRow}>
                 {order.date}
             </div>
-            <div className="event-data-to-row">
+            <div className={classes.eventDataToRow}>
                 {order.startDate}
             </div>
-            <div className="event-data-to-row">
+            <div className={classes.eventDataToRow}>
                 {order.endDate}
             </div>
-            <div className="order-debt">
+            <div className={classes.orderDebt}>
                 {order.debt}
             </div>
-            <div className="order-action-row">
-                <div className="button-cancel">
-                    <button className="cancel-button" type="button" onClick={() => linkToChangePage()}>
-                        <div className="cancel-button-text">
+            <div className={classes.orderActionRow}>
+                <div className={classes.buttonCancel}>
+                    <button className={classes.cancelButton} type="button" onClick={() => linkToChangePage()}>
+                        <div className={classes.cancelButtonText}>
                             Изменить
                         </div>
                     </button>
