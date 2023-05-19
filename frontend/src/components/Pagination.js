@@ -1,5 +1,7 @@
 import React from "react";
 
+import classes from '../css/event_page.module.css';
+
 function Pagination({ itemsPerPage, totalItems, paginate }) {
 
     const pageNumbers = []
@@ -12,8 +14,8 @@ function Pagination({ itemsPerPage, totalItems, paginate }) {
     console.log(pageNumbers.length);
 
     return (
-        <div className="pagination-bar">
-            <ul className="pagination">
+        <div className={classes.paginationBar}>
+            <ul className={classes.pagination}>
                     {
                         pageNumbers.map(page => (
                             <li key={page}>

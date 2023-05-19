@@ -75,7 +75,7 @@
 
 /* Начало Страница Спортивного инвентаря */
 .basePartSportEquipmentPage {
-    height: 1250px;
+    /* height: 1250px; */
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
@@ -86,13 +86,13 @@
     margin-top: 50px;
     float: left;
     background-color: rgb(255, 255, 255);
-    height: 1061px;
+    /* height: 1061px; */
     width: 100%;
 }
 
 .paymentWrapper {
     display: grid;
-    height: 1100px;
+    /* height: 1100px; */
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1.3fr 0.7fr; 
     /* grid-template-rows: repeat(2, 1fr); */
@@ -108,12 +108,13 @@
 }
 
 .paymentBoxWrapper {
-    height: 1100px;
+    /* height: 1100px; */
     margin-left: 60px;
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr; 
-    grid-template-rows: 0.4fr 0.3fr 0.8fr 0.1fr;
+    /* grid-template-rows: 0.4fr 0.3fr 0.8fr 0.1fr; */
+    grid-template-rows: 0fr 0fr 0fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
     max-width: 100%;
@@ -127,6 +128,7 @@
 }
 
 .orderPrice{
+    padding-top: 15px;
     width: 70%;
     text-align: center;
     border-top: 4px solid;
@@ -144,7 +146,7 @@
 }
 
 .qrCodeBox {
-    height: 1061px;
+    /* height: 1061px; */
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr; 
@@ -163,6 +165,11 @@
 
 .qrCode{
     padding-top: 30%;
+    width: 100%;
+}
+
+.qrCode img{
+    height: 100%;
 }
 
 .informationAboutOrderWrapper {

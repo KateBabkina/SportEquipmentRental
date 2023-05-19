@@ -6,7 +6,7 @@ import EventList from "./EventList";
 import ClipLoader from "react-spinners/ClipLoader";
 
 
-import '../css/event_page.css';
+import classes from '../css/event_page.module.css';
 
 function EventPage({ isLogged }) {
 
@@ -53,7 +53,7 @@ function EventPage({ isLogged }) {
   }
 
   return (
-    <div className="base-part-sportEquipment-page">
+    <div className={classes.basePartSportEquipmentPage}>
       {
         loading ?
           <ClipLoader

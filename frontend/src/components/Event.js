@@ -1,31 +1,31 @@
 import React from "react";
 
-import '../css/event_page.css';
+import classes from '../css/event_page.module.css';
 
 function Event({ event }) {
     return (
-        <div className="event-wrapper">
-            <div className="event-img">
+        <div className={classes.eventWrapper}>
+            <div className={classes.eventImg}>
                 <img src={require("../images/events/" + event.name + ".jpg") } alt="MISSING JPG"></img>
             </div>
-            <div className="event-info-wrapper">
-                <div className="event-name">
+            <div className={classes.eventInfoWrapper}>
+                <div className={classes.eventName}>
                     {event.name}
                 </div>
 
-                <div className="event-description">
+                <div className={classes.eventDescription}>
                     {event.description}
                 </div>
 
-                <div className="event-equipment">
+                <div className={classes.eventEquipment}>
                     Необходимое оборудование: {event.inventoryType.type}
                 </div>
 
-                <div className="event-date">
+                <div className={classes.eventDate}>
                     Даты проведения: с {event.startDate} по {event.endDate}
                 </div>
 
-                <div className="event-price">
+                <div className={classes.eventPrice}>
                     {event.price} руб.
                 </div>
             </div>

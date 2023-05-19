@@ -115,6 +115,7 @@
 }
 
 .labelTypeEquipmentBox {
+    padding-bottom: 10px;
     font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
@@ -150,6 +151,7 @@
 }
 
 .labelStartDataBox {
+    padding-bottom: 10px;
     font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
@@ -179,6 +181,7 @@
 }
 
 .labelEndDataBox {
+    padding-bottom: 10px;
     font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;
@@ -208,6 +211,7 @@
 }
 
 .labelPriceForDayBox {
+    padding-bottom: 10px;
     font-family: 'PT Sans', sans-serif;
     text-align: center;
     font-size: 26px;

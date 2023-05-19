@@ -158,6 +158,8 @@
     justify-items: center;
     /* Размещаем карточку по центру */
     /* Отступ между рядами */
+
+    row-gap: 10px;
 }
 
 .emailLable {
