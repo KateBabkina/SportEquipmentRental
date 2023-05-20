@@ -2,16 +2,18 @@ import React from 'react'
 
 import {useDispatch} from "react-redux"
 import {setOrderForChange} from "../../store/userSlice"
+import { useNavigate } from "react-router-dom"
 
 import classes from '../../css/admin_order_manager_page.module.css';
 
 export default function Order({ order }) {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const linkToChangePage = () => {
         dispatch(setOrderForChange(order))
-        window.location.href = "/admin/orders/change"
+        navigate("/admin/orders/change")
     }
 
     const emailSpliter= (email) =>{

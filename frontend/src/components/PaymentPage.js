@@ -1,8 +1,9 @@
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { setBooking } from "../store/userSlice"
+import { useNavigate } from "react-router-dom"
 
 import axios from 'axios';
 import validator from 'validator';
@@ -16,6 +17,7 @@ function PaymentPage() {
     var username = 'sport';
     var password = '123';
 
+    const navigate = useNavigate()
     const booking = useSelector(state => state.user.booking)
 
     const [data, setData] = useState({
@@ -124,7 +126,7 @@ function PaymentPage() {
                     if (res.data.status === true) {
                         console.log(res.data);
                         dispatch(setBooking(res.data.booking))
-                        window.location.href = "/reccomendation"
+                        navigate("/reccomendation")
                     } else {
                         alert(res.data.message)
                     }

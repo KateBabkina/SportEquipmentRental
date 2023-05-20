@@ -1,11 +1,13 @@
 import React from 'react'
 import Event from "./Event"
+import { useNavigate } from "react-router-dom"
 import classes from '../../css/admin_event_manager_page.module.css';
 
 export default function AdminEventList({ events }) {
 
+  const navigate = useNavigate()
   const linkToAddPage = () => {
-    window.location.href = "/admin/events/add"
+    navigate("/admin/events/add")
   }
 
   return (

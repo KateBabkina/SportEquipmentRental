@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { setBooking } from "../store/userSlice"
+import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 
 import classes from '../css/about_equipment_page.module.css';
@@ -12,6 +13,7 @@ function AboutEquipment() {
     var username = 'sport';
     var password = '123';
 
+    const navigate = useNavigate()
     const equipmentForRent = useSelector(state => state.user.equipmentForRent)
     const personId = useSelector(state => state.user.userId)
     const inventoryTypeId = equipmentForRent.id
@@ -93,7 +95,7 @@ function AboutEquipment() {
                     if (res.data.status === true) {
                         console.log(res.data);
                         sendBooking(res.data.booking)
-                        window.location.href = "/payment"
+                        navigate("/payment")
                     } else {
                         alert(res.data.message)
                     }

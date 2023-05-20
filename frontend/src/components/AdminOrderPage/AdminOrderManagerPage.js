@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import AdminOrderFilterField from "./AdminOrderFilterField"
 import AdminOrderList from "./AdminOrderList"
 
-
-
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 

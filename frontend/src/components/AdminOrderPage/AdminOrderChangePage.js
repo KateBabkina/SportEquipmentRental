@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+
 
 import classes from '../../css/admin_order_modify_page.module.css';
 
@@ -10,10 +12,12 @@ export default function AdminOrderChangePage() {
     var password = '123';
 
     const order = useSelector(state => state.user.orderForChange);
+    const now = new Date();
+    const navigate = useNavigate()
 
-    function checkData(){
+    function checkData() {
         var now = new Date();
-        if (order.startDate < now){
+        if (order.startDate < now) {
             alert("Пока нельзя принять заказ")
             return false
         } else {
@@ -33,7 +37,7 @@ export default function AdminOrderChangePage() {
                 }).then(res => {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.href = "/admin/orders"
+                    navigate("/admin/orders")
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })
@@ -106,11 +110,13 @@ export default function AdminOrderChangePage() {
                         </div>
                     </div>
 
-                    <div className={classes.buttonFind}>
-                        <button className={classes.findButton} type="button" onClick={() => acceptOrder()} >
-                            Принять оборудование
-                        </button>
-                    </div>
+                    {
+                        order.startDate < now ? false : <div className={classes.buttonFind}>
+                            <button className={classes.findButton} type="button" onClick={() => acceptOrder()} >
+                                Принять оборудование
+                            </button>
+                        </div>
+                    }
 
                 </div>
 

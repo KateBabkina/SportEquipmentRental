@@ -2,6 +2,7 @@ import React from "react";
 import {useSelector} from "react-redux"
 import {useDispatch} from "react-redux"
 import {setEquipmentForRent} from "../store/userSlice"
+import { useNavigate } from "react-router-dom"
 
 import classes from '../css/inventory_page.module.css';
 
@@ -9,6 +10,7 @@ function Item({ item }) {
 
   const isLogged = useSelector(state => state.user.isLogged);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const preRent = (item) => {
     dispatch(setEquipmentForRent(item))
@@ -17,9 +19,11 @@ function Item({ item }) {
   const handleRentButton = () => {
     if (isLogged === true){
       preRent(item)
-      window.location.href = "/about"
+      navigate("/about")
+      //window.location.href = "/about"
     } else {
-      window.location.href = "/enter"
+      navigate("/enter")
+      //window.location.href = "/enter"
     }
   }
 

@@ -5,7 +5,6 @@ import FilterEventField from "./FilterEventField"
 import EventList from "./EventList";
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 import classes from '../css/event_page.module.css';
 
 function EventPage({ isLogged }) {

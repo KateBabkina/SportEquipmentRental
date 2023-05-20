@@ -1,12 +1,14 @@
 import React from 'react'
 import Equipment from "./Equipment"
+import { useNavigate } from "react-router-dom"
 
 import classes from '../../css/admin_equipment_manager_page.module.css';
 
 export default function AdminEquipmentList({ equipments }) {
 
+  const navigate = useNavigate()
   const linkToAddPage = () => {
-    window.location.href = "/admin/equipments/add"
+    navigate("/admin/equipments/add")
   }
 
   return (
