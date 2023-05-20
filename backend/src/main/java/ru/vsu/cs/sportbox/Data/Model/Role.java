@@ -1,7 +1,7 @@
 package ru.vsu.cs.sportbox.Data.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
