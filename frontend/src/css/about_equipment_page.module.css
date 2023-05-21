@@ -124,6 +124,12 @@
     width: 100%;
 }
 
+.aboutEquipmentPrice{
+    font-size: 30px;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(28, 98, 205);
+}
+
 .aboutEquipmentDescription{
     font-family: 'PT Sans', sans-serif;
     font-size: 24px;

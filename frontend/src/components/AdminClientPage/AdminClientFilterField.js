@@ -52,7 +52,7 @@ export default function AdminClientFilterField({ changeFilter }) {
                     console.log(res.data);
                     changeFilter(res.data)
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
         }
     }

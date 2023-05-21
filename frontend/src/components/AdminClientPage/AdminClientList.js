@@ -1,12 +1,14 @@
 import React from 'react'
 import Client from './Client'
+import { useNavigate } from "react-router-dom"
 
 import classes from '../../css/admin_client_manager_page.module.css';
 
 export default function AdminClientList({ clients }) {
 
+    const navigate = useNavigate()
     const linkToAddPage = () => {
-        window.location.href = "/admin/clients/add"
+        navigate("/admin/clients/add")
     }
 
     return (

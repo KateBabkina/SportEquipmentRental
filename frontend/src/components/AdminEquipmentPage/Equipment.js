@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import {useDispatch} from "react-redux"
 import {setDataForChange} from "../../store/userSlice"
+import { useNavigate } from "react-router-dom"
 
 import classes from '../../css/admin_equipment_manager_page.module.css';
 
@@ -11,6 +12,7 @@ export default function Equipment({ equipment }) {
     var username = 'sport';
     var password = '123';
 
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const deleteUser = () => {
@@ -24,18 +26,18 @@ export default function Equipment({ equipment }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.reload()
+                    //window.location.reload()
                 } else {
                     alert(res.data.message)
                 }
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }
 
     const changeUser = () => {
         dispatch(setDataForChange(equipment))
-        window.location.href = "/admin/equipments/change"
+        navigate("/admin/equipments/change")
     }
 
     return (

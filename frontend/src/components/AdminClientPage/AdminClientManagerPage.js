@@ -30,7 +30,7 @@ export default function AdminClientManagerPage() {
         setCurrentClients(res.data)
         setLoading(false)
       }).catch(() => {
-        alert("An error occurred on the server")
+        alert("Произошла ошибка на сервере!")
       })
   }, [])
 
@@ -39,20 +39,22 @@ export default function AdminClientManagerPage() {
   }
 
   return (
-    <div className={classes.managerWrapper}>
-      {
-        loading ?
-          <ClipLoader
-            color={"#1C62CD"}
-            loading={loading}
-            size={100}
-          />
-          :
+    loading ?
+      <ClipLoader
+        color={"#1C62CD"}
+        loading={loading}
+        size={200}
+        className="spin"
+      />
+      :
+      <div className={classes.managerWrapper}>
+        {
+
           <>
             <AdminClientFilterField changeFilter={changeFilter} ></AdminClientFilterField>
             <AdminClientList clients={currentClients}></AdminClientList>
           </>
-      }
-    </div>
+        }
+      </div>
   )
 }

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import classes from '../../css/admin_event_manager_page.module.css';
 
-import classes from '../../css/admin_equipment_manager_page.module.css';
-
-export default function AdminEquipmentFilterField({ changeFilter }) {
+export default function AdminEventFilterField({ changeFilter }) {
 
   var username = 'sport';
   var password = '123';
 
   const [filter, setFilter] = useState({})
   const [types, setTypes] = useState([])
-
 
   useEffect(() => {
     axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
@@ -28,34 +26,35 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
   }, [])
 
   const filtredInput = (event) => {
-    if (event.target.id === "id") {
-      setFilter((prev) => {
-        return {
-          ...prev,
-          [event.target.id]: Number(event.target.value)
-        }
-      })
-    } else if (event.target.id === "inventoryType" && event.target.value === ""){
-      setFilter({})
-    } else {
-      setFilter((prev) => {
-        return {
-          ...prev,
-          [event.target.id]: event.target.value
-        }
-      })
-    }
+    setFilter((prev) => {
+      return {
+        ...prev,
+        [event.target.id]: event.target.value
+      }
+    })
   }
 
   function checkData() {
-    return true
+
+    var startDate = document.getElementById("startDate").value
+    var endDate = document.getElementById("endDate").value
+
+    if (startDate === "" && endDate !== ""){
+      alert("Заполните дату начала")
+      return false
+    } else if (startDate !== "" && endDate === ""){
+      alert("Заполните дату окончания")
+      return false
+    } else {
+      return true
+    }
   }
 
   const sendFilter = () => {
     var check = checkData()
     if (check) {
       console.log(filter);
-      axios.post("https://sportbox.up.railway.app/api/inventory/filter", filter,
+      axios.post("https://sportbox.up.railway.app/api/event/filter", filter,
         {
           auth: {
             username: username,
@@ -76,13 +75,13 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
     });
   }
 
+
   return (
     <div className={classes.filterPanelWrapper}>
 
       <div className={classes.filterLable}>
         Фильтры поиска
       </div>
-
 
       <div className={classes.typeEquipmentWrapper}>
 
@@ -98,34 +97,46 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
             </option>
             {getTypes()}
           </select>
-
-        </div>
-
-        <div className={classes.idEquipmentWrapper}>
-
-          <div className={classes.idEquipmentLable}>
-            Идентификатор
-            <br />
-            оборудования:
-          </div>
-
-          <div className={classes.fieldIdEquipment}>
-
-            <input type="number" id="id" name="fullName" required onChange={e => filtredInput(e)}
-            minLength="4" maxLength="35"size="20" />
-
-          </div>
-
-        </div>
-
-        <div className={classes.buttonFind}>
-          <button className={classes.findButton} type="button" onClick={() => sendFilter()}>
-            Найти
-          </button>
         </div>
 
       </div>
 
+      <div className={classes.idEquipmentWrapper}>
+
+        <div className={classes.idEquipmentLable}>
+          Дата начала:
+        </div>
+
+        <div className={classes.fieldIdEquipment}>
+
+          <input type="date" id="startDate" name="fullName" required minLength="4" maxLength="35" onChange={(e) => filtredInput(e)}
+            size="20" />
+
+        </div>
+
+      </div>
+
+      <div className={classes.idEquipmentWrapper}>
+
+        <div className={classes.idEquipmentLable}>
+          Дата окончания:
+        </div>
+
+        <div className={classes.fieldIdEquipment}>
+
+          <input type="date" id="endDate" name="fullName" required minLength="4" maxLength="35" onChange={(e) => filtredInput(e)}
+            size="20" />
+
+        </div>
+
+      </div>
+
+
+      <div className={classes.buttonFind}>
+        <button className={classes.findButton} type="button" onClick={() => sendFilter()}>
+          Найти
+        </button>
+      </div>
     </div>
   )
 }

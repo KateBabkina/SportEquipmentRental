@@ -10,7 +10,7 @@ function Header() {
     console.log(useSelector(state => state.user))
     var isAdmin = false
     const role = useSelector(state => {
-        if(isLogged === true){
+        if (isLogged === true) {
             return state.user.user.role.name
         } else {
             return ""
@@ -25,7 +25,7 @@ function Header() {
     return (
         <header className={classes.header}>
             <div className={classes.logo}>
-                <a href="/">SPORTBOX</a>
+                <Link className="headLink" to="/">SPORTBOX</Link>
             </div>
             {
                 isAdmin ?

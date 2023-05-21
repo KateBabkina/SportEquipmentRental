@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+
 
 import classes from '../../css/admin_order_modify_page.module.css';
 
@@ -10,21 +12,36 @@ export default function AdminOrderChangePage() {
     var password = '123';
 
     const order = useSelector(state => state.user.orderForChange);
+    const now = new Date();
+    const navigate = useNavigate()
+
+    function checkData() {
+        var now = new Date();
+        if (order.startDate < now) {
+            alert("Пока нельзя принять заказ")
+            return false
+        } else {
+            return true
+        }
+    }
 
     const acceptOrder = () => {
-        axios.put(`https://sportbox.up.railway.app/api/booking/return?id=${order.id}`, {},
-        {
-            auth: {
-                username: username,
-                password: password
-            }
-        }).then(res => {
-            console.log(res.data);
-            alert(res.data.message)
-            window.location.href = "/admin/orders"
-        }).catch(() => {
-            alert("An error occurred on the server")
-        })
+        var check = checkData()
+        if (check) {
+            axios.put(`https://sportbox.up.railway.app/api/booking/return?id=${order.id}`, {},
+                {
+                    auth: {
+                        username: username,
+                        password: password
+                    }
+                }).then(res => {
+                    console.log(res.data);
+                    alert(res.data.message)
+                    navigate("/admin/orders")
+                }).catch(() => {
+                    alert("Произошла ошибка на сервере!")
+                })
+        }
     }
 
     return (
@@ -59,7 +76,7 @@ export default function AdminOrderChangePage() {
 
                         <div className={classes.rowInformation}>
                             <div className={classes.idLable}>
-                            Адрес эл. почты:
+                                Адрес эл. почты:
                             </div>
                             {order.email}
                         </div>
@@ -93,11 +110,13 @@ export default function AdminOrderChangePage() {
                         </div>
                     </div>
 
-                    <div className={classes.buttonFind}>
-                        <button className={classes.findButton} type="button" onClick={() => acceptOrder()} >
-                            Принять оборудование
-                        </button>
-                    </div>
+                    {
+                        order.startDate < now ? false : <div className={classes.buttonFind}>
+                            <button className={classes.findButton} type="button" onClick={() => acceptOrder()} >
+                                Принять оборудование
+                            </button>
+                        </div>
+                    }
 
                 </div>
 

@@ -22,12 +22,12 @@ export default function Client({ client }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.reload()
+                    //window.location.reload()
                 } else {
                     alert(res.data.message)
                 }
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }
     const unbanUser = () => {
@@ -43,12 +43,12 @@ export default function Client({ client }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.reload()
+                    //window.location.reload()
                 } else {
                     alert(res.data.message)
                 }
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }
     const deleteUser = () => {
@@ -62,12 +62,12 @@ export default function Client({ client }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.reload()
+                    //window.location.reload()
                 } else {
                     alert(res.data.message)
                 }
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }
     

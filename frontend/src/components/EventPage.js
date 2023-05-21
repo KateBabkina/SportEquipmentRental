@@ -5,7 +5,6 @@ import FilterEventField from "./FilterEventField"
 import EventList from "./EventList";
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 import classes from '../css/event_page.module.css';
 
 function EventPage({ isLogged }) {
@@ -35,7 +34,7 @@ function EventPage({ isLogged }) {
         setCurrentEvents(res.data)
         setLoading(false)
       }).catch(() => {
-        alert("An error occurred on the server")
+        alert("Произошла ошибка на сервере!")
       })
   }, [])
 
@@ -59,7 +58,8 @@ function EventPage({ isLogged }) {
           <ClipLoader
             color={"#1C62CD"}
             loading={loading}
-            size={100}
+            size={200}
+            className="spin"
           />
           :
           <>

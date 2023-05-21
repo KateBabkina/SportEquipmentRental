@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import AdminOrderFilterField from "./AdminOrderFilterField"
 import AdminOrderList from "./AdminOrderList"
 
-
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
@@ -31,7 +30,7 @@ export default function AdminOrderManagerPage() {
                 setCurrentOrders(res.data)
                 setLoading(false)
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }, [])
 
@@ -40,15 +39,16 @@ export default function AdminOrderManagerPage() {
     }
 
     return (
-        <div className={classes.managerWrapper}>
-            {
-                loading ?
+        loading ?
                     <ClipLoader
                         color={"#1C62CD"}
                         loading={loading}
-                        size={100}
+                        size={200}
+                        className="spin"
                     />
                     :
+        <div className={classes.managerWrapper}>
+            {
                     <>
                         <AdminOrderFilterField changeFilter={changeFilter} ></AdminOrderFilterField>
                         <AdminOrderList orders={currentOrders}></AdminOrderList>

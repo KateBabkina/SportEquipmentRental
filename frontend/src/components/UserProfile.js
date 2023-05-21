@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { unauthorizeUser, updateUser } from "../store/userSlice"
+import { useNavigate } from "react-router-dom"
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
@@ -14,10 +15,12 @@ export default function EventPage({ setIsLogged }) {
   var password = '123';
   var now = new Date();
 
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+
   const [loading, setLoading] = useState(true)
   const userId = useSelector(state => state.user.userId);
   const [user, setUser] = useState({})
-  const dispatch = useDispatch();
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
@@ -44,7 +47,7 @@ export default function EventPage({ setIsLogged }) {
           }
 
         }).catch(() => {
-          alert("An error occurred on the server")
+          alert("Произошла ошибка на сервере!")
         })
     };
     fetchData();
@@ -61,16 +64,16 @@ export default function EventPage({ setIsLogged }) {
       }).then(res => {
         console.log(res.data);
         alert(res.data.message);
-        window.location.reload();
+        //window.location.reload();
       }).catch(() => {
-        alert("An error occurred on the server")
+        alert("Произошла ошибка на сервере!")
       })
   }
 
 
   const logOut = () => {
     dispatch(unauthorizeUser())
-    window.location.href = "/"
+    navigate("/")
   }
 
   const getHistory = () => {
@@ -129,7 +132,8 @@ export default function EventPage({ setIsLogged }) {
           <ClipLoader
             color={"#1C62CD"}
             loading={loading}
-            size={100}
+            size={200}
+            className="spin"
           />
           :
           <div className={classes.profileWrapper}>
@@ -209,11 +213,10 @@ export default function EventPage({ setIsLogged }) {
                       </div>
                     </div>
                   </div>
-
                 </div>
 
-            }
 
+            }
             <div className={classes.buttonExit}>
               <button className={classes.exitButton} type="submit" onClick={logOut}>
                 <div className={classes.exitButtonText}>

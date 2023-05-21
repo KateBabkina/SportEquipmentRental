@@ -34,7 +34,7 @@ function EquipmentPage() {
         setCurrentItems(res.data)
         setLoading(false)
       }).catch(() => {
-        alert("An error occurred on the server")
+        alert("Произошла ошибка на сервере!")
       })
   }, [])
 
@@ -61,7 +61,8 @@ function EquipmentPage() {
           <ClipLoader
             color={"#1C62CD"}
             loading={loading}
-            size={100}
+            size={200}
+            className="spin"
           />
           :
           <>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
 
 import classes from '../../css/admin_equipment_add_page.module.css';
 
@@ -9,6 +10,7 @@ export default function AdminChangeEquipment() {
     var username = 'sport';
     var password = '123';
 
+    const navigate = useNavigate()
     const equipment = useSelector(state => state.user.dataForChange);
     const [requestToChange, setRequestToChange] = useState(() => {
         if (equipment.inventoryType.isSizable === true) {
@@ -85,9 +87,9 @@ export default function AdminChangeEquipment() {
                 }).then(res => {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.href = "/admin/equipments"
+                    navigate("/admin/equipments")
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
         }
     }
