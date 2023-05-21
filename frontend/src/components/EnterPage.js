@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux"
 import { authorizeUser } from "../store/userSlice"
-
+import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import validator from 'validator';
 
@@ -10,6 +11,7 @@ import classes from '../css/login.module.css';
 const EnterPage = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const authorize = (person) => {
         dispatch(authorizeUser(person));
@@ -53,7 +55,7 @@ const EnterPage = () => {
                     if (res.data.status === true) {
                         console.log(res.data);
                         authorize(res.data.person)
-                        window.location.href = "/"  // при переходе на другую страницу не сохраняет состояние response
+                        navigate("/")
                     } else {
                         alert(res.data.message)
                     }
@@ -67,7 +69,7 @@ const EnterPage = () => {
     return (
         <div className={classes.basePartRegistration}>
             <div className={classes.centreColumnRegistration}>
-                <form name={classes.registrationFormWraper} method="POST" onSubmit={(e) => submitChacking(e)}>
+                <form name={classes.registrationFormWraper} onSubmit={(e) => submitChacking(e)}>
 
                     <div className={classes.createLabel}>
                         Для входа введите данные
@@ -105,7 +107,7 @@ const EnterPage = () => {
                     </div>
 
                     <div className={classes.loginBoxActionBox}>
-                        <a href="/api/person/add">Зарегистрироваться, если нет аккаунта</a>
+                        <Link className="headLink" to="/api/person/add">Зарегистрироваться, если нет аккаунта</Link>
                     </div>
 
                 </form>

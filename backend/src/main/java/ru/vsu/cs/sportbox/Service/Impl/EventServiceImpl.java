@@ -1,7 +1,8 @@
 package ru.vsu.cs.sportbox.Service.Impl;
 
-import io.micrometer.common.util.StringUtils;
+
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.sportbox.Data.Dto.EventChangeDto;

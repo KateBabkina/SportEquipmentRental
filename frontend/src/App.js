@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ClipLoader from "react-spinners/ClipLoader";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -23,6 +22,7 @@ import AdminOrderChangePage from "./components/AdminOrderPage/AdminOrderChangePa
 import AdminEventManagerPage from './components/AdminEventPage/AdminEventManagerPage';
 import AdminAddEventPage from './components/AdminEventPage/AdminAddEventPage';
 import AdminChangeEventPage from './components/AdminEventPage/AdminChangeEventPage';
+import SplashScreen from './components/SplashScreen';
 
 
 const App = () => {
@@ -31,26 +31,17 @@ const App = () => {
     const [loading, setLoading] = useState(true)
    
    useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
         setLoading(false)
     }, 3000)
+
+    return () => clearTimeout(timer);
    }, [])
 
     return (<div>
         {
             loading ?
-                <>
-                    <div className="logo">
-                        <a href="/">SPORTBOX</a>
-                    </div>
-                    <h1 style={{ textAlign: 'center' }}>Приложение загружается. Пожалуйста подождите.</h1>
-                    <ClipLoader
-                        color={"#1C62CD"}
-                        loading={localStorage.getItem("loading")}
-                        size={200}
-                        className="spin"
-                    />
-                </>
+                <SplashScreen loading={loading}></SplashScreen>
                 :
                 <Router>
                     <Header isLogged={isLogged} />

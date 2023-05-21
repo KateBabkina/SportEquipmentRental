@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { unauthorizeUser, updateUser } from "../store/userSlice"
+import { useNavigate } from "react-router-dom"
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
@@ -14,10 +15,12 @@ export default function EventPage({ setIsLogged }) {
   var password = '123';
   var now = new Date();
 
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+
   const [loading, setLoading] = useState(true)
   const userId = useSelector(state => state.user.userId);
   const [user, setUser] = useState({})
-  const dispatch = useDispatch();
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
@@ -61,7 +64,7 @@ export default function EventPage({ setIsLogged }) {
       }).then(res => {
         console.log(res.data);
         alert(res.data.message);
-        window.location.reload();
+        //window.location.reload();
       }).catch(() => {
         alert("An error occurred on the server")
       })
@@ -70,7 +73,7 @@ export default function EventPage({ setIsLogged }) {
 
   const logOut = () => {
     dispatch(unauthorizeUser())
-    window.location.href = "/"
+    navigate("/")
   }
 
   const getHistory = () => {

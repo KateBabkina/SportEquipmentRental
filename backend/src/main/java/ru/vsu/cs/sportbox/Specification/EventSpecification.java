@@ -1,9 +1,10 @@
 package ru.vsu.cs.sportbox.Specification;
 
-import io.micrometer.common.util.StringUtils;
-import jakarta.persistence.criteria.*;
+
+import javax.persistence.criteria.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
 import ru.vsu.cs.sportbox.Data.Dto.EventFilterDto;
 import ru.vsu.cs.sportbox.Data.Model.Event;

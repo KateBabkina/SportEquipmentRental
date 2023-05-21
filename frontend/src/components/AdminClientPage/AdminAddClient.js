@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import validator from 'validator';
+import { useNavigate } from "react-router-dom"
 
 import classes from '../../css/admin_client_add_page.module.css';
 
@@ -9,6 +10,7 @@ export default function AdminAddClient() {
     var username = 'sport';
     var password = '123';
 
+    const navigate = useNavigate()
     const [requestToAdd, setRequestToAdd] = useState({
         name: "",
         password: "",
@@ -58,7 +60,7 @@ export default function AdminAddClient() {
                 }).then(res => {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.href = "/admin/clients"
+                    navigate("/admin/clients")
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })

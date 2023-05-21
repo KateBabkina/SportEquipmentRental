@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import classes from '../../css/admin_event_manager_page.module.css';
 
+import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { setDataForChange } from "../../store/userSlice"
 
@@ -10,6 +11,7 @@ export default function Event({ event }) {
   var username = 'sport';
   var password = '123';
 
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const deleteEvent = () => {
@@ -23,7 +25,7 @@ export default function Event({ event }) {
         if (res.data.status === true) {
           console.log(res.data);
           alert(res.data.message)
-          window.location.reload()
+          //window.location.reload()
         } else {
           alert(res.data.message)
         }
@@ -34,7 +36,7 @@ export default function Event({ event }) {
 
   const changeEvent = () => {
     dispatch(setDataForChange(event))
-    window.location.href = "/admin/events/change"
+    navigate("/admin/events/change")
   }
 
   return (

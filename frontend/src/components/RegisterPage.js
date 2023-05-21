@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { authorizeUser } from "../store/userSlice"
+import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import validator from 'validator';
 
@@ -9,6 +10,7 @@ import classes from '../css/registration_page.module.css';
 
 function RegisterPage({ setIsLogged }) {
 
+    const navigate = useNavigate()
     const [register, setRegister] = useState(() => {
         return {
             usermame: "",
@@ -56,7 +58,7 @@ function RegisterPage({ setIsLogged }) {
                 }).then(res => {
                     if (res.data.status === true) {
                         authorize(res.data.person)
-                        window.location.href = "/enter"
+                        navigate("/enter")
                     } else {
                         alert(res.data.message)
                     }
@@ -69,7 +71,7 @@ function RegisterPage({ setIsLogged }) {
     return (
         <div className={classes.basePartRegistration}>
             <div className={classes.centreColumnRegistration}>
-                <form name={classes.registrationFormWraper} method="POST" onSubmit={(e) => submitChacking(e)}>
+                <form name={classes.registrationFormWraper} onSubmit={(e) => submitChacking(e)}>
 
                     <div className={classes.createLabel}>
 
@@ -118,7 +120,7 @@ function RegisterPage({ setIsLogged }) {
                     </div>
 
                     <div className={classes.loginBoxActionBox}>
-                        <a href="/enter">Войти, если есть аккаунт</a>
+                        <Link className="headLink" to="/enter">Войти, если есть аккаунт</Link>
                     </div>
 
                 </form>

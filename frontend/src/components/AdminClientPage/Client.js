@@ -22,7 +22,7 @@ export default function Client({ client }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.reload()
+                    //window.location.reload()
                 } else {
                     alert(res.data.message)
                 }
@@ -43,7 +43,7 @@ export default function Client({ client }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.reload()
+                    //window.location.reload()
                 } else {
                     alert(res.data.message)
                 }
@@ -62,7 +62,7 @@ export default function Client({ client }) {
                 if (res.data.status === true) {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.reload()
+                    //window.location.reload()
                 } else {
                     alert(res.data.message)
                 }

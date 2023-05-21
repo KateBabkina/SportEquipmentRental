@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import ClipLoader from "react-spinners/ClipLoader";
 import classes from '../../css/admin_event_add_page.module.css';
+import { useNavigate } from "react-router-dom"
 
 export default function AdminAddEventPage() {
 
     var username = 'sport';
     var password = '123';
 
+    const navigate = useNavigate()
     const [types, setTypes] = useState([])
     const [loading, setLoading] = useState(true)
     const [requestToAdd, setRequestToAdd] = useState({})
@@ -86,7 +88,7 @@ export default function AdminAddEventPage() {
                 }).then(res => {
                     console.log(res.data);
                     alert(res.data.message)
-                    window.location.href = "/admin/events"
+                    navigate("/admin/events")
                 }).catch(() => {
                     alert("An error occurred on the server")
                 })
