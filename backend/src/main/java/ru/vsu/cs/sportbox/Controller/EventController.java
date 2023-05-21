@@ -18,7 +18,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/api/event")
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = "https://sport-equipment-rental-deploy.vercel.app", allowCredentials = "true")
 @Tag(name = "Мероприятия", description = "Методы для работы с мероприятиями")
 public class EventController {
     private EventService eventService;

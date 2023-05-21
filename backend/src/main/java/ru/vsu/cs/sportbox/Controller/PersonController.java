@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/person")
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = "https://sport-equipment-rental-deploy.vercel.app", allowCredentials = "true")
 @Tag(name = "Пользователи", description = "Методы для работы с пользователями")
 public class PersonController {
 
