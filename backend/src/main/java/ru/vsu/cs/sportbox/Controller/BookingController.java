@@ -64,7 +64,7 @@ public class BookingController {
     }
 
     @PutMapping("/return")
-    @Operation(summary = "Принятие возвращенного оборудование, закрытие заказа")
+    @Operation(summary = "Принятие возвращенного оборудования, закрытие заказа")
     public ResponseEntity<BookingResponse> changeBooking(@Parameter(description = "Уникальный идентификатор заказа")
                                                              @RequestParam(value="id") int id) {
         HttpStatus httpStatus = HttpStatus.OK;
