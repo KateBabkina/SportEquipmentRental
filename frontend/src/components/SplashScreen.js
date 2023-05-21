@@ -11,7 +11,7 @@ export default function SplashScreen({ loading }) {
             </div>
             <div className={classes.downloadText}>
 
-                Приложение загружается. Пожалуйста подождите.
+                Приложение загружается. Пожалуйста, подождите.
             </div>
             <ClipLoader
                 color={"#1C62CD"}
