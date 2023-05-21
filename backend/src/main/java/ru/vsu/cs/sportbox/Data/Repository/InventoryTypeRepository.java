@@ -14,4 +14,5 @@ import java.util.Optional;
 public interface InventoryTypeRepository extends JpaRepository<InventoryType,Integer>, JpaSpecificationExecutor<InventoryType> {
     InventoryType findByType(String type);
     InventoryType findById(int id);
+    List<InventoryType> findAllByOrderByTypeAsc();
 }

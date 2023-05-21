@@ -66,7 +66,7 @@ public class InventoryTypeServiceImpl implements ru.vsu.cs.sportbox.Service.Inve
     @Override
     @Transactional
     public List<InventoryType> getAllInventoryTypes() {
-        return inventoryTypeRepository.findAll();
+        return inventoryTypeRepository.findAllByOrderByTypeAsc();
     }
 
     @Override
