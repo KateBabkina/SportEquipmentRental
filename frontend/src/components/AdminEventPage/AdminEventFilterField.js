@@ -21,7 +21,7 @@ export default function AdminEventFilterField({ changeFilter }) {
         console.log(res.data);
         setTypes(res.data)
       }).catch(() => {
-        alert("An error occurred on the server")
+        alert("Произошла ошибка на сервере!")
       })
   }, [])
 
@@ -64,7 +64,7 @@ export default function AdminEventFilterField({ changeFilter }) {
           console.log(res.data);
           changeFilter(res.data)
         }).catch(() => {
-          alert("An error occurred on the server")
+          alert("Произошла ошибка на сервере!")
         })
     }
   }

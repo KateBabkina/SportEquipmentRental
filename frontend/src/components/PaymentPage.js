@@ -131,7 +131,7 @@ function PaymentPage() {
                         alert(res.data.message)
                     }
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
 
         }

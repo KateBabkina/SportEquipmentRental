@@ -62,7 +62,7 @@ export default function AdminAddClient() {
                     alert(res.data.message)
                     navigate("/admin/clients")
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
         }
     }

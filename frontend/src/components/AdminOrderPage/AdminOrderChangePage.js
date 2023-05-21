@@ -39,7 +39,7 @@ export default function AdminOrderChangePage() {
                     alert(res.data.message)
                     navigate("/admin/orders")
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
         }
     }

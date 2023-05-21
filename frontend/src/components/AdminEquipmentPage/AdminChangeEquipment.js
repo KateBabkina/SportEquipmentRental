@@ -89,7 +89,7 @@ export default function AdminChangeEquipment() {
                     alert(res.data.message)
                     navigate("/admin/equipments")
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
         }
     }

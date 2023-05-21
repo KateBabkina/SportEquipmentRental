@@ -31,7 +31,7 @@ export default function Equipment({ equipment }) {
                     alert(res.data.message)
                 }
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }
 

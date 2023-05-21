@@ -71,7 +71,7 @@
 
 /* Начало Страница Мероприятия */
 .basePartSportEquipmentPage {
-    height: 1061px;
+    /* height: 1061px; */
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;

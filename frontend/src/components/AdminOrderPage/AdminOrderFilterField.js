@@ -46,7 +46,7 @@ export default function AdminOrderFilterField({ changeFilter }) {
           console.log(res.data);
           changeFilter(res.data)
         }).catch(() => {
-          alert("An error occurred on the server")
+          alert("Произошла ошибка на сервере!")
         })
     }
   }
@@ -82,7 +82,7 @@ export default function AdminOrderFilterField({ changeFilter }) {
 
         <div className={classes.fieldIdEquipment}>
 
-          <input type="text" id="email" name="fullName" required onChange={(e) => filtredInput(e)}
+          <input type="text" placeholder='example@example.ru' id="email" name="fullName" required onChange={(e) => filtredInput(e)}
            minLength="4" maxLength="35" size="20" />
 
         </div>

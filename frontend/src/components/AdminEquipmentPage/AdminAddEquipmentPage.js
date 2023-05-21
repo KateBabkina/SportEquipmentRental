@@ -31,7 +31,7 @@ export default function AdminAddEquipmentPage() {
                 setTypes(res.data)
                 setLoading(false)
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }, [])
 
@@ -119,21 +119,24 @@ export default function AdminAddEquipmentPage() {
                     alert(res.data.message)
                     navigate("/admin/equipments")
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
         }
     }
 
     return (
+
         <div className={classes.centreColumnRegistration}>
             {
                 loading ?
                     <ClipLoader
                         color={"#1C62CD"}
                         loading={loading}
-                        size={100}
+                        size={200}
+                        className='spin'
                     />
                     :
+
                     <form name={classes.registrationFormWraper}>
                         <div className={classes.createLabel}>
                             Для добавления оборудования введите данные

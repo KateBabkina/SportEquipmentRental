@@ -100,7 +100,7 @@ function AboutEquipment() {
                         alert(res.data.message)
                     }
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
         }
     }
@@ -122,6 +122,9 @@ function AboutEquipment() {
 
                         <div className={classes.aboutEquipmentDescription}>
                             {equipmentForRent.description}
+                        </div>
+                        <div className={classes.aboutEquipmentPrice}>
+                            {equipmentForRent.price} руб./день
                         </div>
 
 

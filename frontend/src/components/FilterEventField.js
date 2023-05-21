@@ -26,7 +26,7 @@ function FilterEventField({ changeFilter }) {
             }).then(res => {
                 setTypesForEvent(res.data)
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }, [])
 
@@ -65,7 +65,7 @@ function FilterEventField({ changeFilter }) {
                     console.log(res.data);
                     changeFilter(res.data)
                 }).catch(() => {
-                    alert("An error occurred on the server")
+                    alert("Произошла ошибка на сервере!")
                 })
         }
 

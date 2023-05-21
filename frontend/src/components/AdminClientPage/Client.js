@@ -27,7 +27,7 @@ export default function Client({ client }) {
                     alert(res.data.message)
                 }
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }
     const unbanUser = () => {
@@ -48,7 +48,7 @@ export default function Client({ client }) {
                     alert(res.data.message)
                 }
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }
     const deleteUser = () => {
@@ -67,7 +67,7 @@ export default function Client({ client }) {
                     alert(res.data.message)
                 }
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }
     

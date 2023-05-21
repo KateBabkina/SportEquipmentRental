@@ -30,7 +30,7 @@ export default function AdminClientManagerPage() {
         setCurrentClients(res.data)
         setLoading(false)
       }).catch(() => {
-        alert("An error occurred on the server")
+        alert("Произошла ошибка на сервере!")
       })
   }, [])
 

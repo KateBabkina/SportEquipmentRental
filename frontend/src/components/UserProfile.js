@@ -47,7 +47,7 @@ export default function EventPage({ setIsLogged }) {
           }
 
         }).catch(() => {
-          alert("An error occurred on the server")
+          alert("Произошла ошибка на сервере!")
         })
     };
     fetchData();
@@ -66,7 +66,7 @@ export default function EventPage({ setIsLogged }) {
         alert(res.data.message);
         //window.location.reload();
       }).catch(() => {
-        alert("An error occurred on the server")
+        alert("Произошла ошибка на сервере!")
       })
   }
 
@@ -213,18 +213,17 @@ export default function EventPage({ setIsLogged }) {
                       </div>
                     </div>
                   </div>
-
-                  <div className={classes.buttonExit}>
-                    <button className={classes.exitButton} type="submit" onClick={logOut}>
-                      <div className={classes.exitButtonText}>
-                        Выйти
-                      </div>
-                    </button>
-                  </div>
-
                 </div>
 
+
             }
+            <div className={classes.buttonExit}>
+              <button className={classes.exitButton} type="submit" onClick={logOut}>
+                <div className={classes.exitButtonText}>
+                  Выйти
+                </div>
+              </button>
+            </div>
 
           </div>
       }

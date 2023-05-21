@@ -27,7 +27,7 @@ export default function AdminAddEventPage() {
                 setTypes(res.data)
                 setLoading(false)
             }).catch(() => {
-                alert("An error occurred on the server")
+                alert("Произошла ошибка на сервере!")
             })
     }, [])
 
