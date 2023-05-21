@@ -4,6 +4,18 @@
 
 /*Стили шапки*/
 
+.downloadText{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.splashScreen{
+    margin-top: 15%;
+}
+
 .logoClip{
     text-align: center;
     font-size: 48px;
