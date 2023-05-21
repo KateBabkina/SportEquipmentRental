@@ -2,6 +2,8 @@ package ru.vsu.cs.sportbox.Data.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +14,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "role")
+@Schema(description = "Информация о роли пользователя (клиент или администратор)")
 public class Role {
 
     @Id
