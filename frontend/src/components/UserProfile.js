@@ -211,17 +211,17 @@ export default function EventPage({ setIsLogged }) {
                     </div>
                   </div>
 
+                  <div className={classes.buttonExit}>
+                    <button className={classes.exitButton} type="submit" onClick={logOut}>
+                      <div className={classes.exitButtonText}>
+                        Выйти
+                      </div>
+                    </button>
+                  </div>
+
                 </div>
 
             }
-
-            <div className={classes.buttonExit}>
-              <button className={classes.exitButton} type="submit" onClick={logOut}>
-                <div className={classes.exitButtonText}>
-                  Выйти
-                </div>
-              </button>
-            </div>
 
           </div>
       }

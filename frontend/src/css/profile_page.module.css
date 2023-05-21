@@ -96,7 +96,7 @@
     /* height: 1600px; */
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.5fr 0fr 0fr;
+    grid-template-rows: 0fr 0.3fr 0fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
     max-width: 100%;
@@ -157,11 +157,11 @@
 }
 
 .informationAboutOrdersWrapper{
-    height: 780px;
+    /* height: 780px; */
     display: grid;
     /* Автоматически заполняем на всю ширину grid-контейнера */
     grid-template-columns: 1fr;
-    grid-template-rows: 0fr 0fr 0fr;
+    grid-template-rows: 0fr 0fr 0fr 0fr;
     /* grid-template-rows: repeat(2, 1fr); */
     width: 100%;
     max-width: 100%;
@@ -184,7 +184,7 @@
 .tableWrapper{
     overflow: auto;
     overflow-x: hidden;
-    height: 70%;
+    height: 90%;
     width: 80%;
     max-width: 100%;
     /* Ширина grid-контейнера */
@@ -346,6 +346,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
     width: 100%;
+    height: 100%;
     max-width: 100%;
     /* Ширина grid-контейнера */
     justify-content: center;
