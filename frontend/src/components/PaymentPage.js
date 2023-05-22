@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 import axios from 'axios';
 import validator from 'validator';
-import qr from "../images/QR-code.JPG";
+import qr from "../images/QR-code.jpg";
 
 import classes from '../css/payment_page.module.css';
 
@@ -107,6 +107,34 @@ function PaymentPage() {
 
     const personId = useSelector(state => state.user.userId)
     const dispatch = useDispatch()
+
+    const handleQRButton = () => {
+        console.log(data);
+        axios.post(`https://sportbox.up.railway.app/api/booking/add`, {
+            personId: personId,
+            inventoryTypeId: booking.inventory.inventoryType.id,
+            startDate: booking.startDate,
+            endDate: booking.endDate,
+            size: booking.inventory.size
+        },
+            {
+                auth: {
+                    username: username,
+                    password: password
+                }
+            }).then(res => {
+                if (res.data.status === true) {
+                    console.log(res.data);
+                    dispatch(setBooking(res.data.booking))
+                    navigate("/reccomendation")
+                } else {
+                    alert(res.data.message)
+                }
+            }).catch(() => {
+                alert("Произошла ошибка на сервере!")
+            })
+
+    }
 
     const handlePaymentButton = (e) => {
 
@@ -272,11 +300,11 @@ function PaymentPage() {
                         <div className={classes.qrCode}>
                             <img src={qr} alt="Missing picture" />
                         </div>
-                    </div>
-                    <div className={classes.buttonPay}>
-                        <button className={classes.payButton} type="button" onClick={(e) => handlePaymentButton(e)}>
-                            Оплатить по qr коду
-                        </button>
+                        <div className={classes.buttonPay}>
+                            <button className={classes.payButton} type="button" onClick={(e) => handleQRButton(e)}>
+                                Оплатить по QR-коду
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

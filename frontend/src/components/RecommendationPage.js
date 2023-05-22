@@ -8,7 +8,7 @@ function ReccomendationPage() {
 
     useEffect(() => {
         document.title = "Recommendation"
-     }, []);
+    }, []);
 
     const booking = useSelector(state => state.user.booking)
 
@@ -36,7 +36,7 @@ function ReccomendationPage() {
                     </div>
 
                     {
-                        booking ? <><div className={classes.recommendationLable}>
+                        booking.length === 0 ? <><div className={classes.recommendationLable}>
                             Рекомендуем принять участие в следующих мероприятиях:
                         </div>
                             {getReccomendation()}</>
@@ -44,13 +44,6 @@ function ReccomendationPage() {
                             <div className={classes.recommendationLable}>
                                 В настоящее время рекомендованных к Вашему заказу мероприятий нет.
                             </div>
-                    }
-
-                    <div className={classes.recommendationLable}>
-                        Рекомендуем принять участие в следующих мероприятиях:
-                    </div>
-                    {
-                        booking ? getReccomendation() : false
                     }
                 </div>
             </div>

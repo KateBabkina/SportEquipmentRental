@@ -310,6 +310,13 @@
     border-color: rgb(205, 205, 205);
 }
 
+.noOrders{
+    width: 100%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .orderDebtLable{
     display: flex;
     justify-content: center;
