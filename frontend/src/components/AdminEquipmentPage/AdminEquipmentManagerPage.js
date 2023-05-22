@@ -17,6 +17,9 @@ export default function AdminEquipmentManagerPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+
+    document.title = "Manager equipments"
+
     setLoading(true)
     axios.post("https://sportbox.up.railway.app/api/inventory/filter", {},
       {

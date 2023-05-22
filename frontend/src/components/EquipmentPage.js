@@ -21,6 +21,9 @@ function EquipmentPage() {
   const [itemsPerPage] = useState(6)
 
   useEffect(() => {
+
+    document.title = "Equipments"
+
     setLoading(true)
     axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
       {

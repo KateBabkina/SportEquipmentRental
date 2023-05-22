@@ -19,6 +19,9 @@ export default function AdminAddEquipmentPage() {
     })
 
     useEffect(() => {
+
+        document.title = "Add equipment"
+
         setLoading(true)
         axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {

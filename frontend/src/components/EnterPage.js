@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from "react-redux"
 import { authorizeUser } from "../store/userSlice"
 import { useNavigate } from "react-router-dom"
@@ -9,6 +9,10 @@ import validator from 'validator';
 import classes from '../css/login.module.css';
 
 const EnterPage = () => {
+
+    useEffect(() => {
+        document.title = "Login"
+     }, []);
 
     const dispatch = useDispatch();
     const navigate = useNavigate()

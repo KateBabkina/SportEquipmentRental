@@ -17,6 +17,9 @@ export default function AdminClientManagerPage() {
 
 
   useEffect(() => {
+
+    document.title = "Manager clients"
+
     setLoading(true)
     axios.post("https://sportbox.up.railway.app/api/person/filter", {},
       {

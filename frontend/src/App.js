@@ -31,6 +31,7 @@ const App = () => {
     const [loading, setLoading] = useState(true)
    
    useEffect(() => {
+    document.title = "SportBox"
     const timer = setTimeout(() => {
         setLoading(false)
     }, 3000)

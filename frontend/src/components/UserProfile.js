@@ -24,6 +24,8 @@ export default function EventPage({ setIsLogged }) {
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
+    document.title = "Profile"
+
     let cleanupFunction = false;
     setLoading(true)
     const fetchData = async () => {

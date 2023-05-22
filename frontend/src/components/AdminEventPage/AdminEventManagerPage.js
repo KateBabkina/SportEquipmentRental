@@ -16,6 +16,9 @@ export default function AdminEventManagerPage() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+
+        document.title = "Manager events"
+
         setLoading(true)
         axios.post("https://sportbox.up.railway.app/api/event/filter", {},
             {

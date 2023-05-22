@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from "react-redux"
 import { authorizeUser } from "../store/userSlice"
 import { useNavigate } from "react-router-dom"
@@ -9,6 +9,10 @@ import validator from 'validator';
 import classes from '../css/registration_page.module.css';
 
 function RegisterPage({ setIsLogged }) {
+
+    useEffect(() => {
+        document.title = "Register"
+     }, []);
 
     const navigate = useNavigate()
     const [register, setRegister] = useState(() => {

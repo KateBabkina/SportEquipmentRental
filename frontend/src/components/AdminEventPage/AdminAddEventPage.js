@@ -15,6 +15,9 @@ export default function AdminAddEventPage() {
     const [requestToAdd, setRequestToAdd] = useState({})
 
     useEffect(() => {
+
+        document.title = "Add event"
+
         setLoading(true)
         axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {

@@ -21,6 +21,9 @@ function EventPage({ isLogged }) {
 
 
   useEffect(() => {
+
+    document.title = "Events"
+
     setLoading(true)
     axios.post("https://sportbox.up.railway.app/api/event/filter", {},
       {

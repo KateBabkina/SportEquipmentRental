@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import classes from '../../css/admin_event_add_page.module.css';
 
 export default function AdminChangeEventPage() {
+
+  useEffect(() => {
+    document.title = "Change event"
+  }, []);
 
   var username = 'sport';
   var password = '123';

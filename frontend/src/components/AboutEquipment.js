@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { setBooking } from "../store/userSlice"
@@ -9,6 +9,10 @@ import axios from 'axios';
 import classes from '../css/about_equipment_page.module.css';
 
 function AboutEquipment() {
+
+    useEffect(() => {
+        document.title = "About equipment"
+     }, []);
 
     var username = 'sport';
     var password = '123';

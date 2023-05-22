@@ -17,6 +17,9 @@ export default function AdminOrderManagerPage() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+
+        document.title = "Manager orders"
+
         setLoading(true)
         axios.post("https://sportbox.up.railway.app/api/booking/filter", {},
             {

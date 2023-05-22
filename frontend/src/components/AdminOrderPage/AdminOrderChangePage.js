@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios';
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom"
 import classes from '../../css/admin_order_modify_page.module.css';
 
 export default function AdminOrderChangePage() {
+
+    useEffect(() => {
+        document.title = "Change order"
+     }, []);
 
     var username = 'sport';
     var password = '123';
