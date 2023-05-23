@@ -27,3 +27,7 @@
 ##### Презентация к 1 аттестации:
 [Презентация к 1 аттестации](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация%20по%20итогам%201%20этапа.pptx)  
 [Видеопрезентация к 1 аттестации](https://disk.yandex.ru/i/M4w3kLeDoMgYEw)
+
+##### Итоговая презентация:
+[Итоговая презентация](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация.pptx)  
+[Итоговая видеопрезентация]()
