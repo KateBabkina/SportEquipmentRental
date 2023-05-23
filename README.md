@@ -31,7 +31,7 @@
 [Видеопрезентация к 1 аттестации](https://disk.yandex.ru/i/M4w3kLeDoMgYEw)
 
 ##### Отчёт по ролям:
-[Отчёт по ролям.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.docx)
+[Отчёт по ролям.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.docx)  
 [Отчёт по ролям.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.pdf)
 
 ##### Итоговая презентация:
