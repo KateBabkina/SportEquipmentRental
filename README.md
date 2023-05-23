@@ -1,4 +1,5 @@
 # Прокат инвентаря на спортивной базе.
+## [Ссылка на веб-приложение](https://sport-equipment-rental-deploy.vercel.app)
 ## Краткое описание:  
 Целью данного проекта является разработка сайта, который позволит клиентам арендовать спортивное оборудование и произвести оплату онлайн, кроме того упростит продавцам учёт заказов клиентов и списка оборудования.  
 
@@ -28,6 +29,10 @@
 ##### Презентация к 1 аттестации:
 [Презентация к 1 аттестации](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация%20по%20итогам%201%20этапа.pptx)  
 [Видеопрезентация к 1 аттестации](https://disk.yandex.ru/i/M4w3kLeDoMgYEw)
+
+##### Отчёт по ролям:
+[Отчёт по ролям.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.docx)
+[Отчёт по ролям.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.pdf)
 
 ##### Итоговая презентация:
 [Итоговая презентация](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация.pptx)  
