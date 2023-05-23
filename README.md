@@ -17,13 +17,13 @@
 - [Интерактивный макет приложения в Figma (сценарии администратора)](https://www.figma.com/proto/XtkhVklPCNHFBAgIbzIP51/SportBox?type=design&node-id=213-482&scaling=min-zoom&page-id=32%3A317&starting-point-node-id=213%3A482)
 
 ##### Курсовой проект:
-[Курсовой проект.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовая%20работа.docx)  
-[Курсовой проект.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовая%20работа.pdf)
+[Курсовой проект.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовой%20проект.docx)  
+[Курсовой проект.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовой%20проект.pdf)
 
 ##### Техническое задание:
 [Техническое задание.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Техническое%20задание.docx)  
 [Техническое задание.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Техническое%20задание.pdf)  
 
 ##### Презентация к 1 аттестации:
-[Презентация.pptx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация%20по%20итогам%201%20этапа.pptx)  
-[Видеопрезентация.mp4](https://disk.yandex.ru/i/M4w3kLeDoMgYEw)
+[Презентация к 1 аттестации](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация%20по%20итогам%201%20этапа.pptx)  
+[Видеопрезентация к 1 аттестации](https://disk.yandex.ru/i/M4w3kLeDoMgYEw)
