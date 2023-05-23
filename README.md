@@ -30,4 +30,4 @@
 
 ##### Итоговая презентация:
 [Итоговая презентация](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация.pptx)  
-[Итоговая видеопрезентация]()
+[Итоговая видеопрезентация](https://youtu.be/ulU78k2-nDY)
