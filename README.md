@@ -1,25 +1,39 @@
 # Прокат инвентаря на спортивной базе.
-##### Краткое описание:  
+## [Ссылка на веб-приложение](https://sport-equipment-rental-deploy.vercel.app)
+## Краткое описание:  
 Целью данного проекта является разработка сайта, который позволит клиентам арендовать спортивное оборудование и произвести оплату онлайн, кроме того упростит продавцам учёт заказов клиентов и списка оборудования.  
 
-# Команда разработчиков:
+## Команда разработчиков:
 - [Бабкина Екатерина](https://github.com/Babkina-Ekaterina)
 - [Кандауров Игнатий](https://github.com/SolidSnakeF141)
 - [Корнилов Илья](https://github.com/iljaKorn)
 
-# Материалы к проекту:
+## Материалы к проекту:
+##### Основные ссылки:
 - [Miro](https://miro.com/app/board/uXjVMfsWqvM=/)  
-- [Trello](https://trello.com/b/VeTOQY3y/аренда-спортивного-инвентаря)  
-- [Figma](https://www.figma.com/file/XtkhVklPCNHFBAgIbzIP51/Desktop?node-id=32%3A317&t=C6Uad3FMa4sqbmWP-1)
+- [Trello](https://trello.com/b/VeTOQY3y/аренда-спортивного-инвентаря) 
+- [Swagger](https://app.swaggerhub.com/apis/Babkina-Ekaterina/SportBox/1.0.0)
+- [Дизайн приложения в Figma](https://www.figma.com/file/XtkhVklPCNHFBAgIbzIP51/SportBox?type=design&node-id=93-2&t=WMR2ndoixoUZJ21y-0)
+- [Интерактивный макет приложения в Figma (сценарии клиента)](https://www.figma.com/proto/XtkhVklPCNHFBAgIbzIP51/SportBox?type=design&node-id=124-104&scaling=min-zoom&page-id=93%3A2&starting-point-node-id=124%3A104)
+- [Интерактивный макет приложения в Figma (сценарии администратора)](https://www.figma.com/proto/XtkhVklPCNHFBAgIbzIP51/SportBox?type=design&node-id=213-482&scaling=min-zoom&page-id=32%3A317&starting-point-node-id=213%3A482)
+- [Кабинет аналитики](https://analytics.google.com/analytics/web/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F#/p377381058/reports/reportinghub?params=_u..nav%3Dmaui&collectionId=life-cycle)
 
 ##### Курсовой проект:
-[Курсовой проект.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовая%20работа.docx)  
-[Курсовой проект.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовая%20работа.pdf)
+[Курсовой проект.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовой%20проект.docx)  
+[Курсовой проект.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовой%20проект.pdf)
 
 ##### Техническое задание:
 [Техническое задание.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Техническое%20задание.docx)  
 [Техническое задание.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Техническое%20задание.pdf)  
 
-##### Презентация:
-[Презентация.pptx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация%20по%20итогам%201%20этапа.pptx)  
-[Видеопрезентация.mp4](https://disk.yandex.ru/i/M4w3kLeDoMgYEw)
+##### Презентация к 1 аттестации:
+[Презентация к 1 аттестации](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация%20по%20итогам%201%20этапа.pptx)  
+[Видеопрезентация к 1 аттестации](https://disk.yandex.ru/i/M4w3kLeDoMgYEw)
+
+##### Отчёт по ролям:
+[Отчёт по ролям.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.docx)  
+[Отчёт по ролям.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.pdf)
+
+##### Итоговая презентация:
+[Итоговая презентация](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация.pptx)  
+[Итоговая видеопрезентация](https://youtu.be/ulU78k2-nDY)
