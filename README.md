@@ -16,7 +16,7 @@
 - [Дизайн приложения в Figma](https://www.figma.com/file/XtkhVklPCNHFBAgIbzIP51/SportBox?type=design&node-id=93-2&t=WMR2ndoixoUZJ21y-0)
 - [Интерактивный макет приложения в Figma (сценарии клиента)](https://www.figma.com/proto/XtkhVklPCNHFBAgIbzIP51/SportBox?type=design&node-id=124-104&scaling=min-zoom&page-id=93%3A2&starting-point-node-id=124%3A104)
 - [Интерактивный макет приложения в Figma (сценарии администратора)](https://www.figma.com/proto/XtkhVklPCNHFBAgIbzIP51/SportBox?type=design&node-id=213-482&scaling=min-zoom&page-id=32%3A317&starting-point-node-id=213%3A482)
-- [Кабинет аналитики](https://github.com/iljaKorn/SportEquipmentRental/blob/hotfix/documents/Доступ%20к%20%20google%20analytics.docx)
+- [Кабинет аналитики](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Доступ%20в%20кабинет%20аналитики.pdf)
 
 ##### Курсовой проект:
 [Курсовой проект.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовой%20проект.docx)  
