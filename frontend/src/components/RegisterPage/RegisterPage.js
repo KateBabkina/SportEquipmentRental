@@ -1,36 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from "react-redux"
-import { authorizeUser } from "../store/userSlice"
+import { authorizeUser } from "../../store/userSlice"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import validator from 'validator';
 
-import classes from '../css/login.module.css';
+import classes from '../css/registration_page.module.css';
 
-const EnterPage = () => {
+function RegisterPage({ setIsLogged }) {
 
     useEffect(() => {
-        document.title = "Login"
+        document.title = "Register"
      }, []);
 
-    const dispatch = useDispatch();
     const navigate = useNavigate()
-
-    const authorize = (person) => {
-        dispatch(authorizeUser(person));
-    }
-
-    const [login, setLogin] = useState(() => {
+    const [register, setRegister] = useState(() => {
         return {
+            usermame: "",
             email: "",
             password: ""
         }
     })
 
-    const changeInputLogin = event => {
+    const changeInputRegister = event => {
         event.persist()
-        setLogin(prev => {
+        setRegister(prev => {
             return {
                 ...prev,
                 [event.target.name]: event.target.value,
@@ -38,17 +33,26 @@ const EnterPage = () => {
         })
     }
 
+    const dispatch = useDispatch();
+
+    const authorize = (person) => {
+        dispatch(authorizeUser(person));
+    }
+
     var username = 'sport';
     var password = '123';
 
     function submitChacking(event) {
         event.preventDefault();
-        if (!validator.isEmail(login.email)) {
+        if (!validator.isEmail(register.email)) {
             alert("You did not enter email")
+        } else if (!validator.isStrongPassword(register.password, { minSymbols: 0 })) {
+            alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
-            axios.post("https://sportbox.up.railway.app/api/person/login", {
-                email: login.email,
-                password: login.password
+            axios.post("https://sportbox.up.railway.app/api/person/add", {
+                name: register.usermame,
+                email: register.email,
+                password: register.password
             },
                 {
                     auth: {
@@ -57,9 +61,8 @@ const EnterPage = () => {
                     }
                 }).then(res => {
                     if (res.data.status === true) {
-                        console.log(res.data);
                         authorize(res.data.person)
-                        navigate("/")
+                        navigate("/enter")
                     } else {
                         alert(res.data.message)
                     }
@@ -67,7 +70,6 @@ const EnterPage = () => {
                     alert("Произошла ошибка на сервере!")
                 })
         }
-
     }
 
     return (
@@ -76,50 +78,59 @@ const EnterPage = () => {
                 <form name={classes.registrationFormWraper} onSubmit={(e) => submitChacking(e)}>
 
                     <div className={classes.createLabel}>
-                        Для входа введите данные
+
+                        Для регистрации введите данные
+
+                    </div>
+
+                    <div className={classes.fullnameBox}>
+                        <div className={classes.fullnameBoxLabel}>
+                            ФИО:
+                        </div>
+                        <div className={classes.fullnameBoxField}>
+                            <input type="text" placeholder="Иванов Иван Иванович" id="usermame" name="usermame" value={register.usermame}
+                                onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
+                        </div>
                     </div>
 
                     <div className={classes.accountBox}>
                         <div className={classes.accountBoxLabel}>
-                            <b>Адрес эл. почты:</b>
+                            Адрес эл. почты:
                         </div>
                         <div className={classes.accountBoxField}>
-                            <input type="text" placeholder="example@example.ru" id="email" name="email" value={login.email}
-                                onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
+                            <input type="text" placeholder="example@example.ru" id="email" name="email" value={register.email}
+                                onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
 
                     <div className={classes.firstpasswordBox}>
                         <div className={classes.firstpasswordBoxLabel}>
-                            <b>Пароль:</b>
+                            Пароль:
                         </div>
                         <div className={classes.firstpasswordBoxField}>
-                            <input type="password" placeholder="********" id="password" name="password" value={login.password}
-                                onChange={(e) => changeInputLogin(e)} required maxLength="35" size="20"></input>
+                            <input type="password" placeholder="********" id="password" name="password" value={register.password}
+                                onChange={(e) => changeInputRegister(e)} required maxLength="35" size="20"></input>
                         </div>
                     </div>
+
 
 
                     <div className={classes.registrationBoxActionBox}>
-
                         <button className={classes.createNewUserButton} type="submit">
                             <div className={classes.createNewUserButtonText}>
-                                Войти
+                                Зарегистрироваться
                             </div>
                         </button>
-
                     </div>
 
                     <div className={classes.loginBoxActionBox}>
-                        <Link className="headLink" to="/api/person/add">Зарегистрироваться, если нет аккаунта</Link>
+                        <Link className="headLink" to="/enter">Войти, если есть аккаунт</Link>
                     </div>
 
                 </form>
-
             </div>
-
         </div>
     );
 };
 
-export default EnterPage;
+export default RegisterPage;

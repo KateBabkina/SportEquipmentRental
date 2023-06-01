@@ -1,7 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux"
 import {useDispatch} from "react-redux"
-import {setEquipmentForRent} from "../store/userSlice"
+import {setEquipmentForRent} from "../../store/userSlice"
 import { useNavigate } from "react-router-dom"
 
 import classes from '../css/inventory_page.module.css';

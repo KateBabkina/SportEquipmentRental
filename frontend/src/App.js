@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Supporting components/Header";
+import Footer from "./components/Supporting components/Footer";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import EquipmentPage from "./components/EquipmentPage";
-import EventPage from "./components/EventPage";
-import EnterPage from "./components/EnterPage";
-import RegisterPage from "./components/RegisterPage";
-import UserProfile from "./components/UserProfile"
-import AboutEquipment from "./components/AboutEquipment"
-import PaymentPage from './components/PaymentPage';
-import ReccomendationPage from './components/RecommendationPage';
+import Home from "./components/MainPage/Home";
+import EquipmentPage from "./components/EquipmentPage/EquipmentPage";
+import EventPage from "./components/EventPage/EventPage";
+import EnterPage from "./components/LoginPage/EnterPage";
+import RegisterPage from "./components/RegisterPage/RegisterPage";
+import UserProfile from "./components/UserProfilePage/UserProfile"
+import AboutEquipment from "./components/AboutEquipmentPage/AboutEquipment"
+import PaymentPage from './components/PaymentPage/PaymentPage';
+import ReccomendationPage from './components/ReccomendationPage/RecommendationPage';
 import AdminClientMenager from './components/AdminClientPage/AdminClientManagerPage';
 import AdminAddClient from './components/AdminClientPage/AdminAddClient';
 import AdminEquipmentManagerPage from './components/AdminEquipmentPage/AdminEquipmentManagerPage';
@@ -22,7 +22,7 @@ import AdminOrderChangePage from "./components/AdminOrderPage/AdminOrderChangePa
 import AdminEventManagerPage from './components/AdminEventPage/AdminEventManagerPage';
 import AdminAddEventPage from './components/AdminEventPage/AdminAddEventPage';
 import AdminChangeEventPage from './components/AdminEventPage/AdminChangeEventPage';
-import SplashScreen from './components/SplashScreen';
+import SplashScreen from './components/Supporting components/SplashScreen';
 
 
 const App = () => {

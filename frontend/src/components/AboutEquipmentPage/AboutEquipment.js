@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
-import { setBooking } from "../store/userSlice"
+import { setBooking } from "../../store/userSlice"
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
-import { unauthorizeUser, updateUser } from "../store/userSlice"
+import { unauthorizeUser, updateUser } from "../../store/userSlice"
 import { useNavigate } from "react-router-dom"
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
