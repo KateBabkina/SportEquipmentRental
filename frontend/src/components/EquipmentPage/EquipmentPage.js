@@ -5,7 +5,7 @@ import FilterField from "./FiltreField";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
-import classes from '../css/inventory_page.module.css';
+import classes from '../../css/inventory_page.module.css';
 
 function EquipmentPage() {
 

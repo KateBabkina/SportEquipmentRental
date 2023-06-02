@@ -6,7 +6,7 @@ import { setBooking } from "../../store/userSlice"
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 
-import classes from '../css/about_equipment_page.module.css';
+import classes from '../../css/about_equipment_page.module.css';
 
 function AboutEquipment() {
 
@@ -117,7 +117,7 @@ function AboutEquipment() {
                     <div className={classes.aboutEquipmentWrapper}>
 
                         <div className={classes.aboutEquipmentImg}>
-                            <img src={require("../images/inventory/" + equipmentForRent.type + ".jpg")} alt="MISSING JPG" />
+                            <img src={require("../../images/inventory/" + equipmentForRent.type + ".jpg")} alt="MISSING JPG" />
                         </div>
 
                         <div className={classes.aboutEquipmentName}>

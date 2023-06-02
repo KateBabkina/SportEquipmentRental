@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux"
-import Event from "./Event";
+import Event from "../EventPage/Event";
 
-import classes from '../css/recommendation_page.module.css';
+import classes from '../../css/recommendation_page.module.css';
 
 function ReccomendationPage() {
 
@@ -36,7 +36,7 @@ function ReccomendationPage() {
                     </div>
 
                     {
-                        booking.length === 0 ? <><div className={classes.recommendationLable}>
+                        booking.events.length !== 0 ? <><div className={classes.recommendationLable}>
                             Рекомендуем принять участие в следующих мероприятиях:
                         </div>
                             {getReccomendation()}</>

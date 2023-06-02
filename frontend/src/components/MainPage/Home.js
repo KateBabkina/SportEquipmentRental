@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import classes from '../css/main_page.module.css';
+import classes from '../../css/main_page.module.css';
 
 function Home() {
 

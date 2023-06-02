@@ -1,6 +1,6 @@
 import React from "react";
 
-import classes from '../css/main_page.module.css';
+import classes from '../../css/main_page.module.css';
 
 function Footer(props) {
     return (

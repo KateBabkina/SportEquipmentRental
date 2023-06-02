@@ -1,12 +1,12 @@
 import React from "react";
 
-import classes from '../css/event_page.module.css';
+import classes from '../../css/event_page.module.css';
 
 function Event({ event }) {
     return (
         <div className={classes.eventWrapper}>
             <div className={classes.eventImg}>
-                <img src={require("../images/events/" + event.name + ".jpg") } alt="MISSING JPG"></img>
+                <img src={require("../../images/events/" + event.name + ".jpg") } alt="MISSING JPG"></img>
             </div>
             <div className={classes.eventInfoWrapper}>
                 <div className={classes.eventName}>

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 
-import classes from '../css/profile_page.module.css'
+import classes from '../../css/profile_page.module.css'
 
 export default function EventPage({ setIsLogged }) {
 

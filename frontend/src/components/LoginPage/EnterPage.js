@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import validator from 'validator';
 
-import classes from '../css/login.module.css';
+import classes from '../../css/login.module.css';
 
 const EnterPage = () => {
 

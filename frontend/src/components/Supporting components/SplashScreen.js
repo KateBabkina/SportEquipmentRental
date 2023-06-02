@@ -1,7 +1,7 @@
 import React from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
 
-import classes from '../css/main_page.module.css';
+import classes from '../../css/main_page.module.css';
 
 export default function SplashScreen({ loading }) {
     return (

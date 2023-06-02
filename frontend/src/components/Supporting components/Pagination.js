@@ -1,6 +1,6 @@
 import React from "react";
 
-import classes from '../css/event_page.module.css';
+import classes from '../../css/event_page.module.css';
 
 function Pagination({ itemsPerPage, totalItems, paginate }) {
 

@@ -2,7 +2,7 @@ import React from "react";
 import Item from "./Item";
 import Pagination from "../Supporting components/Pagination";
 
-import classes from '../css/inventory_page.module.css';
+import classes from '../../css/inventory_page.module.css';
 
 
 function ItemList({ items, itemsPerPage, currentItems, paginate }) {

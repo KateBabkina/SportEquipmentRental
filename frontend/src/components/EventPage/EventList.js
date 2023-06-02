@@ -2,7 +2,7 @@ import React from "react";
 import Event from "./Event"
 import Pagination from "../Supporting components/Pagination";
 
-import classes from '../css/event_page.module.css';
+import classes from '../../css/event_page.module.css';
 
 function EventList({ events, eventsPerPage, currentEvents, paginate }) {
     return (

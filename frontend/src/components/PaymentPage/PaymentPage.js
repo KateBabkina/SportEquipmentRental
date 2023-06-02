@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom"
 
 import axios from 'axios';
 import validator from 'validator';
-import qr from "../images/QR-code.JPG";
+import qr from "../../images/QR-code.JPG";
 
-import classes from '../css/payment_page.module.css';
+import classes from '../../css/payment_page.module.css';
 
 
 function PaymentPage() {

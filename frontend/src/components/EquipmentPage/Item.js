@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux"
 import {setEquipmentForRent} from "../../store/userSlice"
 import { useNavigate } from "react-router-dom"
 
-import classes from '../css/inventory_page.module.css';
+import classes from '../../css/inventory_page.module.css';
 
 function Item({ item }) {
 
@@ -31,7 +31,7 @@ function Item({ item }) {
     <div className={classes.equipmentWrapper}>
 
       <div className={classes.equipmentImg}>
-        <img src={require("../images/inventory/" + item.type + ".jpg")} alt="MISSING JPG" />
+        <img src={require("../../images/inventory/" + item.type + ".jpg")} alt="MISSING JPG" />
       </div>
 
       <div className={classes.equipmentInfo}>

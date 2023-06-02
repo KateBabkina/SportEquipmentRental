@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import classes from '../css/inventory_page.module.css';
+import classes from '../../css/inventory_page.module.css';
 
 
 function FilterField({ changeFilter }) {

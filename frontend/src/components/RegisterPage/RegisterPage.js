@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import validator from 'validator';
 
-import classes from '../css/registration_page.module.css';
+import classes from '../../css/registration_page.module.css';
 
 function RegisterPage({ setIsLogged }) {
 

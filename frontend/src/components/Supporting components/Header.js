@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux"
 
-import classes from '../css/main_page.module.css';
+import classes from '../../css/main_page.module.css';
 
 function Header() {
 
