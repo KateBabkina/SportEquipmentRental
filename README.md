@@ -36,5 +36,5 @@
 [Отчёт по ролям.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.pdf)
 
 ##### Итоговая презентация:
-[Итоговая презентация](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Презентация.pptx)  
+[Итоговая презентация](https://docs.google.com/presentation/d/13X-oEXnfk2f652JuD1npu98BIqT24qJ9ZRZy2Aua9s4/edit?usp=sharing)  
 [Итоговая видеопрезентация](https://youtu.be/ulU78k2-nDY)
