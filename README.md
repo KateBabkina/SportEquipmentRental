@@ -37,4 +37,7 @@
 
 ##### Итоговая презентация:
 [Итоговая презентация](https://docs.google.com/presentation/d/13X-oEXnfk2f652JuD1npu98BIqT24qJ9ZRZy2Aua9s4/edit?usp=sharing)  
+
+##### Видео:
+[Видео про backend](https://youtu.be/ANb5wlKCnsg)  
 [Итоговая видеопрезентация](https://youtu.be/ulU78k2-nDY)
