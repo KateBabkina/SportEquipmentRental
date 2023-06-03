@@ -62,8 +62,8 @@ class SportBoxApplicationTests {
         given(personService.loginPerson(any())).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -93,8 +93,8 @@ class SportBoxApplicationTests {
         given(personService.loginPerson(any())).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -130,8 +130,8 @@ class SportBoxApplicationTests {
         given(personService.addNewPerson(any())).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -163,8 +163,8 @@ class SportBoxApplicationTests {
         given(personService.addNewPerson(any())).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -196,8 +196,8 @@ class SportBoxApplicationTests {
         given(personService.getPersonById(1)).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -230,8 +230,8 @@ class SportBoxApplicationTests {
         given(personService.getPersonById(1)).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -263,8 +263,8 @@ class SportBoxApplicationTests {
         given(personService.banPerson(1)).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -297,8 +297,8 @@ class SportBoxApplicationTests {
         given(personService.unbanPerson(1)).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -331,8 +331,8 @@ class SportBoxApplicationTests {
         given(personService.deletePersonById(1)).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -366,8 +366,8 @@ class SportBoxApplicationTests {
         given(personService.deletePersonById(1)).willReturn(personResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -404,8 +404,8 @@ class SportBoxApplicationTests {
         given(inventoryService.addNewInventory(any())).willReturn(inventoryResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -437,8 +437,8 @@ class SportBoxApplicationTests {
         given(inventoryService.addNewInventory(any())).willReturn(inventoryResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -471,8 +471,8 @@ class SportBoxApplicationTests {
         given(inventoryService.getInventoryById(1)).willReturn(inventoryResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -506,8 +506,8 @@ class SportBoxApplicationTests {
         given(inventoryService.getInventoryById(1)).willReturn(inventoryResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -540,8 +540,8 @@ class SportBoxApplicationTests {
         given(inventoryService.deleteInventoryById(1)).willReturn(inventoryResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
@@ -575,8 +575,8 @@ class SportBoxApplicationTests {
         given(inventoryService.deleteInventoryById(1)).willReturn(inventoryResponse);
 
 
-        String username = System.getenv("SECURITY_USERNAME");
-        String password = System.getenv("SECURITY_PASSWORD");
+        String username = System.getProperty("SECURITY_USERNAME");
+        String password = System.getProperty("SECURITY_PASSWORD");
         String credentials = username + ":" + password;
         String base64Credentials = new String(Base64.encode(credentials.getBytes()));
 
