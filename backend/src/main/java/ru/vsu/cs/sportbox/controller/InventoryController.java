@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/inventory")
 @AllArgsConstructor
-@CrossOrigin(origins = {"https://sport-equipment-rental-deploy.vercel.app", "http://localhost:3000"}, allowCredentials = "true")
+@CrossOrigin(origins = {"https://sport-box.vercel.app", "http://localhost:3000"}, allowCredentials = "true")
 @Tag(name = "Оборудование", description = "Методы для работы с оборудованием")
 public class InventoryController {
 
