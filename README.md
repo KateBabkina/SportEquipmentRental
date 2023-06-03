@@ -18,6 +18,7 @@
 - [Интерактивный макет приложения в Figma (сценарии администратора)](https://www.figma.com/proto/XtkhVklPCNHFBAgIbzIP51/SportBox?type=design&node-id=213-482&scaling=min-zoom&page-id=32%3A317&starting-point-node-id=213%3A482)
 - [Кабинет аналитики](https://docs.google.com/document/d/1G6utc0vHI6bsZvxOa1XI3u62f-RZle1cFfTDKwC6EuE/edit?usp=sharing)
 - [Тестовые аккаунты для входа](https://docs.google.com/document/d/1QEK4JwCO43XW1t8fDN5eJZqZH0w0T3FRkZOTYmKEgyY/edit?usp=sharing)
+- [Доступ к серверу](https://docs.google.com/document/d/1Pt46DTeUbTOCqLeFdX7braQi40ergEptLHKEM2IIrU8/edit?usp=sharing)
 
 ##### Курсовой проект:
 [Курсовой проект.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Курсовой%20проект.docx)  
