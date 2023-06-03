@@ -7,10 +7,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 import classes from '../../css/event_page.module.css';
 
-function EventPage({ isLogged }) {
-
-  var username = 'sport';
-  var password = '123';
+function EventPage() {
 
   const [loading, setLoading] = useState(true)
   const [eventList, setEventList] = useState([])
@@ -28,8 +25,8 @@ function EventPage({ isLogged }) {
     axios.post("https://sportbox.up.railway.app/api/event/filter", {},
       {
         auth: {
-          username: username,
-          password: password
+          username: process.env.REACT_APP_USERNAME,
+          password: process.env.REACT_APP_PASSWORD
         }
       }).then(res => {
         console.log(res.data);

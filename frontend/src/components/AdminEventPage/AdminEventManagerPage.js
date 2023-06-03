@@ -8,9 +8,6 @@ import axios from 'axios';
 
 export default function AdminEventManagerPage() {
 
-    var username = 'sport';
-    var password = '123';
-
     const [events, setEvents] = useState([])
     const [currentEvents, setCurrentEvents] = useState(events)
     const [loading, setLoading] = useState(true)
@@ -23,8 +20,8 @@ export default function AdminEventManagerPage() {
         axios.post("https://sportbox.up.railway.app/api/event/filter", {},
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 console.log(res.data);

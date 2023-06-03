@@ -9,10 +9,6 @@ import classes from '../../css/inventory_page.module.css';
 
 function EquipmentPage() {
 
-  var username = 'sport';
-  var password = '123';
-
-
   const [itemList, setItemList] = useState([])
   const [currentItems, setCurrentItems] = useState(itemList)
   const [loading, setLoading] = useState(true)
@@ -28,8 +24,8 @@ function EquipmentPage() {
     axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
       {
         auth: {
-          username: username,
-          password: password
+          username: process.env.REACT_APP_USERNAME,
+          password: process.env.REACT_APP_PASSWORD
         }
       }).then(res => {
         console.log(res.data);

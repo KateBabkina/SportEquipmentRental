@@ -18,9 +18,6 @@ function PaymentPage() {
         document.title = "Payment"
     }, []);
 
-    var username = 'sport';
-    var password = '123';
-
     const navigate = useNavigate()
     const booking = useSelector(state => state.user.booking)
 
@@ -119,8 +116,8 @@ function PaymentPage() {
         },
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 if (res.data.status === true) {
@@ -151,8 +148,8 @@ function PaymentPage() {
             },
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     if (res.data.status === true) {

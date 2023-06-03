@@ -6,9 +6,6 @@ import classes from '../../css/event_page.module.css';
 
 function FilterEventField({ changeFilter }) {
 
-    var username = 'sport';
-    var password = '123';
-
     const [typesForEvent, setTypesForEvent] = useState([])
     const [filterForEvent, setFilterForEvent] = useState({
         inventoryType: "",
@@ -20,8 +17,8 @@ function FilterEventField({ changeFilter }) {
         axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 setTypesForEvent(res.data)
@@ -58,8 +55,8 @@ function FilterEventField({ changeFilter }) {
             axios.post("https://sportbox.up.railway.app/api/event/filter", filterForEvent,
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     console.log(res.data);

@@ -10,9 +10,6 @@ export default function AdminChangeEventPage() {
     document.title = "Change event"
   }, []);
 
-  var username = 'sport';
-  var password = '123';
-
   const navigate = useNavigate()
   const event = useSelector(state => state.user.dataForChange);
   const [requestToChange, setRequestToChange] = useState({
@@ -70,8 +67,8 @@ export default function AdminChangeEventPage() {
       axios.put(`https://sportbox.up.railway.app/api/event/change?id=${event.id}`, requestToChange,
         {
           auth: {
-            username: username,
-            password: password
+            username: process.env.REACT_APP_USERNAME,
+            password: process.env.REACT_APP_PASSWORD
           }
         }).then(res => {
           console.log(res.data);

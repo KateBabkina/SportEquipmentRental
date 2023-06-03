@@ -9,10 +9,8 @@ import axios from 'axios';
 
 import classes from '../../css/profile_page.module.css'
 
-export default function EventPage({ setIsLogged }) {
+export default function UserProfile({ setIsLogged }) {
 
-  var username = 'sport';
-  var password = '123';
   var now = new Date();
 
   const navigate = useNavigate()
@@ -32,8 +30,8 @@ export default function EventPage({ setIsLogged }) {
       await axios.get(`https://sportbox.up.railway.app/api/person/profile?id=${userId}`,
         {
           auth: {
-            username: username,
-            password: password
+            username: process.env.REACT_APP_USERNAME,
+            password: process.env.REACT_APP_PASSWORD
           }
         }).then(res => {
           console.log(res.data);
@@ -60,8 +58,8 @@ export default function EventPage({ setIsLogged }) {
     axios.delete(`https://sportbox.up.railway.app/api/booking/cancel?id=${id}`,
       {
         auth: {
-          username: username,
-          password: password
+          username: process.env.REACT_APP_USERNAME,
+          password: process.env.REACT_APP_PASSWORD
         }
       }).then(res => {
         console.log(res.data);

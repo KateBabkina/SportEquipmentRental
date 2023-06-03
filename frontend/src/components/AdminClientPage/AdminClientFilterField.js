@@ -6,9 +6,6 @@ import classes from '../../css/admin_client_manager_page.module.css';
 
 export default function AdminClientFilterField({ changeFilter }) {
 
-    var username = 'sport';
-    var password = '123';
-
     const [filter, setFilter] = useState({})
 
     const filtredInput = (event) => {
@@ -45,8 +42,8 @@ export default function AdminClientFilterField({ changeFilter }) {
             axios.post("https://sportbox.up.railway.app/api/person/filter", filter,
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     console.log(res.data);

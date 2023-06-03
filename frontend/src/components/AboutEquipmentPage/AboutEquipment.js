@@ -12,10 +12,7 @@ function AboutEquipment() {
 
     useEffect(() => {
         document.title = "About equipment"
-     }, []);
-
-    var username = 'sport';
-    var password = '123';
+    }, []);
 
     const navigate = useNavigate()
     const equipmentForRent = useSelector(state => state.user.equipmentForRent)
@@ -92,8 +89,8 @@ function AboutEquipment() {
             axios.post(`https://sportbox.up.railway.app/api/booking/check`, rentRequest,
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     if (res.data.status === true) {

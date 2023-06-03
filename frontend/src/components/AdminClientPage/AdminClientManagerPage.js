@@ -8,9 +8,6 @@ import classes from '../../css/admin_client_manager_page.module.css';
 
 export default function AdminClientManagerPage() {
 
-  var username = 'sport';
-  var password = '123';
-
   const [clients, setClients] = useState([])
   const [currentClients, setCurrentClients] = useState(clients)
   const [loading, setLoading] = useState(true)
@@ -24,8 +21,8 @@ export default function AdminClientManagerPage() {
     axios.post("https://sportbox.up.railway.app/api/person/filter", {},
       {
         auth: {
-          username: username,
-          password: password
+          username: process.env.REACT_APP_USERNAME,
+          password: process.env.REACT_APP_PASSWORD
         }
       }).then(res => {
         console.log(res.data);

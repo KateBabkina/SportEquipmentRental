@@ -5,17 +5,14 @@ import classes from '../../css/admin_client_manager_page.module.css';
 
 export default function Client({ client }) {
 
-    var username = 'sport';
-    var password = '123';
-
     const banUser = () => {
         axios.put(`https://sportbox.up.railway.app/api/person/ban?id=${client.id}`, {
             isBaned: true
         },
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 console.log(res.data);
@@ -36,8 +33,8 @@ export default function Client({ client }) {
         },
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 if (res.data.status === true) {
@@ -55,8 +52,8 @@ export default function Client({ client }) {
         axios.delete(`https://sportbox.up.railway.app/api/person/delete?id=${client.id}`,
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 if (res.data.status === true) {
@@ -70,9 +67,9 @@ export default function Client({ client }) {
                 alert("Произошла ошибка на сервере!")
             })
     }
-    
-    const emailSpliter= (email) =>{
-        
+
+    const emailSpliter = (email) => {
+
         var list = email.split('@');
         email = list[0] + ' @' + list[1];
 

@@ -7,9 +7,6 @@ import classes from '../../css/inventory_page.module.css';
 
 function FilterField({ changeFilter }) {
 
-    var username = 'sport';
-    var password = '123';
-
     const [types, setTypes] = useState([])
     const [filter, setFilter] = useState({
         inventoryType: "",
@@ -23,8 +20,8 @@ function FilterField({ changeFilter }) {
         axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 console.log(res.data);
@@ -63,8 +60,8 @@ function FilterField({ changeFilter }) {
             axios.post("https://sportbox.up.railway.app/api/inventory_type/filter", filter,
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     console.log(res.data);

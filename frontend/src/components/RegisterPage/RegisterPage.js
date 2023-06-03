@@ -39,9 +39,6 @@ function RegisterPage({ setIsLogged }) {
         dispatch(authorizeUser(person));
     }
 
-    var username = 'sport';
-    var password = '123';
-
     function submitChacking(event) {
         event.preventDefault();
         if (!validator.isEmail(register.email)) {
@@ -56,8 +53,8 @@ function RegisterPage({ setIsLogged }) {
             },
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     if (res.data.status === true) {

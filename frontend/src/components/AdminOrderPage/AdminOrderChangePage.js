@@ -12,9 +12,6 @@ export default function AdminOrderChangePage() {
         document.title = "Change order"
      }, []);
 
-    var username = 'sport';
-    var password = '123';
-
     const order = useSelector(state => state.user.orderForChange);
     const now = new Date();
     const navigate = useNavigate()
@@ -35,8 +32,8 @@ export default function AdminOrderChangePage() {
             axios.put(`https://sportbox.up.railway.app/api/booking/return?id=${order.id}`, {},
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     console.log(res.data);

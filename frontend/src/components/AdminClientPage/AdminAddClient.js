@@ -9,10 +9,7 @@ export default function AdminAddClient() {
 
     useEffect(() => {
         document.title = "Add client"
-     }, []);
-
-    var username = 'sport';
-    var password = '123';
+    }, []);
 
     const navigate = useNavigate()
     const [requestToAdd, setRequestToAdd] = useState({
@@ -39,10 +36,10 @@ export default function AdminAddClient() {
         if (!validator.isEmail(email)) {
             alert("Проверьте почту")
             return false
-        } else if (name === ""){
+        } else if (name === "") {
             alert("Введите имя")
             return false
-        } else if (!validator.isStrongPassword(password, { minSymbols: 0 })){
+        } else if (!validator.isStrongPassword(password, { minSymbols: 0 })) {
             alert("Пароль должен состоять из 8 символов и иметь как заглавные, так и прописные символы")
             return false
         } else {
@@ -58,8 +55,8 @@ export default function AdminAddClient() {
             axios.post("https://sportbox.up.railway.app/api/person/add", requestToAdd,
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     console.log(res.data);

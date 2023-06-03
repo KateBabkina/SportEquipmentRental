@@ -38,9 +38,6 @@ const EnterPage = () => {
         })
     }
 
-    var username = 'sport';
-    var password = '123';
-
     function submitChacking(event) {
         event.preventDefault();
         if (!validator.isEmail(login.email)) {
@@ -52,8 +49,8 @@ const EnterPage = () => {
             },
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     if (res.data.status === true) {

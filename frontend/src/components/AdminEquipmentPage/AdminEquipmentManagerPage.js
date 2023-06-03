@@ -9,9 +9,6 @@ import classes from '../../css/admin_equipment_manager_page.module.css';
 
 export default function AdminEquipmentManagerPage() {
 
-  var username = 'sport';
-  var password = '123';
-
   const [equipments, setEquipments] = useState([])
   const [currentEquipments, setCurrentEquipments] = useState(equipments)
   const [loading, setLoading] = useState(true)
@@ -24,8 +21,8 @@ export default function AdminEquipmentManagerPage() {
     axios.post("https://sportbox.up.railway.app/api/inventory/filter", {},
       {
         auth: {
-          username: username,
-          password: password
+          username: process.env.REACT_APP_USERNAME,
+          password: process.env.REACT_APP_PASSWORD
         }
       }).then(res => {
         console.log(res.data);
