@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux"
-import Event from "../EventPage/Event";
+import Event from "../eventPage/Event";
 
 import classes from '../../css/recommendation_page.module.css';
 

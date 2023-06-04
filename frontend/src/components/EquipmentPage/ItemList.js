@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "./Item";
-import Pagination from "../Supporting components/Pagination";
+import Pagination from "../supporting components/Pagination";
 
 import classes from '../../css/inventory_page.module.css';
 
