@@ -36,6 +36,10 @@
 [Отчёт по ролям.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.docx)  
 [Отчёт по ролям.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Отчёт%20по%20ролям.pdf)
 
+##### Сопроводительное письмо:
+[Сопроводительное письмо.docx](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Сопроводительное%20письмо.docx)  
+[Сопроводительное письмо.pdf](https://github.com/iljaKorn/SportEquipmentRental/blob/main/documents/Сопроводительное%20письмо.pdf)
+
 ##### Итоговая презентация:
 [Итоговая презентация](https://docs.google.com/presentation/d/13X-oEXnfk2f652JuD1npu98BIqT24qJ9ZRZy2Aua9s4/edit?usp=sharing)  
 
