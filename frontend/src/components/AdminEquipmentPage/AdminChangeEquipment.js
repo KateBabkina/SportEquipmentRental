@@ -9,10 +9,7 @@ export default function AdminChangeEquipment() {
 
     useEffect(() => {
         document.title = "Change equipment"
-     }, []);
-
-    var username = 'sport';
-    var password = '123';
+    }, []);
 
     const navigate = useNavigate()
     const equipment = useSelector(state => state.user.dataForChange);
@@ -85,8 +82,8 @@ export default function AdminChangeEquipment() {
             axios.put(`https://sportbox.up.railway.app/api/inventory/change?id=${equipment.id}`, requestToChange,
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     console.log(res.data);

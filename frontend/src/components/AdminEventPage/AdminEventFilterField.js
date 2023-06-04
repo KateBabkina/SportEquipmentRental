@@ -4,9 +4,6 @@ import classes from '../../css/admin_event_manager_page.module.css';
 
 export default function AdminEventFilterField({ changeFilter }) {
 
-  var username = 'sport';
-  var password = '123';
-
   const [filter, setFilter] = useState({})
   const [types, setTypes] = useState([])
 
@@ -14,8 +11,8 @@ export default function AdminEventFilterField({ changeFilter }) {
     axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
       {
         auth: {
-          username: username,
-          password: password
+          username: process.env.REACT_APP_USERNAME,
+          password: process.env.REACT_APP_PASSWORD
         }
       }).then(res => {
         console.log(res.data);
@@ -57,8 +54,8 @@ export default function AdminEventFilterField({ changeFilter }) {
       axios.post("https://sportbox.up.railway.app/api/event/filter", filter,
         {
           auth: {
-            username: username,
-            password: password
+            username: process.env.REACT_APP_USERNAME,
+            password: process.env.REACT_APP_PASSWORD
           }
         }).then(res => {
           console.log(res.data);

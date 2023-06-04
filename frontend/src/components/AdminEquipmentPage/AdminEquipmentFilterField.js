@@ -5,9 +5,6 @@ import classes from '../../css/admin_equipment_manager_page.module.css';
 
 export default function AdminEquipmentFilterField({ changeFilter }) {
 
-  var username = 'sport';
-  var password = '123';
-
   const [filter, setFilter] = useState({})
   const [types, setTypes] = useState([])
 
@@ -16,8 +13,8 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
     axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
       {
         auth: {
-          username: username,
-          password: password
+          username: process.env.REACT_APP_USERNAME,
+          password: process.env.REACT_APP_PASSWORD
         }
       }).then(res => {
         console.log(res.data);
@@ -35,7 +32,7 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
           [event.target.id]: Number(event.target.value)
         }
       })
-    } else if (event.target.id === "inventoryType" && event.target.value === ""){
+    } else if (event.target.id === "inventoryType" && event.target.value === "") {
       setFilter({})
     } else {
       setFilter((prev) => {
@@ -58,8 +55,8 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
       axios.post("https://sportbox.up.railway.app/api/inventory/filter", filter,
         {
           auth: {
-            username: username,
-            password: password
+            username: process.env.REACT_APP_USERNAME,
+            password: process.env.REACT_APP_PASSWORD
           }
         }).then(res => {
           console.log(res.data);
@@ -112,7 +109,7 @@ export default function AdminEquipmentFilterField({ changeFilter }) {
           <div className={classes.fieldIdEquipment}>
 
             <input type="number" id="id" name="fullName" required onChange={e => filtredInput(e)}
-            minLength="4" maxLength="35"size="20" />
+              minLength="4" maxLength="35" size="20" />
 
           </div>
 

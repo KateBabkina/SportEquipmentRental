@@ -8,9 +8,6 @@ import { setDataForChange } from "../../store/userSlice"
 
 export default function Event({ event }) {
 
-  var username = 'sport';
-  var password = '123';
-
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -18,8 +15,8 @@ export default function Event({ event }) {
     axios.delete(`https://sportbox.up.railway.app/api/event/delete?id=${event.id}`,
       {
         auth: {
-          username: username,
-          password: password
+          username: process.env.REACT_APP_USERNAME,
+          password: process.env.REACT_APP_PASSWORD
         }
       }).then(res => {
         if (res.data.status === true) {

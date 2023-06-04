@@ -6,9 +6,6 @@ import { useNavigate } from "react-router-dom"
 
 export default function AdminAddEventPage() {
 
-    var username = 'sport';
-    var password = '123';
-
     const navigate = useNavigate()
     const [types, setTypes] = useState([])
     const [loading, setLoading] = useState(true)
@@ -22,8 +19,8 @@ export default function AdminAddEventPage() {
         axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 console.log(res.data);
@@ -85,8 +82,8 @@ export default function AdminAddEventPage() {
             axios.post("https://sportbox.up.railway.app/api/event/add", requestToAdd,
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     console.log(res.data);
@@ -120,7 +117,7 @@ export default function AdminAddEventPage() {
                                 </div>
                                 <div className={classes.accountBoxField}>
                                     <input type="text" id="name" required
-                                        minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)}/>
+                                        minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                                 </div>
                             </div>
 
@@ -144,7 +141,7 @@ export default function AdminAddEventPage() {
                                 </div>
                                 <div className={classes.firstpasswordBoxField}>
                                     <input type="number" id="price" required
-                                        minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)}/>
+                                        minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                                 </div>
                             </div>
 
@@ -154,7 +151,7 @@ export default function AdminAddEventPage() {
                                 </div>
                                 <div className={classes.firstpasswordBoxField}>
                                     <input type="date" id="startDate" required
-                                        minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)}/>
+                                        minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                                 </div>
                             </div>
 
@@ -164,7 +161,7 @@ export default function AdminAddEventPage() {
                                 </div>
                                 <div className={classes.firstpasswordBoxField}>
                                     <input type="date" id="endDate" required
-                                        minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)}/>
+                                        minLength="4" maxLength="35" size="20" onChange={(e) => filtredInput(e)} />
                                 </div>
                             </div>
 

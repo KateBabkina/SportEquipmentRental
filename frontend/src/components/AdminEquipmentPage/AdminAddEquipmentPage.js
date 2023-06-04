@@ -7,9 +7,6 @@ import classes from '../../css/admin_equipment_add_page.module.css';
 
 export default function AdminAddEquipmentPage() {
 
-    var username = 'sport';
-    var password = '123';
-
     const navigate = useNavigate()
     const [types, setTypes] = useState([])
     const [loading, setLoading] = useState(true)
@@ -26,8 +23,8 @@ export default function AdminAddEquipmentPage() {
         axios.get("https://sportbox.up.railway.app/api/inventory_type/get_all",
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 console.log(res.data);
@@ -114,8 +111,8 @@ export default function AdminAddEquipmentPage() {
             axios.post("https://sportbox.up.railway.app/api/inventory/add", requestToAdd,
                 {
                     auth: {
-                        username: username,
-                        password: password
+                        username: process.env.REACT_APP_USERNAME,
+                        password: process.env.REACT_APP_PASSWORD
                     }
                 }).then(res => {
                     console.log(res.data);

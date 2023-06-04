@@ -9,9 +9,6 @@ import classes from '../../css/admin_order_manager_page.module.css';
 
 export default function AdminOrderManagerPage() {
 
-    var username = 'sport';
-    var password = '123';
-
     const [orders, setOrders] = useState([])
     const [currentOrders, setCurrentOrders] = useState(orders)
     const [loading, setLoading] = useState(true)
@@ -24,8 +21,8 @@ export default function AdminOrderManagerPage() {
         axios.post("https://sportbox.up.railway.app/api/booking/filter", {},
             {
                 auth: {
-                    username: username,
-                    password: password
+                    username: process.env.REACT_APP_USERNAME,
+                    password: process.env.REACT_APP_PASSWORD
                 }
             }).then(res => {
                 console.log(res.data);

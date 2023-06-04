@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/supporting components/Header";
+import Footer from "./components/supporting components/Footer";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import EquipmentPage from "./components/EquipmentPage";
-import EventPage from "./components/EventPage";
-import EnterPage from "./components/EnterPage";
-import RegisterPage from "./components/RegisterPage";
-import UserProfile from "./components/UserProfile"
-import AboutEquipment from "./components/AboutEquipment"
-import PaymentPage from './components/PaymentPage';
-import ReccomendationPage from './components/RecommendationPage';
-import AdminClientMenager from './components/AdminClientPage/AdminClientManagerPage';
-import AdminAddClient from './components/AdminClientPage/AdminAddClient';
-import AdminEquipmentManagerPage from './components/AdminEquipmentPage/AdminEquipmentManagerPage';
-import AdminAddEquipmentPage from './components/AdminEquipmentPage/AdminAddEquipmentPage';
-import AdminChangeEquipment from './components/AdminEquipmentPage/AdminChangeEquipment';
-import AdminOrderManagerPage from "./components/AdminOrderPage/AdminOrderManagerPage";
-import AdminOrderChangePage from "./components/AdminOrderPage/AdminOrderChangePage"
-import AdminEventManagerPage from './components/AdminEventPage/AdminEventManagerPage';
-import AdminAddEventPage from './components/AdminEventPage/AdminAddEventPage';
-import AdminChangeEventPage from './components/AdminEventPage/AdminChangeEventPage';
-import SplashScreen from './components/SplashScreen';
+import Home from "./components/mainPage/Home";
+import EquipmentPage from "./components/equipmentPage/EquipmentPage";
+import EventPage from "./components/eventPage/EventPage";
+import EnterPage from "./components/loginPage/EnterPage";
+import RegisterPage from "./components/registerPage/RegisterPage";
+import UserProfile from "./components/userProfilePage/UserProfile"
+import AboutEquipment from "./components/aboutEquipmentPage/AboutEquipment"
+import PaymentPage from './components/paymentPage/PaymentPage';
+import ReccomendationPage from './components/reccomendationPage/RecommendationPage';
+import AdminClientMenager from './components/adminClientPage/AdminClientManagerPage';
+import AdminAddClient from './components/adminClientPage/AdminAddClient';
+import AdminEquipmentManagerPage from './components/adminEquipmentPage/AdminEquipmentManagerPage';
+import AdminAddEquipmentPage from './components/adminEquipmentPage/AdminAddEquipmentPage';
+import AdminChangeEquipment from './components/adminEquipmentPage/AdminChangeEquipment';
+import AdminOrderManagerPage from "./components/adminOrderPage/AdminOrderManagerPage";
+import AdminOrderChangePage from "./components/adminOrderPage/AdminOrderChangePage"
+import AdminEventManagerPage from './components/adminEventPage/AdminEventManagerPage';
+import AdminAddEventPage from './components/adminEventPage/AdminAddEventPage';
+import AdminChangeEventPage from './components/adminEventPage/AdminChangeEventPage';
+import SplashScreen from './components/supporting components/SplashScreen';
 
 
 const App = () => {
