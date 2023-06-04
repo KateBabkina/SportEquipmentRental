@@ -41,6 +41,6 @@
 
 ##### Видео:
 [Видео про backend](https://youtu.be/ANb5wlKCnsg)  
-[Итоговая видеопрезентация](https://youtu.be/P-2c_NeBBGs)
-
-[Видео про использование приложения](https://youtu.be/sG3JJIwiAA8)
+[Видео про frontend](https://youtu.be/P-FrxGexUu4)  
+[Итоговая видеопрезентация](https://youtu.be/P-2c_NeBBGs)  
+[Видео с работой приложения](https://youtu.be/sG3JJIwiAA8)
