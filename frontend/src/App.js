@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Header from "./components/supporting components/Header";
-import Footer from "./components/supporting components/Footer";
+import Header from "./components/supportingComponents/Header";
+import Footer from "./components/supportingComponents/Footer";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/mainPage/Home";
@@ -22,7 +22,7 @@ import AdminOrderChangePage from "./components/adminOrderPage/AdminOrderChangePa
 import AdminEventManagerPage from './components/adminEventPage/AdminEventManagerPage';
 import AdminAddEventPage from './components/adminEventPage/AdminAddEventPage';
 import AdminChangeEventPage from './components/adminEventPage/AdminChangeEventPage';
-import SplashScreen from './components/supporting components/SplashScreen';
+import SplashScreen from './components/supportingComponents/SplashScreen';
 
 
 const App = () => {

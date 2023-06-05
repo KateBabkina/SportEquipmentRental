@@ -1,6 +1,6 @@
 import React from "react";
 import Event from "./Event"
-import Pagination from "../supporting components/Pagination";
+import Pagination from "../supportingComponents/Pagination";
 
 import classes from '../../css/event_page.module.css';
 
